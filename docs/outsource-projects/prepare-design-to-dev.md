@@ -48,10 +48,17 @@ NewPascalCaseName:
     
 ```
 
-## Hard!
+Why YAML?, can start with JSON, but YAML less verbose I think and will be easier to edit, can experiment
+
+## Avoid duplicate components
+
+Next phase
+
 Need to identify and ignore, reference duplicate parts, let's discuss this once you ready
 
 ![duplicate-parts.png](images/duplicate-parts.png)
+
+![deupicate-parts2.png](images/deupicate-parts2.png)
     
 ## Apply the rename data to figma
 
