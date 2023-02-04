@@ -47,6 +47,11 @@ NewPascalCaseName:
       he: Orignal hebrew text
     
 ```
+
+## Hard!
+Need to identify and ignore, reference duplicate parts, let's discuss this once you ready
+
+![duplicate-parts.png](images/duplicate-parts.png)
     
 ## Apply the rename data to figma
 
