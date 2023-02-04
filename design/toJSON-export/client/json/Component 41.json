@@ -1,0 +1,135 @@
+{
+"name":"Component 41",
+"type":"INSTANCE",
+"visible":true,
+"x":-6329,
+"y":-70608,
+"width":80,
+"height":32,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":80,
+		"height":32,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":200,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"S:876bf0e03b4811350ae767ccd7c6dbfb9a6afc06,",
+		"strokeWeight":2,
+		"strokes":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.2862745225429535,
+					"g": 0.3137255012989044,
+					"b": 0.34117648005485535
+				}
+			}
+		]
+	},
+	{
+		"name":"ןכ",
+		"type":"TEXT",
+		"visible":true,
+		"x":32,
+		"y":7,
+		"width":16,
+		"height":17,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"characters":"ןכ",
+		"fontSize":14,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Regular"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

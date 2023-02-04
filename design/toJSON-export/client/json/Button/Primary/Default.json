@@ -1,0 +1,134 @@
+{
+"name":"Button/Primary/Default",
+"type":"FRAME",
+"visible":true,
+"x":-14886,
+"y":-70940,
+"width":107,
+"height":48,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MAX",
+	"vertical": "MAX"
+},
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":107,
+		"height":48,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":20,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "GRADIENT_LINEAR",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"gradientStops": [
+					{
+						"color": {
+							"r": 0.7958333492279053,
+							"g": 0.023211777210235596,
+							"b": 0.2714436948299408,
+							"a": 1
+						},
+						"position": 0
+					},
+					{
+						"color": {
+							"r": 0.862500011920929,
+							"g": 0.45661768317222595,
+							"b": 0,
+							"a": 1
+						},
+						"position": 1
+					}
+				],
+				"gradientTransform": [
+					[
+						1,
+						-1.2919296336129805e-14,
+						1.6653346428168532e-15
+					],
+					[
+						2.2725451400117938e-15,
+						1.0000003576278687,
+						0.5
+					]
+				]
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"הריחב",
+		"type":"TEXT",
+		"visible":true,
+		"x":13.16918659210205,
+		"y":12.923077583312988,
+		"width":79.83845520019531,
+		"height":21.046154022216797,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"characters":"הריחב",
+		"fontSize":16,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"CENTER",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Regular"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

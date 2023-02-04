@@ -1,0 +1,189 @@
+{
+"name":"Button/Secondary/Default",
+"type":"FRAME",
+"visible":true,
+"x":8549,
+"y":-70552,
+"width":182,
+"height":48,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "CENTER",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":182,
+		"height":48,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":20,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "GRADIENT_LINEAR",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"gradientStops": [
+					{
+						"color": {
+							"r": 0.0855034589767456,
+							"g": 0.8208333253860474,
+							"b": 0.7767135500907898,
+							"a": 1
+						},
+						"position": 0
+					},
+					{
+						"color": {
+							"r": 0.05375000834465027,
+							"g": 0.36334994435310364,
+							"b": 0.5375000238418579,
+							"a": 1
+						},
+						"position": 0.925000011920929
+					}
+				],
+				"gradientTransform": [
+					[
+						-1,
+						-4.823748873077202e-15,
+						1
+					],
+					[
+						1.3071540555761635e-15,
+						-1,
+						0.5
+					]
+				]
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"S:9502b7cc228d879e47352ed0119b3a11723d0f3f,",
+		"strokeWeight":1,
+		"strokes":
+		[
+			{
+				"type": "GRADIENT_LINEAR",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"gradientStops": [
+					{
+						"color": {
+							"r": 0.0855034589767456,
+							"g": 0.8208333253860474,
+							"b": 0.7767135500907898,
+							"a": 1
+						},
+						"position": 0
+					},
+					{
+						"color": {
+							"r": 0.05375000834465027,
+							"g": 0.36334994435310364,
+							"b": 0.5375000238418579,
+							"a": 1
+						},
+						"position": 0.925000011920929
+					}
+				],
+				"gradientTransform": [
+					[
+						-1,
+						-4.823748873077202e-15,
+						1
+					],
+					[
+						1.3071540555761635e-15,
+						-1,
+						0.5
+					]
+				]
+			}
+		]
+	},
+	{
+		"name":"אל",
+		"type":"TEXT",
+		"visible":true,
+		"x":0,
+		"y":13.000003814697266,
+		"width":182,
+		"height":20.999996185302734,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"characters":"אל",
+		"fontSize":16,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"CENTER",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Regular"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

@@ -1,0 +1,144 @@
+{
+"name":"Tool Tip הצעות ביטוח דירה",
+"type":"FRAME",
+"visible":true,
+"x":8810,
+"y":-30979,
+"width":300,
+"height":86,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle 2",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":300,
+		"height":80,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":10,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"Vector",
+		"type":"VECTOR",
+		"visible":true,
+		"x":143,
+		"y":80,
+		"width":14,
+		"height":6,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "MAX"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"וחלשנש תועצהה ללכ תא ףקשמ .ךמש תחת חוטיבה תורבחל",
+		"type":"TEXT",
+		"visible":true,
+		"x":31,
+		"y":16,
+		"width":237,
+		"height":42,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "MAX"
+		},
+		"characters":"וחלשנש תועצהה ללכ תא ףקשמ\n.ךמש תחת חוטיבה תורבחל",
+		"fontSize":16,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Assistant",
+			"style": "SemiBold"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

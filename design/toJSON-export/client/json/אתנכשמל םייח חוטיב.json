@@ -1,0 +1,87 @@
+{
+"name":"אתנכשמל םייח חוטיב",
+"type":"COMPONENT",
+"visible":true,
+"x":-37740,
+"y":-70102,
+"width":612,
+"height":95,
+"rotation":0,
+"opacity":1,
+"description":"",
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+	},
+	{
+		"name":"אתנכשמל םייח חוטיב",
+		"type":"TEXT",
+		"visible":true,
+		"x":109,
+		"y":21,
+		"width":426,
+		"height":62,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"characters":" אתנכשמל םייח חוטיב",
+		"fontSize":48,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"CENTER",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Regular"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

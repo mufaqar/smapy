@@ -1,0 +1,44 @@
+{
+"name":"Second insurance that you allready have",
+"type":"TEXT",
+"visible":true,
+"x":-26996,
+"y":-69238,
+"width":1576,
+"height":948,
+"rotation":0,
+"opacity":1,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"characters":"Second insurance that you allready have",
+"fontSize":200,
+"textAlignHorizontal":"LEFT",
+"textAlignVertical":"TOP",
+"fontName":
+{
+	"family": "Rubik",
+	"style": "Bold"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.12941177189350128,
+			"g": 0.1411764770746231,
+			"b": 0.16078431904315948
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

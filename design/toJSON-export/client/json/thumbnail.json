@@ -1,0 +1,556 @@
+{
+"name":"thumbnail",
+"type":"FRAME",
+"visible":true,
+"x":-43915,
+"y":-71169,
+"width":540,
+"height":399,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "CENTER",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Card background",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":540,
+		"height":399,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "STRETCH",
+			"vertical": "STRETCH"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"Mask Group",
+		"type":"GROUP",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":540,
+		"height":285,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"Card background",
+				"type":"RECTANGLE",
+				"visible":true,
+				"x":0,
+				"y":0,
+				"width":540,
+				"height":285,
+				"rotation":0,
+				"opacity":1,
+				"topLeftRadius":40,
+				"topRightRadius":0,
+				"bottomLeftRadius":40,
+				"bottomRightRadius":37,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "STRETCH",
+					"vertical": "STRETCH"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			},
+			{
+				"name":"Rectangle 26",
+				"type":"VECTOR",
+				"visible":true,
+				"x":540,
+				"y":0,
+				"width":546,
+				"height":273,
+				"rotation":-180,
+				"opacity":1,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "STRETCH",
+					"vertical": "MIN"
+				},
+				"fills":
+				[
+					{
+						"type": "GRADIENT_LINEAR",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"gradientStops": [
+							{
+								"color": {
+									"r": 1,
+									"g": 0.529411792755127,
+									"b": 0,
+									"a": 1
+								},
+								"position": 0
+							},
+							{
+								"color": {
+									"r": 0.9960784316062927,
+									"g": 0.019607843831181526,
+									"b": 0.3333333432674408,
+									"a": 1
+								},
+								"position": 1
+							}
+						],
+						"gradientTransform": [
+							[
+								0.9999999403953552,
+								-2.561300916368095e-14,
+								-4.4240657890034195e-15
+							],
+							[
+								2.272544928253557e-15,
+								1.9825406074523926,
+								-0.48254019021987915
+							]
+						]
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	},
+	{
+		"name":"Mask Group",
+		"type":"GROUP",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":152,
+		"height":190,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"Rectangle 745",
+				"type":"RECTANGLE",
+				"visible":true,
+				"x":0,
+				"y":0,
+				"width":152,
+				"height":190,
+				"rotation":0,
+				"opacity":1,
+				"topLeftRadius":38,
+				"topRightRadius":38,
+				"bottomLeftRadius":0,
+				"bottomRightRadius":38,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 0.7686274647712708,
+							"g": 0.7686274647712708,
+							"b": 0.7686274647712708
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			},
+			{
+				"name":"Vector",
+				"type":"VECTOR",
+				"visible":true,
+				"x":13.735122680664062,
+				"y":-14.12329387664795,
+				"width":163.2412567138672,
+				"height":208.26605224609375,
+				"rotation":-16.361221619613598,
+				"opacity":1,
+				"cornerRadius":0,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	},
+	{
+		"name":"םכח חוטיב",
+		"type":"TEXT",
+		"visible":true,
+		"x":312,
+		"y":75,
+		"width":153,
+		"height":48,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "MIN",
+			"vertical": "MIN"
+		},
+		"characters":"םכח חוטיב",
+		"fontSize":36,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Assistant",
+			"style": "ExtraBold"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"ROUND",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":8
+	},
+	{
+		"name":"םלתשמו ףוקש",
+		"type":"TEXT",
+		"visible":true,
+		"x":208,
+		"y":123,
+		"width":208,
+		"height":48,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "MIN",
+			"vertical": "MIN"
+		},
+		"characters":"םלתשמו ףוקש",
+		"fontSize":36,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Assistant",
+			"style": "ExtraBold"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"ROUND",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":8
+	},
+	{
+		"name":"smapy Logo 1",
+		"type":"FRAME",
+		"visible":true,
+		"x":251,
+		"y":279,
+		"width":256,
+		"height":59,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "MAX",
+			"vertical": "MIN"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": false,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Layer 2",
+				"type":"GROUP",
+				"visible":true,
+				"x":0.9764834642410278,
+				"y":0,
+				"width":255.0235137939453,
+				"height":57.79446029663086,
+				"rotation":0,
+				"opacity":1,
+				"children":
+				[
+					{
+						"name":"Layer 1",
+						"type":"GROUP",
+						"visible":true,
+						"x":0.9764834642410278,
+						"y":0,
+						"width":255.0235137939453,
+						"height":57.79446029663086,
+						"rotation":0,
+						"opacity":1,
+						"children":
+						[
+							{
+								"name":"Vector",
+								"type":"VECTOR",
+								"visible":true,
+								"x":0.9764834642410278,
+								"y":0,
+								"width":255.0235137939453,
+								"height":57.79446029663086,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "SCALE",
+									"vertical": "SCALE"
+								},
+								"fills":
+								[
+									{
+										"type": "GRADIENT_LINEAR",
+										"visible": true,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"gradientStops": [
+											{
+												"color": {
+													"r": 1,
+													"g": 0,
+													"b": 0.3607843220233917,
+													"a": 1
+												},
+												"position": 0
+											},
+											{
+												"color": {
+													"r": 1,
+													"g": 0.30588236451148987,
+													"b": 0,
+													"a": 1
+												},
+												"position": 0.5440999865531921
+											},
+											{
+												"color": {
+													"r": 1,
+													"g": 0.615686297416687,
+													"b": 0,
+													"a": 1
+												},
+												"position": 1
+											}
+										],
+										"gradientTransform": [
+											[
+												1,
+												0,
+												-2.6020852139652106e-17
+											],
+											[
+												0,
+												0.2287781983613968,
+												0.38561388850212097
+											]
+										]
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							},
+							{
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
+}

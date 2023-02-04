@@ -1,0 +1,602 @@
+{
+"name":"Life loan 1.13.1",
+"type":"FRAME",
+"visible":true,
+"x":49732,
+"y":-28017,
+"width":1110,
+"height":380,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "CENTER",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Group 22",
+		"type":"GROUP",
+		"visible":true,
+		"x":240,
+		"y":0,
+		"width":870,
+		"height":477,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"Card background",
+				"type":"RECTANGLE",
+				"visible":true,
+				"x":240,
+				"y":0,
+				"width":870,
+				"height":477,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":40,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "MIN"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			},
+			{
+				"name":"םיאנת ירושיאו תורהצה",
+				"type":"TEXT",
+				"visible":true,
+				"x":484,
+				"y":43,
+				"width":383,
+				"height":48,
+				"rotation":0,
+				"opacity":1,
+				"constraints":
+				{
+					"horizontal": "CENTER",
+					"vertical": "MIN"
+				},
+				"characters":"םיאנת ירושיאו תורהצה",
+				"fontSize":36,
+				"textAlignHorizontal":"CENTER",
+				"textAlignVertical":"CENTER",
+				"fontName":
+				{
+					"family": "Rubik",
+					"style": "Bold"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 0.12941177189350128,
+							"g": 0.1411764770746231,
+							"b": 0.16078431904315948
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	},
+	{
+		"name":"Button/Primary/Default",
+		"type":"FRAME",
+		"visible":true,
+		"x":585,
+		"y":238,
+		"width":182,
+		"height":48,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "MAX",
+			"vertical": "MAX"
+		},
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Rectangle",
+				"type":"RECTANGLE",
+				"visible":true,
+				"x":0,
+				"y":0,
+				"width":182,
+				"height":48,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":20,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"fills":
+				[
+					{
+						"type": "GRADIENT_LINEAR",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"gradientStops": [
+							{
+								"color": {
+									"r": 0.9960784316062927,
+									"g": 0.019607843831181526,
+									"b": 0.3333333432674408,
+									"a": 1
+								},
+								"position": 0
+							},
+							{
+								"color": {
+									"r": 1,
+									"g": 0.529411792755127,
+									"b": 0,
+									"a": 1
+								},
+								"position": 1
+							}
+						],
+						"gradientTransform": [
+							[
+								1,
+								-1.2919296336129805e-14,
+								1.6653346428168532e-15
+							],
+							[
+								2.2725451400117938e-15,
+								1.0000003576278687,
+								0.5
+							]
+						]
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			},
+			{
+				"name":"ךשמה",
+				"type":"TEXT",
+				"visible":true,
+				"x":49,
+				"y":13,
+				"width":84,
+				"height":21,
+				"rotation":0,
+				"opacity":1,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"characters":"ךשמה",
+				"fontSize":16,
+				"textAlignHorizontal":"CENTER",
+				"textAlignVertical":"CENTER",
+				"fontName":
+				{
+					"family": "Rubik",
+					"style": "Regular"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	},
+	{
+		"name":"Review",
+		"type":"TEXT",
+		"visible":true,
+		"x":327,
+		"y":146,
+		"width":672,
+		"height":27,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "MIN"
+		},
+		"characters":"םניה תרסמש םיטרפה לכש ת/רשאמ ךנה ,ךשמה רותפכ לע הציחלב\n.חוקלה רושיאבו םינוכנו םיאלמ",
+		"fontSize":24,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Light"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.2862745225429535,
+					"g": 0.3137255012989044,
+					"b": 0.34117648005485535
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"הרזח",
+		"type":"TEXT",
+		"visible":true,
+		"x":1009,
+		"y":46.86666488647461,
+		"width":40,
+		"height":12.033333778381348,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"characters":"הרזח",
+		"fontSize":16,
+		"textAlignHorizontal":"RIGHT",
+		"textAlignVertical":"CENTER",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Regular"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.4313725531101227,
+					"g": 0.4745098054409027,
+					"b": 0.5490196347236633
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":0
+	},
+	{
+		"name":"arrow-left-circle",
+		"type":"INSTANCE",
+		"visible":true,
+		"x":1041,
+		"y":73,
+		"width":25,
+		"height":25,
+		"rotation":179.99999499104388,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "MIN",
+			"vertical": "MIN"
+		},
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Vector",
+				"type":"VECTOR",
+				"visible":true,
+				"x":0.833171010017395,
+				"y":0.8334130048751831,
+				"width":23.33333396911621,
+				"height":23.33333396911621,
+				"rotation":-1.9653880365841397e-13,
+				"opacity":1,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"S:767e14f7a339d6a75d33a5ddbbaa2371d359a071,1:1",
+				"strokeWeight":1,
+				"strokes":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 0,
+							"g": 0,
+							"b": 0
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"name":"Group 143",
+		"type":"GROUP",
+		"visible":true,
+		"x":512,
+		"y":321,
+		"width":292,
+		"height":28,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"Group 27",
+				"type":"INSTANCE",
+				"visible":true,
+				"x":776,
+				"y":321,
+				"width":28,
+				"height":28,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":0,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "MAX",
+					"vertical": "MIN"
+				},
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1,
+				"children":
+				[
+					{
+						"name":"Rectangle 3.1",
+						"type":"RECTANGLE",
+						"visible":true,
+						"x":0,
+						"y":0,
+						"width":28,
+						"height":28,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":4,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "SCALE",
+							"vertical": "SCALE"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": true,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 0.12941177189350128,
+									"g": 0.1411764770746231,
+									"b": 0.16078431904315948
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1
+					},
+					{
+						"name":"Path 5 Copy 10",
+						"type":"VECTOR",
+						"visible":true,
+						"x":8.5,
+						"y":9,
+						"width":11.5,
+						"height":9,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "SCALE",
+							"vertical": "SCALE"
+						},
+						"strokeCap":"ROUND",
+						"strokeJoin":"ROUND",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":3,
+						"strokes":
+						[
+							{
+								"type": "SOLID",
+								"visible": true,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"name":"Review",
+				"type":"TEXT",
+				"visible":true,
+				"x":512,
+				"y":321,
+				"width":255,
+				"height":27,
+				"rotation":0,
+				"opacity":1,
+				"constraints":
+				{
+					"horizontal": "MAX",
+					"vertical": "MIN"
+				},
+				"characters":"ןאכ ץוחלל שי אלמה ןונקתה תאירקל",
+				"fontSize":16,
+				"textAlignHorizontal":"RIGHT",
+				"textAlignVertical":"TOP",
+				"fontName":
+				{
+					"family": "Rubik",
+					"style": "Light"
+				},
+				"style-fills":
+				[
+					{
+						"characters": "ןאכ ץוחלל",
+						"start": 0,
+						"end": 9,
+						"fills": [
+							{
+								"type": "SOLID",
+								"visible": true,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 0.18431372940540314,
+									"g": 0.501960813999176,
+									"b": 0.929411768913269
+								}
+							}
+						]
+					},
+					{
+						"characters": " שי אלמה ןונקתה תאירקל",
+						"start": 9,
+						"end": 31,
+						"fills": [
+							{
+								"type": "SOLID",
+								"visible": true,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 0.2862745225429535,
+									"g": 0.3137255012989044,
+									"b": 0.34117648005485535
+								}
+							}
+						]
+					}
+				]
+,
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	}
+]
+}

@@ -1,0 +1,405 @@
+{
+"name":"Frame 118",
+"type":"FRAME",
+"visible":true,
+"x":-37209,
+"y":-69931,
+"width":237,
+"height":56,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Group 241",
+		"type":"GROUP",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":237,
+		"height":56,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"Rectangle",
+				"type":"RECTANGLE",
+				"visible":true,
+				"x":0,
+				"y":0,
+				"width":237,
+				"height":56,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":20,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"fills":
+				[
+					{
+						"type": "GRADIENT_LINEAR",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"gradientStops": [
+							{
+								"color": {
+									"r": 0.0855034589767456,
+									"g": 0.8208333253860474,
+									"b": 0.7767135500907898,
+									"a": 1
+								},
+								"position": 0
+							},
+							{
+								"color": {
+									"r": 0.05375000834465027,
+									"g": 0.36334994435310364,
+									"b": 0.5375000238418579,
+									"a": 1
+								},
+								"position": 0.925000011920929
+							}
+						],
+						"gradientTransform": [
+							[
+								-1,
+								-4.823748873077202e-15,
+								1
+							],
+							[
+								1.3071540555761635e-15,
+								-1,
+								0.5
+							]
+						]
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"S:9502b7cc228d879e47352ed0119b3a11723d0f3f,",
+				"strokeWeight":1,
+				"strokes":
+				[
+					{
+						"type": "GRADIENT_LINEAR",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"gradientStops": [
+							{
+								"color": {
+									"r": 0.0855034589767456,
+									"g": 0.8208333253860474,
+									"b": 0.7767135500907898,
+									"a": 1
+								},
+								"position": 0
+							},
+							{
+								"color": {
+									"r": 0.05375000834465027,
+									"g": 0.36334994435310364,
+									"b": 0.5375000238418579,
+									"a": 1
+								},
+								"position": 0.925000011920929
+							}
+						],
+						"gradientTransform": [
+							[
+								-1,
+								-4.823748873077202e-15,
+								1
+							],
+							[
+								1.3071540555761635e-15,
+								-1,
+								0.5
+							]
+						]
+					}
+				]
+			},
+			{
+				"name":"mortgage 2",
+				"type":"FRAME",
+				"visible":true,
+				"x":179.96266174316406,
+				"y":8,
+				"width":39.336097717285156,
+				"height":40,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":0,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": false,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1,
+				"children":
+				[
+					{
+						"name":"healthcare covid19 coronavirus hand hearth",
+						"type":"GROUP",
+						"visible":true,
+						"x":0,
+						"y":0.8873670697212219,
+						"width":39.33617401123047,
+						"height":38.227622985839844,
+						"rotation":0,
+						"opacity":1,
+						"children":
+						[
+							{
+								"name":"Vector",
+								"type":"VECTOR",
+								"visible":true,
+								"x":15.041860580444336,
+								"y":5.232511818408966,
+								"width":9.252443313598633,
+								"height":8.948869705200195,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "SCALE",
+									"vertical": "SCALE"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": true,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":8
+							},
+							{
+								"name":"Vector",
+								"type":"VECTOR",
+								"visible":true,
+								"x":20.32899284362793,
+								"y":8.334586918354034,
+								"width":19.00718116760254,
+								"height":30.778854370117188,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "SCALE",
+									"vertical": "SCALE"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": true,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":8
+							},
+							{
+								"name":"Vector",
+								"type":"VECTOR",
+								"visible":true,
+								"x":0,
+								"y":8.338319599628448,
+								"width":19.007143020629883,
+								"height":30.77666664123535,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "SCALE",
+									"vertical": "SCALE"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": true,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":8
+							},
+							{
+								"name":"Vector",
+								"type":"VECTOR",
+								"visible":true,
+								"x":8.387282371520996,
+								"y":0.8873670697212219,
+								"width":22.562191009521484,
+								"height":19.68826675415039,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "SCALE",
+									"vertical": "SCALE"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": true,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":8
+							}
+						]
+					}
+				]
+			},
+			{
+				"name":"םייח חוטיב",
+				"type":"TEXT",
+				"visible":true,
+				"x":66,
+				"y":17,
+				"width":79,
+				"height":22,
+				"rotation":0,
+				"opacity":1,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"characters":"םייח חוטיב",
+				"fontSize":18,
+				"textAlignHorizontal":"RIGHT",
+				"textAlignVertical":"CENTER",
+				"fontName":
+				{
+					"family": "Rubik",
+					"style": "Light"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	}
+]
+}

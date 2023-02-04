@@ -1,0 +1,144 @@
+{
+"name":"Tool Tip",
+"type":"FRAME",
+"visible":true,
+"x":-2715,
+"y":-70608,
+"width":375,
+"height":112,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle 2",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":375,
+		"height":106,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":10,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "STRETCH",
+			"vertical": "STRETCH"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"Vector",
+		"type":"VECTOR",
+		"visible":true,
+		"x":181,
+		"y":106,
+		"width":14,
+		"height":6,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "MAX"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"תרתי תא ולבקיש ולא םה םייקוחה םישרויה וא םיבטומה / רזוח יתלבה בטומל ומלושיש רחאל הסילופהמ םיפסכה הסילופה יאנתל ףופכבו םאתהב דבעשמ / קנב",
+		"type":"TEXT",
+		"visible":true,
+		"x":24,
+		"y":19,
+		"width":327,
+		"height":72,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "MAX"
+		},
+		"characters":"תרתי תא ולבקיש ולא םה םייקוחה םישרויה וא םיבטומה\n/ רזוח יתלבה בטומל ומלושיש רחאל הסילופהמ םיפסכה\nהסילופה יאנתל ףופכבו םאתהב דבעשמ / קנב",
+		"fontSize":16,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Assistant",
+			"style": "SemiBold"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

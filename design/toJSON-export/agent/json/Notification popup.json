@@ -1,0 +1,2793 @@
+{
+"name":"Notification popup",
+"type":"FRAME",
+"visible":true,
+"x":6520,
+"y":-30210,
+"width":1110,
+"height":750,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "CENTER",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Card background",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":1110,
+		"height":750,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":40,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "MIN"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"Card background",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":1062,
+		"y":239,
+		"width":8,
+		"height":158,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":20,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "MIN"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.7866319417953491,
+					"g": 0.7934722304344177,
+					"b": 0.8208333253860474
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+		"strokeWeight":1,
+		"strokes":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.7866319417953491,
+					"g": 0.7934722304344177,
+					"b": 0.8208333253860474
+				}
+			}
+		]
+	},
+	{
+		"name":"x",
+		"type":"INSTANCE",
+		"visible":true,
+		"x":1047,
+		"y":36,
+		"width":30,
+		"height":30,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "MIN",
+			"vertical": "MIN"
+		},
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Vector",
+				"type":"VECTOR",
+				"visible":true,
+				"x":3,
+				"y":3,
+				"width":24,
+				"height":24,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":0,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"S:767e14f7a339d6a75d33a5ddbbaa2371d359a071,1:1",
+				"strokeWeight":2,
+				"strokes":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 0,
+							"g": 0,
+							"b": 0
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"name":"Frame 52",
+		"type":"FRAME",
+		"visible":true,
+		"x":89,
+		"y":39,
+		"width":931,
+		"height":648,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "MIN",
+			"vertical": "MIN"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": false,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Frame 216",
+				"type":"FRAME",
+				"visible":true,
+				"x":16,
+				"y":0,
+				"width":900,
+				"height":1064,
+				"rotation":0,
+				"opacity":1,
+				"cornerRadius":0,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1,
+				"children":
+				[
+					{
+						"name":"Frame 46",
+						"type":"COMPONENT",
+						"visible":true,
+						"x":0,
+						"y":0,
+						"width":900,
+						"height":200,
+						"rotation":0,
+						"opacity":1,
+						"description":"",
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "CENTER",
+							"vertical": "MIN"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": false,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1,
+						"children":
+						[
+							{
+								"name":"Frame 31",
+								"type":"FRAME",
+								"visible":true,
+								"x":0,
+								"y":0,
+								"width":900,
+								"height":200,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "MIN",
+									"vertical": "MIN"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": false,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1,
+								"children":
+								[
+									{
+										"name":"totalCampaign",
+										"type":"GROUP",
+										"visible":true,
+										"x":0,
+										"y":0,
+										"width":900,
+										"height":200,
+										"rotation":0,
+										"opacity":1,
+										"children":
+										[
+											{
+												"name":"background",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":900,
+												"height":200,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":14,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.7866319417953491,
+															"g": 0.7934722304344177,
+															"b": 0.8208333253860474
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":45,
+										"width":820,
+										"height":110,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"?םוספיא םרול ,לאזעזעל ,הז המ\n לש - תויבוציע תוציקסב םקוממ תויהל דעוימו - שירבי'ג וא טסקט ימד םג םימעפל ארקנה - ןיטולחל תועמשמ רסח טסקטל יוניכ  .יתימא טסקט היהיש דע - יפוסה יתימאה טסקטה םוקמב - 'וכו טנרטניא ירתא ,תועדומ ,םיניזגמ ,םינולע אוה םוספיא םרול\n\n\n\n",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.2862745225429535,
+													"g": 0.3137255012989044,
+													"b": 0.34117648005485535
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Tag/Alternate",
+										"type":"FRAME",
+										"visible":true,
+										"x":40,
+										"y":149,
+										"width":107,
+										"height":32,
+										"rotation":0,
+										"opacity":1,
+										"cornerRadius":0,
+										"cornerSmoothing":0,
+										"constraints":
+										{
+											"horizontal": "MIN",
+											"vertical": "MIN"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": false,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 1,
+													"g": 1,
+													"b": 1
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1,
+										"children":
+										[
+											{
+												"name":"Rectangle",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":107,
+												"height":32,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":200,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:7938b11f786659a0fd6d2f352a2ae5498deaa637,6:14",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.8666666746139526,
+															"g": 0.886274516582489,
+															"b": 0.8980392217636108
+														}
+													}
+												]
+											},
+											{
+												"name":"םיאלמ םיטרפ",
+												"type":"TEXT",
+												"visible":true,
+												"x":19,
+												"y":8,
+												"width":84,
+												"height":16,
+												"rotation":0,
+												"opacity":1,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "CENTER"
+												},
+												"characters":"םיאלמ םיטרפ",
+												"fontSize":12,
+												"textAlignHorizontal":"CENTER",
+												"textAlignVertical":"TOP",
+												"fontName":
+												{
+													"family": "Rubik",
+													"style": "Regular"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"",
+												"strokeWeight":1
+											},
+											{
+												"name":"Vector 7",
+												"type":"VECTOR",
+												"visible":true,
+												"x":19,
+												"y":10.5,
+												"width":13,
+												"height":6,
+												"rotation":-90.00000250447827,
+												"opacity":1,
+												"cornerRadius":0,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "MIN"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"ROUND",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:1de837f34d9f994218a68d2cbd2215be6d5cc0e2,1607:1",
+												"strokeWeight":2,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":3,
+										"width":89,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"25/12/2020",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":612,
+										"y":18,
+										"width":248,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"םוספיא םרול תרתוכ",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":22,
+										"width":34,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"10:35",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									}
+								]
+							}
+						]
+					},
+					{
+						"name":"Frame 51",
+						"type":"INSTANCE",
+						"visible":true,
+						"x":0,
+						"y":216,
+						"width":900,
+						"height":200,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "CENTER",
+							"vertical": "MIN"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": false,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1,
+						"children":
+						[
+							{
+								"name":"Frame 31",
+								"type":"FRAME",
+								"visible":true,
+								"x":0,
+								"y":0,
+								"width":900,
+								"height":200,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "MIN",
+									"vertical": "MIN"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": false,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1,
+								"children":
+								[
+									{
+										"name":"totalCampaign",
+										"type":"GROUP",
+										"visible":true,
+										"x":0,
+										"y":0,
+										"width":900,
+										"height":200,
+										"rotation":0,
+										"opacity":1,
+										"children":
+										[
+											{
+												"name":"background",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":900,
+												"height":200,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":14,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.7866319417953491,
+															"g": 0.7934722304344177,
+															"b": 0.8208333253860474
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":45,
+										"width":820,
+										"height":110,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"?םוספיא םרול ,לאזעזעל ,הז המ\n לש - תויבוציע תוציקסב םקוממ תויהל דעוימו - שירבי'ג וא טסקט ימד םג םימעפל ארקנה - ןיטולחל תועמשמ רסח טסקטל יוניכ  .יתימא טסקט היהיש דע - יפוסה יתימאה טסקטה םוקמב - 'וכו טנרטניא ירתא ,תועדומ ,םיניזגמ ,םינולע אוה םוספיא םרול\n\n\n\n",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.2862745225429535,
+													"g": 0.3137255012989044,
+													"b": 0.34117648005485535
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Tag/Alternate",
+										"type":"FRAME",
+										"visible":true,
+										"x":40,
+										"y":149,
+										"width":107,
+										"height":32,
+										"rotation":0,
+										"opacity":1,
+										"cornerRadius":0,
+										"cornerSmoothing":0,
+										"constraints":
+										{
+											"horizontal": "MIN",
+											"vertical": "MIN"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": false,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 1,
+													"g": 1,
+													"b": 1
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1,
+										"children":
+										[
+											{
+												"name":"Rectangle",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":107,
+												"height":32,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":200,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:7938b11f786659a0fd6d2f352a2ae5498deaa637,6:14",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.8666666746139526,
+															"g": 0.886274516582489,
+															"b": 0.8980392217636108
+														}
+													}
+												]
+											},
+											{
+												"name":"םיאלמ םיטרפ",
+												"type":"TEXT",
+												"visible":true,
+												"x":19,
+												"y":8,
+												"width":84,
+												"height":16,
+												"rotation":0,
+												"opacity":1,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "CENTER"
+												},
+												"characters":"םיאלמ םיטרפ",
+												"fontSize":12,
+												"textAlignHorizontal":"CENTER",
+												"textAlignVertical":"TOP",
+												"fontName":
+												{
+													"family": "Rubik",
+													"style": "Regular"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"",
+												"strokeWeight":1
+											},
+											{
+												"name":"Vector 7",
+												"type":"VECTOR",
+												"visible":true,
+												"x":19,
+												"y":10.5,
+												"width":13,
+												"height":6,
+												"rotation":-90.00000250447827,
+												"opacity":1,
+												"cornerRadius":0,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "MIN"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"ROUND",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:1de837f34d9f994218a68d2cbd2215be6d5cc0e2,1607:1",
+												"strokeWeight":2,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":3,
+										"width":86,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"25/12/2020",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":612,
+										"y":18,
+										"width":248,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"םוספיא םרול תרתוכ",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":22,
+										"width":34,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"10:35",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									}
+								]
+							}
+						]
+					},
+					{
+						"name":"Frame 52",
+						"type":"INSTANCE",
+						"visible":true,
+						"x":0,
+						"y":432,
+						"width":900,
+						"height":200,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "CENTER",
+							"vertical": "MIN"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": false,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1,
+						"children":
+						[
+							{
+								"name":"Frame 31",
+								"type":"FRAME",
+								"visible":true,
+								"x":0,
+								"y":0,
+								"width":900,
+								"height":200,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "MIN",
+									"vertical": "MIN"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": false,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1,
+								"children":
+								[
+									{
+										"name":"totalCampaign",
+										"type":"GROUP",
+										"visible":true,
+										"x":0,
+										"y":0,
+										"width":900,
+										"height":200,
+										"rotation":0,
+										"opacity":1,
+										"children":
+										[
+											{
+												"name":"background",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":900,
+												"height":200,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":14,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.7866319417953491,
+															"g": 0.7934722304344177,
+															"b": 0.8208333253860474
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":45,
+										"width":820,
+										"height":110,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"?םוספיא םרול ,לאזעזעל ,הז המ\n לש - תויבוציע תוציקסב םקוממ תויהל דעוימו - שירבי'ג וא טסקט ימד םג םימעפל ארקנה - ןיטולחל תועמשמ רסח טסקטל יוניכ  .יתימא טסקט היהיש דע - יפוסה יתימאה טסקטה םוקמב - 'וכו טנרטניא ירתא ,תועדומ ,םיניזגמ ,םינולע אוה םוספיא םרול\n\n\n\n",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.2862745225429535,
+													"g": 0.3137255012989044,
+													"b": 0.34117648005485535
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Tag/Alternate",
+										"type":"FRAME",
+										"visible":true,
+										"x":40,
+										"y":149,
+										"width":107,
+										"height":32,
+										"rotation":0,
+										"opacity":1,
+										"cornerRadius":0,
+										"cornerSmoothing":0,
+										"constraints":
+										{
+											"horizontal": "MIN",
+											"vertical": "MIN"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": false,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 1,
+													"g": 1,
+													"b": 1
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1,
+										"children":
+										[
+											{
+												"name":"Rectangle",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":107,
+												"height":32,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":200,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:7938b11f786659a0fd6d2f352a2ae5498deaa637,6:14",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.8666666746139526,
+															"g": 0.886274516582489,
+															"b": 0.8980392217636108
+														}
+													}
+												]
+											},
+											{
+												"name":"םיאלמ םיטרפ",
+												"type":"TEXT",
+												"visible":true,
+												"x":19,
+												"y":8,
+												"width":84,
+												"height":16,
+												"rotation":0,
+												"opacity":1,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "CENTER"
+												},
+												"characters":"םיאלמ םיטרפ",
+												"fontSize":12,
+												"textAlignHorizontal":"CENTER",
+												"textAlignVertical":"TOP",
+												"fontName":
+												{
+													"family": "Rubik",
+													"style": "Regular"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"",
+												"strokeWeight":1
+											},
+											{
+												"name":"Vector 7",
+												"type":"VECTOR",
+												"visible":true,
+												"x":19,
+												"y":10.5,
+												"width":13,
+												"height":6,
+												"rotation":-90.00000250447827,
+												"opacity":1,
+												"cornerRadius":0,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "MIN"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"ROUND",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:1de837f34d9f994218a68d2cbd2215be6d5cc0e2,1607:1",
+												"strokeWeight":2,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":3,
+										"width":86,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"25/12/2020",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":612,
+										"y":18,
+										"width":248,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"םוספיא םרול תרתוכ",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":22,
+										"width":34,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"10:35",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									}
+								]
+							}
+						]
+					},
+					{
+						"name":"Frame 53",
+						"type":"INSTANCE",
+						"visible":true,
+						"x":0,
+						"y":648,
+						"width":900,
+						"height":200,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "CENTER",
+							"vertical": "MIN"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": false,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1,
+						"children":
+						[
+							{
+								"name":"Frame 31",
+								"type":"FRAME",
+								"visible":true,
+								"x":0,
+								"y":0,
+								"width":900,
+								"height":200,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "MIN",
+									"vertical": "MIN"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": false,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1,
+								"children":
+								[
+									{
+										"name":"totalCampaign",
+										"type":"GROUP",
+										"visible":true,
+										"x":0,
+										"y":0,
+										"width":900,
+										"height":200,
+										"rotation":0,
+										"opacity":1,
+										"children":
+										[
+											{
+												"name":"background",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":900,
+												"height":200,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":14,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.7866319417953491,
+															"g": 0.7934722304344177,
+															"b": 0.8208333253860474
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":45,
+										"width":820,
+										"height":110,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"?םוספיא םרול ,לאזעזעל ,הז המ\n לש - תויבוציע תוציקסב םקוממ תויהל דעוימו - שירבי'ג וא טסקט ימד םג םימעפל ארקנה - ןיטולחל תועמשמ רסח טסקטל יוניכ  .יתימא טסקט היהיש דע - יפוסה יתימאה טסקטה םוקמב - 'וכו טנרטניא ירתא ,תועדומ ,םיניזגמ ,םינולע אוה םוספיא םרול\n\n\n\n",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.2862745225429535,
+													"g": 0.3137255012989044,
+													"b": 0.34117648005485535
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Tag/Alternate",
+										"type":"FRAME",
+										"visible":true,
+										"x":40,
+										"y":149,
+										"width":107,
+										"height":32,
+										"rotation":0,
+										"opacity":1,
+										"cornerRadius":0,
+										"cornerSmoothing":0,
+										"constraints":
+										{
+											"horizontal": "MIN",
+											"vertical": "MIN"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": false,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 1,
+													"g": 1,
+													"b": 1
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1,
+										"children":
+										[
+											{
+												"name":"Rectangle",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":107,
+												"height":32,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":200,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:7938b11f786659a0fd6d2f352a2ae5498deaa637,6:14",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.8666666746139526,
+															"g": 0.886274516582489,
+															"b": 0.8980392217636108
+														}
+													}
+												]
+											},
+											{
+												"name":"םיאלמ םיטרפ",
+												"type":"TEXT",
+												"visible":true,
+												"x":19,
+												"y":8,
+												"width":84,
+												"height":16,
+												"rotation":0,
+												"opacity":1,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "CENTER"
+												},
+												"characters":"םיאלמ םיטרפ",
+												"fontSize":12,
+												"textAlignHorizontal":"CENTER",
+												"textAlignVertical":"TOP",
+												"fontName":
+												{
+													"family": "Rubik",
+													"style": "Regular"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"",
+												"strokeWeight":1
+											},
+											{
+												"name":"Vector 7",
+												"type":"VECTOR",
+												"visible":true,
+												"x":19,
+												"y":10.5,
+												"width":13,
+												"height":6,
+												"rotation":-90.00000250447827,
+												"opacity":1,
+												"cornerRadius":0,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "MIN"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"ROUND",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:1de837f34d9f994218a68d2cbd2215be6d5cc0e2,1607:1",
+												"strokeWeight":2,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":3,
+										"width":86,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"25/12/2020",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":612,
+										"y":18,
+										"width":248,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"םוספיא םרול תרתוכ",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":22,
+										"width":34,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"10:35",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									}
+								]
+							}
+						]
+					},
+					{
+						"name":"Frame 54",
+						"type":"INSTANCE",
+						"visible":true,
+						"x":0,
+						"y":864,
+						"width":900,
+						"height":200,
+						"rotation":0,
+						"opacity":1,
+						"cornerRadius":0,
+						"cornerSmoothing":0,
+						"constraints":
+						{
+							"horizontal": "CENTER",
+							"vertical": "MIN"
+						},
+						"fills":
+						[
+							{
+								"type": "SOLID",
+								"visible": false,
+								"opacity": 1,
+								"blendMode": "NORMAL",
+								"color": {
+									"r": 1,
+									"g": 1,
+									"b": 1
+								}
+							}
+						],
+						"strokeCap":"NONE",
+						"strokeJoin":"MITER",
+						"strokeMiterLimit":4,
+						"strokeStyleId":"",
+						"strokeWeight":1,
+						"children":
+						[
+							{
+								"name":"Frame 31",
+								"type":"FRAME",
+								"visible":true,
+								"x":0,
+								"y":0,
+								"width":900,
+								"height":200,
+								"rotation":0,
+								"opacity":1,
+								"cornerRadius":0,
+								"cornerSmoothing":0,
+								"constraints":
+								{
+									"horizontal": "MIN",
+									"vertical": "MIN"
+								},
+								"fills":
+								[
+									{
+										"type": "SOLID",
+										"visible": false,
+										"opacity": 1,
+										"blendMode": "NORMAL",
+										"color": {
+											"r": 1,
+											"g": 1,
+											"b": 1
+										}
+									}
+								],
+								"strokeCap":"NONE",
+								"strokeJoin":"MITER",
+								"strokeMiterLimit":4,
+								"strokeStyleId":"",
+								"strokeWeight":1,
+								"children":
+								[
+									{
+										"name":"totalCampaign",
+										"type":"GROUP",
+										"visible":true,
+										"x":0,
+										"y":0,
+										"width":900,
+										"height":200,
+										"rotation":0,
+										"opacity":1,
+										"children":
+										[
+											{
+												"name":"background",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":900,
+												"height":200,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":14,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.7866319417953491,
+															"g": 0.7934722304344177,
+															"b": 0.8208333253860474
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":45,
+										"width":820,
+										"height":110,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"?םוספיא םרול ,לאזעזעל ,הז המ\n לש - תויבוציע תוציקסב םקוממ תויהל דעוימו - שירבי'ג וא טסקט ימד םג םימעפל ארקנה - ןיטולחל תועמשמ רסח טסקטל יוניכ  .יתימא טסקט היהיש דע - יפוסה יתימאה טסקטה םוקמב - 'וכו טנרטניא ירתא ,תועדומ ,םיניזגמ ,םינולע אוה םוספיא םרול\n\n\n\n",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.2862745225429535,
+													"g": 0.3137255012989044,
+													"b": 0.34117648005485535
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Tag/Alternate",
+										"type":"FRAME",
+										"visible":true,
+										"x":40,
+										"y":149,
+										"width":107,
+										"height":32,
+										"rotation":0,
+										"opacity":1,
+										"cornerRadius":0,
+										"cornerSmoothing":0,
+										"constraints":
+										{
+											"horizontal": "MIN",
+											"vertical": "MIN"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": false,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 1,
+													"g": 1,
+													"b": 1
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1,
+										"children":
+										[
+											{
+												"name":"Rectangle",
+												"type":"RECTANGLE",
+												"visible":true,
+												"x":0,
+												"y":0,
+												"width":107,
+												"height":32,
+												"rotation":0,
+												"opacity":1,
+												"cornerRadius":200,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "SCALE",
+													"vertical": "SCALE"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 1,
+															"g": 1,
+															"b": 1
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:7938b11f786659a0fd6d2f352a2ae5498deaa637,6:14",
+												"strokeWeight":1,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.8666666746139526,
+															"g": 0.886274516582489,
+															"b": 0.8980392217636108
+														}
+													}
+												]
+											},
+											{
+												"name":"םיאלמ םיטרפ",
+												"type":"TEXT",
+												"visible":true,
+												"x":19,
+												"y":8,
+												"width":84,
+												"height":16,
+												"rotation":0,
+												"opacity":1,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "CENTER"
+												},
+												"characters":"םיאלמ םיטרפ",
+												"fontSize":12,
+												"textAlignHorizontal":"CENTER",
+												"textAlignVertical":"TOP",
+												"fontName":
+												{
+													"family": "Rubik",
+													"style": "Regular"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"MITER",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"",
+												"strokeWeight":1
+											},
+											{
+												"name":"Vector 7",
+												"type":"VECTOR",
+												"visible":true,
+												"x":19,
+												"y":10.5,
+												"width":13,
+												"height":6,
+												"rotation":-90.00000250447827,
+												"opacity":1,
+												"cornerRadius":0,
+												"cornerSmoothing":0,
+												"constraints":
+												{
+													"horizontal": "MIN",
+													"vertical": "MIN"
+												},
+												"fills":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												],
+												"strokeCap":"NONE",
+												"strokeJoin":"ROUND",
+												"strokeMiterLimit":4,
+												"strokeStyleId":"S:1de837f34d9f994218a68d2cbd2215be6d5cc0e2,1607:1",
+												"strokeWeight":2,
+												"strokes":
+												[
+													{
+														"type": "SOLID",
+														"visible": true,
+														"opacity": 1,
+														"blendMode": "NORMAL",
+														"color": {
+															"r": 0.2862745225429535,
+															"g": 0.3137255012989044,
+															"b": 0.34117648005485535
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":3,
+										"width":86,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"25/12/2020",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":612,
+										"y":18,
+										"width":248,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"םוספיא םרול תרתוכ",
+										"fontSize":18,
+										"textAlignHorizontal":"RIGHT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Bold"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									},
+									{
+										"name":"Review",
+										"type":"TEXT",
+										"visible":true,
+										"x":40,
+										"y":22,
+										"width":34,
+										"height":27,
+										"rotation":0,
+										"opacity":1,
+										"constraints":
+										{
+											"horizontal": "CENTER",
+											"vertical": "MIN"
+										},
+										"characters":"10:35",
+										"fontSize":14,
+										"textAlignHorizontal":"LEFT",
+										"textAlignVertical":"TOP",
+										"fontName":
+										{
+											"family": "Rubik",
+											"style": "Light"
+										},
+										"fills":
+										[
+											{
+												"type": "SOLID",
+												"visible": true,
+												"opacity": 1,
+												"blendMode": "NORMAL",
+												"color": {
+													"r": 0.12941177189350128,
+													"g": 0.1411764770746231,
+													"b": 0.16078431904315948
+												}
+											}
+										],
+										"strokeCap":"NONE",
+										"strokeJoin":"MITER",
+										"strokeMiterLimit":4,
+										"strokeStyleId":"",
+										"strokeWeight":1
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
+}

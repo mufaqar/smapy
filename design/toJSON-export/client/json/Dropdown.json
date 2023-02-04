@@ -1,0 +1,121 @@
+{
+"name":"Dropdown",
+"type":"INSTANCE",
+"visible":true,
+"x":-15257,
+"y":-71099,
+"width":180,
+"height":45,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "SCALE",
+	"vertical": "SCALE"
+},
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle 2.3",
+		"type":"VECTOR",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":180,
+		"height":138,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":8,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 1,
+					"b": 1
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"S:19a429190e0662d52d83d29f3b4a9c324e26018d,",
+		"strokeWeight":1,
+		"strokes":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.7866319417953491,
+					"g": 0.7934722304344177,
+					"b": 0.8208333253860474
+				}
+			}
+		]
+	},
+	{
+		"name":"רבטצמ םולשת ישדוח םולשת עצוממ םולשת",
+		"type":"TEXT",
+		"visible":true,
+		"x":57,
+		"y":9,
+		"width":104,
+		"height":120,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "MAX",
+			"vertical": "MIN"
+		},
+		"characters":"רבטצמ םולשת\nישדוח םולשת\nעצוממ םולשת",
+		"fontSize":18,
+		"textAlignHorizontal":"RIGHT",
+		"textAlignVertical":"CENTER",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Light"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	}
+]
+}

@@ -1,0 +1,44 @@
+{
+"name":"ילש תוחוקלה לכ לש תואוולהה תרתי כ''הס",
+"type":"TEXT",
+"visible":true,
+"x":7762,
+"y":-29305,
+"width":410,
+"height":38,
+"rotation":0,
+"opacity":1,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"characters":"ילש תוחוקלה לכ לש תואוולהה תרתי כ''הס",
+"fontSize":24,
+"textAlignHorizontal":"CENTER",
+"textAlignVertical":"CENTER",
+"fontName":
+{
+	"family": "Rubik",
+	"style": "Light"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.4313725531101227,
+			"g": 0.4745098054409027,
+			"b": 0.5490196347236633
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

@@ -1,0 +1,37 @@
+{
+"name":"Rectangle 827",
+"type":"RECTANGLE",
+"visible":true,
+"x":21450.994140625,
+"y":-21748.765625,
+"width":15360.6591796875,
+"height":311,
+"rotation":89.6597457999767,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.7686274647712708,
+			"g": 0.7686274647712708,
+			"b": 0.7686274647712708
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

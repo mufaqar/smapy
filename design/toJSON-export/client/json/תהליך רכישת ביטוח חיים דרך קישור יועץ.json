@@ -1,0 +1,44 @@
+{
+"name":"תהליך רכישת ביטוח חיים דרך קישור יועץ",
+"type":"TEXT",
+"visible":true,
+"x":-34458,
+"y":-72251,
+"width":7961,
+"height":555,
+"rotation":0,
+"opacity":1,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"characters":"תהליך רכישת ביטוח חיים דרך קישור יועץ\n",
+"fontSize":400,
+"textAlignHorizontal":"RIGHT",
+"textAlignVertical":"TOP",
+"fontName":
+{
+	"family": "Rubik",
+	"style": "Bold"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.12941177189350128,
+			"g": 0.1411764770746231,
+			"b": 0.16078431904315948
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

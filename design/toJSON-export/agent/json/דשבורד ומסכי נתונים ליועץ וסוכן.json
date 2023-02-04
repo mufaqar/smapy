@@ -1,0 +1,45 @@
+{
+"name":"דשבורד ומסכי נתונים ליועץ וסוכן",
+"type":"TEXT",
+"visible":true,
+"x":2529,
+"y":-32799.7109375,
+"width":17654.744140625,
+"height":1185,
+"rotation":0.24109440203658247,
+"opacity":1,
+"isJPEG":"false",
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"characters":"דשבורד ומסכי נתונים ליועץ וסוכן",
+"fontSize":1000,
+"textAlignHorizontal":"RIGHT",
+"textAlignVertical":"TOP",
+"fontName":
+{
+	"family": "Rubik",
+	"style": "Bold"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.12941177189350128,
+			"g": 0.1411764770746231,
+			"b": 0.16078431904315948
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

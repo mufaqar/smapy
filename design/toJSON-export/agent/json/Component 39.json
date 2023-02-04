@@ -1,0 +1,221 @@
+{
+"name":"Component 39",
+"type":"INSTANCE",
+"visible":true,
+"x":-1015,
+"y":-29203,
+"width":120,
+"height":120,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "CENTER",
+	"vertical": "CENTER"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": false,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1,
+"children":
+[
+	{
+		"name":"Rectangle 743",
+		"type":"RECTANGLE",
+		"visible":true,
+		"x":0,
+		"y":0,
+		"width":120,
+		"height":120,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":40,
+		"cornerSmoothing":0.6000000238418579,
+		"constraints":
+		{
+			"horizontal": "SCALE",
+			"vertical": "SCALE"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 1,
+					"g": 0.9352269172668457,
+					"b": 0.9496209621429443
+				}
+			},
+			{
+				"type": "GRADIENT_LINEAR",
+				"visible": true,
+				"opacity": 0.6000000238418579,
+				"blendMode": "SOFT_LIGHT",
+				"gradientStops": [
+					{
+						"color": {
+							"r": 0,
+							"g": 0,
+							"b": 0,
+							"a": 1
+						},
+						"position": 0
+					},
+					{
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1,
+							"a": 0
+						},
+						"position": 1
+					}
+				],
+				"gradientTransform": [
+					[
+						-0.5,
+						-0.4999999701976776,
+						1
+					],
+					[
+						0.4999999701976776,
+						-0.5,
+						0.5
+					]
+				]
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":8.901226043701172
+	},
+	{
+		"name":"Review",
+		"type":"TEXT",
+		"visible":true,
+		"x":39,
+		"y":78,
+		"width":40,
+		"height":18,
+		"rotation":0,
+		"opacity":1,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "CENTER"
+		},
+		"characters":"ןופלט",
+		"fontSize":16,
+		"textAlignHorizontal":"CENTER",
+		"textAlignVertical":"TOP",
+		"fontName":
+		{
+			"family": "Rubik",
+			"style": "Light"
+		},
+		"fills":
+		[
+			{
+				"type": "SOLID",
+				"visible": true,
+				"opacity": 1,
+				"blendMode": "NORMAL",
+				"color": {
+					"r": 0.12941177189350128,
+					"g": 0.1411764770746231,
+					"b": 0.16078431904315948
+				}
+			}
+		],
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1
+	},
+	{
+		"name":"phone",
+		"type":"INSTANCE",
+		"visible":true,
+		"x":45,
+		"y":37,
+		"width":30,
+		"height":30,
+		"rotation":0,
+		"opacity":1,
+		"cornerRadius":0,
+		"cornerSmoothing":0,
+		"constraints":
+		{
+			"horizontal": "CENTER",
+			"vertical": "CENTER"
+		},
+		"strokeCap":"NONE",
+		"strokeJoin":"MITER",
+		"strokeMiterLimit":4,
+		"strokeStyleId":"",
+		"strokeWeight":1,
+		"children":
+		[
+			{
+				"name":"Vector 2186",
+				"type":"VECTOR",
+				"visible":true,
+				"x":1,
+				"y":1,
+				"width":28,
+				"height":28,
+				"rotation":0,
+				"opacity":1,
+				"cornerSmoothing":0,
+				"constraints":
+				{
+					"horizontal": "SCALE",
+					"vertical": "SCALE"
+				},
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"S:6e9d7a6af1a37ac3ed021588d04fc7e9fec0a8a1,",
+				"strokeWeight":2,
+				"strokes":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 0.12941177189350128,
+							"g": 0.1411764770746231,
+							"b": 0.16078431904315948
+						}
+					}
+				]
+			}
+		]
+	}
+]
+}

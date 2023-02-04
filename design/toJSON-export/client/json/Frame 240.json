@@ -1,0 +1,166 @@
+{
+"name":"Frame 240",
+"type":"FRAME",
+"visible":true,
+"x":4459,
+"y":-67110,
+"width":293,
+"height":38,
+"rotation":0,
+"opacity":1,
+"cornerRadius":20,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "GRADIENT_LINEAR",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"gradientStops": [
+			{
+				"color": {
+					"r": 0.0855034589767456,
+					"g": 0.8208333253860474,
+					"b": 0.7767135500907898,
+					"a": 1
+				},
+				"position": 0
+			},
+			{
+				"color": {
+					"r": 0.05375000834465027,
+					"g": 0.36334994435310364,
+					"b": 0.5375000238418579,
+					"a": 1
+				},
+				"position": 0.925000011920929
+			}
+		],
+		"gradientTransform": [
+			[
+				-1,
+				-4.823748873077202e-15,
+				1
+			],
+			[
+				1.3071540555761635e-15,
+				-1,
+				0.5
+			]
+		]
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"S:9502b7cc228d879e47352ed0119b3a11723d0f3f,",
+"strokeWeight":1,
+"strokes":
+[
+	{
+		"type": "GRADIENT_LINEAR",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"gradientStops": [
+			{
+				"color": {
+					"r": 0.0855034589767456,
+					"g": 0.8208333253860474,
+					"b": 0.7767135500907898,
+					"a": 1
+				},
+				"position": 0
+			},
+			{
+				"color": {
+					"r": 0.05375000834465027,
+					"g": 0.36334994435310364,
+					"b": 0.5375000238418579,
+					"a": 1
+				},
+				"position": 0.925000011920929
+			}
+		],
+		"gradientTransform": [
+			[
+				-1,
+				-4.823748873077202e-15,
+				1
+			],
+			[
+				1.3071540555761635e-15,
+				-1,
+				0.5
+			]
+		]
+	}
+],
+"children":
+[
+	{
+		"name":"Group 240",
+		"type":"GROUP",
+		"visible":true,
+		"x":18,
+		"y":8,
+		"width":257,
+		"height":22,
+		"rotation":0,
+		"opacity":1,
+		"children":
+		[
+			{
+				"name":"גיצנמ הרזעל חמשא - ת/רכוז אל ינא",
+				"type":"TEXT",
+				"visible":true,
+				"x":18,
+				"y":8,
+				"width":257,
+				"height":22,
+				"rotation":0,
+				"opacity":1,
+				"constraints":
+				{
+					"horizontal": "MIN",
+					"vertical": "MIN"
+				},
+				"characters":"גיצנמ הרזעל חמשא - ת/רכוז אל ינא",
+				"fontSize":18,
+				"textAlignHorizontal":"RIGHT",
+				"textAlignVertical":"CENTER",
+				"fontName":
+				{
+					"family": "Rubik",
+					"style": "Light"
+				},
+				"fills":
+				[
+					{
+						"type": "SOLID",
+						"visible": true,
+						"opacity": 1,
+						"blendMode": "NORMAL",
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1
+						}
+					}
+				],
+				"strokeCap":"NONE",
+				"strokeJoin":"MITER",
+				"strokeMiterLimit":4,
+				"strokeStyleId":"",
+				"strokeWeight":1
+			}
+		]
+	}
+]
+}

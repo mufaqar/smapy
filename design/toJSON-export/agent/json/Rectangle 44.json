@@ -1,0 +1,37 @@
+{
+"name":"Rectangle 44",
+"type":"RECTANGLE",
+"visible":true,
+"x":-16603,
+"y":-21701,
+"width":72265,
+"height":384,
+"rotation":0,
+"opacity":1,
+"cornerRadius":0,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.12941177189350128,
+			"g": 0.1411764770746231,
+			"b": 0.16078431904315948
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"",
+"strokeWeight":1
+}

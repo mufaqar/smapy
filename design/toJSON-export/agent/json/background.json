@@ -1,0 +1,51 @@
+{
+"name":"background",
+"type":"RECTANGLE",
+"visible":true,
+"x":7668,
+"y":-29332,
+"width":598,
+"height":149,
+"rotation":0,
+"opacity":1,
+"cornerRadius":14,
+"cornerSmoothing":0,
+"constraints":
+{
+	"horizontal": "MIN",
+	"vertical": "MIN"
+},
+"fills":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 1,
+			"g": 1,
+			"b": 1
+		}
+	}
+],
+"strokeCap":"NONE",
+"strokeJoin":"MITER",
+"strokeMiterLimit":4,
+"strokeStyleId":"S:bec270e435e085bbcccda567184fd0f4f150b993,35:1",
+"strokeWeight":1,
+"strokes":
+[
+	{
+		"type": "SOLID",
+		"visible": true,
+		"opacity": 1,
+		"blendMode": "NORMAL",
+		"color": {
+			"r": 0.7866319417953491,
+			"g": 0.7934722304344177,
+			"b": 0.8208333253860474
+		}
+	}
+]
+}
