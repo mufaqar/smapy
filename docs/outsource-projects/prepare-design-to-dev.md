@@ -40,12 +40,17 @@ Output YAML: `figma-mapping.yaml`
 ```yaml
 NewPascalCaseName:
   old-name: old maybe hebrew name
-  children: 
-    SomeTEXTNodeNewPascalCaseName:
-      old-name: old hebrew name
-      en: English translation of the text
-      he: Orignal hebrew text
-    
+  children:
+    NewPascalCaseName2:
+      old-name: old maybe hebrew name2
+      children: 
+        SomeTEXTNodeNewPascalCaseName:
+          old-name: old hebrew name
+          en: English translation of the text
+          he: Orignal hebrew text
+        MoreNodes:
+          old-name: old node
+        
 ```
 
 Why YAML?, can start with JSON, but YAML less verbose I think and will be easier to edit, can experiment
