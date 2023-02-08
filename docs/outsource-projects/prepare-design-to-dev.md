@@ -77,3 +77,14 @@ not written yet
 - Design may change so will have to redo
 - will use the he/en data to create translation file for the app
 - will consider use the `figma-mapping.yaml` to create initial React code tree
+
+# Iteration 2
+- Extract common components and put it in the top level components->footer tree
+
+![img_1.png](img_1.png)
+
+- trim nodes, recursive up :) if there is no TEXT node in the children and name is generic like
+  Rectangle, Vector, Layer {x}, Group {x}
+
+![img.png](img.png)
+
