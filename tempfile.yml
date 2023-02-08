@@ -1,0 +1,389 @@
+new name: Structure loan 0.0.0
+old name: Structure loan 0.0.0
+children:
+- - new name: Union
+    old name: Union
+  - new name: Vector 2
+    old name: Vector 2
+  - new name: Vector 5
+    old name: Vector 5
+  - new name: Rectangle 26
+    old name: Rectangle 26
+    children:
+    - - new name: Rectangle 26
+        old name: Rectangle 26
+  - new name: Frame 23
+    old name: Frame 23
+    children:
+    - - new name: footer
+        old name: footer
+        children:
+        - - new name: Rectangle 6
+            old name: Rectangle 6
+          - new name: Group 131
+            old name: Group 131
+            children:
+            - - new name: bsx copy
+                old name: bsx copy
+              - new name: Handmade with
+                old name: Handmade with
+              - new name: B Y
+                old name: B Y
+              - new name: heart
+                old name: heart
+                children:
+                - - new name: Vector
+                    old name: Vector
+          - new name: Facebook
+            old name: Facebook
+            children:
+            - - new name: Combined Shape
+                old name: Combined Shape
+                children:
+                - - new name: Facebook
+                    old name: Facebook
+                  - new name: Path
+                    old name: Path
+          - new name: Google +
+            old name: Google +
+            children:
+            - - new name: Combined Shape
+                old name: Combined Shape
+                children:
+                - - new name: Google +
+                    old name: Google +
+                  - new name: Shape
+                    old name: Shape
+                  - new name: Shape Copy
+                    old name: Shape Copy
+          - new name: LinkedIN
+            old name: LinkedIN
+            children:
+            - - new name: Combined Shape
+                old name: Combined Shape
+                children:
+                - - new name: LinkedIN
+                    old name: LinkedIN
+                  - new name: Combined Shape
+                    old name: Combined Shape
+                  - new name: Combined Shape
+                    old name: Combined Shape
+                  - new name: Combined Shape
+                    old name: Combined Shape
+          - new name: Group 120
+            old name: Group 120
+            children:
+            - - new name: help
+                old name: הרזע
+                old readable name: עזרה
+                new characters: help
+                old characters: הרזע
+                old readable characters: עזרה
+              - new name: FAQ Contact
+                old name: רשק רוצ FAQ
+                old readable name: FAQ צור קשר
+                new characters: Contact Us \n FAQ
+                old characters: רשק רוצ\nFAQ
+                old readable characters: צור קשר\nFAQ
+          - new name: Group 121
+            old name: Group 121
+            children:
+            - - new name: Site Map
+                old name: רתא תפמ
+                old readable name: מפת אתר
+                new characters: Site Map
+                old characters: רתא תפמ
+                old readable characters: מפת אתר
+              - new name: Profile Sign Up Sign In Articles
+                old name: םירמאמ Profile Sign Up Sign In
+                old readable name: Profile Sign Up Sign In מאמרים
+                new characters: articles \n Profile \n Sign up \n Sign in
+                old characters: םירמאמ\nProfile\nSign Up\nSign In
+                old readable characters: מאמרים\nProfile\nSign Up\nSign In
+          - new name: Group 122
+            old name: Group 122
+            children:
+            - - new name: information
+                old name: עדימ
+                old readable name: מידע
+                new characters: information
+                old characters: עדימ
+                old readable characters: מידע
+              - new name: Terms of Use about how it works
+                old name: דבוע הז ךיא תודוא שומיש יאנת
+                old readable name: תנאי שימוש אודות איך זה עובד
+                new characters: How It Works \n about \n Terms of Use
+                old characters: דבוע הז ךיא\nתודוא\nשומיש יאנת
+                old readable characters: איך זה עובד\nאודות\nתנאי שימוש
+          - new name: Group 123
+            old name: Group 123
+            children:
+            - - new name: life insurance
+                old name: םייח חוטיב
+                old readable name: ביטוח חיים
+                new characters: life insurance
+                old characters: םייח חוטיב
+                old readable characters: ביטוח חיים
+              - new name: Life Insurance Comparing Life Insurance is important to
+                  know
+                old name: תעדל בושח םייח חוטיב תאוושה םייח חוטיב
+                old readable name: ביטוח חיים השוואת ביטוח חיים חשוב לדעת
+                new characters: Important Information \n Comparing life insurance
+                  \n life insurance
+                old characters: תעדל בושח\n םייח חוטיב תאוושה\n םייח חוטיב
+                old readable characters: 'חשוב לדעת\nהשוואת ביטוח חיים \nביטוח חיים '
+          - new name: Group 124
+            old name: Group 124
+            children:
+            - - new name: Mortgage Life Insurance
+                old name: אתנכשמל םייח חוטיב
+                old readable name: ביטוח חיים למשכנתא
+                new characters: Mortgage Life Insurance
+                old characters: אתנכשמל םייח חוטיב
+                old readable characters: ביטוח חיים למשכנתא
+              - new name: Life Insurance for Mortgage Comparing Life Insurance for
+                  Mortgage is important to know
+                old name: תעדל בושח אתנכשמל םייח חוטיב תאוושה אתנכשמל םייח חוטיב
+                old readable name: ביטוח חיים למשכנתא השוואת ביטוח חיים למשכנתא חשוב
+                  לדעת
+                new characters: Important Information \n Comparing life insurance
+                  for mortgage \n Mortgage Life Insurance
+                old characters: ' תעדל בושח\nאתנכשמל םייח חוטיב תאוושה\nאתנכשמל םייח
+                  חוטיב'
+                old readable characters: חשוב לדעת \nהשוואת ביטוח חיים למשכנתא\nביטוח
+                  חיים למשכנתא
+          - new name: Group 125
+            old name: Group 125
+            children:
+            - - new name: Mortgage structure insurance
+                old name: אתנכשמל הנבמ חוטיב
+                old readable name: ביטוח מבנה למשכנתא
+                new characters: Mortgage structure insurance
+                old characters: אתנכשמל הנבמ חוטיב
+                old readable characters: ביטוח מבנה למשכנתא
+              - new name: Insurance Contents Insurance Comparison Insurance Building
+                  is important to know content and structure
+                old name: הנבמו הלוכת תעדל בושח הנבמ חוטיב תאוושה הנבמ חוטיב הלוכת
+                  חוטיב
+                old readable name: ביטוח תכולה ביטוח מבנה השוואת ביטוח מבנה חשוב לדעת
+                  תכולה ומבנה
+                new characters: Content and structure \n Important Information \n
+                  Comparing structure insurance \n building insurance \n Insurance
+                  Capacity
+                old characters: ' הנבמו הלוכת\nתעדל בושח\n הנבמ חוטיב תאוושה\nהנבמ
+                  חוטיב\nהלוכת חוטיב'
+                old readable characters: תכולה ומבנה \nחשוב לדעת\nהשוואת ביטוח מבנה
+                  \nביטוח מבנה\nביטוח תכולה
+          - new name: Group 126
+            old name: Group 126
+            children:
+            - - new name: building insurance
+                old name: הנבמ חוטיב
+                old readable name: ביטוח מבנה
+                new characters: building insurance
+                old characters: הנבמ חוטיב
+                old readable characters: ביטוח מבנה
+              - new name: Insurance Content Insurance Building Insurance Building
+                  Mortgage is important to know content and structure
+                old name: הנבמו הלוכת תעדל בושח אתנכשמל הנבמ חוטיב תאוושה הנבמ חוטיב
+                  הלוכת חוטיב
+                old readable name: ביטוח תכולה ביטוח מבנה השוואת ביטוח מבנה למשכנתא
+                  חשוב לדעת תכולה ומבנה
+                new characters: Content and structure \n Important Information \n
+                  Comparing a mortgage building insurance \n building insurance \n
+                  Insurance Capacity
+                old characters: הנבמו הלוכת\nתעדל בושח\nאתנכשמל  הנבמ חוטיב תאוושה\nהנבמ
+                  חוטיב\nהלוכת חוטיב
+                old readable characters: תכולה ומבנה\nחשוב לדעת\nהשוואת ביטוח מבנה  למשכנתא\nביטוח
+                  מבנה\nביטוח תכולה
+          - new name: smapy Logo 1
+            old name: smapy Logo 1
+            children:
+            - - new name: Layer 2
+                old name: Layer 2
+                children:
+                - - new name: Layer 1
+                    old name: Layer 1
+                    children:
+                    - - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+                      - new name: Vector
+                        old name: Vector
+      - new name: Group 26
+        old name: Group 26
+        children:
+        - - new name: Mortgage Life Insurance
+            old name: אתנכשמל םייח חוטיב
+            old readable name: ביטוח חיים למשכנתא
+            children:
+            - - new name: Mortgage structure insurance
+                old name: אתנכשמל הנבמ חוטיב
+                old readable name: ביטוח מבנה למשכנתא
+                new characters: Mortgage structure insurance
+                old characters: ' אתנכשמל הנבמ חוטיב'
+                old readable characters: 'ביטוח מבנה למשכנתא '
+      - new name: Client reg - 1.2
+        old name: Client reg - 1.2
+        children:
+        - - new name: Group 22
+            old name: Group 22
+            children:
+            - - new name: Card background
+                old name: Card background
+              - new name: Some clicks and you will also have building insurance
+                old name: הנבמ חוטיב םג ךל היהיו םיקילק המכ
+                old readable name: כמה קליקים ויהיה לך גם ביטוח מבנה
+                new characters: Some clicks and you will also have building insurance
+                old characters: הנבמ חוטיב םג ךל היהיו םיקילק המכ
+                old readable characters: כמה קליקים ויהיה לך גם ביטוח מבנה
+          - new name: Button/Primary/Default
+            old name: Button/Primary/Default
+            children:
+            - - new name: Rectangle
+                old name: Rectangle
+              - new name: Continued
+                old name: ךשמה
+                old readable name: המשך
+                new characters: Continued
+                old characters: ךשמה
+                old readable characters: המשך
+          - new name: lat's-Go 1
+            old name: lat's-Go 1
+  - new name: Header
+    old name: Header
+    children:
+    - - new name: Rectangle 25
+        old name: Rectangle 25
+      - new name: Component 34
+        old name: Component 34
+        children:
+        - - new name: +972 (0) 500 111 433
+            old name: +972 (0) 500 111 433
+            new characters: +972 (0) 500 111 433
+            old characters: +972 (0) 500 111 433
+          - new name: Viber
+            old name: Viber
+            children:
+            - - new name: Path
+                old name: Path
+              - new name: Path
+                old name: Path
+              - new name: Path
+                old name: Path
+              - new name: Path
+                old name: Path
+      - new name: Button/Secondary/Default
+        old name: Button/Secondary/Default
+        children:
+        - - new name: Rectangle
+            old name: Rectangle
+          - new name: Consultants/agents' entry
+            old name: םינכוס/םיצעוי תסינכ
+            old readable name: כניסת יועצים/סוכנים
+            new characters: Consultants/agents' entry
+            old characters: םינכוס/םיצעוי תסינכ
+            old readable characters: כניסת יועצים/סוכנים
+      - new name: Button/Primary/Default
+        old name: Button/Primary/Default
+        children:
+        - - new name: Rectangle
+            old name: Rectangle
+          - new name: Customer entry
+            old name: תוחוקל תסינכ
+            old readable name: כניסת לקוחות
+            new characters: Customer entry
+            old characters: תוחוקל תסינכ
+            old readable characters: כניסת לקוחות
+      - new name: smapy Logo 1
+        old name: smapy Logo 1
+        children:
+        - - new name: Layer 2
+            old name: Layer 2
+            children:
+            - - new name: Layer 1
+                old name: Layer 1
+                children:
+                - - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
+                  - new name: Vector
+                    old name: Vector
