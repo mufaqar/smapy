@@ -1,3 +1,3 @@
 # smapy
 
-Open `tempfile.yml` for as a sample.
+Open `tempfile.yml` as a sample.
