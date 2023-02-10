@@ -12,10 +12,18 @@ import { emit } from "@create-figma-plugin/utilities";
 import { h } from "preact";
 import { useCallback, useState } from "preact/hooks";
 
-import { CloseHandler, CreateRectanglesHandler, RenameHandler } from "./types";
+import {
+  ApplyTranslateHandler,
+  CloseHandler,
+  CreateRectanglesHandler,
+  ScanDocumentHandler,
+} from "./types";
 
 function Plugin() {
   const [count, setCount] = useState<number | null>(5);
+  const [fileName, setFileName] = useState<string | null>(
+    "C:\\smapy\\design\\figma-translated\\manual-change.json"
+  );
   const [countString, setCountString] = useState("5");
   const handleCreateRectanglesButtonClick = useCallback(
     function () {
@@ -25,13 +33,23 @@ function Plugin() {
     },
     [count]
   );
-  const handleRenameButtonClick = useCallback(
+  const handleScanDocumentButtonClick = useCallback(
     function () {
+      console.log(`muly:handleRenameButtonClick ${count}`, {});
       if (count !== null) {
-        emit<RenameHandler>("RENAME_LAYER");
+        emit<ScanDocumentHandler>("SCAN_DOCUMENT");
       }
     },
     [count]
+  );
+  const handleApplyTranslateButtonClick = useCallback(
+    function () {
+      console.log(`muly:handleApplyTranslateButtonClick ${fileName}`);
+      if (fileName !== null) {
+        emit<ApplyTranslateHandler>("APPLY_TRANSLATE", fileName);
+      }
+    },
+    [fileName]
   );
   const handleCloseButtonClick = useCallback(function () {
     emit<CloseHandler>("CLOSE");
@@ -51,11 +69,14 @@ function Plugin() {
       />
       <VerticalSpace space="extraLarge" />
       <Columns space="extraSmall">
-        <Button fullWidth onClick={handleCreateRectanglesButtonClick}>
-          Create
+        {/*<Button fullWidth onClick={handleCreateRectanglesButtonClick}>*/}
+        {/*  Create*/}
+        {/*</Button>*/}
+        <Button fullWidth onClick={handleScanDocumentButtonClick}>
+          SCAN
         </Button>
-        <Button fullWidth onClick={handleRenameButtonClick}>
-          Rename
+        <Button fullWidth onClick={handleApplyTranslateButtonClick}>
+          APPLY
         </Button>
         <Button fullWidth onClick={handleCloseButtonClick} secondary>
           Close

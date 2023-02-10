@@ -1,0 +1,14 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "fig-to-json": "node ./convert-fig-to-json/fig-to-json.mjs"
+  },
+  "dependencies": {
+    "kiwi-schema": "^0.4.7",
+    "uzip": "^0.20201231.0"
+  }
+}

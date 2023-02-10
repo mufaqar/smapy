@@ -1,0 +1,11 @@
+{
+  "name": "figma-to-json",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "plugin",
+    "website"
+  ],
+  "scripts": {
+  }
+}

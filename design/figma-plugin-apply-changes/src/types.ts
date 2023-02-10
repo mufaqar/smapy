@@ -5,8 +5,13 @@ export interface CreateRectanglesHandler extends EventHandler {
   handler: (count: number) => void;
 }
 
-export interface RenameHandler extends EventHandler {
-  name: "RENAME_LAYER";
+export interface ApplyTranslateHandler extends EventHandler {
+  name: "APPLY_TRANSLATE";
+  handler: (filename: string) => void;
+}
+
+export interface ScanDocumentHandler extends EventHandler {
+  name: "SCAN_DOCUMENT";
   handler: () => void;
 }
 
