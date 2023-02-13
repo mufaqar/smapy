@@ -3,8 +3,8 @@
   "editorType": [
     "figma"
   ],
-  "id": "smapy-apply-changes",
-  "name": "smapy-apply-changes",
+  "id": "preact-rectangles",
+  "name": "Preact Rectangles",
   "main": "build/main.js",
   "ui": "build/ui.js"
 }

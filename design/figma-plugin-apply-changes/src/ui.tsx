@@ -16,6 +16,7 @@ import {
   ApplyTranslateHandler,
   CloseHandler,
   CreateRectanglesHandler,
+  NodeInfoHandler,
   ScanDocumentHandler,
 } from "./types";
 
@@ -38,6 +39,15 @@ function Plugin() {
       console.log(`muly:handleRenameButtonClick ${count}`, {});
       if (count !== null) {
         emit<ScanDocumentHandler>("SCAN_DOCUMENT");
+      }
+    },
+    [count]
+  );
+  const handleNodeInfoButtonClick = useCallback(
+    function () {
+      console.log(`muly:handleNodeInfoButtonClick ${count}`, {});
+      if (count !== null) {
+        emit<NodeInfoHandler>("NODE_INFO");
       }
     },
     [count]
@@ -72,6 +82,9 @@ function Plugin() {
         {/*<Button fullWidth onClick={handleCreateRectanglesButtonClick}>*/}
         {/*  Create*/}
         {/*</Button>*/}
+        <Button fullWidth onClick={handleNodeInfoButtonClick}>
+          NODE INFO
+        </Button>
         <Button fullWidth onClick={handleScanDocumentButtonClick}>
           SCAN
         </Button>

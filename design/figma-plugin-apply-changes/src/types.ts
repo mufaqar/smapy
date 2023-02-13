@@ -10,6 +10,11 @@ export interface ApplyTranslateHandler extends EventHandler {
   handler: (filename: string) => void;
 }
 
+export interface NodeInfoHandler extends EventHandler {
+  name: "NODE_INFO";
+  handler: () => void;
+}
+
 export interface ScanDocumentHandler extends EventHandler {
   name: "SCAN_DOCUMENT";
   handler: () => void;

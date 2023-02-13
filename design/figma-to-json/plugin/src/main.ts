@@ -18,5 +18,5 @@ export default function () {
     console.log("Plugin Document Title:", title)
     emit<ResDocumentTitleHandler>("RES_DOCUMENT_TITLE", title)
   })
-  showUI({ height: 120, width: 320 })
+  showUI({ height: 160, width: 480 })
 }
