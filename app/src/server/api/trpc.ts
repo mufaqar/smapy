@@ -16,10 +16,18 @@
  * database, the session, etc.
  */
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-
+import { initTRPC, TRPCError } from "@trpc/server";
+import superjson from "superjson";
+import {
+  createServerSupabaseClient,
+  User,
+} from "@supabase/auth-helpers-nextjs";
 import { prisma } from "../db";
+import { cookieOptions } from "../../utils/cookie-options";
 
-type CreateContextOptions = Record<string, never>;
+type CreateContextOptions = {
+  user: User | null;
+};
 
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use
@@ -31,8 +39,15 @@ type CreateContextOptions = Record<string, never>;
  *
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
-const createInnerTRPCContext = (_opts: CreateContextOptions) => {
+
+// export interface Context {
+//   user: User | null;
+//   prisma: PrismaClient;
+// }
+
+const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
+    user: opts.user,
     prisma,
   };
 };
@@ -43,8 +58,24 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  *
  * @see https://trpc.io/docs/context
  */
-export const createTRPCContext = (_opts: CreateNextContextOptions) => {
-  return createInnerTRPCContext({});
+export const createTRPCContext = async (opts: CreateNextContextOptions) => {
+  const { req, res } = opts;
+  const supabaseServerClient = createServerSupabaseClient(
+    {
+      req,
+      res,
+    },
+    {
+      cookieOptions,
+    }
+  );
+  const {
+    data: { user },
+  } = await supabaseServerClient.auth.getUser();
+
+  // console.log(`muly:createTRPCContext`, { user });
+
+  return createInnerTRPCContext({ user });
 };
 
 /**
@@ -53,8 +84,6 @@ export const createTRPCContext = (_opts: CreateNextContextOptions) => {
  * This is where the tRPC API is initialized, connecting the context and
  * transformer.
  */
-import { initTRPC } from "@trpc/server";
-import superjson from "superjson";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
@@ -85,3 +114,30 @@ export const createTRPCRouter = t.router;
  * can still access user session data if they are logged in.
  */
 export const publicProcedure = t.procedure;
+
+/**
+ * Reusable middleware that enforces users are logged in before running the
+ * procedure
+ */
+const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
+  if (!ctx.user || !ctx.user.id) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+  return next({
+    ctx: {
+      // infers the `user` as non-nullable
+      user: { ...ctx.user },
+    },
+  });
+});
+
+/**
+ * Protected (authed) procedure
+ *
+ * If you want a query or mutation to ONLY be accessible to logged in users, use
+ * this. It verifies the session is valid and guarantees ctx.session.user is not
+ * null
+ *
+ * @see https://trpc.io/docs/procedures
+ */
+export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);

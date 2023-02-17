@@ -8,6 +8,13 @@ import { z } from "zod";
 const server = z.object({
   DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
+  SUPABASE_SECRET_KEY: z.string(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string(),
+  NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
+  ADMIN_SECRET: z.string(),
+  UI_URL: z.string().url(),
+  SENDGRID_API_KEY: z.string(),
+  NEXT_PUBLIC_FLAGS_ENV_KEY: z.string(),
 });
 
 /**
@@ -27,7 +34,13 @@ const client = z.object({
 const processEnv = {
   DATABASE_URL: process.env.DATABASE_URL,
   NODE_ENV: process.env.NODE_ENV,
-  // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+  SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  ADMIN_SECRET: process.env.ADMIN_SECRET,
+  UI_URL: process.env.UI_URL,
+  SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+  NEXT_PUBLIC_FLAGS_ENV_KEY: process.env.NEXT_PUBLIC_FLAGS_ENV_KEY,
 };
 
 // Don't touch the part below

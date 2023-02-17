@@ -2,16 +2,96 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "zod-prisma"
+  output   = "./zod" // (default) the directory where generated zod schemas will be saved
+
+  relationModel = true // (default) Create and export both plain and related models.
+  // relationModel         = "default" // Do not export model without relations.
+  // relationModel         = false // Do not generate related model
+
+  modelCase = "PascalCase" // (default) Output models using pascal case (ex. UserModel, PostModel)
+  // modelCase             = "camelCase" // Output models using camel case (ex. userModel, postModel)
+
+  modelSuffix = "Model" // (default) Suffix to apply to your prisma models when naming Zod schemas
+
+  useDecimalJs = false // (default) represent the prisma Decimal type using as a JS number
+  // useDecimalJs = true // represent the prisma Decimal type using Decimal.js (as Prisma does)
+
+  imports = "./zod-add-schema" // (default) will import the referenced file in generated schemas to be used via imports.someExportedVariable
+
+  // https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-by-null-values
+  // prismaJsonNullability = true // (default) uses prisma's scheme for JSON field nullability
+  prismaJsonNullability = false // allows null assignment to optional JSON fields
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model UserProfile {
+  id String @id
+
+  id_card_number String? @unique
+
+  email                      String? // too hard to get from auth.users, trigger to update
+  first_name                 String?
+  last_name                  String?
+  phone                      String?   @unique
+  avatar_url                 String?
+  address                    String?
+  acceptedTermsAndConditions DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  email_new_value        String?
+  email_time             DateTime?
+  email_verificationCode String?
+  email_verified         DateTime?
+
+  phone_new_value        String?
+  phone_time             DateTime?
+  phone_verificationCode String?
+  phone_verified         DateTime?
+
+  years_experience Int?
+  worker_type      String?
+  workplace_name   String?
+  number_of_files  Int?
+
+  certificate_id_picture       String?
+  certificate_id_picture_later Boolean?
+
+  bank_name          String?
+  bank_branch        String?
+  bank_number        String?
+  bank_branch_number String?
+  bank_account       String?
+  bank_details_later Boolean?
+
+  signed_terms           DateTime?
+}
+
+model SystemEvents {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt DateTime @default(now())
+  subject   String
+  details   Json?
+}
+
+model AdminOperations {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt DateTime @default(now())
+  user      String
+  cmd       String
+  params    String?
+  moreInfo  Json?
+  status    String
+  details   Json?
 }
