@@ -1,8 +1,12 @@
+/* eslint-disable
+      @typescript-eslint/no-unsafe-assignment
+*/
+
 import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react";
 import type { UseRadioProps } from "@chakra-ui/radio/dist/use-radio";
 import React from "react";
-import type { ChoiceType } from "./TextField";
 import type { UseRadioGroupProps } from "@chakra-ui/radio/dist/use-radio-group";
+import type { ChoiceType } from "./zod-describe";
 
 interface RCProps extends UseRadioProps {
   children: React.ReactNode;

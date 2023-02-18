@@ -25,8 +25,8 @@ const start = async () => {
 
 start()
   .then((answer) => {
-    console.log(`DONE ${answer.message}`);
-    const { json } = superjson.serialize(answer.results);
+    console.log(`DONE ${answer.message || answer}`);
+    const { json } = superjson.serialize(answer.results || answer);
     writeFileSync(
       "./last-run-admin-command.json",
       JSON.stringify(answer, null, 2)

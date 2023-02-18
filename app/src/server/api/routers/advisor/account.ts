@@ -11,6 +11,7 @@ import {
   schemaStep1,
   schemaStep3,
 } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { TRPCError } from "@trpc/server";
 
 const UserProfileSchemaSelect = {
   id: true,
@@ -50,6 +51,10 @@ export const updateUserProfile = protectedProcedure
   .input(AdvisorUpdateSchema)
   .output(UserProfileSchema)
   .mutation(async ({ ctx, input }) => {
+    if (!input) {
+      throw new TRPCError({ code: "BAD_REQUEST" });
+    }
+
     const userProfile = await ctx.prisma.userProfile.upsert({
       where: { id: ctx.user.id },
       update: input,

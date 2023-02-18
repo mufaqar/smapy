@@ -1,4 +1,4 @@
-import { ChoiceType } from "./TextField";
+import type { ChoiceType } from "./zod-describe";
 
 export const parseOptionsString = (
   input?: string
@@ -20,7 +20,7 @@ export const parseOptionsString = (
     const parts = textPart.replace(/(?:\r\n|\r|\n)/g, " ").split("#");
     parts.forEach((part: string) => {
       if (part) {
-        let splitPos = part.indexOf(":");
+        const splitPos = part.indexOf(":");
         // if (splitPos < 0) {
         //   splitPos = part.indexOf("=");
         // }

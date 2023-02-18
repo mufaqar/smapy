@@ -1,5 +1,10 @@
+/* eslint-disable
+      @typescript-eslint/no-unsafe-member-access,
+      @typescript-eslint/no-unsafe-argument
+*/
+
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SafeParseReturnType } from "zod/lib/types";
+import type { SafeParseReturnType } from "zod/lib/types";
 import { preTransformDates } from "../utils/zod-utils";
 
 export const formResolver =
@@ -27,7 +32,7 @@ export const formResolver =
 
 export const convertZodAnswerToReactAdminFormErrors = (
   zodAnswer: SafeParseReturnType<any, any>
-) => {
+): any => {
   let validationErrors: any = null;
   if (!zodAnswer.success) {
     validationErrors = {};

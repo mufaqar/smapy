@@ -1,5 +1,9 @@
 import * as z from "zod";
 import { SPLIT_DESCRIPTION_SYMBOL } from "../../libs/react-ts-form/getMetaInformationForZodType";
+import type React from "react";
+
+export type CustomControlDef = () => React.ReactNode;
+export type CustomControlDefMap = { [key: string]: CustomControlDef };
 
 const ChoiceSchema = z
   .object({

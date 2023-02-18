@@ -1,29 +1,3 @@
 {
-  "message": "scratchPad",
-  "results": {
-    "id": true,
-    "id_card_number": true,
-    "email": true,
-    "first_name": true,
-    "last_name": true,
-    "phone": true,
-    "avatar_url": true,
-    "address": true,
-    "acceptedTermsAndConditions": true,
-    "createdAt": true,
-    "updatedAt": true,
-    "email_new_value": true,
-    "email_time": true,
-    "email_verificationCode": true,
-    "email_verified": true,
-    "phone_new_value": true,
-    "phone_time": true,
-    "phone_verificationCode": true,
-    "phone_verified": true,
-    "testArray": true,
-    "obj": {
-      "a": true,
-      "b": true
-    }
-  }
+  "message": "scratchPad"
 }

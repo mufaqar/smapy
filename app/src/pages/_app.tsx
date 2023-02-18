@@ -1,3 +1,8 @@
+/* eslint-disable
+   @typescript-eslint/no-unsafe-member-access
+
+*/
+
 import { useState } from "react";
 import type { AppProps } from "next/app";
 import { type AppType } from "next/app";

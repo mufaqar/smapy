@@ -4,12 +4,9 @@ import Head from "next/head";
 import NextLink from "next/link";
 import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 
-import { api } from "../utils/api";
-
 const Home: NextPage = () => {
   const supabaseClient = useSupabaseClient();
   const user = useUser();
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const links = [
     { href: "/signup", title: "Advisor -> Sign up" },
     { href: "/signin", title: "Advisor -> Sign In" },

@@ -6,8 +6,8 @@ export const AdvisorDashboard = () => {
   const { data: userProfile } = api.advisor.getUserProfile.useQuery();
   const { isLoading, session, error, supabaseClient } = useSessionContext();
 
-  const handleSignout = () => {
-    supabaseClient.auth.signOut();
+  const handleSignout = async () => {
+    await supabaseClient.auth.signOut();
     console.log(`muly:handleSignout`, {});
   };
 

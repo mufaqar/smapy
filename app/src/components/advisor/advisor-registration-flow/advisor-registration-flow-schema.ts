@@ -2,37 +2,44 @@ import { z } from "zod";
 import { schemaRegister } from "../../auth/advisor-auth-schema";
 import { dsk } from "../../common/forms/zod-describe";
 
-export const schemaStep0 = schemaRegister.pick({
-  first_name: true,
-  last_name: true,
-});
+export const schemaStep0 = schemaRegister
+  .pick({
+    first_name: true,
+    last_name: true,
+  })
+  .describe("schemaStep0");
 
-export const schemaStep1 = z.object({
-  years_experience: z.coerce
-    .number()
-    .min(0)
-    .max(120)
-    .default(0)
-    .describe("Advisory years of experience // Years..."),
+export const schemaStep1 = z
+  .object({
+    years_experience: z.coerce
+      .number()
+      .min(0)
+      .max(120)
+      .default(0)
+      .describe("Advisory years of experience // Years..."),
 
-  worker_type: z.string().describe(
-    dsk("Are you // PlaceHolder", {
-      control: "RadioGroup",
-      choices: [
-        { id: "freelancer", title: "Freelancer" },
-        { id: "hired", title: "Hired" },
-      ],
-    })
-  ),
+    worker_type: z.string().describe(
+      dsk("Are you // PlaceHolder", {
+        control: "RadioGroup",
+        choices: [
+          { id: "freelancer", title: "Freelancer" },
+          { id: "hired", title: "Hired" },
+        ],
+      })
+    ),
 
-  workplace_name: z.string().nullish().describe("Name of workplace // Name..."),
-  number_of_files: z.coerce
-    .number()
-    .min(0)
-    .nullish()
-    .default(0)
-    .describe("Number of files a month (Optional) // Average..., "),
-});
+    workplace_name: z
+      .string()
+      .nullish()
+      .describe("Name of workplace // Name..."),
+    number_of_files: z.coerce
+      .number()
+      .min(0)
+      .nullish()
+      .default(0)
+      .describe("Number of files a month (Optional) // Average..., "),
+  })
+  .describe("schemaStep1");
 
 export const schemaStep2 = z
   .object({
@@ -50,7 +57,8 @@ export const schemaStep2 = z
       message: "Upload or image or select to upload later",
       path: ["certificate_id_picture"],
     }
-  );
+  )
+  .describe("schemaStep2");
 
 export const schemaStep3 = z
   .object({
@@ -81,6 +89,7 @@ export const schemaStep3 = z
       .nullish()
       .describe("Will fill later"),
   })
+  .describe("schemaStep3")
   .superRefine((arg, ctx) => {
     if (arg.bank_details_later) {
       return;
@@ -127,11 +136,15 @@ export const schemaStep3 = z
     }
   });
 
-export const schemaStep4 = z.object({
-  signed_terms: z
-    .date({ invalid_type_error: "Must agree to terms" })
-    .describe(dsk("Confirm terms", { control: "Checkbox" })),
-});
+export const schemaStep4 = z
+  .object({
+    signed_terms: z
+      .date({ invalid_type_error: "Must agree to terms" })
+      .describe(dsk("Confirm terms", { control: "Checkbox" })),
+  })
+  .describe("schemaStep4");
+
+const dummySchemaThanks = z.undefined().describe("WelcomeText");
 
 export const AdvisorUpdateSchema = z.union([
   schemaRegister,
@@ -140,4 +153,5 @@ export const AdvisorUpdateSchema = z.union([
   schemaStep2,
   schemaStep3,
   schemaStep4,
+  dummySchemaThanks,
 ]);

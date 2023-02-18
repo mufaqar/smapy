@@ -1,6 +1,7 @@
 import { scratchPad } from "./scratch-pad";
-import { getFeaturesFlags } from './get-features-flags';
-import { addSystemEvent } from './system-events';
+import { getFeaturesFlags } from "./get-features-flags";
+import { addSystemEvent } from "./system-events";
+import { castError } from "../../utils/errors";
 
 export interface AdminCommandAnswer {
   message: string;
@@ -17,7 +18,8 @@ export const executeAdminCommand = async (
     try {
       const answer = await scratchPad();
       return { message: "scratchPad", results: answer };
-    } catch (err: any) {
+    } catch (_err) {
+      const err = castError(_err);
       return { message: `ERROR: ${err.message}`, results: err.stack };
     }
   } else if (cmd === "flags") {

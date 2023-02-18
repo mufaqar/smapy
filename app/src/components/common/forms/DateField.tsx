@@ -13,7 +13,8 @@ import { AddIcon } from "@chakra-ui/icons";
 import { RadioButtonGroup } from "./RadioButtonGroup";
 import { CheckboxGroup } from "./CheckboxGroup";
 import { parseChoices, parseOptionsString } from "./parse-option-string";
-import { ChoiceType, ZodDescribeType } from "./zod-describe";
+import type { ZodDescribeType } from "./zod-describe";
+import { ChoiceType } from "./zod-describe";
 
 interface Props {
   controlName?: ZodDescribeType["control"];
