@@ -9,7 +9,7 @@ import {
   AdvisorUpdateSchema,
   schemaStep0,
   schemaStep1,
-  schemaStep3,
+  bankDetails,
 } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { TRPCError } from "@trpc/server";
 

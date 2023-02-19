@@ -5,12 +5,12 @@ import { Box, Grid, GridItem } from "@chakra-ui/react";
 interface Props {
   children: React.ReactNode;
 
-  grid?: GridProps;
+  style?: GridProps;
 }
 
-export const FormLayout = ({ grid, children }: Props) => {
+export const FormLayout = ({ style, children }: Props) => {
   const childrenSplitToCells: any[][] = [[]];
-  if (grid) {
+  if (false) {
     Children.toArray(children).forEach((child: any) => {
       if (
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -26,7 +26,7 @@ export const FormLayout = ({ grid, children }: Props) => {
     });
 
     return (
-      <Grid columnGap={16} rowGap={8} {...grid}>
+      <Grid columnGap={16} rowGap={8} {...style}>
         {childrenSplitToCells.map((items, idx) => (
           <GridItem key={idx} area={String.fromCharCode(97 + idx)}>
             {items}
@@ -36,5 +36,5 @@ export const FormLayout = ({ grid, children }: Props) => {
     );
   }
 
-  return <Box>{children}</Box>;
+  return <Grid {...style}>{children}</Grid>;
 };

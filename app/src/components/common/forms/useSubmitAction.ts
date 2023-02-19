@@ -5,10 +5,13 @@ import type { CommonFormProps } from "./Form";
 import { useFormContext } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 
-export const useSubmitAction = ({
-  onSubmit,
-  submitNotification,
-}: Pick<CommonFormProps, "onSubmit" | "submitNotification">) => {
+interface Options {
+  onSubmit: CommonFormProps["onSubmit"];
+
+  notification?: boolean;
+}
+
+export const useSubmitAction = ({ onSubmit, notification }: Options) => {
   const { handleSubmit } = useFormContext();
   const toast = useToast();
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +22,7 @@ export const useSubmitAction = ({
     try {
       // await pause(2000);
       await onSubmit(fieldValues);
-      if (submitNotification) {
+      if (notification) {
         toast({
           title: "Saved",
           // description: "We've created your account for you.",
@@ -31,7 +34,7 @@ export const useSubmitAction = ({
     } catch (_err) {
       const err = castError(_err);
       console.error(`Error submit form ${err.message}`, { err: err.stack });
-      if (submitNotification) {
+      if (notification) {
         toast({
           title: "Failed to save",
           description: `Error: ${err.message}`,

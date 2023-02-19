@@ -23,6 +23,7 @@ import {
 } from "../modal/ModalFormActionContext";
 import { useFormContext } from "react-hook-form";
 import { DeleteIcon } from "@chakra-ui/icons";
+import { ChakraProps } from "@chakra-ui/system/dist/system.types";
 
 interface CommonFormProps {
   // onClose: () => void;
@@ -32,7 +33,7 @@ interface CommonFormProps {
   children: React.ReactNode;
   actions?: React.ReactNode;
 
-  grid?: GridProps;
+  style?: ChakraProps | GridProps;
 }
 
 const CommonForm = ({
@@ -40,7 +41,7 @@ const CommonForm = ({
   title,
   onSubmit,
   children,
-  grid,
+  style,
   actions,
 }: CommonFormProps) => {
   const onClose = useContext<Action>(ModalFormActionContext);
@@ -65,7 +66,7 @@ const CommonForm = ({
         <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <FormLayout grid={grid}>{children}</FormLayout>
+          <FormLayout style={style}>{children}</FormLayout>
         </ModalBody>
 
         <ModalFooter gap={4} justifyContent={actions ? "space-between" : "end"}>

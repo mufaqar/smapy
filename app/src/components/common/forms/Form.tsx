@@ -6,27 +6,29 @@ import { Button, Stack } from "@chakra-ui/react";
 import type { GridProps } from "@chakra-ui/layout/dist/grid";
 import { FormLayout } from "./FormLayout";
 import { useSubmitAction } from "./useSubmitAction";
+import type { ButtonProps } from "@chakra-ui/button/dist/button";
+import { ChakraProps } from "@chakra-ui/system/dist/system.types";
 
 export interface CommonFormProps {
   onSubmit: (values: unknown) => Promise<void>;
   children: React.ReactNode;
 
-  grid?: GridProps;
+  submit?: ButtonProps & {
+    text?: string;
+    notification?: boolean;
+  };
 
-  submitButtonText?: string;
-  submitNotification?: boolean;
+  style?: ChakraProps | GridProps;
 }
 
-const CommonForm = ({
-  onSubmit,
-  children,
-  grid,
-  submitButtonText,
-  submitNotification = true,
-}: CommonFormProps) => {
+const CommonForm = ({ onSubmit, children, submit, style }: CommonFormProps) => {
+  const { text, notification, ...buttonProps } = submit || {
+    text: "Save",
+    notification: false,
+  };
   const { handleSubmit, isLoading } = useSubmitAction({
     onSubmit,
-    submitNotification,
+    notification,
   });
 
   return (
@@ -38,15 +40,16 @@ const CommonForm = ({
       noValidate
     >
       <Stack>
-        <FormLayout grid={grid}>{children}</FormLayout>
+        <FormLayout style={style}>{children}</FormLayout>
         <Button
+          // Defaults
           minW={36}
+          mt={8}
           type="submit"
-          variant="solid"
           isLoading={isLoading}
-          alignSelf="start"
+          {...buttonProps}
         >
-          {submitButtonText ? submitButtonText : "SAVE"}
+          {text}
         </Button>
       </Stack>
     </form>

@@ -39,7 +39,9 @@ export const schemaStep1 = z
       .default(0)
       .describe("Number of files a month (Optional) // Average..., "),
   })
-  .describe("schemaStep1");
+  .describe(
+    "Partnership start with a good recognition // Some of your experience"
+  );
 
 export const schemaStep2 = z
   .object({
@@ -60,19 +62,19 @@ export const schemaStep2 = z
   )
   .describe("schemaStep2");
 
-export const schemaStep3 = z
+export const bankDetails = z
   .object({
     bank_name: z.string().nullish().default("").describe("Bank // Bank name"),
-    bank_branch: z
-      .string()
-      .nullish()
-      .default("")
-      .describe("Branch // Branch..."),
     bank_number: z
       .string()
       .nullish()
       .default("")
       .describe("Bank Number // Bank Number..."),
+    bank_branch: z
+      .string()
+      .nullish()
+      .default("")
+      .describe("Branch // Branch..."),
     bank_branch_number: z
       .string()
       .nullish()
@@ -87,9 +89,21 @@ export const schemaStep3 = z
       .boolean()
       .default(false)
       .nullish()
-      .describe("Will fill later"),
+      .describe(
+        dsk("Will fill later", {
+          style: {
+            gridColumn: "1/3",
+            textAlign: "center",
+            mt: 8,
+          },
+        })
+      ),
   })
-  .describe("schemaStep3")
+  .describe(
+    dsk("Where to deposit your money?", {
+      style: { templateColumns: "2fr 1fr", gap: 6 },
+    })
+  )
   .superRefine((arg, ctx) => {
     if (arg.bank_details_later) {
       return;
@@ -147,11 +161,10 @@ export const schemaStep4 = z
 const dummySchemaThanks = z.undefined().describe("WelcomeText");
 
 export const AdvisorUpdateSchema = z.union([
-  schemaRegister,
+  bankDetails,
   schemaStep0,
   schemaStep1,
   schemaStep2,
-  schemaStep3,
   schemaStep4,
   dummySchemaThanks,
 ]);

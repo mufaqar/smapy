@@ -18,17 +18,17 @@ import { ChoiceType, ZodDescribeType } from "./zod-describe";
 export const CheckboxField = () => {
   const { field, error } = useTsController<boolean>();
   const options = useDescription();
-  const { label } = options || {
+  const { label, style } = options || {
     label: "",
   };
 
   const controlName = options?.control;
 
   return (
-    <FormControl isInvalid={!!error} my={5}>
-      {controlName !== "Checkbox" && controlName !== "Switch" && (
-        <FormLabel mb={1}>{label}</FormLabel>
-      )}
+    <FormControl isInvalid={!!error} {...style}>
+      {/*{controlName !== "Checkbox" && controlName !== "Switch" && (*/}
+      {/*  <FormLabel mb={1}>{label}</FormLabel>*/}
+      {/*)}*/}
       <Checkbox
         name={field.name}
         isChecked={!!field.value}

@@ -1,6 +1,6 @@
 import type { z } from "zod";
 import { useUser } from "@supabase/auth-helpers-react";
-import { Box, Button, Stack } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Stack, VStack } from "@chakra-ui/react";
 import { api } from "../../../utils/api";
 import { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
 import { WelcomeText } from "./WelcomeText";
@@ -39,26 +39,47 @@ export const AdvisorRegistrationFlow = () => {
   }
 
   return (
-    <>
+    <VStack maxW="lg" m="auto">
       <Box>AdvisorRegistrationFlow</Box>
-      <Button
-        onClick={onStepBack}
-        isDisabled={currentStep === 0}
-        alignSelf="end"
-      >
-        Back
-      </Button>
+      <Box width="100%" position="relative">
+        <VStack>
+          <Heading as="h1" size="xl" flexGrow={1}>
+            {step.props?.label}
+          </Heading>
+          <Heading as="h2" size="md" flexGrow={1}>
+            {step.props?.placeholder}
+          </Heading>
+        </VStack>
+        <Button
+          position="absolute"
+          right={0}
+          top={0}
+          onClick={onStepBack}
+          isDisabled={currentStep === 0}
+          alignSelf="end"
+        >
+          Back
+        </Button>
+      </Box>
       {!!control ? (
         control()
       ) : (
         <Form
           schema={step.type}
           onSubmit={handleSubmit}
-          // props={{}}
+          props={{}}
           defaultValues={userProfile}
+          formProps={{
+            submit: {
+              notification: false,
+              text: "Next",
+              alignSelf: "center",
+              mt: 16,
+            },
+          }}
         ></Form>
       )}
       <pre>{JSON.stringify(userProfile, null, 2)}</pre>
-    </>
+    </VStack>
   );
 };

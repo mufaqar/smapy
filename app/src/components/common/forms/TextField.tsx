@@ -35,6 +35,7 @@ export const TextField = (
     label,
     placeholder,
     choices: choicesDescription,
+    style,
   } = options || {
     label: "",
     placeholder: "",
@@ -188,7 +189,7 @@ export const TextField = (
   }
 
   return (
-    <FormControl isInvalid={!!error} my={5}>
+    <FormControl isInvalid={!!error} {...style}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
         <FormLabel mb={1}>{label}</FormLabel>
       )}

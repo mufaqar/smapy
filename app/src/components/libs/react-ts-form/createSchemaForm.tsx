@@ -16,7 +16,10 @@ import type {
   RequireKeysWithRequiredChildren,
   UnwrapMapping,
 } from "./typeUtilities";
-import { getMetaInformationForZodType } from "./getMetaInformationForZodType";
+import {
+  getMetaInformationForZodType,
+  parseDescription,
+} from "./getMetaInformationForZodType";
 import { unwrapEffects } from "./unwrap";
 import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
 import { FieldContextProvider } from "./FieldContext";
@@ -232,9 +235,10 @@ export function createTsForm<
     propsMap?: PropsMapType;
   }
 ) {
-  const ActualFormComponent = options?.FormComponent
-    ? options.FormComponent
-    : "form";
+  if (!options?.FormComponent) {
+    throw new Error("Missing FormComponent");
+  }
+  const ActualFormComponent = options?.FormComponent;
   const schemas = componentMap.map((e) => e[0]);
   checkForDuplicateTypes(schemas);
   checkForDuplicateUniqueFields(schemas);
@@ -381,6 +385,14 @@ export function createTsForm<
     const { control, handleSubmit, setError } = _form;
     const _schema = unwrapEffects(schema);
     const shape: Record<string, RTFSupportedZodTypes> = _schema._def.shape();
+
+    const propsDesc = parseDescription(_schema.description);
+    console.log(`muly:Component:createSchemaForm`, {
+      _schema,
+      shape,
+      propsDesc,
+    });
+
     const coerceUndefinedFieldsRef = useRef<Set<string>>(new Set());
 
     function addToCoerceUndefined(fieldName: string) {
@@ -419,7 +431,8 @@ export function createTsForm<
 
     return (
       <FormProvider {..._form}>
-        <ActualFormComponent {...formProps} onSubmit={submitFn}>
+        {/* @ts-ignore */}
+        <ActualFormComponent {...propsDesc} {...formProps} onSubmit={submitFn}>
           {renderBefore && renderBefore({ submit: submitFn })}
           {Object.keys(shape).map((key) => {
             const type = shape[key] as RTFSupportedZodTypes;
@@ -450,6 +463,7 @@ export function createTsForm<
               }),
               ...fieldProps,
             };
+
             // const ctxLabel = meta.description?.label;
             // const ctxPlaceholder = meta.description?.placeholder;
             return (
