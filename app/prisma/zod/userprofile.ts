@@ -1,5 +1,5 @@
-import * as z from "zod"
-import * as imports from "../zod-add-schema"
+import * as z from "zod";
+import * as imports from "../zod-add-schema";
 
 export const UserProfileModel = z.object({
   id: z.string(),
@@ -35,4 +35,4 @@ export const UserProfileModel = z.object({
   bank_details_later: z.boolean().nullish(),
   signed_terms: z.date().nullish(),
   signed_terms_signature: z.string().nullish(),
-})
+});

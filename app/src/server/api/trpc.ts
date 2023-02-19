@@ -18,11 +18,8 @@
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
-import type {
-  User} from "@supabase/auth-helpers-nextjs";
-import {
-  createServerSupabaseClient
-} from "@supabase/auth-helpers-nextjs";
+import type { User } from "@supabase/auth-helpers-nextjs";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { prisma } from "../db";
 import { cookieOptions } from "../../utils/cookie-options";
 
