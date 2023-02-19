@@ -22,7 +22,6 @@ const UserProfileSchemaSelect = {
   bank_account: true,
   bank_details_later: true,
   signed_terms: true,
-  signed_terms_signature: true,
 } as const;
 
 const UserProfileSchema = UserProfileModel.pick(UserProfileSchemaSelect);
