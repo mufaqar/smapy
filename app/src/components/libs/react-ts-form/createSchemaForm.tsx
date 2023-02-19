@@ -391,6 +391,7 @@ export function createTsForm<
       _schema,
       shape,
       propsDesc,
+      formProps,
     });
 
     const coerceUndefinedFieldsRef = useRef<Set<string>>(new Set());
@@ -432,7 +433,12 @@ export function createTsForm<
     return (
       <FormProvider {..._form}>
         {/* @ts-ignore */}
-        <ActualFormComponent {...propsDesc} {...formProps} onSubmit={submitFn}>
+        <ActualFormComponent
+          {...propsDesc}
+          {...formProps}
+          style={{ ...formProps?.style, ...propsDesc?.style }}
+          onSubmit={submitFn}
+        >
           {renderBefore && renderBefore({ submit: submitFn })}
           {Object.keys(shape).map((key) => {
             const type = shape[key] as RTFSupportedZodTypes;

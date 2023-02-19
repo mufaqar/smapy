@@ -42,7 +42,7 @@ export const AdvisorRegistrationFlow = () => {
     <VStack maxW="lg" m="auto">
       <Box>AdvisorRegistrationFlow</Box>
       <Box width="100%" position="relative">
-        <VStack>
+        <VStack px={12}>
           <Heading as="h1" size="xl" flexGrow={1}>
             {step.props?.label}
           </Heading>
@@ -70,6 +70,10 @@ export const AdvisorRegistrationFlow = () => {
           props={{}}
           defaultValues={userProfile}
           formProps={{
+            style: {
+              // Merged with schema dsk style, priority to dsk
+              mt: 18,
+            },
             submit: {
               notification: false,
               text: "Next",
