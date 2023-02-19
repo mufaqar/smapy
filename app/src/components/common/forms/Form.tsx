@@ -7,7 +7,7 @@ import type { GridProps } from "@chakra-ui/layout/dist/grid";
 import { FormLayout } from "./FormLayout";
 import { useSubmitAction } from "./useSubmitAction";
 import type { ButtonProps } from "@chakra-ui/button/dist/button";
-import { ChakraProps } from "@chakra-ui/system/dist/system.types";
+import type { ChakraProps } from "@chakra-ui/system/dist/system.types";
 
 export interface CommonFormProps {
   onSubmit: (values: unknown) => Promise<void>;

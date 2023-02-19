@@ -23,7 +23,7 @@ import {
 } from "../modal/ModalFormActionContext";
 import { useFormContext } from "react-hook-form";
 import { DeleteIcon } from "@chakra-ui/icons";
-import { ChakraProps } from "@chakra-ui/system/dist/system.types";
+import type { ChakraProps } from "@chakra-ui/system/dist/system.types";
 
 interface CommonFormProps {
   // onClose: () => void;

@@ -7,6 +7,7 @@ import { WelcomeText } from "./WelcomeText";
 import React, { useState } from "react";
 import { Form } from "../../common/forms/Form";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
+import { Terms } from "./Terms";
 
 export const AdvisorRegistrationFlow = () => {
   const { onStepBack, onStepNext, control, step, currentStep } = useWizardFlow(
@@ -15,6 +16,7 @@ export const AdvisorRegistrationFlow = () => {
       onCompleteUrl: "/advisor/dashboard",
       customControlsMap: {
         WelcomeText: () => <WelcomeText />,
+        Terms: () => <Terms />,
       },
     }
   );

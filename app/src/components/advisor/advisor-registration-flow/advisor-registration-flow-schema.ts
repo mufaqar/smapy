@@ -2,14 +2,14 @@ import { z } from "zod";
 import { schemaRegister } from "../../auth/advisor-auth-schema";
 import { dsk } from "../../common/forms/zod-describe";
 
-export const schemaStep0 = schemaRegister
+export const missingName = schemaRegister
   .pick({
     first_name: true,
     last_name: true,
   })
-  .describe("schemaStep0");
+  .describe("Complete missing details");
 
-export const schemaStep1 = z
+export const knowTheAgent = z
   .object({
     years_experience: z.coerce
       .number()
@@ -43,7 +43,7 @@ export const schemaStep1 = z
     "Partnership start with a good recognition // Some of your experience"
   );
 
-export const schemaStep2 = z
+export const uploadIdPicture = z
   .object({
     certificate_id_picture: z.string().nullish().describe("Upload ID Picture"),
     certificate_id_picture_later: z
@@ -60,7 +60,7 @@ export const schemaStep2 = z
       path: ["certificate_id_picture"],
     }
   )
-  .describe("schemaStep2");
+  .describe("Identification");
 
 export const bankDetails = z
   .object({
@@ -101,7 +101,11 @@ export const bankDetails = z
   })
   .describe(
     dsk("Where to deposit your money?", {
-      style: { templateColumns: "2fr 1fr", gap: 6 },
+      style: {
+        // TBD, make it 1 column for mobile
+        templateColumns: "2fr 1fr",
+        gap: 6,
+      },
     })
   )
   .superRefine((arg, ctx) => {
@@ -150,21 +154,21 @@ export const bankDetails = z
     }
   });
 
-export const schemaStep4 = z
+export const agreeToTerms = z
   .object({
     signed_terms: z
       .date({ invalid_type_error: "Must agree to terms" })
-      .describe(dsk("Confirm terms", { control: "Checkbox" })),
+      .describe(dsk("Confirm terms", { control: "Checkbox", before: "Terms" })),
   })
-  .describe("schemaStep4");
+  .describe("Terms");
 
 const dummySchemaThanks = z.undefined().describe("WelcomeText");
 
 export const AdvisorUpdateSchema = z.union([
+  missingName,
+  knowTheAgent,
+  uploadIdPicture,
   bankDetails,
-  schemaStep0,
-  schemaStep1,
-  schemaStep2,
-  schemaStep4,
+  agreeToTerms,
   dummySchemaThanks,
 ]);

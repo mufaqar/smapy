@@ -1,8 +1,8 @@
 import * as z from "zod";
 import { SPLIT_DESCRIPTION_SYMBOL } from "../../libs/react-ts-form/getMetaInformationForZodType";
 import type React from "react";
-import { ChakraProps } from "@chakra-ui/react";
-import { GridProps } from "@chakra-ui/layout/dist/grid";
+import type { ChakraProps } from "@chakra-ui/react";
+import type { GridProps } from "@chakra-ui/layout/dist/grid";
 
 export type CustomControlDef = () => React.ReactNode;
 export type CustomControlDefMap = { [key: string]: CustomControlDef };
@@ -29,6 +29,8 @@ const ZodDescribeSchema = z.object({
     .optional(),
   choices: z.array(ChoiceSchema).optional(),
   style: z.any(),
+  before: z.string().optional(),
+  after: z.string().optional(),
 });
 
 export type ChoiceType = z.infer<typeof ChoiceSchema>;

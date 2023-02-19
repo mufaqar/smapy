@@ -1,16 +1,6 @@
 import { protectedProcedure } from "../../trpc";
-import {
-  schemaRegister,
-  schemaSignin,
-} from "../../../../components/auth/advisor-auth-schema";
 import { UserProfileModel } from "../../../../../prisma/zod";
-import * as z from "zod";
-import {
-  AdvisorUpdateSchema,
-  schemaStep0,
-  schemaStep1,
-  bankDetails,
-} from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { AdvisorUpdateSchema } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { TRPCError } from "@trpc/server";
 
 const UserProfileSchemaSelect = {

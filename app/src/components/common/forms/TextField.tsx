@@ -191,7 +191,9 @@ export const TextField = (
   return (
     <FormControl isInvalid={!!error} {...style}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
-        <FormLabel mb={1}>{label}</FormLabel>
+        <FormLabel mb={1} whiteSpace="nowrap">
+          {label}
+        </FormLabel>
       )}
       {control}
       {!error ? null : (
