@@ -14,8 +14,7 @@
     "run-admin-command-dbg": "env-cmd -f .env node --inspect-brk -r ts-node/register/transpile-only run-admin-command.ts",
     "get-env": "netlify env:list --json > .env-staging.json && zx ./scripts/netlify-env-json-to-dot-env.mjs --envName=staging",
     "set-env": "netlify env:import .env-staging",
-    "i18next-scan-translation": "../node_modules/.bin/i18next",
-    "storybook": "start-storybook -p 6002"
+    "i18next-scan-translation": "../node_modules/.bin/i18next"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
