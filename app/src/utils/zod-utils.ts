@@ -99,31 +99,79 @@ export const zodRefineCheckArrayDuplicate = (
 //   }
 // };
 
-export interface WizardsStep {
-  props?: ZodDescribeType;
-  type: z.AnyZodObject | ZodEffects<any, any>;
+export interface MetaInfo {
+  description?: ZodDescribeType;
+  children?: Record<string, MetaInfo>;
+  type: z.AnyZodObject | ZodEffects<any, any> | ZodTypeAny;
+  // type: z.AnyZodObject | ZodEffects<any, any>;
+
+  typeName: string;
 }
 
-export const splitUnion = <T extends ZodTypeAny>(type: T): WizardsStep[] => {
-  let union = type;
+const getInnerType = <T extends ZodTypeAny>(type: T): string => {
+  let r = type;
+  while (r._def.innerType) {
+    r = r._def.innerType;
+  }
+  while (r._def.schema) {
+    r = r._def.schema;
+  }
+  return r._def.typeName;
+};
+
+export const getZodMetaInfo = <T extends ZodTypeAny>(
+  type: T,
+  name?: string
+): MetaInfo => {
+  let r = type;
 
   // @ts-ignore
-  while (union.unwrap) {
+  while (r.unwrap) {
     // @ts-ignore
-    union = union.unwrap();
+    r = r.unwrap();
+  }
+  while (r._def.innerType) {
+    r = r._def.innerType;
+  }
+  while (r._def.schema) {
+    r = r._def.schema;
   }
 
-  if (union._def.typeName === "ZodUnion") {
-    return union._def.options.map((type: any) => {
-      let r = type;
-      r = r.description ? r : unwrap(r).type;
-
-      return {
-        props: parseDescription(r.description),
-        type,
-      };
+  if (r._def.typeName === "ZodUnion") {
+    const children: Record<string, MetaInfo> = {};
+    r._def.options.forEach((r: ZodTypeAny, idx: number) => {
+      children[idx] = getZodMetaInfo(r);
     });
-  }
 
-  throw new Error("Failed to split union, Not a union?");
+    return {
+      description: { name, ...parseDescription(r.description) },
+      children,
+      typeName: getInnerType(r),
+      type,
+    };
+  } else if (r._def.typeName === "ZodObject") {
+    const children: Record<string, MetaInfo> = {};
+    Object.keys(r._def.shape()).forEach((key) => {
+      // console.log(`muly:SCAN OBJECT ${name}->${key}`, {});
+      children[key] = getZodMetaInfo(r._def.shape()[key], key);
+    });
+    // console.log(`muly:getZodMetaInfo CHILD`, { map: Object.keys(children) });
+    return {
+      description: { name, ...parseDescription(r.description) },
+      children,
+      typeName: getInnerType(r), // r._def.typeName,
+      type,
+    };
+  } else {
+    console.log(`muly:getZodMetaInfo:CHILD ${name}`, {
+      type,
+      r,
+      d: type.description,
+    });
+    return {
+      description: { name, ...parseDescription(type.description) },
+      typeName: getInnerType(r),
+      type,
+    };
+  }
 };

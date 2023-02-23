@@ -1,6 +1,10 @@
 import { z } from "zod";
 import { formatPhoneNumber, validatePhoneNumber } from "../../utils/phone";
 import { isIsraeliIdValid } from "../../utils/israeli-id-validator";
+import { dsk } from "../common/forms/zod-describe";
+import { declareTranslationNS, dt } from "../../utils/i18n-utils";
+
+declareTranslationNS("advisor");
 
 export const schemaRegister = z
   .object({
@@ -8,18 +12,21 @@ export const schemaRegister = z
     last_name: z.string().describe("Last Name").default("Muly"),
     id_card_number: z
       .string()
-      .refine((val) => isIsraeliIdValid(val), "Not valid israeli id number")
+      .refine(
+        (val) => isIsraeliIdValid(val),
+        dt("register.id_card_number.validation", "Not valid israeli id number")
+      )
       .describe("ID Card Number"),
     phone: z
       .string()
       .refine(
         (val) => !validatePhoneNumber(val).error,
-        "Not a valid phone number"
+        dt("register.phone.validation", "Not a valid phone number")
       )
       .transform((val) => formatPhoneNumber(val) || "")
       .describe("Phone Number"),
   })
-  .describe("schemaRegister");
+  .describe(dsk("schemaRegister", { name: "register" }));
 
 export const schemaSignin = schemaRegister.pick({
   id_card_number: true,

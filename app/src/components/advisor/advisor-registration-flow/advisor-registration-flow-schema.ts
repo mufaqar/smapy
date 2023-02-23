@@ -7,7 +7,7 @@ export const missingName = schemaRegister
     first_name: true,
     last_name: true,
   })
-  .describe("Complete missing details");
+  .describe(dsk("Complete missing details", { name: "register" }));
 
 export const knowTheAgent = z
   .object({
@@ -40,7 +40,10 @@ export const knowTheAgent = z
       .describe("Number of files a month (Optional) // Average..., "),
   })
   .describe(
-    "Partnership start with a good recognition // Some of your experience"
+    dsk(
+      "Partnership start with a good recognition // Some of your experience",
+      { name: "knowTheAgent" }
+    )
   );
 
 export const uploadIdPicture = z
@@ -60,7 +63,7 @@ export const uploadIdPicture = z
       path: ["certificate_id_picture"],
     }
   )
-  .describe("Identification");
+  .describe(dsk("Identification", { name: "uploadIdPicture" }));
 
 export const bankDetails = z
   .object({
@@ -102,10 +105,13 @@ export const bankDetails = z
   .describe(
     dsk("Where to deposit your money?", {
       style: {
-        // TBD, make it 1 column for mobile
         templateColumns: "2fr 1fr",
         gap: 6,
       },
+      props: {
+        image: "/images/advisor-register-bank.svg",
+      },
+      name: "bankDetails",
     })
   )
   .superRefine((arg, ctx) => {
@@ -129,13 +135,13 @@ export const bankDetails = z
       });
     }
 
-    if (!arg.bank_number) {
-      ctx.addIssue({
-        code: "custom",
-        message: "Bank number is required",
-        path: ["bank_number"],
-      });
-    }
+    // if (!arg.bank_number) {
+    //   ctx.addIssue({
+    //     code: "custom",
+    //     message: "Bank number is required",
+    //     path: ["bank_number"],
+    //   });
+    // }
 
     if (!arg.bank_branch_number) {
       ctx.addIssue({
@@ -160,11 +166,16 @@ export const agreeToTerms = z
       .date({ invalid_type_error: "Must agree to terms" })
       .describe(dsk("Confirm terms", { control: "Checkbox", before: "Terms" })),
   })
-  .describe("Terms");
+  .describe(dsk("Terms", { name: "agreeToTerms" }));
 
-const dummySchemaThanks = z.undefined().describe("WelcomeText");
+const dummySchemaThanks = z
+  .undefined()
+  .describe(
+    dsk("thanksPage", { name: "dummySchemaThanks", control: "WelcomeText" })
+  );
 
 export const AdvisorUpdateSchema = z.union([
+  // schemaRegister, /// TBD remove
   missingName,
   knowTheAgent,
   uploadIdPicture,

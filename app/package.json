@@ -3,19 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "prisma generate && prisma migrate deploy && zx ./prisma/set-db-permissions.mjs && next build",
     "dev": "next dev -p 3002",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
-    "confirm": "yarn prettier --write . && yarn lint --fix && tsc && env-cmd -f .env next build",
+    "confirm": "yarn lint --fix && tsc && env-cmd -f .env next build && yarn prettier --write .",
     "set-db-permissions": "env-cmd -f .env zx ./prisma/set-db-permissions.mjs",
     "run-admin-command": "node -r ts-node/register/transpile-only run-admin-command.ts",
     "run-admin-command-dbg": "env-cmd -f .env node --inspect-brk -r ts-node/register/transpile-only run-admin-command.ts",
     "get-env": "netlify env:list --json > .env-staging.json && zx ./scripts/netlify-env-json-to-dot-env.mjs --envName=staging",
     "set-env": "netlify env:import .env-staging",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "i18next-scan-translation": "../node_modules/.bin/i18next"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
@@ -39,14 +40,17 @@
     "date-fns": "^2.29.3",
     "date-fns-tz": "^1.3.7",
     "framer-motion": "^9.0.2",
+    "i18next": "^22.4.10",
     "json-colorz": "^0.2.7",
     "libphonenumber-js": "^1.10.14",
     "next": "13.1.6",
+    "next-i18next": "^13.1.5",
     "p-map": "^5.5.0",
     "rambda": "^7.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.1",
+    "react-i18next": "^12.1.5",
     "superjson": "1.9.1",
     "trpc-playground": "^1.0.1",
     "ts-node": "^10.9.1",
@@ -74,8 +78,5 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.5.1"
-  },
-  "eslintIgnore": [
-    "**/react-ts-form/*.*"
-  ]
+  }
 }

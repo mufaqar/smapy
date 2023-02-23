@@ -34,6 +34,12 @@ import { ZodNullable, ZodNullableType } from "zod/lib/types";
 import { NestedValue } from "react-hook-form/dist/types/form";
 import { BrowserNativeObject } from "react-hook-form/dist/types/utils";
 
+export type PreprocessField = (
+  name: string,
+  form: UseFormReturn<any>,
+  props: any // TBD typing
+) => void;
+
 /**
  * @internal
  */
@@ -252,6 +258,7 @@ export function createTsForm<
     onSubmit,
     props,
     formProps,
+    preprocessField,
     defaultValues,
     renderAfter,
     renderBefore,
@@ -265,6 +272,8 @@ export function createTsForm<
      * A callback function that will be called with the data once the form has been submitted and validated successfully.
      */
     onSubmit: (values: z.infer<SchemaType>) => void;
+
+    preprocessField?: PreprocessField;
     /**
      * Initializes your form with default values. Is a deep partial, so all properties and nested properties are optional.
      */
@@ -373,7 +382,7 @@ export function createTsForm<
     const _form = (() => {
       if (form) return form;
 
-      console.log(`muly:FORM:defaultValues`, { defaultValues });
+      // console.log(`muly:FORM:defaultValues`, { defaultValues });
 
       const uf = useForm({
         resolver,
@@ -387,12 +396,12 @@ export function createTsForm<
     const shape: Record<string, RTFSupportedZodTypes> = _schema._def.shape();
 
     const propsDesc = parseDescription(_schema.description);
-    console.log(`muly:Component:createSchemaForm`, {
-      _schema,
-      shape,
-      propsDesc,
-      formProps,
-    });
+    // console.log(`muly:Component:createSchemaForm`, {
+    //   _schema,
+    //   shape,
+    //   propsDesc,
+    //   formProps,
+    // });
 
     const coerceUndefinedFieldsRef = useRef<Set<string>>(new Set());
 
@@ -452,8 +461,6 @@ export function createTsForm<
 
             const fieldProps = props && props[key] ? (props[key] as any) : {};
 
-            const { beforeElement, afterElement } = fieldProps;
-
             const mergedProps = {
               ...(propsMap.name && { [propsMap.name]: key }),
               ...(propsMap.control && { [propsMap.control]: control }),
@@ -470,6 +477,33 @@ export function createTsForm<
               ...fieldProps,
             };
 
+            // console.log(
+            //   `muly:mergedProps, good place to put hook to preprocess meta ${key}`,
+            //   {
+            //     preprocessField,
+            //     fieldProps,
+            //     mergedProps,
+            //     meta,
+            //     _form,
+            //   }
+            // );
+
+            const controlProps: any = {
+              ...meta,
+              ...mergedProps,
+              ...fieldProps,
+            };
+            if (preprocessField) {
+              preprocessField(key, _form, controlProps);
+            }
+            const {
+              beforeElement,
+              afterElement,
+              description,
+              enumValues,
+              ...mergedPropsM
+            } = controlProps;
+
             // const ctxLabel = meta.description?.label;
             // const ctxPlaceholder = meta.description?.placeholder;
             return (
@@ -478,14 +512,14 @@ export function createTsForm<
                 <FieldContextProvider
                   control={control}
                   name={key}
-                  description={meta.description}
+                  description={description}
                   // label={ctxLabel}
                   // placeholder={ctxPlaceholder}
-                  enumValues={meta.enumValues as string[] | undefined}
+                  enumValues={enumValues as string[] | undefined}
                   addToCoerceUndefined={addToCoerceUndefined}
                   removeFromCoerceUndefined={removeFromCoerceUndefined}
                 >
-                  <Component key={key} {...mergedProps} />
+                  <Component key={key} {...mergedPropsM} />
                 </FieldContextProvider>
                 {afterElement}
               </Fragment>
