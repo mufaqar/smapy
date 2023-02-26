@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { formatPhoneNumber, validatePhoneNumber } from "../../utils/phone";
 import { isIsraeliIdValid } from "../../utils/israeli-id-validator";
-import { dsk } from "../common/forms/zod-describe";
 import { declareTranslationNS, dt } from "../../utils/i18n-utils";
 
 declareTranslationNS("advisor");
@@ -26,7 +25,8 @@ export const schemaRegister = z
       .transform((val) => formatPhoneNumber(val) || "")
       .describe("Phone Number"),
   })
-  .describe(dsk("schemaRegister", { name: "register" }));
+  .describe("schemaRegister")
+  .meta({ name: "register" });
 
 export const schemaSignin = schemaRegister.pick({
   id_card_number: true,

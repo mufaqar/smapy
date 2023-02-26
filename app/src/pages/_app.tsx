@@ -19,6 +19,7 @@ import "../styles/globals.css";
 import { theme } from "../components/chakra-ui-theme";
 import { cookieOptions } from "../utils/cookie-options";
 import { missingKeyHandler } from "../utils/i18n-utils";
+import "../utils/zod-meta";
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   const [supabaseClient] = useState(() =>
@@ -37,5 +38,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-const I18nApp = appWithTranslation(MyApp, { ...i18nConfig, missingKeyHandler });
+const I18nApp = appWithTranslation(MyApp, {
+  ...i18nConfig /* missingKeyHandler */,
+});
 export default api.withTRPC(I18nApp);

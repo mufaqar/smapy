@@ -16,13 +16,10 @@ import type {
   RequireKeysWithRequiredChildren,
   UnwrapMapping,
 } from "./typeUtilities";
-import {
-  getMetaInformationForZodType,
-  parseDescription,
-} from "./getMetaInformationForZodType";
+import { getMetaInformationForZodType } from "./getMetaInformationForZodType";
 import { unwrapEffects } from "./unwrap";
 import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
-import { FieldContextProvider } from "./FieldContext";
+import { FieldContextProvider, FormContext } from "./FieldContext";
 import { isZodTypeEqual } from "./isZodTypeEqual";
 import { duplicateTypeError, printWarningsForSchema } from "./logging";
 import {
@@ -33,6 +30,8 @@ import {
 import { ZodNullable, ZodNullableType } from "zod/lib/types";
 import { NestedValue } from "react-hook-form/dist/types/form";
 import { BrowserNativeObject } from "react-hook-form/dist/types/utils";
+import { UseTranslationResponse } from "react-i18next";
+import { getZodMetaInfo } from "../../../utils/zod-meta";
 
 export type PreprocessField = (
   name: string,
@@ -254,6 +253,7 @@ export function createTsForm<
   return function Component<
     SchemaType extends z.AnyZodObject | ZodEffects<any, any>
   >({
+    formContext,
     schema,
     onSubmit,
     props,
@@ -264,6 +264,7 @@ export function createTsForm<
     renderBefore,
     form,
   }: {
+    formContext: FormContext;
     /**
      * A Zod Schema - An input field will be rendered for each property in the schema, based on the mapping passed to `createTsForm`
      */
@@ -393,9 +394,10 @@ export function createTsForm<
     })();
     const { control, handleSubmit, setError } = _form;
     const _schema = unwrapEffects(schema);
+    // console.log(`muly:createSchemaForm:Component`, { _schema });
     const shape: Record<string, RTFSupportedZodTypes> = _schema._def.shape();
 
-    const propsDesc = parseDescription(_schema.description);
+    const propsDesc = getZodMetaInfo(_schema).meta;
     // console.log(`muly:Component:createSchemaForm`, {
     //   _schema,
     //   shape,
@@ -439,6 +441,8 @@ export function createTsForm<
     }
     const submitFn = handleSubmit(_submit);
 
+    // console.log(`muly:Component:formContext`, { formContext });
+
     return (
       <FormProvider {..._form}>
         {/* @ts-ignore */}
@@ -468,11 +472,10 @@ export function createTsForm<
                 [propsMap.enumValues]: meta.enumValues,
               }),
               ...(propsMap.descriptionLabel && {
-                [propsMap.descriptionLabel]: meta.description?.label,
+                [propsMap.descriptionLabel]: meta.meta.label,
               }),
               ...(propsMap.descriptionPlaceholder && {
-                [propsMap.descriptionPlaceholder]:
-                  meta.description?.placeholder,
+                [propsMap.descriptionPlaceholder]: meta.meta?.placeholder,
               }),
               ...fieldProps,
             };
@@ -512,7 +515,8 @@ export function createTsForm<
                 <FieldContextProvider
                   control={control}
                   name={key}
-                  description={description}
+                  formContext={formContext}
+                  meta={meta.meta}
                   // label={ctxLabel}
                   // placeholder={ctxPlaceholder}
                   enumValues={enumValues as string[] | undefined}

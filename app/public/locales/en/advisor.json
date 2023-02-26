@@ -77,7 +77,7 @@
     }
   },
   "dummySchemaThanks": {
-    "label": "thanksPage-v2"
+    "label": "thanksPage"
   },
   "Complete missing details": "Complete missing details",
   "Partnership start with a good recognition": "Partnership start with a good recognition",
@@ -85,5 +85,163 @@
   "Where to deposit your money?": "Where to deposit your money?",
   "Terms": "Terms",
   "thanksPage": "thanksPage",
-  "thanksPage-v2": "thanksPage-v2"
+  "thanksPage-v2": "thanksPage-v2",
+  "AdvisorUpdateSchema": {
+    "register": {
+      "label": "Complete missing details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
+    },
+    "knowTheAgent": {
+      "label": "Partnership start with a good recognition",
+      "placeholder": "Some of your experience",
+      "years_experience": {
+        "label": "Advisory years of experience",
+        "placeholder": "Years..."
+      },
+      "worker_type": {
+        "label": "Are you",
+        "placeholder": "PlaceHolder"
+      },
+      "workplace_name": {
+        "label": "Name of workplace",
+        "placeholder": "Name..."
+      },
+      "number_of_files": {
+        "label": "Number of files a month (Optional)",
+        "placeholder": "Average...,"
+      }
+    },
+    "certificate_id_picture": {
+      "label": "Upload ID Picture"
+    },
+    "certificate_id_picture_later": {
+      "label": "Will upload ID later"
+    },
+    "bankDetails": {
+      "label": "Where to deposit your money?",
+      "bank_name": {
+        "label": "Bank",
+        "placeholder": "Bank name"
+      },
+      "bank_number": {
+        "label": "Bank Number",
+        "placeholder": "Bank Number..."
+      },
+      "bank_branch": {
+        "label": "Branch",
+        "placeholder": "Branch..."
+      },
+      "bank_branch_number": {
+        "label": "Branch Number",
+        "placeholder": "Branch Number..."
+      },
+      "bank_account": {
+        "label": "Account Number",
+        "placeholder": "Account Number..."
+      },
+      "bank_details_later": {
+        "label": "Will fill later"
+      }
+    },
+    "agreeToTerms": {
+      "label": "Terms",
+      "signed_terms": {
+        "label": "Confirm terms"
+      }
+    },
+    "dummySchemaThanks": {
+      "label": "thanksPage"
+    }
+  },
+  "AdvisorRegistrationFlow": {
+    "label": "Registration",
+    "register": {
+      "label": "Complete missing details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
+    },
+    "knowTheAgent": {
+      "label": "Partnership start with a good recognition",
+      "placeholder": "Some of your experience",
+      "years_experience": {
+        "label": "Advisory years of experience",
+        "placeholder": "Years..."
+      },
+      "worker_type": {
+        "label": "Are you",
+        "placeholder": "PlaceHolder"
+      },
+      "workplace_name": {
+        "label": "Name of workplace",
+        "placeholder": "Name..."
+      },
+      "number_of_files": {
+        "label": "Number of files a month (Optional)",
+        "placeholder": "Average...,"
+      }
+    },
+    "certificate_id_picture": {
+      "label": "Upload ID Picture"
+    },
+    "certificate_id_picture_later": {
+      "label": "Will upload ID later"
+    },
+    "bankDetails": {
+      "label": "Where to deposit your money?",
+      "bank_name": {
+        "label": "Bank",
+        "placeholder": "Bank name"
+      },
+      "bank_number": {
+        "label": "Bank Number",
+        "placeholder": "Bank Number..."
+      },
+      "bank_branch": {
+        "label": "Branch",
+        "placeholder": "Branch..."
+      },
+      "bank_branch_number": {
+        "label": "Branch Number",
+        "placeholder": "Branch Number..."
+      },
+      "bank_account": {
+        "label": "Account Number",
+        "placeholder": "Account Number..."
+      },
+      "bank_details_later": {
+        "label": "Will fill later"
+      }
+    },
+    "agreeToTerms": {
+      "label": "Terms",
+      "signed_terms": {
+        "label": "Confirm terms"
+      }
+    },
+    "dummySchemaThanks": {
+      "label": "thanksPage"
+    }
+  },
+  "Registration": "Registration",
+  "AdvisorNewLifeInsuranceSchema": {
+    "label": "New Life Insurance for Mortgage",
+    "dummySchemaWelcome": {
+      "label": "welcomePage"
+    },
+    "number_of_persons": {
+      "label": "How many persons"
+    },
+    "newInsuranceThanksPage": {
+      "label": "newInsuranceThanksPage"
+    }
+  }
 }

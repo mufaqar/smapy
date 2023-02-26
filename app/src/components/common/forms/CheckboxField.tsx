@@ -1,4 +1,4 @@
-import { useDescription, useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import {
   Input,
   Select,
@@ -9,20 +9,15 @@ import {
   Checkbox,
   Textarea,
 } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
-import { RadioButtonGroup } from "./RadioButtonGroup";
-import { CheckboxGroup } from "./CheckboxGroup";
-import { parseChoices, parseOptionsString } from "./parse-option-string";
-import { ChoiceType, ZodDescribeType } from "./zod-describe";
 
 export const CheckboxField = () => {
-  const { field, error } = useTsController<boolean>();
-  const options = useDescription();
-  const { label, style } = options || {
+  const { field, error, formContext } = useTsController<boolean>();
+  const meta = useMeta();
+  const { label, style } = meta || {
     label: "",
   };
 
-  const controlName = options?.control;
+  const controlName = meta?.control;
 
   return (
     <FormControl isInvalid={!!error} {...style}>
@@ -42,7 +37,9 @@ export const CheckboxField = () => {
         // <FormHelperText>
         //   Enter the email you'd like to receive the newsletter on.
         // </FormHelperText>
-        <FormErrorMessage>{error?.errorMessage}</FormErrorMessage>
+        <FormErrorMessage>
+          {formContext.t(error?.errorMessage)}
+        </FormErrorMessage>
       )}
     </FormControl>
   );

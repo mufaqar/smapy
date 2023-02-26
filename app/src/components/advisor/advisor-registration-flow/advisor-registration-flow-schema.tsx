@@ -1,13 +1,15 @@
 import { z } from "zod";
 import { schemaRegister } from "../../auth/advisor-auth-schema";
-import { dsk } from "../../common/forms/zod-describe";
+import "../../../utils/zod-meta";
+import { WelcomeText } from "./WelcomeText";
 
 export const missingName = schemaRegister
   .pick({
     first_name: true,
     last_name: true,
   })
-  .describe(dsk("Complete missing details", { name: "register" }));
+  .describe("Complete missing details")
+  .meta({ name: "register" });
 
 export const knowTheAgent = z
   .object({
@@ -18,16 +20,16 @@ export const knowTheAgent = z
       .default(0)
       .describe("Advisory years of experience // Years..."),
 
-    worker_type: z.string().describe(
-      dsk("Are you // PlaceHolder", {
+    worker_type: z
+      .string()
+      .describe("Are you")
+      .meta({
         control: "RadioGroup",
         choices: [
           { id: "freelancer", title: "Freelancer" },
           { id: "hired", title: "Hired" },
         ],
-      })
-    ),
-
+      }),
     workplace_name: z
       .string()
       .nullish()
@@ -40,15 +42,15 @@ export const knowTheAgent = z
       .describe("Number of files a month (Optional) // Average..., "),
   })
   .describe(
-    dsk(
-      "Partnership start with a good recognition // Some of your experience",
-      { name: "knowTheAgent" }
-    )
-  );
+    "Partnership start with a good recognition // Some of your experience"
+  )
+  .meta({
+    name: "knowTheAgent",
+  });
 
 export const uploadIdPicture = z
   .object({
-    certificate_id_picture: z.string().nullish().describe("Upload ID Picture"),
+    certificate_id_picture: z.string().nullish().meta("Upload ID Picture"),
     certificate_id_picture_later: z
       .boolean()
       .default(false)
@@ -63,7 +65,8 @@ export const uploadIdPicture = z
       path: ["certificate_id_picture"],
     }
   )
-  .describe(dsk("Identification", { name: "uploadIdPicture" }));
+  .describe("Identification")
+  .meta({ name: "uploadIdPicture" });
 
 export const bankDetails = z
   .object({
@@ -92,28 +95,26 @@ export const bankDetails = z
       .boolean()
       .default(false)
       .nullish()
-      .describe(
-        dsk("Will fill later", {
-          style: {
-            gridColumn: "1/3",
-            textAlign: "center",
-            mt: 8,
-          },
-        })
-      ),
+      .describe("Will fill later")
+      .meta({
+        style: {
+          gridColumn: "1/3",
+          textAlign: "center",
+          mt: 8,
+        },
+      }),
   })
-  .describe(
-    dsk("Where to deposit your money?", {
-      style: {
-        templateColumns: "2fr 1fr",
-        gap: 6,
-      },
-      props: {
-        image: "/images/advisor-register-bank.svg",
-      },
-      name: "bankDetails",
-    })
-  )
+  .describe("Where to deposit your money?")
+  .meta({
+    style: {
+      templateColumns: "2fr 1fr",
+      gap: 6,
+    },
+    props: {
+      image: "/images/advisor-register-bank.svg",
+    },
+    name: "bankDetails",
+  })
   .superRefine((arg, ctx) => {
     if (arg.bank_details_later) {
       return;
@@ -164,22 +165,28 @@ export const agreeToTerms = z
   .object({
     signed_terms: z
       .date({ invalid_type_error: "Must agree to terms" })
-      .describe(dsk("Confirm terms", { control: "Checkbox", before: "Terms" })),
+      .describe("Confirm terms")
+      .meta({ control: "Checkbox", before: "Terms" }),
   })
-  .describe(dsk("Terms", { name: "agreeToTerms" }));
+  .describe("Terms")
+  .meta({ name: "agreeToTerms" });
 
-const dummySchemaThanks = z
+const registrationThanksPage = z
   .undefined()
-  .describe(
-    dsk("thanksPage", { name: "dummySchemaThanks", control: "WelcomeText" })
-  );
+  .describe("registrationThanksPage")
+  .meta({
+    name: "registrationThanksPage",
+    control: (props) => <WelcomeText />,
+  });
 
-export const AdvisorUpdateSchema = z.union([
-  // schemaRegister, /// TBD remove
-  missingName,
-  knowTheAgent,
-  uploadIdPicture,
-  bankDetails,
-  agreeToTerms,
-  dummySchemaThanks,
-]);
+export const AdvisorUpdateSchema = z
+  .union([
+    missingName,
+    knowTheAgent,
+    uploadIdPicture,
+    bankDetails,
+    agreeToTerms,
+    registrationThanksPage,
+  ])
+  .describe("Registration")
+  .meta({ name: "AdvisorRegistrationFlow" });

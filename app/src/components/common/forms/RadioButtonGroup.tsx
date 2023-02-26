@@ -6,7 +6,7 @@ import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react";
 import type { UseRadioProps } from "@chakra-ui/radio/dist/use-radio";
 import React from "react";
 import type { UseRadioGroupProps } from "@chakra-ui/radio/dist/use-radio-group";
-import type { ChoiceType } from "./zod-describe";
+import type { ChoiceType } from "../../../utils/zod-meta";
 
 interface RCProps extends UseRadioProps {
   children: React.ReactNode;
@@ -17,6 +17,8 @@ const RadioCard = ({ children, ...props }: RCProps) => {
 
   const input = getInputProps();
   const checkbox = getCheckboxProps();
+
+  // console.log(`muly:RadioCard`, { input });
 
   return (
     <Box as="label">
@@ -58,9 +60,10 @@ export const RadioButtonGroup = ({ choices, ...props }: Props) => {
   return (
     <HStack {...group}>
       {choices.map((choice, idx) => {
+        // console.log(`muly:RadioButtonGroup:${idx}`, { choice, idx });
         const { id, title } =
           typeof choice === "string" ? { id: choice, title: choice } : choice;
-        const radio = getRadioProps({ value: id });
+        const radio = getRadioProps({ value: String(id) });
         return (
           <RadioCard key={idx} {...radio}>
             {title}

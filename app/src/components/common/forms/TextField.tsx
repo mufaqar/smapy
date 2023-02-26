@@ -1,4 +1,4 @@
-import { useDescription, useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import {
   Input,
   Select,
@@ -12,14 +12,13 @@ import {
 import { AddIcon } from "@chakra-ui/icons";
 import { RadioButtonGroup } from "./RadioButtonGroup";
 import { CheckboxGroup } from "./CheckboxGroup";
-import { parseChoices, parseOptionsString } from "./parse-option-string";
-import type { ChoiceType, ZodDescribeType } from "./zod-describe";
+import type { ChoiceType, ZodMetaDataItem } from "../../../utils/zod-meta";
 
 interface Props {
   choices?: ChoiceType[];
   type?: string;
 
-  controlName?: ZodDescribeType["control"];
+  controlName?: ZodMetaDataItem["control"];
 }
 
 export const TextField = (
@@ -29,14 +28,14 @@ export const TextField = (
   // }
   { type, choices: choicesParams, controlName }: Props
 ) => {
-  const { field, error } = useTsController<string>();
-  const options = useDescription();
+  const { field, error, formContext } = useTsController<string>();
+  const meta = useMeta();
   const {
     label,
     placeholder,
     choices: choicesDescription,
     style,
-  } = options || {
+  } = meta || {
     label: "",
     placeholder: "",
   };
@@ -48,18 +47,18 @@ export const TextField = (
   //   choices = parseChoices(String(options.choices));
   // }
 
-  controlName = controlName || options?.control;
+  controlName = controlName || meta?.control;
 
-  // console.log(
-  //   `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
-  //   {
-  //     choices,
-  //     field,
-  //     label,
-  //     placeholder,
-  //     options,
-  //   }
-  // );
+  console.log(
+    `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
+    {
+      meta,
+      choices,
+      field,
+      label,
+      placeholder,
+    }
+  );
 
   let control;
   if (!choices) {
@@ -188,6 +187,8 @@ export const TextField = (
     );
   }
 
+  // console.log(`muly:TextField`, { formContext });
+
   return (
     <FormControl isInvalid={!!error} {...style}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
@@ -200,7 +201,9 @@ export const TextField = (
         // <FormHelperText>
         //   Enter the email you'd like to receive the newsletter on.
         // </FormHelperText>
-        <FormErrorMessage>{error?.errorMessage}</FormErrorMessage>
+        <FormErrorMessage>
+          {formContext.t(error?.errorMessage)}
+        </FormErrorMessage>
       )}
     </FormControl>
   );

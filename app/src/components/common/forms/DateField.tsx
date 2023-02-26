@@ -1,4 +1,4 @@
-import { useDescription, useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import {
   Input,
   Select,
@@ -9,15 +9,10 @@ import {
   Checkbox,
   Textarea,
 } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
-import { RadioButtonGroup } from "./RadioButtonGroup";
-import { CheckboxGroup } from "./CheckboxGroup";
-import { parseChoices, parseOptionsString } from "./parse-option-string";
-import type { ZodDescribeType } from "./zod-describe";
-import { ChoiceType } from "./zod-describe";
+import type { ZodMetaDataItem } from "../../../utils/zod-meta";
 
 interface Props {
-  controlName?: ZodDescribeType["control"];
+  controlName?: ZodMetaDataItem["control"];
 }
 
 export const DateField = (
@@ -27,8 +22,8 @@ export const DateField = (
   // }
   { controlName }: Props
 ) => {
-  const { field, error } = useTsController<Date>();
-  const options = useDescription();
+  const { field, error, formContext } = useTsController<Date>();
+  const options = useMeta();
   const { label, placeholder } = options || {
     label: "",
     placeholder: "",
@@ -69,11 +64,13 @@ export const DateField = (
         </FormLabel>
       )}
       {control}
-      {!error ? null : (
+      {!error?.errorMessage ? null : (
         // <FormHelperText>
         //   Enter the email you'd like to receive the newsletter on.
         // </FormHelperText>
-        <FormErrorMessage>{error?.errorMessage}</FormErrorMessage>
+        <FormErrorMessage>
+          {formContext.t(error?.errorMessage)}
+        </FormErrorMessage>
       )}
     </FormControl>
   );

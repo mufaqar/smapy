@@ -1,6 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { AdvisorDashboard } from "../../components/advisor/AdvisorDashboard";
+
+import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
+import { AdvisorNewLifeInsuranceFlow } from "../../components/advisor/advisor-new-life-insurance/AdvisorNewLifeInsuranceFlow";
+
+export const getServerSideProps = i18nGetServerSideProps;
 
 const Page: NextPage = () => {
   return (
@@ -11,7 +15,7 @@ const Page: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <AdvisorDashboard />
+        <AdvisorNewLifeInsuranceFlow />
       </main>
     </>
   );

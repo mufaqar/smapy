@@ -34,6 +34,24 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+model SystemEvents {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt DateTime @default(now())
+  subject   String
+  details   Json?
+}
+
+model AdminOperations {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt DateTime @default(now())
+  user      String
+  cmd       String
+  params    String?
+  moreInfo  Json?
+  status    String
+  details   Json?
+}
+
 model UserProfile {
   id String @id
 
@@ -75,23 +93,17 @@ model UserProfile {
   bank_account       String?
   bank_details_later Boolean?
 
-  signed_terms           DateTime?
+  signed_terms  DateTime?
+  lifeInsurance lifeInsurance[]
 }
 
-model SystemEvents {
-  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
-  createdAt DateTime @default(now())
-  subject   String
-  details   Json?
-}
+model lifeInsurance {
+  id String @id @default(dbgenerated("uuid_generate_v4()"))
 
-model AdminOperations {
-  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
-  createdAt DateTime @default(now())
-  user      String
-  cmd       String
-  params    String?
-  moreInfo  Json?
-  status    String
-  details   Json?
+  advisorId String
+  advisor   UserProfile @relation(fields: [advisorId], references: [id])
+
+  number_of_persons Int
+
+  // TBD...
 }

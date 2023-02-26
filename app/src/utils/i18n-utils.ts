@@ -4,9 +4,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18nConfig } from "../../next-i18next.config.mjs";
 import { trpcVanillaClient } from "./api";
 import { callAsync } from "./call-async";
-import type { MetaInfo } from "./zod-utils";
+import type { MetaInfo } from "./zod-meta";
 
 const itemSent: { [key: string]: boolean } = {};
+export type TranslationFn = (key: string, def?: string) => string;
 
 export const missingKeyHandler = (
   lngs: readonly string[],
@@ -41,15 +42,15 @@ export const missingKeyHandler = (
 
 export const translateSchemaInfo = (
   metaInfo: MetaInfo,
-  translate: (key: string, def?: string) => string,
+  translate: TranslationFn,
   path = ""
 ): MetaInfo => {
-  const { description, children, ...rest } = metaInfo;
+  const { meta, children, ...rest } = metaInfo;
 
-  let tDesc = undefined;
+  let tDesc = {};
 
-  if (description) {
-    const { label, placeholder, name, ...restDesc } = description;
+  if (meta) {
+    const { label, placeholder, name, ...restDesc } = meta;
 
     if (name) {
       path = path ? [path, name].join(".") : name;
@@ -76,7 +77,7 @@ export const translateSchemaInfo = (
 
   return {
     ...rest,
-    description: tDesc,
+    meta: tDesc,
     children: tChildren,
   };
 };

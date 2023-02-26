@@ -11,6 +11,10 @@ const Home: NextPage = () => {
     { href: "/signup", title: "Advisor -> Sign up" },
     { href: "/signin", title: "Advisor -> Sign In" },
     { href: "/advisor/registration", title: "Advisor -> Registration Flow" },
+    {
+      href: "/advisor/new-life-insurance",
+      title: "Advisor -> New Life Insurance",
+    },
     { href: "/advisor/dashboard", title: "Advisor -> Dashboard" },
   ];
 

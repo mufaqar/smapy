@@ -1,5 +1,6 @@
 import * as z from "zod"
 import * as imports from "../zod-add-schema"
+import { CompletelifeInsurance, RelatedlifeInsuranceModel } from "./index"
 
 export const UserProfileModel = z.object({
   id: z.string(),
@@ -35,3 +36,16 @@ export const UserProfileModel = z.object({
   bank_details_later: z.boolean().nullish(),
   signed_terms: z.date().nullish(),
 })
+
+export interface CompleteUserProfile extends z.infer<typeof UserProfileModel> {
+  lifeInsurance: CompletelifeInsurance[]
+}
+
+/**
+ * RelatedUserProfileModel contains all relations on your model in addition to the scalars
+ *
+ * NOTE: Lazy required in case of potential circular dependencies within schema
+ */
+export const RelatedUserProfileModel: z.ZodSchema<CompleteUserProfile> = z.lazy(() => UserProfileModel.extend({
+  lifeInsurance: RelatedlifeInsuranceModel.array(),
+}))

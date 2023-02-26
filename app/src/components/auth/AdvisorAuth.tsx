@@ -6,6 +6,7 @@ import { useState } from "react";
 import { OTPConfirmation } from "./OTPConfirmation";
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
+import { useTranslation } from "next-i18next";
 
 type RegisterValues =
   | z.infer<typeof schemaRegister>
@@ -16,6 +17,7 @@ interface Props {
 }
 
 export const AdvisorAuth = ({ register }: Props) => {
+  const { t } = useTranslation("advisor");
   const router = useRouter();
 
   const [authValues, setAuthValues] = useState<RegisterValues | null>(null);
@@ -71,6 +73,7 @@ export const AdvisorAuth = ({ register }: Props) => {
   } else {
     return (
       <Form
+        formContext={{ t }}
         schema={register ? schemaRegister : schemaSignin}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit}

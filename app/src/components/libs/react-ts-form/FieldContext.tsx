@@ -9,14 +9,20 @@ import type {
 import { useController } from "react-hook-form";
 import { printUseEnumWarning } from "./logging";
 import { errorFromRhfErrorObject } from "./zodObjectErrors";
-import { ZodDescribeType } from "../../common/forms/zod-describe";
+import { ZodMetaDataItem } from "../../../utils/zod-meta";
+import { TranslationFn } from "../../../utils/i18n-utils";
+
+export interface FormContext {
+  t: TranslationFn;
+}
 
 export const FieldContext = createContext<null | {
   control: Control<any>;
   name: string;
   // label?: string;
   // placeholder?: string;
-  description?: ZodDescribeType;
+  formContext: FormContext;
+  meta?: ZodMetaDataItem;
   enumValues?: string[];
   addToCoerceUndefined: (v: string) => void;
   removeFromCoerceUndefined: (v: string) => void;
@@ -26,7 +32,8 @@ export function FieldContextProvider({
   name,
   control,
   children,
-  description,
+  formContext,
+  meta,
   // label,
   // placeholder,
   enumValues,
@@ -35,7 +42,8 @@ export function FieldContextProvider({
 }: {
   name: string;
   control: Control<any>;
-  description?: ZodDescribeType;
+  formContext: FormContext;
+  meta?: ZodMetaDataItem;
   // label?: string;
   // placeholder?: string;
   enumValues?: string[];
@@ -50,7 +58,8 @@ export function FieldContextProvider({
         name,
         // label,
         // placeholder,
-        description,
+        formContext,
+        meta,
         enumValues,
         addToCoerceUndefined,
         removeFromCoerceUndefined,
@@ -123,6 +132,7 @@ export function useTsController<FieldType extends any>() {
     }
   }
   return {
+    formContext: context.formContext,
     ...controller,
     error: errorFromRhfErrorObject<FieldType>(fieldState.error),
     field: {
@@ -160,9 +170,9 @@ export function requiredDescriptionDataNotPassedError(
  * ```
  * @returns `{label: string, placeholder: string}`
  */
-export function useDescription(): ZodDescribeType | undefined {
-  const { description } = useContextProt("useReqDescription");
-  return description;
+export function useMeta(): ZodMetaDataItem | undefined {
+  const { meta } = useContextProt("useReqDescription");
+  return meta;
 }
 
 /**
@@ -186,8 +196,8 @@ export function useDescription(): ZodDescribeType | undefined {
  * @returns `{label: string, placeholder: string}`
  */
 export function useReqDescription() {
-  const { description } = useContextProt("useReqDescription");
-  if (!description) {
+  const { meta } = useContextProt("useReqDescription");
+  if (!meta) {
     throw new Error(
       requiredDescriptionDataNotPassedError("label", "useReqDescription")
     );
@@ -197,7 +207,7 @@ export function useReqDescription() {
   //     requiredDescriptionDataNotPassedError("placeholder", "useReqDescription")
   //   );
   // }
-  return description;
+  return meta;
 }
 
 export function enumValuesNotPassedError() {
