@@ -28,11 +28,11 @@ export const AdvisorNewLifeInsuranceFlow = () => {
   });
 
   const { onStepNext, control, step, schema } = wizard;
-  const [recordData, setRecordData] = useState<RecordType>();
+  const [recordData, setRecordData] = useState<RecordType | null>();
 
   // we enable query also for new empty id, solve hydration issue
   const { data, isLoading } = api.advisor.getLifeInsurance.useQuery(id, {
-    onSuccess: (data) => setRecordData(data || undefined),
+    onSuccess: (data) => setRecordData(data || null),
   });
 
   const updateUserProfile = api.advisor.updateLifeInsurance.useMutation();

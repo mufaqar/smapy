@@ -26,7 +26,7 @@ export const WizardForm = ({
 
   console.log(`muly:WizardForm render`, { wizard, recordData });
 
-  if (!recordData) {
+  if (recordData === undefined) {
     return <Box>Loading...</Box>;
   }
 
