@@ -24,6 +24,12 @@ export const WizardForm = ({
 }: Props<any>) => {
   const { schema, control, step } = wizard;
 
+  console.log(`muly:WizardForm render`, { wizard, recordData });
+
+  if (!recordData) {
+    return <Box>Loading...</Box>;
+  }
+
   return (
     <VStack maxW="lg" m="auto">
       <FormHeader wizard={wizard} />

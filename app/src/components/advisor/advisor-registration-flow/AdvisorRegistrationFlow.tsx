@@ -25,14 +25,15 @@ export const AdvisorRegistrationFlow = () => {
   const { setStepRange, onStepNext, control, step, schema } = wizard;
   const [recordData, setRecordData] = useState<RecordType>();
 
-  const { data, isLoading } = api.advisor.getUserProfile.useQuery(undefined, {
-    onSuccess: (data) => {
+  const query = api.advisor.getUserProfile.useQuery(undefined, {
+    onSuccess: async (data) => {
+      console.log(`muly:onSuccess`, {});
+      if (data?.first_name && data?.last_name) {
+        await setStepRange(1, undefined);
+      }
       if (data) {
         // @ts-ignore
         setRecordData(data);
-      }
-      if (data?.first_name && data?.last_name) {
-        setStepRange(1, undefined);
       }
     },
   });
@@ -46,9 +47,13 @@ export const AdvisorRegistrationFlow = () => {
     await onStepNext();
   };
 
-  if (isLoading) {
-    return null;
-  }
+  console.log(
+    `muly:AdvisorRegistrationFlow ${query.isSuccess} ${!!recordData}`,
+    {
+      recordData,
+      query,
+    }
+  );
 
   const preprocessField = (name: string, form: UseFormReturn, props: any) => {
     // console.log(`muly:preprocessField ${name}`, { form, props });

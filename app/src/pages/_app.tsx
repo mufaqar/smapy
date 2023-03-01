@@ -39,6 +39,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
 };
 
 const I18nApp = appWithTranslation(MyApp, {
-  ...i18nConfig /* missingKeyHandler */,
+  ...i18nConfig,
+  missingKeyHandler,
 });
 export default api.withTRPC(I18nApp);

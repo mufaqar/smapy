@@ -4,9 +4,11 @@ import Head from "next/head";
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
 import { AdvisorNewLifeInsuranceFlow } from "../../components/advisor/advisor-new-life-insurance/AdvisorNewLifeInsuranceFlow";
 
-export const getServerSideProps = i18nGetServerSideProps;
+export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 
-const Page: NextPage = () => {
+const Page: NextPage = (props) => {
+  console.log(`muly:Page`, { props });
+
   return (
     <>
       <Head>

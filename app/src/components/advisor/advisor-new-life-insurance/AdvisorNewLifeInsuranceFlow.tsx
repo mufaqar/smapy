@@ -32,7 +32,7 @@ export const AdvisorNewLifeInsuranceFlow = () => {
 
   // we enable query also for new empty id, solve hydration issue
   const { data, isLoading } = api.advisor.getLifeInsurance.useQuery(id, {
-    onSuccess: setRecordData,
+    onSuccess: (data) => setRecordData(data || undefined),
   });
 
   const updateUserProfile = api.advisor.updateLifeInsurance.useMutation();
@@ -47,10 +47,6 @@ export const AdvisorNewLifeInsuranceFlow = () => {
     await onStepNext();
   };
 
-  if (isLoading) {
-    return null;
-  }
-
   // const preprocessField = (name: string, form: UseFormReturn, props: any) => {
   //   // console.log(`muly:preprocessField ${name}`, { form, props });
   //   // if (props.description.after) {
@@ -58,7 +54,9 @@ export const AdvisorNewLifeInsuranceFlow = () => {
   //   // }
   // };
 
-  console.log(`muly:AdvisorNewLifeInsuranceFlow`, { recordData });
+  console.log(`muly:AdvisorNewLifeInsuranceFlow isLoading:${isLoading}`, {
+    recordData,
+  });
 
   return (
     <WizardForm

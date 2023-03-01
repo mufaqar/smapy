@@ -3,7 +3,7 @@ import Head from "next/head";
 import { AdvisorRegistrationFlow } from "../../components/advisor/advisor-registration-flow/AdvisorRegistrationFlow";
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
 
-export const getServerSideProps = i18nGetServerSideProps;
+export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 
 const Page: NextPage = () => {
   return (

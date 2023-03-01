@@ -10,3 +10,31 @@ export const optionalUuidSchema = z
   .nullish()
   .optional()
   .transform((e) => (e === "" ? undefined : e));
+
+export const InterestType = {
+  fixed: "fixed",
+  change: "change",
+};
+
+export const LinkageType = {
+  fixed: "fixed",
+  cpi: "cpi",
+  dollar: "dollar",
+};
+
+export const LoanType = {
+  ballon: "ballon",
+  shpizer: "shpizer",
+  equal: "equal",
+};
+
+export const LoanTracks = z.array(
+  z.object({
+    balance: z.number(),
+    endDate: z.date(),
+    interest_rate: z.number(),
+    interest_type: z.nativeEnum(InterestType),
+    linkage_type: z.nativeEnum(LinkageType),
+    loan_type: z.nativeEnum(LoanType),
+  })
+);

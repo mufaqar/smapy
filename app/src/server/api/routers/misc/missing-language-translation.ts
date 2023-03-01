@@ -48,6 +48,7 @@ const updateMissing = async () => {
     item: translationSchemaType,
     lang: string
   ) => {
+    let changed = false;
     const path: string[] = item.key.split(".");
     let obj: TranslationData = nsData;
     // console.log(`muly:appendMissingTranslation`, {
@@ -71,12 +72,15 @@ const updateMissing = async () => {
     });
 
     const tail = path[path.length - 1];
-    if (tail) {
+    // @ts-ignore
+    if (tail && !obj[tail]) {
       // @ts-ignore
       obj[tail] = item.fallbackValue;
+      changed = true;
     }
 
     // console.log(`muly:ADD`, { tail, path, key: item.key, obj });
+    return changed;
   };
 
   const q = [...queue];
@@ -91,11 +95,15 @@ const updateMissing = async () => {
   }, uniq(map(({ ns }) => ns, q)));
 
   await PMap(pairs, async ({ ns, lang }) => {
+    let changed = false;
     const nsData = await loadNSData(lang, ns);
-    q.filter((item) => item.ns === ns).forEach((item) =>
-      appendMissingTranslation(nsData, item, lang)
-    );
-    await saveNSData(lang, ns, nsData);
+    q.filter((item) => item.ns === ns).forEach((item) => {
+      changed = changed || appendMissingTranslation(nsData, item, lang);
+    });
+
+    if (changed) {
+      await saveNSData(lang, ns, nsData);
+    }
   });
 };
 

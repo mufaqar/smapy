@@ -1,6 +1,6 @@
 import * as z from "zod"
 import * as imports from "../zod-add-schema"
-import { CompletelifeInsurance, RelatedlifeInsuranceModel } from "./index"
+import { CompletelifeInsurance, RelatedlifeInsuranceModel, Completecustomer, RelatedcustomerModel } from "./index"
 
 export const UserProfileModel = z.object({
   id: z.string(),
@@ -39,6 +39,7 @@ export const UserProfileModel = z.object({
 
 export interface CompleteUserProfile extends z.infer<typeof UserProfileModel> {
   lifeInsurance: CompletelifeInsurance[]
+  customer: Completecustomer[]
 }
 
 /**
@@ -48,4 +49,5 @@ export interface CompleteUserProfile extends z.infer<typeof UserProfileModel> {
  */
 export const RelatedUserProfileModel: z.ZodSchema<CompleteUserProfile> = z.lazy(() => UserProfileModel.extend({
   lifeInsurance: RelatedlifeInsuranceModel.array(),
+  customer: RelatedcustomerModel.array(),
 }))

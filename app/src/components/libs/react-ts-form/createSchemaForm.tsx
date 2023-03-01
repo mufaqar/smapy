@@ -5,7 +5,7 @@ import type {
 } from "react";
 import React, { Fragment, useRef } from "react";
 import type { ComponentProps } from "react";
-import type { ErrorOption, UseFormReturn } from "react-hook-form";
+import type { ErrorOption, NestedValue, UseFormReturn } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
 import type { AnyZodObject, z, ZodEffects } from "zod";
 import { getComponentForZodType } from "./getComponentForZodType";
@@ -27,10 +27,8 @@ import {
   HIDDEN_ID_PROPERTY,
   isSchemaWithHiddenProperties,
 } from "./createFieldSchema";
-import { ZodNullable, ZodNullableType } from "zod/lib/types";
-import { NestedValue } from "react-hook-form/dist/types/form";
-import { BrowserNativeObject } from "react-hook-form/dist/types/utils";
-import { UseTranslationResponse } from "react-i18next";
+import { ZodNullableType } from "zod/lib/types";
+import type { BrowserNativeObject } from "react-hook-form";
 import { getZodMetaInfo } from "../../../utils/zod-meta";
 
 export type PreprocessField = (
@@ -383,7 +381,7 @@ export function createTsForm<
     const _form = (() => {
       if (form) return form;
 
-      // console.log(`muly:FORM:defaultValues`, { defaultValues });
+      console.log(`muly:FORM:defaultValues`, { defaultValues });
 
       const uf = useForm({
         resolver,

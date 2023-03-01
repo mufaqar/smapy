@@ -229,6 +229,9 @@
     },
     "dummySchemaThanks": {
       "label": "thanksPage"
+    },
+    "registrationThanksPage": {
+      "label": "registrationThanksPage"
     }
   },
   "Registration": "Registration",
@@ -243,5 +246,11 @@
     "newInsuranceThanksPage": {
       "label": "newInsuranceThanksPage"
     }
-  }
+  },
+  "test": {
+    "layer1": {
+      "layer2": "default test"
+    }
+  },
+  "test3": "Test 3 - default test"
 }

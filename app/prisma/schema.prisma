@@ -95,15 +95,81 @@ model UserProfile {
 
   signed_terms  DateTime?
   lifeInsurance lifeInsurance[]
+  customer      customer[]
+}
+
+enum InsuranceStatus {
+  init
+  approved
+  cancled
 }
 
 model lifeInsurance {
-  id String @id @default(dbgenerated("uuid_generate_v4()"))
+  id         String    @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
+  statusDate DateTime?
 
   advisorId String
   advisor   UserProfile @relation(fields: [advisorId], references: [id])
 
   number_of_persons Int
 
-  // TBD...
+  customerId String?
+  customer   customer? @relation(fields: [customerId], references: [id])
+
+  loan_tracks_count Int?
+
+  /// @zod.custom(imports.LoanTracks)
+  load_tracks Json?
+
+  total Float?
+
+  status InsuranceStatus @default(init)
+}
+
+enum Gender {
+  male
+  female
+  na
+}
+
+enum Smoking {
+  yes
+  no
+  stop
+}
+
+enum FamilyStatus {
+  Single
+  Married
+  Divorced
+  Separated
+  Widowed
+}
+
+model customer {
+  id String @id @default(dbgenerated("uuid_generate_v4()"))
+
+  userId      String?      @unique
+  userProfile UserProfile? @relation(fields: [userProfileId], references: [id])
+
+  lifeInsurance lifeInsurance[]
+  userProfileId String?
+
+  gender  Gender?
+  smoking Smoking?
+
+  smoking_stop_month Int?
+  first_name         String?
+  last_name          String?
+
+  family_status FamilyStatus
+
+  birthDate DateTime?
+
+  occupation           String?
+  dangerous_hobby_has  Boolean?
+  dangerous_hobby      String?
+  dangerous_hobby_desc String?
 }

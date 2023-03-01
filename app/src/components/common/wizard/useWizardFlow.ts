@@ -29,6 +29,14 @@ export const useWizardFlow = (
     parse: (val: string) => (val ? Number(val) : 0),
     defaultValue: 0,
   });
+  const [currentStepREPLACE, setCurrentStepREPLACE] = useQueryState<number>(
+    "step",
+    {
+      history: "replace",
+      parse: (val: string) => (val ? Number(val) : 0),
+      defaultValue: 0,
+    }
+  );
 
   const steps = useMemo(() => {
     const stepsRaw = getZodMetaInfo(type);
@@ -83,13 +91,13 @@ export const useWizardFlow = (
     }
   };
 
-  console.log(`muly:useWizardFlow`, {
-    stepRange,
-    control,
-    step,
-    currentStep,
-    metaInfo: steps,
-  });
+  // console.log(`muly:useWizardFlow`, {
+  //   stepRange,
+  //   control,
+  //   step,
+  //   currentStep,
+  //   metaInfo: steps,
+  // });
 
   if (step.typeName === "ZodUndefined" && !control) {
     throw new Error(
@@ -99,7 +107,7 @@ export const useWizardFlow = (
 
   return {
     stepRange,
-    setStepRange: (start?: number, end?: number) => {
+    setStepRange: async (start?: number, end?: number) => {
       const _start = start === undefined ? stepRange.start : start;
       const _end = end === undefined ? stepRange.end : end;
       setStepRange({
@@ -107,7 +115,9 @@ export const useWizardFlow = (
         end: _end,
       });
 
-      void setCurrentStep(Math.min(_end, Math.max(_start, currentStep)));
+      await setCurrentStepREPLACE(
+        Math.min(_end, Math.max(_start, currentStep))
+      );
       console.log(`useWizardFlow:setStepRange`, {
         _start,
         _end,

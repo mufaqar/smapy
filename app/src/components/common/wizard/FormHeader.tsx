@@ -5,7 +5,7 @@ import type { WizardControlProps } from "./useWizardFlow";
 export const FormHeader = ({
   wizard: { stepRange, step, metaInfo, onStepBack, currentStep },
 }: WizardControlProps) => {
-  console.log(`muly:FormHeader ${currentStep}`);
+  // console.log(`muly:FormHeader ${currentStep}`);
   return (
     <>
       <Box>{metaInfo.meta.label || null}</Box>

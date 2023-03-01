@@ -24,6 +24,20 @@ const numberOfPersons = z.object({
     }),
 });
 
+const person1Details = z.object({
+  number_of_persons: z.coerce
+    .number()
+    .default(1)
+    .describe("How many persons")
+    .meta({
+      control: "RadioGroup",
+      choices: [
+        { id: 1, title: "One" },
+        { id: 2, title: "Two" },
+      ],
+    }),
+});
+
 const newInsuranceThanksPage = z
   .undefined()
   .describe("newInsuranceThanksPage")
