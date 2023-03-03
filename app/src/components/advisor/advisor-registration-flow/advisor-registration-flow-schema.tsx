@@ -2,14 +2,14 @@ import { z } from "zod";
 import { schemaRegister } from "../../auth/advisor-auth-schema";
 import "../../../utils/zod-meta";
 import { WelcomeText } from "./WelcomeText";
+import type { WizardPagesDefinition } from "../../common/wizard/useWizardFlow";
 
 export const missingName = schemaRegister
   .pick({
     first_name: true,
     last_name: true,
   })
-  .describe("Complete missing details")
-  .meta({ name: "register" });
+  .describe("Complete missing details");
 
 export const knowTheAgent = z
   .object({
@@ -43,10 +43,7 @@ export const knowTheAgent = z
   })
   .describe(
     "Partnership start with a good recognition // Some of your experience"
-  )
-  .meta({
-    name: "knowTheAgent",
-  });
+  );
 
 export const uploadIdPicture = z
   .object({
@@ -65,8 +62,7 @@ export const uploadIdPicture = z
       path: ["certificate_id_picture"],
     }
   )
-  .describe("Identification")
-  .meta({ name: "uploadIdPicture" });
+  .describe("Identification");
 
 export const bankDetails = z
   .object({
@@ -113,7 +109,6 @@ export const bankDetails = z
     props: {
       image: "/images/advisor-register-bank.svg",
     },
-    name: "bankDetails",
   })
   .superRefine((arg, ctx) => {
     if (arg.bank_details_later) {
@@ -168,25 +163,33 @@ export const agreeToTerms = z
       .describe("Confirm terms")
       .meta({ control: "Checkbox", before: "Terms" }),
   })
-  .describe("Terms")
-  .meta({ name: "agreeToTerms" });
+  .describe("Terms");
 
 const registrationThanksPage = z
   .undefined()
   .describe("registrationThanksPage")
   .meta({
-    name: "registrationThanksPage",
     control: (props) => <WelcomeText />,
   });
 
-export const AdvisorUpdateSchema = z
-  .union([
+export const AdvisorUpdateSchema = z.union([
+  missingName,
+  knowTheAgent,
+  uploadIdPicture,
+  bankDetails,
+  agreeToTerms,
+  registrationThanksPage,
+]);
+
+export const AdvisorUpdatePages = {
+  pages: {
     missingName,
     knowTheAgent,
     uploadIdPicture,
     bankDetails,
     agreeToTerms,
     registrationThanksPage,
-  ])
-  .describe("Registration")
-  .meta({ name: "AdvisorRegistrationFlow" });
+  },
+  description: "Registration",
+  name: "AdvisorRegistrationFlow",
+} satisfies WizardPagesDefinition;

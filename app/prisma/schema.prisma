@@ -115,17 +115,42 @@ model lifeInsurance {
 
   number_of_persons Int
 
-  customerId String?
-  customer   customer? @relation(fields: [customerId], references: [id])
-
   loan_tracks_count Int?
 
+  same_address_mortgage     Boolean?
+  property_city             String?
+  property_street           String?
+  property_street_number    String?
+  property_apartment_number String?
+
+  insurance_start_date DateTime?
+  bank_name            String?
+  bank_branch          String?
+  bank_number          String?
+  bank_branch_number   String?
+
+  details_approval DateTime?
+
   /// @zod.custom(imports.LoanTracks)
-  load_tracks Json?
+  loan_tracks Json?
 
   total Float?
 
-  status InsuranceStatus @default(init)
+  status                InsuranceStatus         @default(init)
+
+  lifeInsuranceCustomer lifeInsuranceCustomer[]
+}
+
+model lifeInsuranceCustomer {
+  lifeInsurance   lifeInsurance @relation(fields: [lifeInsuranceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  lifeInsuranceId String
+
+  customer   customer @relation(fields: [customerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  customerId String
+
+  sort Int
+
+  @@unique([lifeInsuranceId, customerId])
 }
 
 enum Gender {
@@ -152,10 +177,7 @@ model customer {
   id String @id @default(dbgenerated("uuid_generate_v4()"))
 
   userId      String?      @unique
-  userProfile UserProfile? @relation(fields: [userProfileId], references: [id])
-
-  lifeInsurance lifeInsurance[]
-  userProfileId String?
+  userProfile UserProfile? @relation(fields: [userId], references: [id])
 
   gender  Gender?
   smoking Smoking?
@@ -163,6 +185,14 @@ model customer {
   smoking_stop_month Int?
   first_name         String?
   last_name          String?
+  card_id            String?
+  phone              String?
+  email              String?
+
+  city             String?
+  street           String?
+  street_number    String?
+  apartment_number String?
 
   family_status FamilyStatus
 
@@ -172,4 +202,6 @@ model customer {
   dangerous_hobby_has  Boolean?
   dangerous_hobby      String?
   dangerous_hobby_desc String?
+
+  lifeInsuranceCustomer lifeInsuranceCustomer[]
 }

@@ -1,4 +1,4 @@
-import type { z } from "zod";
+import { z } from "zod";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import type { MetaInfo, ControlCallback } from "../../../utils/zod-meta";
@@ -7,10 +7,24 @@ import type { ZodEffects } from "zod";
 import type { TranslationFn } from "../../../utils/i18n-utils";
 import { translateSchemaInfo } from "../../../utils/i18n-utils";
 import { useQueryState } from "next-usequerystate";
+import type { ZodTypeAny } from "zod/lib/types";
+import { map } from "rambda";
 
 // type CustomRefMap = Record<string, () => Promise<any>>;
 // export type CustomControlDef = (props: WizardControlProps) => React.ReactNode;
 // export type CustomControlDefMap = { [key: string]: CustomControlDef };
+
+const getPagesZodMetaInfo = (
+  wizardPagesDefinition: WizardPagesDefinition
+): MetaInfo => {
+  const { pages, ...meta } = wizardPagesDefinition;
+  return {
+    meta,
+    children: map((page, name) => getZodMetaInfo(page, name), pages),
+    typeName: "wizard",
+    type: z.undefined(),
+  };
+};
 
 interface UseWizardFlowOptions {
   onCompleteUrl: string;
@@ -18,8 +32,15 @@ interface UseWizardFlowOptions {
   translate: TranslationFn;
 }
 
+export interface WizardPagesDefinition {
+  pages: Record<string, ZodTypeAny>;
+
+  description: string;
+  name: string;
+}
+
 export const useWizardFlow = (
-  type: z.ZodUnion<any>,
+  pagesDefinition: WizardPagesDefinition,
   options: UseWizardFlowOptions
 ) => {
   const router = useRouter();
@@ -39,10 +60,10 @@ export const useWizardFlow = (
   );
 
   const steps = useMemo(() => {
-    const stepsRaw = getZodMetaInfo(type);
+    const stepsRaw = getPagesZodMetaInfo(pagesDefinition);
     const steps = translateSchemaInfo(stepsRaw, options.translate);
     return steps;
-  }, [options.translate, type]);
+  }, [options.translate, pagesDefinition]);
 
   if (!steps.children) {
     throw new Error("Not a union type");

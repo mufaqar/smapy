@@ -1,7 +1,7 @@
 import * as z from "zod"
 import * as imports from "../zod-add-schema"
 import { InsuranceStatus } from "@prisma/client"
-import { CompleteUserProfile, RelatedUserProfileModel, Completecustomer, RelatedcustomerModel } from "./index"
+import { CompleteUserProfile, RelatedUserProfileModel, CompletelifeInsuranceCustomer, RelatedlifeInsuranceCustomerModel } from "./index"
 
 // Helper schema for JSON fields
 type Literal = boolean | number | string | null
@@ -16,16 +16,26 @@ export const lifeInsuranceModel = z.object({
   statusDate: z.date().nullish(),
   advisorId: z.string(),
   number_of_persons: z.number().int(),
-  customerId: z.string().nullish(),
   loan_tracks_count: z.number().int().nullish(),
-  load_tracks: imports.LoanTracks,
+  same_address_mortgage: z.boolean().nullish(),
+  property_city: z.string().nullish(),
+  property_street: z.string().nullish(),
+  property_street_number: z.string().nullish(),
+  property_apartment_number: z.string().nullish(),
+  insurance_start_date: z.date().nullish(),
+  bank_name: z.string().nullish(),
+  bank_branch: z.string().nullish(),
+  bank_number: z.string().nullish(),
+  bank_branch_number: z.string().nullish(),
+  details_approval: z.date().nullish(),
+  loan_tracks: imports.LoanTracks,
   total: z.number().nullish(),
   status: z.nativeEnum(InsuranceStatus),
 })
 
 export interface CompletelifeInsurance extends z.infer<typeof lifeInsuranceModel> {
   advisor: CompleteUserProfile
-  customer?: Completecustomer | null
+  lifeInsuranceCustomer: CompletelifeInsuranceCustomer[]
 }
 
 /**
@@ -35,5 +45,5 @@ export interface CompletelifeInsurance extends z.infer<typeof lifeInsuranceModel
  */
 export const RelatedlifeInsuranceModel: z.ZodSchema<CompletelifeInsurance> = z.lazy(() => lifeInsuranceModel.extend({
   advisor: RelatedUserProfileModel,
-  customer: RelatedcustomerModel.nullish(),
+  lifeInsuranceCustomer: RelatedlifeInsuranceCustomerModel.array(),
 }))

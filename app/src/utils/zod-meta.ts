@@ -36,6 +36,8 @@ export interface ZodMetaDataItem {
   props?: Record<string, any>;
   before?: React.ReactNode;
   after?: React.ReactNode;
+
+  condition?: (data: Record<string, unknown>) => boolean;
 }
 
 declare module "zod" {

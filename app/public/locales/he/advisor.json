@@ -245,6 +245,11 @@
     },
     "newInsuranceThanksPage": {
       "label": "newInsuranceThanksPage"
+    },
+    "personDetails1": {
+      "gender": {
+        "label": "Gender"
+      }
     }
   },
   "test": {

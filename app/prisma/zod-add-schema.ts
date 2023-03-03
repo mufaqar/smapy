@@ -28,13 +28,13 @@ export const LoanType = {
   equal: "equal",
 };
 
-export const LoanTracks = z.array(
-  z.object({
-    balance: z.number(),
-    endDate: z.date(),
-    interest_rate: z.number(),
-    interest_type: z.nativeEnum(InterestType),
-    linkage_type: z.nativeEnum(LinkageType),
-    loan_type: z.nativeEnum(LoanType),
-  })
-);
+export const LoanTrack = z.object({
+  balance: z.number(),
+  endDate: z.date(),
+  interest_rate: z.number(),
+  interest_type: z.nativeEnum(InterestType),
+  linkage_type: z.nativeEnum(LinkageType),
+  loan_type: z.nativeEnum(LoanType),
+});
+
+export const LoanTracks = z.array(LoanTrack);

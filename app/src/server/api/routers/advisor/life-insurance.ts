@@ -1,16 +1,31 @@
 import * as z from "zod";
 import { protectedProcedure } from "../../trpc";
-import { lifeInsuranceModel } from "../../../../../prisma/zod";
+import {
+  CompletelifeInsurance,
+  lifeInsuranceCustomerModel,
+  lifeInsuranceModel,
+  RelatedlifeInsuranceCustomerModel,
+  RelatedlifeInsuranceModel,
+  RelatedUserProfileModel,
+} from "../../../../../prisma/zod";
 import { TRPCError } from "@trpc/server";
-import { AdvisorNewLifeInsuranceSchema } from "../../../../components/advisor/advisor-new-life-insurance/advisor-new-life-insurance-schema";
-import { optionalUuidSchema } from "../../../../../prisma/zod-add-schema";
+import {
+  LoanTracks,
+  optionalUuidSchema,
+} from "../../../../../prisma/zod-add-schema";
+import type { Prisma } from "@prisma/client";
 
-const LifeInsuranceSchemaSelect = {
-  id: true,
-  number_of_persons: true,
-} as const;
+const lifeInsuranceSchemaSelect = {
+  include: {
+    lifeInsuranceCustomer: true,
+  },
+} satisfies {
+  include: Prisma.lifeInsuranceInclude;
+};
 
-const LifeInsuranceSchema = lifeInsuranceModel.pick(LifeInsuranceSchemaSelect);
+const LifeInsuranceSchema = lifeInsuranceModel.extend({
+  lifeInsuranceCustomer: lifeInsuranceCustomerModel.array().nullish(),
+});
 
 export const getLifeInsurance = protectedProcedure
   .input(optionalUuidSchema)
@@ -24,7 +39,7 @@ export const getLifeInsurance = protectedProcedure
 
     const answer = await ctx.prisma.lifeInsurance.findFirstOrThrow({
       where: { id: input, advisorId: ctx.user.id },
-      select: LifeInsuranceSchemaSelect,
+      ...lifeInsuranceSchemaSelect,
     });
 
     console.log(`muly:getLifeInsurance`, {
@@ -32,32 +47,44 @@ export const getLifeInsurance = protectedProcedure
       advisorId: ctx.user.id,
       answer,
     });
-    return answer;
+
+    const { loan_tracks, ...data } = answer;
+    return { ...data, loan_tracks: LoanTracks.parse(loan_tracks) };
   });
 
 export const updateLifeInsurance = protectedProcedure
-  .input(
-    z.object({ values: AdvisorNewLifeInsuranceSchema, id: optionalUuidSchema })
-  )
+  .input(z.object({ values: LifeInsuranceSchema, id: optionalUuidSchema }))
   .output(LifeInsuranceSchema)
   .mutation(async ({ ctx, input: { id, values } }) => {
     if (!values) {
       throw new TRPCError({ code: "BAD_REQUEST" });
     }
 
+    const { advisorId, lifeInsuranceCustomer, loan_tracks, ...sdata } = values;
+
+    const loan_tracksWithType = LoanTracks.parse(loan_tracks);
+
+    // const l = [];
+    const data = {
+      ...sdata,
+      advisorId: ctx.user.id,
+      loan_tracks: loan_tracksWithType as any, // help it to match Prisma.JSON
+    };
+
     let lifeInsurance;
     if (id) {
       lifeInsurance = await ctx.prisma.lifeInsurance.update({
         where: { id },
-        data: values,
-        select: LifeInsuranceSchemaSelect,
+        data,
+        ...lifeInsuranceSchemaSelect,
       });
     } else {
       lifeInsurance = await ctx.prisma.lifeInsurance.create({
-        data: { ...values, advisorId: ctx.user.id },
-        select: LifeInsuranceSchemaSelect,
+        data: { ...data, advisorId: ctx.user.id },
+        ...lifeInsuranceSchemaSelect,
       });
     }
 
-    return lifeInsurance;
+    const { loan_tracks: loan_tracks_json, ...rest } = lifeInsurance;
+    return { ...rest, loan_tracks: LoanTracks.parse(loan_tracks_json) };
   });

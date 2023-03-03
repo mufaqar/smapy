@@ -1,7 +1,8 @@
 import type { z } from "zod";
 import { Box, VStack } from "@chakra-ui/react";
 import { api } from "../../../utils/api";
-import { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
+import type { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
+import { AdvisorUpdatePages } from "./advisor-registration-flow-schema";
 import React, { useState } from "react";
 import { Form } from "../../common/forms/Form";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
@@ -17,7 +18,7 @@ export const AdvisorRegistrationFlow = () => {
   const { t } = useTranslation("advisor");
   // const { data: sampleBankList } = api.advisor.sampleBankList.useQuery();
 
-  const wizard = useWizardFlow(AdvisorUpdateSchema, {
+  const wizard = useWizardFlow(AdvisorUpdatePages, {
     translate: t,
     onCompleteUrl: "/advisor/dashboard",
   });
