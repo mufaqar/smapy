@@ -6,7 +6,7 @@ import { callAsync } from "../../../../utils/call-async";
 import { forEach, map, uniq, uniqBy } from "rambda";
 import PMap from "../../../../utils/p-map";
 import fs from "fs";
-import { promises as fsp } from "fs";
+// import { promises as fsp } from "fs";
 
 const translationSchema = z.object({
   ns: z.string(),
@@ -20,24 +20,20 @@ type translationSchemaType = z.infer<typeof translationSchema>;
 let queue: translationSchemaType[] = [];
 let timeout: ReturnType<typeof setTimeout> | undefined;
 
-const updateMissing = async () => {
-  const loadNSData = async (lang: string, ns: string) => {
+const updateMissing = () => {
+  const loadNSData = (lang: string, ns: string) => {
     // console.log(`muly:loadNSData ${`./public/locales/${lang}/${ns}.json`}`, {
     //   pwd: process.cwd(),
     //   file: await fsp.readFile(`./public/locales/${lang}/${ns}.json`, "utf8"),
     //   ex: fs.existsSync(`./public/locales/${lang}/${ns}.json`),
     // });
     return JSON.parse(
-      await fsp.readFile(`./public/locales/${lang}/${ns}.json`, "utf8")
+      fs.readFileSync(`./public/locales/${lang}/${ns}.json`, "utf8")
     ) as TranslationData;
   };
-  const saveNSData = async (
-    lang: string,
-    ns: string,
-    nsData: TranslationData
-  ) => {
+  const saveNSData = (lang: string, ns: string, nsData: TranslationData) => {
     console.log(`muly:saveNSData`, { nsData });
-    await fsp.writeFile(
+    fs.writeFileSync(
       `./public/locales/${lang}/${ns}.json`,
       JSON.stringify(nsData, null, 2)
     );
@@ -60,6 +56,11 @@ const updateMissing = async () => {
     path.slice(0, path.length - 1).forEach((key) => {
       if (typeof obj !== "string") {
         if (!obj[key]) {
+          console.log(`muly:ADD:BRANCH FULL`, {
+            key,
+            path,
+            obj,
+          });
           obj[key] = {};
         }
         // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
@@ -74,12 +75,12 @@ const updateMissing = async () => {
     const tail = path[path.length - 1];
     // @ts-ignore
     if (tail && !obj[tail]) {
+      console.log(`muly:ADD:LEAF`, { tail, path, key: item.key, obj });
       // @ts-ignore
       obj[tail] = item.fallbackValue;
       changed = true;
     }
 
-    // console.log(`muly:ADD`, { tail, path, key: item.key, obj });
     return changed;
   };
 
@@ -94,17 +95,17 @@ const updateMissing = async () => {
     }, langs);
   }, uniq(map(({ ns }) => ns, q)));
 
-  await PMap(pairs, async ({ ns, lang }) => {
+  map(({ ns, lang }) => {
     let changed = false;
-    const nsData = await loadNSData(lang, ns);
+    const nsData = loadNSData(lang, ns);
     q.filter((item) => item.ns === ns).forEach((item) => {
-      changed = changed || appendMissingTranslation(nsData, item, lang);
+      changed = appendMissingTranslation(nsData, item, lang) || changed;
     });
 
     if (changed) {
-      await saveNSData(lang, ns, nsData);
+      saveNSData(lang, ns, nsData);
     }
-  });
+  }, pairs);
 };
 
 export const missingLanguageTranslation = publicProcedure
@@ -115,5 +116,5 @@ export const missingLanguageTranslation = publicProcedure
     }
     queue.push(input);
     clearTimeout(timeout);
-    timeout = setTimeout(callAsync(updateMissing), 5000);
+    timeout = setTimeout(updateMissing, 5000);
   });

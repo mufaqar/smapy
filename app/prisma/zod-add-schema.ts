@@ -30,7 +30,7 @@ export const LoanType = {
 
 export const LoanTrack = z.object({
   balance: z.number(),
-  endDate: z.date(),
+  endDate: z.coerce.date(),
   interest_rate: z.number(),
   interest_type: z.nativeEnum(InterestType),
   linkage_type: z.nativeEnum(LinkageType),

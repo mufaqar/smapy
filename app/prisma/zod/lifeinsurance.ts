@@ -15,7 +15,7 @@ export const lifeInsuranceModel = z.object({
   updatedAt: z.date().nullish(),
   statusDate: z.date().nullish(),
   advisorId: z.string(),
-  number_of_persons: z.number().int(),
+  number_of_customers: z.number().int(),
   loan_tracks_count: z.number().int().nullish(),
   same_address_mortgage: z.boolean().nullish(),
   property_city: z.string().nullish(),

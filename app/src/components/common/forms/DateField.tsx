@@ -10,6 +10,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import type { ZodMetaDataItem } from "../../../utils/zod-meta";
+import { SingleDatepicker } from "chakra-dayzed-datepicker";
 
 interface Props {
   controlName?: ZodMetaDataItem["control"];
@@ -31,15 +32,15 @@ export const DateField = (
 
   controlName = controlName || options?.control;
 
-  console.log(
-    `muly:DateField ${field.name} label:${label}, placeholder:${placeholder}`,
-    {
-      field,
-      label,
-      placeholder,
-      options,
-    }
-  );
+  // console.log(
+  //   `muly:DateField ${field.name} label:${label}, placeholder:${placeholder}`,
+  //   {
+  //     field,
+  //     label,
+  //     placeholder,
+  //     options,
+  //   }
+  // );
 
   let control;
   if (controlName === "Checkbox") {
@@ -53,6 +54,16 @@ export const DateField = (
       >
         {label}
       </Checkbox>
+    );
+  } else {
+    control = (
+      <SingleDatepicker
+        // maxW="sm"
+        // placeholder={placeholder}
+        name={field.name}
+        date={field.value || new Date()}
+        onDateChange={field.onChange}
+      />
     );
   }
 

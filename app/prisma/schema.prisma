@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["extendedWhereUnique"]
 }
 
 generator zod {
@@ -113,7 +114,7 @@ model lifeInsurance {
   advisorId String
   advisor   UserProfile @relation(fields: [advisorId], references: [id])
 
-  number_of_persons Int
+  number_of_customers Int @default(1)
 
   loan_tracks_count Int?
 
@@ -176,7 +177,7 @@ enum FamilyStatus {
 model customer {
   id String @id @default(dbgenerated("uuid_generate_v4()"))
 
-  userId      String?      @unique
+  userId      String?
   userProfile UserProfile? @relation(fields: [userId], references: [id])
 
   gender  Gender?

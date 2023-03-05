@@ -69,6 +69,7 @@ export const AdvisorRegistrationFlow = () => {
       wizard={wizard}
       handleSubmit={handleSubmit}
       recordData={recordData}
+      formData={recordData}
     />
   );
 };

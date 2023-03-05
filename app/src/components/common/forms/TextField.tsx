@@ -49,16 +49,16 @@ export const TextField = (
 
   controlName = controlName || meta?.control;
 
-  console.log(
-    `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
-    {
-      meta,
-      choices,
-      field,
-      label,
-      placeholder,
-    }
-  );
+  // console.log(
+  //   `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
+  //   {
+  //     meta,
+  //     choices,
+  //     field,
+  //     label,
+  //     placeholder,
+  //   }
+  // );
 
   let control;
   if (!choices) {
@@ -171,6 +171,7 @@ export const TextField = (
         placeholder={placeholder}
         value={field.value ? field.value + "" : ""}
         onChange={(e) => {
+          console.log(`muly:Select on change`, { e });
           field.onChange(e.target.value);
         }}
       >

@@ -26,6 +26,8 @@ export type ChoiceType = z.infer<typeof ChoiceSchema>;
 
 export type ControlCallback = (props: WizardControlProps) => React.ReactNode;
 
+export type ConditionCallback = (step: MetaInfo, data?: any) => boolean;
+
 export interface ZodMetaDataItem {
   name?: string;
   label?: string;
@@ -37,7 +39,7 @@ export interface ZodMetaDataItem {
   before?: React.ReactNode;
   after?: React.ReactNode;
 
-  condition?: (data: Record<string, unknown>) => boolean;
+  condition?: ConditionCallback;
 }
 
 declare module "zod" {
@@ -73,6 +75,8 @@ export interface MetaInfo {
   // type: z.AnyZodObject | ZodEffects<any, any>;
 
   typeName: string;
+
+  name: string;
 }
 
 export const getZodMetaInfo = <T extends ZodTypeAny>(
@@ -81,6 +85,9 @@ export const getZodMetaInfo = <T extends ZodTypeAny>(
 ): MetaInfo => {
   const getFullMeta = <T extends ZodTypeAny>(type: T): ZodMetaDataItem => {
     let desc = {};
+
+    // console.log(`muly:getFullMeta`, { type });
+
     const description = type.description;
     if (description) {
       const [label, ...rest] = description
@@ -93,7 +100,18 @@ export const getZodMetaInfo = <T extends ZodTypeAny>(
       };
     }
 
+    // not sure about the format pof choices for ZodEnum, tested only for ZodNativeEnum
+    const choices =
+      type._def.typeName === z.ZodFirstPartyTypeKind.ZodEnum ||
+      type._def.typeName === z.ZodFirstPartyTypeKind.ZodNativeEnum
+        ? Object.keys(type._def.values).map((key) => ({
+            id: key,
+            title: type._def.values[key],
+          }))
+        : undefined;
+
     return {
+      choices,
       name,
       ...type.metadata(),
       ...desc,
@@ -136,6 +154,7 @@ export const getZodMetaInfo = <T extends ZodTypeAny>(
       children,
       typeName: getInnerType(r),
       type,
+      name: name || "union",
     };
   } else if (r._def.typeName === "ZodObject") {
     const children: Record<string, MetaInfo> = {};
@@ -145,16 +164,18 @@ export const getZodMetaInfo = <T extends ZodTypeAny>(
     });
     // console.log(`muly:getZodMetaInfo CHILD`, { map: Object.keys(children) });
     return {
-      meta: getFullMeta(r),
+      meta: getFullMeta(type),
       children,
       typeName: getInnerType(r), // r._def.typeName,
       type,
+      name: name || "object",
     };
   } else {
     return {
       meta: getFullMeta(type),
       typeName: getInnerType(r),
       type,
+      name: name || "unknown",
     };
   }
 };

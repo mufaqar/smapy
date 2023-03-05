@@ -3,12 +3,12 @@ import React from "react";
 import type { WizardControlProps } from "./useWizardFlow";
 
 export const FormHeader = ({
-  wizard: { stepRange, step, metaInfo, onStepBack, currentStep },
+  wizard: { stepRange, step, meta, onStepBack, currentStep },
 }: WizardControlProps) => {
-  // console.log(`muly:FormHeader ${currentStep}`);
+  // console.log(`muly:FormHeader ${currentStep}:${step.meta.label}`, { meta });
   return (
     <>
-      <Box>{metaInfo.meta.label || null}</Box>
+      <Box>{meta.label || null}</Box>
       <Box width="100%" position="relative">
         <VStack px={12}>
           <Heading as="h1" size="xl" flexGrow={1}>
@@ -22,7 +22,7 @@ export const FormHeader = ({
           position="absolute"
           right={0}
           top={0}
-          onClick={onStepBack}
+          onClick={() => onStepBack()}
           isDisabled={currentStep === stepRange.start}
           alignSelf="end"
         >

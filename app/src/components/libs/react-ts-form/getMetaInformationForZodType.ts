@@ -5,7 +5,13 @@ import { getZodMetaInfo } from "../../../utils/zod-meta";
 export const SPLIT_DESCRIPTION_SYMBOL = " // ";
 
 export function getEnumValues(type: RTFSupportedZodTypes) {
-  if (!(type._def.typeName === z.ZodFirstPartyTypeKind.ZodEnum)) return;
+  if (
+    !(
+      type._def.typeName === z.ZodFirstPartyTypeKind.ZodEnum ||
+      type._def.typeName === z.ZodFirstPartyTypeKind.ZodNativeEnum
+    )
+  )
+    return;
   return type._def.values as readonly string[];
 }
 
@@ -30,7 +36,7 @@ export function getMetaInformationForZodType(type: RTFSupportedZodTypes) {
   const unwrapped = unwrap(type);
   const description = recursivelyGetDescription(type);
   return {
-    meta: getZodMetaInfo(type).meta,
+    meta: getZodMetaInfo(type),
     enumValues: getEnumValues(unwrapped.type),
   };
 }

@@ -50,14 +50,29 @@ export const translateSchemaInfo = (
   let tDesc = {};
 
   if (meta) {
-    const { label, placeholder, name, ...restDesc } = meta;
+    const { label, placeholder, name, choices, props, ...restDesc } = meta;
 
-    if (name) {
-      path = path ? [path, name].join(".") : name;
+    const translationKey = props?.translationKey || name;
+    if (translationKey) {
+      path = path ? [path, translationKey].join(".") : translationKey;
     }
 
     tDesc = {
       ...restDesc,
+      props,
+      choices: choices
+        ? choices.map((value) => {
+            if (typeof value === "string") {
+              return value;
+            } else {
+              return {
+                id: value.id,
+                title: translate(`${path}.choices.${value.id}`, value.title),
+              };
+            }
+          })
+        : choices,
+
       label: label && translate(`${path}.label`, label),
       placeholder: placeholder && translate(`${path}.placeholder`, placeholder),
     };

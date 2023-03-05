@@ -1,7 +1,9 @@
-import * as z from "zod";
+import { z } from "zod";
 import { protectedProcedure } from "../../trpc";
 import {
   CompletelifeInsurance,
+  CompletelifeInsuranceCustomer,
+  customerModel,
   lifeInsuranceCustomerModel,
   lifeInsuranceModel,
   RelatedlifeInsuranceCustomerModel,
@@ -14,18 +16,31 @@ import {
   optionalUuidSchema,
 } from "../../../../../prisma/zod-add-schema";
 import type { Prisma } from "@prisma/client";
+import { AdvisorUpdateSchema } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { map } from "rambda";
 
 const lifeInsuranceSchemaSelect = {
   include: {
-    lifeInsuranceCustomer: true,
+    lifeInsuranceCustomer: { include: { customer: true } },
   },
 } satisfies {
   include: Prisma.lifeInsuranceInclude;
 };
 
 const LifeInsuranceSchema = lifeInsuranceModel.extend({
-  lifeInsuranceCustomer: lifeInsuranceCustomerModel.array().nullish(),
+  lifeInsuranceCustomer: lifeInsuranceCustomerModel
+    .omit({ lifeInsuranceId: true, customerId: true })
+    .extend({
+      customerId: z.string().optional(),
+      customer: customerModel
+        .omit({ id: true, userId: true })
+        .extend({ id: optionalUuidSchema }),
+    })
+    .array()
+    .nullish(),
 });
+
+export type LifeInsuranceType = z.infer<typeof LifeInsuranceSchema>;
 
 export const getLifeInsurance = protectedProcedure
   .input(optionalUuidSchema)
@@ -49,42 +64,106 @@ export const getLifeInsurance = protectedProcedure
     });
 
     const { loan_tracks, ...data } = answer;
-    return { ...data, loan_tracks: LoanTracks.parse(loan_tracks) };
+    return {
+      ...data,
+      loan_tracks: loan_tracks ? LoanTracks.parse(loan_tracks) : [],
+    };
+  });
+
+export const createLifeInsurance = protectedProcedure
+  .input(lifeInsuranceModel.pick({ number_of_customers: true }))
+  .output(LifeInsuranceSchema)
+  .mutation(async ({ ctx, input }) => {
+    const lifeInsurance = await ctx.prisma.lifeInsurance.create({
+      data: { ...input, advisorId: ctx.user.id },
+      ...lifeInsuranceSchemaSelect,
+    });
+
+    const { loan_tracks: loan_tracks_json, ...rest } = lifeInsurance;
+    return {
+      ...rest,
+      loan_tracks: loan_tracks_json ? LoanTracks.parse(loan_tracks_json) : [],
+    };
   });
 
 export const updateLifeInsurance = protectedProcedure
-  .input(z.object({ values: LifeInsuranceSchema, id: optionalUuidSchema }))
+  .input(LifeInsuranceSchema)
   .output(LifeInsuranceSchema)
-  .mutation(async ({ ctx, input: { id, values } }) => {
-    if (!values) {
-      throw new TRPCError({ code: "BAD_REQUEST" });
-    }
+  .mutation(async ({ ctx, input }) => {
+    const { id, advisorId, lifeInsuranceCustomer, loan_tracks, ...save } =
+      input;
 
-    const { advisorId, lifeInsuranceCustomer, loan_tracks, ...sdata } = values;
+    const lifeInsuranceId = id;
+    const loan_tracksWithType = loan_tracks
+      ? LoanTracks.parse(loan_tracks)
+      : [];
 
-    const loan_tracksWithType = LoanTracks.parse(loan_tracks);
+    console.log(`muly:updateLifeInsurance 1`, {
+      lifeInsuranceCustomer,
+      updatelifeInsuranceCustomer: {
+        create: (lifeInsuranceCustomer || [])
+          .filter(({ customerId }) => !customerId)
+          .map(({ customerId, customer, sort }) => {
+            const { id, ...create } = customer;
+            return {
+              sort,
+              customer: { create },
+            };
+          }),
+        update: (lifeInsuranceCustomer || [])
+          .filter(({ customerId }) => customerId)
+          .map(({ customerId, customer, sort }) => {
+            const { id, ...update } = customer;
+            return {
+              where: {
+                lifeInsuranceId_customerId: {
+                  customerId: customerId!,
+                  lifeInsuranceId,
+                },
+              },
+              data: { sort, customer: { update } },
+            };
+          }),
+      },
+    });
 
-    // const l = [];
-    const data = {
-      ...sdata,
-      advisorId: ctx.user.id,
-      loan_tracks: loan_tracksWithType as any, // help it to match Prisma.JSON
-    };
-
-    let lifeInsurance;
-    if (id) {
-      lifeInsurance = await ctx.prisma.lifeInsurance.update({
-        where: { id },
-        data,
-        ...lifeInsuranceSchemaSelect,
-      });
-    } else {
-      lifeInsurance = await ctx.prisma.lifeInsurance.create({
-        data: { ...data, advisorId: ctx.user.id },
-        ...lifeInsuranceSchemaSelect,
-      });
-    }
+    const lifeInsurance = await ctx.prisma.lifeInsurance.update({
+      where: { id, advisorId: ctx.user.id },
+      data: {
+        ...save,
+        loan_tracks: loan_tracksWithType as any, // help it to match Prisma.JSON
+        lifeInsuranceCustomer: {
+          create: (lifeInsuranceCustomer || [])
+            .filter(({ customerId }) => !customerId)
+            .map(({ customerId, customer, sort }) => {
+              const { id, ...create } = customer;
+              return {
+                sort,
+                customer: { create },
+              };
+            }),
+          update: (lifeInsuranceCustomer || [])
+            .filter(({ customerId }) => customerId)
+            .map(({ customerId, customer, sort }) => {
+              const { id, ...update } = customer;
+              return {
+                where: {
+                  lifeInsuranceId_customerId: {
+                    customerId: customerId!,
+                    lifeInsuranceId,
+                  },
+                },
+                data: { sort, customer: { update } },
+              };
+            }),
+        },
+      },
+      ...lifeInsuranceSchemaSelect,
+    });
 
     const { loan_tracks: loan_tracks_json, ...rest } = lifeInsurance;
-    return { ...rest, loan_tracks: LoanTracks.parse(loan_tracks_json) };
+    return {
+      ...rest,
+      loan_tracks: loan_tracks_json ? LoanTracks.parse(loan_tracks_json) : [],
+    };
   });

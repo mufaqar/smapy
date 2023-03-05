@@ -9,7 +9,7 @@ import type { ErrorOption, NestedValue, UseFormReturn } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
 import type { AnyZodObject, z, ZodEffects } from "zod";
 import { getComponentForZodType } from "./getComponentForZodType";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import type {
   IndexOf,
   IndexOfUnwrapZodType,
@@ -30,6 +30,7 @@ import {
 import { ZodNullableType } from "zod/lib/types";
 import type { BrowserNativeObject } from "react-hook-form";
 import { getZodMetaInfo } from "../../../utils/zod-meta";
+import { formResolver } from "../../common/forms/form-resolver";
 
 export type PreprocessField = (
   name: string,
@@ -376,12 +377,12 @@ export function createTsForm<
     if (!!useFormResultInitialValue.current !== !!form) {
       throw new Error(useFormResultValueChangedErrorMesssage());
     }
-    const resolver = zodResolver(schema);
+    const resolver = formResolver(schema);
 
     const _form = (() => {
       if (form) return form;
 
-      console.log(`muly:FORM:defaultValues`, { defaultValues });
+      // console.log(`muly:FORM:defaultValues`, { defaultValues });
 
       const uf = useForm({
         resolver,
@@ -393,6 +394,7 @@ export function createTsForm<
     const { control, handleSubmit, setError } = _form;
     const _schema = unwrapEffects(schema);
     // console.log(`muly:createSchemaForm:Component`, { _schema });
+    // @ts-ignore
     const shape: Record<string, RTFSupportedZodTypes> = _schema._def.shape();
 
     const propsDesc = getZodMetaInfo(_schema).meta;
@@ -470,16 +472,16 @@ export function createTsForm<
                 [propsMap.enumValues]: meta.enumValues,
               }),
               ...(propsMap.descriptionLabel && {
-                [propsMap.descriptionLabel]: meta.meta.label,
+                [propsMap.descriptionLabel]: meta.meta.meta.label,
               }),
               ...(propsMap.descriptionPlaceholder && {
-                [propsMap.descriptionPlaceholder]: meta.meta?.placeholder,
+                [propsMap.descriptionPlaceholder]: meta.meta?.meta.placeholder,
               }),
               ...fieldProps,
             };
 
             // console.log(
-            //   `muly:mergedProps, good place to put hook to preprocess meta ${key}`,
+            //   `muly:mergedProps, ${key} good place to put hook to preprocess meta ${key}`,
             //   {
             //     preprocessField,
             //     fieldProps,
@@ -489,11 +491,26 @@ export function createTsForm<
             //   }
             // );
 
+            if (meta.meta?.meta.condition) {
+              const cond = meta.meta.meta?.condition(meta.meta, _form.watch());
+              // console.log(`muly:condition ${key} ${cond}`, {
+              //   meta,
+              //   cond,
+              //   _form: _form.watch(),
+              //   condition: meta.meta.meta?.condition,
+              // });
+
+              if (!cond) {
+                return null;
+              }
+            }
+
             const controlProps: any = {
               ...meta,
               ...mergedProps,
               ...fieldProps,
             };
+
             if (preprocessField) {
               preprocessField(key, _form, controlProps);
             }
@@ -514,7 +531,7 @@ export function createTsForm<
                   control={control}
                   name={key}
                   formContext={formContext}
-                  meta={meta.meta}
+                  meta={meta.meta.meta}
                   // label={ctxLabel}
                   // placeholder={ctxPlaceholder}
                   enumValues={enumValues as string[] | undefined}

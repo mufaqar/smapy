@@ -2,7 +2,7 @@ import { z } from "zod";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import type { MetaInfo, ControlCallback } from "../../../utils/zod-meta";
-import { getZodMetaInfo } from "../../../utils/zod-meta";
+import { ConditionCallback, getZodMetaInfo } from "../../../utils/zod-meta";
 import type { ZodEffects } from "zod";
 import type { TranslationFn } from "../../../utils/i18n-utils";
 import { translateSchemaInfo } from "../../../utils/i18n-utils";
@@ -17,11 +17,12 @@ import { map } from "rambda";
 const getPagesZodMetaInfo = (
   wizardPagesDefinition: WizardPagesDefinition
 ): MetaInfo => {
-  const { pages, ...meta } = wizardPagesDefinition;
+  const { pages, description, name, ...meta } = wizardPagesDefinition;
   return {
-    meta,
+    meta: { label: description, ...meta },
     children: map((page, name) => getZodMetaInfo(page, name), pages),
-    typeName: "wizard",
+    typeName: name || "wizard",
+    name: name || "wizard",
     type: z.undefined(),
   };
 };
@@ -30,6 +31,8 @@ interface UseWizardFlowOptions {
   onCompleteUrl: string;
 
   translate: TranslationFn;
+
+  recordData?: any;
 }
 
 export interface WizardPagesDefinition {
@@ -43,6 +46,7 @@ export const useWizardFlow = (
   pagesDefinition: WizardPagesDefinition,
   options: UseWizardFlowOptions
 ) => {
+  // console.log(`muly:useWizardFlow`, { options });
   const router = useRouter();
 
   const [currentStep, setCurrentStep] = useQueryState<number>("step", {
@@ -59,21 +63,23 @@ export const useWizardFlow = (
     }
   );
 
-  const steps = useMemo(() => {
+  const { steps, meta } = useMemo(() => {
     const stepsRaw = getPagesZodMetaInfo(pagesDefinition);
     const steps = translateSchemaInfo(stepsRaw, options.translate);
-    return steps;
+    const { children, meta } = steps;
+    return { steps: Object.values(steps.children || {}), meta };
   }, [options.translate, pagesDefinition]);
 
-  if (!steps.children) {
-    throw new Error("Not a union type");
+  if (!steps) {
+    throw new Error("No steps found");
   }
 
-  const step: MetaInfo | undefined = steps.children[currentStep];
+  const stepCount = steps.length;
+  const step: MetaInfo | undefined = steps[currentStep];
 
   if (!step) {
     throw new Error(
-      `Unexpected state currentStep: ${currentStep}/${steps.children.length}`
+      `Unexpected state currentStep: ${currentStep}/${stepCount}`
     );
   }
 
@@ -84,7 +90,7 @@ export const useWizardFlow = (
 
   const [stepRange, setStepRange] = useState<{ start: number; end: number }>({
     start: 0,
-    end: Object.keys(steps.children || {}).length - 1,
+    end: stepCount - 1,
   });
 
   const setStep = (stepIdx: number) => {
@@ -98,18 +104,36 @@ export const useWizardFlow = (
     );
   };
 
-  const onStepBack = () => {
-    console.log(`useWizardFlow:onStepBack`, { stepRange, currentStep });
-    setStep(currentStep - 1);
+  const onStepBack = async (data?: any) => {
+    await moveStep(-1, data);
   };
 
-  const onStepNext = async () => {
-    console.log(`useWizardFlow:onStepNext`, { stepRange, currentStep });
-    if (currentStep >= stepRange.end) {
+  const moveStep = async (direction: number, data?: any) => {
+    let idx = currentStep + direction;
+    while (
+      (direction > 0 || idx > stepRange.start) &&
+      (direction < 0 || idx < stepRange.end) &&
+      !evaluateStepCondition(steps[idx], data)
+    ) {
+      console.log(
+        `useWizardFlow:moveStep ${idx}:${steps[idx]?.name} ${direction} condition is false`,
+        {
+          idx,
+          step: steps[idx],
+          data,
+        }
+      );
+      idx += direction;
+    }
+    if (idx >= stepRange.end) {
       await router.push(options.onCompleteUrl);
     } else {
-      setStep(currentStep + 1);
+      setStep(idx);
     }
+  };
+
+  const onStepNext = async (data?: any) => {
+    await moveStep(1, data);
   };
 
   // console.log(`muly:useWizardFlow`, {
@@ -125,6 +149,12 @@ export const useWizardFlow = (
       `Invalid step ${currentStep}, schema type is ${step.typeName} and control is empty`
     );
   }
+
+  const evaluateStepCondition = (step?: MetaInfo, data?: any) => {
+    return step?.meta.condition
+      ? step.meta.condition(step, data || options.recordData)
+      : true;
+  };
 
   return {
     stepRange,
@@ -152,9 +182,10 @@ export const useWizardFlow = (
 
     control,
     step,
+    steps,
     currentStep,
     schema: step.type as z.AnyZodObject | ZodEffects<any, any>,
-    metaInfo: steps,
+    meta,
   };
 };
 
