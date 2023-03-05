@@ -27,7 +27,11 @@
     },
     "worker_type": {
       "label": "Are you",
-      "placeholder": "PlaceHolder"
+      "placeholder": "PlaceHolder",
+      "choices": {
+        "freelancer": "Freelancer",
+        "hired": "Hired"
+      }
     },
     "workplace_name": {
       "label": "Name of workplace",
@@ -1349,5 +1353,17 @@
   },
   "Invalid email": "Invalid email",
   "Expected date, received null": "Expected date, received null",
-  "Must approve all details are correct": "Must approve all details are correct"
+  "Must approve all details are correct": "Must approve all details are correct",
+  "uploadIdPicture": {
+    "label": "Identification",
+    "certificate_id_picture": {
+      "label": "Upload ID Picture"
+    },
+    "certificate_id_picture_later": {
+      "label": "Will upload ID later"
+    }
+  },
+  "registrationThanksPage": {
+    "label": "registrationThanksPage"
+  }
 }
