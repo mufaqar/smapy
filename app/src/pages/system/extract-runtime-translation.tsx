@@ -10,7 +10,7 @@ const ExtractRuntimeTranslation = () => {
   const { t: advisor } = useTranslation("advisor");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleExtract = async () => {
+  const handleExtract = () => {
     setIsLoading(true);
     const answer = extractRuntimeTranslation({ advisor });
     console.log(`extractRuntimeTranslation ${answer.message}`, { answer });
