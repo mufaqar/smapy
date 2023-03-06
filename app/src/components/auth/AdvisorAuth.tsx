@@ -7,6 +7,7 @@ import { OTPConfirmation } from "./OTPConfirmation";
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
 import { useTranslation } from "next-i18next";
+import { usePrepareSchema } from "../common/forms/usePrepareSchema";
 
 type RegisterValues =
   | z.infer<typeof schemaRegister>
@@ -19,6 +20,9 @@ interface Props {
 export const AdvisorAuth = ({ register }: Props) => {
   const { t } = useTranslation("advisor");
   const router = useRouter();
+
+  const schema = register ? schemaRegister : schemaSignin;
+  const formContext = usePrepareSchema(t, schema);
 
   const [authValues, setAuthValues] = useState<RegisterValues | null>(null);
   const { isLoading, session, error, supabaseClient } = useSessionContext();
@@ -73,8 +77,8 @@ export const AdvisorAuth = ({ register }: Props) => {
   } else {
     return (
       <Form
-        formContext={{ t }}
-        schema={register ? schemaRegister : schemaSignin}
+        formContext={formContext}
+        schema={schema}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit}
         props={{}}

@@ -1,0 +1,305 @@
+{
+  "register": {
+    "id_card_number": {
+      "validation": "[zzzzzzzzzzz]",
+      "label": "[zzzzzzzzzzzzzz]"
+    },
+    "phone": {
+      "validation": "[zzzzzzzzzzz]",
+      "label": "[zzzzzzzzzzzz]"
+    },
+    "label": "[zzzzzzzzzzzzzz]",
+    "first_name": {
+      "label": "[zzzzzzzzzz]"
+    },
+    "last_name": {
+      "label": "[zzzzzzzzz]"
+    }
+  },
+  "test": {
+    "layer1": {
+      "layer2": "[zzzzzzzzzzz]"
+    }
+  },
+  "test3": "[zzzzzzzzzzz]",
+  "": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz]"
+  },
+  "numberOfCustomers": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzz]",
+    "number_of_customers": {
+      "choices": {
+        "1": "[zzz]",
+        "2": "[zzz]"
+      },
+      "label": "[zzzzzzzzzzzzzzzzzz]"
+    }
+  },
+  "customerDetails1": {
+    "label": "[zzzzzzzzzzzzzzzz]",
+    "gender": {
+      "choices": {
+        "male": "[zzzz]",
+        "female": "[zzzzzz]"
+      },
+      "label": "[zzzzzz]"
+    },
+    "smoking": {
+      "choices": {
+        "yes": "[zzz]",
+        "no": "[zz]",
+        "stop": "[zzzzzzzzzzzzzzzzz]"
+      },
+      "label": "[zzzzzzzzzzzzzzzzzzzz]"
+    },
+    "smoking_stop_month": {
+      "label": "[zzzzzzzzzzzzzzzzzzzzzz]"
+    },
+    "first_name": {
+      "label": "[zzzzzzzzzz]"
+    },
+    "last_name": {
+      "label": "[zzzzzzzzzz]"
+    },
+    "family_status": {
+      "choices": {
+        "Single": "[zzzzzz]",
+        "Married": "[zzzzzzz]",
+        "Divorced": "[zzzzzzzz]",
+        "Separated": "[zzzzzzzzz]",
+        "Widowed": "[zzzzzzz]"
+      },
+      "label": "[zzzzzzzzzzzzz]"
+    },
+    "birthDate": {
+      "label": "[zzzzzzzzzzzzz]"
+    }
+  },
+  "customerDetails2": {
+    "label": "[zzzzzzzzzzzzzzz]",
+    "occupation": {
+      "label": "[zzzzzzzzzzzzzzzzzzz]"
+    },
+    "dangerous_hobby_has": {
+      "choices": {
+        "0": "[zz]",
+        "1": "[zzz]"
+      },
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzz]"
+    },
+    "dangerous_hobby": {
+      "label": "[zzzzz]"
+    },
+    "dangerous_hobby_desc": {
+      "label": "[zzzzzzzzzzzzzzzzz]"
+    }
+  },
+  "loanTracksCount": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzz]",
+    "loan_tracks_count": {
+      "choices": {
+        "1": "[z]",
+        "2": "[z]",
+        "3": "[z]",
+        "4": "[z]",
+        "5": "[z]",
+        "6": "[z]",
+        "7": "[z]",
+        "8": "[z]"
+      },
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzz]"
+    }
+  },
+  "loanTracks": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzz]",
+    "balance": {
+      "label": "[zzzzzzz]"
+    },
+    "endDate": {
+      "label": "[zzzzzzzzzzzzz]"
+    },
+    "interest_rate": {
+      "label": "[zzzzzzzzzzzzzzzzzzz]"
+    },
+    "interest_type": {
+      "choices": {
+        "fixed": "[zzzzz]",
+        "change": "[zzzzzz]"
+      },
+      "label": "[zzzzzzzzzzzzz]"
+    },
+    "linkage_type": {
+      "choices": {
+        "fixed": "[zzzzz]",
+        "cpi": "[zzz]",
+        "dollar": "[zzzzzz]"
+      },
+      "label": "[zzzzzzzzzzzz]"
+    },
+    "loan_type": {
+      "choices": {
+        "ballon": "[zzzzzz]",
+        "shpizer": "[zzzzzzz]",
+        "equal": "[zzzzz]"
+      },
+      "label": "[zzzzzzzzz]"
+    }
+  },
+  "customerMoreDetails": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzzzzz]",
+    "first_name": {
+      "label": "[zzzzzzzzzz]"
+    },
+    "last_name": {
+      "label": "[zzzzzzzzzz]"
+    },
+    "card_id": {
+      "label": "[zzzzzzz]"
+    },
+    "phone": {
+      "label": "[zzzzz]"
+    },
+    "email": {
+      "label": "[zzzzz]"
+    },
+    "city": {
+      "label": "[zzzzzzzzz]"
+    },
+    "street": {
+      "label": "[zzzzzz]"
+    },
+    "street_number": {
+      "label": "[zzzzzzzzzzzzz]"
+    },
+    "apartment_number": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    }
+  },
+  "mortgagePropertyAddress": {
+    "label": "[zzzzzzzzzzzzzzzz]",
+    "same_address_mortgage": {
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz]"
+    },
+    "property_city": {
+      "label": "[zzzzzzzzz]"
+    },
+    "property_street": {
+      "label": "[zzzzzz]"
+    },
+    "property_street_number": {
+      "label": "[zzzzzzzzzzzzz]"
+    },
+    "property_apartment_number": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    }
+  },
+  "insuranceDetails": {
+    "label": "[zzzzzzzzzzzzzzzzz]",
+    "insurance_start_date": {
+      "label": "[zzzzzzzzzzzzzzzzzzzz]"
+    },
+    "bank_name": {
+      "label": "[zzzz]",
+      "placeholder": "[zzzzzzzzz]"
+    },
+    "bank_number": {
+      "label": "[zzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzzzzz]"
+    },
+    "bank_branch": {
+      "label": "[zzzzzz]",
+      "placeholder": "[zzzzzzzzz]"
+    },
+    "bank_branch_number": {
+      "label": "[zzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzzzzzzz]"
+    }
+  },
+  "sendLinksToComplete": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzz]",
+    "email_customer1": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    },
+    "phone_customer1": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    },
+    "email_customer2": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    },
+    "phone_customer2": {
+      "label": "[zzzzzzzzzzzzzzzz]"
+    },
+    "details_approval": {
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz]"
+    }
+  },
+  "newInsuranceThanksPage": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzz]"
+  },
+  "knowTheAgent": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz]",
+    "placeholder": "[zzzzzzzzzzzzzzzzzzzzzzz]",
+    "years_experience": {
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzz]"
+    },
+    "worker_type": {
+      "choices": {
+        "freelancer": "[zzzzzzzzzz]",
+        "hired": "[zzzzz]"
+      },
+      "label": "[zzzzzzz]"
+    },
+    "workplace_name": {
+      "label": "[zzzzzzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzz]"
+    },
+    "number_of_files": {
+      "label": "[zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzz]"
+    }
+  },
+  "uploadIdPicture": {
+    "label": "[zzzzzzzzzzzzzz]",
+    "certificate_id_picture": {
+      "label": "[zzzzzzzzzzzzzzzzz]"
+    },
+    "certificate_id_picture_later": {
+      "label": "[zzzzzzzzzzzzzzzzzzzz]"
+    }
+  },
+  "bankDetails": {
+    "bank_name": {
+      "label": "[zzzz]",
+      "placeholder": "[zzzzzzzzz]"
+    },
+    "bank_number": {
+      "label": "[zzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzzzzz]"
+    },
+    "bank_branch": {
+      "label": "[zzzzzz]",
+      "placeholder": "[zzzzzzzzz]"
+    },
+    "bank_branch_number": {
+      "label": "[zzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzzzzzzz]"
+    },
+    "bank_account": {
+      "label": "[zzzzzzzzzzzzzz]",
+      "placeholder": "[zzzzzzzzzzzzzzzzz]"
+    },
+    "bank_details_later": {
+      "label": "[zzzzzzzzzzzzzzz]"
+    }
+  },
+  "agreeToTerms": {
+    "label": "[zzzzz]",
+    "signed_terms": {
+      "label": "[zzzzzzzzzzzzz]"
+    }
+  },
+  "registrationThanksPage": {
+    "label": "[zzzzzzzzzzzzzzzzzzzzzz]"
+  }
+}

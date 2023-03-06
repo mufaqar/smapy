@@ -1,16 +1,9 @@
-import type { z } from "zod";
-import { Box, VStack } from "@chakra-ui/react";
 import { api } from "../../../utils/api";
 import React, { useState } from "react";
-import { Form } from "../../common/forms/Form";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
-import type { UseFormReturn } from "react-hook-form";
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import { FormHeader } from "../../common/wizard/FormHeader";
 import { AdvisorNewLifeInsurancePages } from "./advisor-new-life-insurance-schema";
-import { WelcomePage } from "./WelcomePage";
-import { queryTypes, useQueryState, useQueryStates } from "next-usequerystate";
+import { useQueryState } from "next-usequerystate";
 import { WizardForm } from "../../common/wizard/WizardForm";
 import type { LifeInsuranceType } from "../../../server/api/routers/advisor/life-insurance";
 
@@ -165,7 +158,6 @@ export const AdvisorNewLifeInsuranceFlow = () => {
 
   return (
     <WizardForm
-      t={t}
       wizard={wizard}
       handleSubmit={handleSubmit}
       recordData={recordData}

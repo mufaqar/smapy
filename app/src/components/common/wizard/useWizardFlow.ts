@@ -14,7 +14,7 @@ import { map } from "rambda";
 // export type CustomControlDef = (props: WizardControlProps) => React.ReactNode;
 // export type CustomControlDefMap = { [key: string]: CustomControlDef };
 
-const getPagesZodMetaInfo = (
+export const getPagesZodMetaInfo = (
   wizardPagesDefinition: WizardPagesDefinition
 ): MetaInfo => {
   const { pages, description, name, ...meta } = wizardPagesDefinition;
@@ -186,6 +186,7 @@ export const useWizardFlow = (
     currentStep,
     schema: step.type as z.AnyZodObject | ZodEffects<any, any>,
     meta,
+    formContext: { t: options.translate, formMeta: step },
   };
 };
 

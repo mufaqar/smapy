@@ -14,7 +14,7 @@
     "run-admin-command-dbg": "env-cmd -f .env node --inspect-brk -r ts-node/register/transpile-only run-admin-command.ts",
     "get-env": "netlify env:list --json > .env-staging.json && zx ./scripts/netlify-env-json-to-dot-env.mjs --envName=staging",
     "set-env": "netlify env:import .env-staging",
-    "i18next-scan-translation": "../node_modules/.bin/i18next"
+    "i18next-scan-translation": "../node_modules/.bin/i18next && (cd ../scripts && node ./generate-zz-translation-files/generate-zz-translation-files.mjs) && echo OPEN http://localhost:3002/system/extract-runtime-translation"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
@@ -25,6 +25,7 @@
     "@hookform/resolvers": "^2.9.11",
     "@prisma/client": "^4.9.0",
     "@react-hook/debounce": "^4.0.0",
+    "@sentry/nextjs": "^7.40.0",
     "@supabase/auth-helpers-nextjs": "^0.5.4",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/supabase-js": "^2.7.1",

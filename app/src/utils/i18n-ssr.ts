@@ -8,6 +8,7 @@ export const i18nGetServerSideProps =
       ...(await serverSideTranslations(locale, nameSpaces, i18nConfig, [
         "en",
         "he",
+        "zz",
       ])),
     },
   });

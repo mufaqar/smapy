@@ -48,13 +48,13 @@ export const AdvisorRegistrationFlow = () => {
     await onStepNext();
   };
 
-  console.log(
-    `muly:AdvisorRegistrationFlow ${query.isSuccess} ${!!recordData}`,
-    {
-      recordData,
-      query,
-    }
-  );
+  // console.log(
+  //   `muly:AdvisorRegistrationFlow ${query.isSuccess} ${!!recordData}`,
+  //   {
+  //     recordData,
+  //     query,
+  //   }
+  // );
 
   const preprocessField = (name: string, form: UseFormReturn, props: any) => {
     // console.log(`muly:preprocessField ${name}`, { form, props });
@@ -65,7 +65,6 @@ export const AdvisorRegistrationFlow = () => {
 
   return (
     <WizardForm
-      t={t}
       wizard={wizard}
       handleSubmit={handleSubmit}
       recordData={recordData}

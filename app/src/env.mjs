@@ -9,12 +9,9 @@ const server = z.object({
   DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
   SUPABASE_SECRET_KEY: z.string(),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string(),
-  NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
   ADMIN_SECRET: z.string(),
   UI_URL: z.string().url(),
   SENDGRID_API_KEY: z.string(),
-  NEXT_PUBLIC_FLAGS_ENV_KEY: z.string(),
 });
 
 /**
@@ -23,6 +20,9 @@ const server = z.object({
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 const client = z.object({
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string(),
+  NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
+  NEXT_PUBLIC_FLAGS_ENV_KEY: z.string(),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 

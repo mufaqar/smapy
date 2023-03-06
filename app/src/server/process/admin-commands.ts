@@ -2,6 +2,7 @@ import { scratchPad } from "./scratch-pad";
 import { getFeaturesFlags } from "./get-features-flags";
 import { addSystemEvent } from "./system-events";
 import { castError } from "../../utils/errors";
+import { extractRuntimeTranslation } from "./extract-runtime-translation";
 
 export interface AdminCommandAnswer {
   message: string;
@@ -14,7 +15,14 @@ export const executeAdminCommand = async (
 ): Promise<AdminCommandAnswer> => {
   // console.log(`muly:executeAdminCommand`, { cmd, data });
 
-  if (cmd === "scratchPad") {
+  if (cmd === "system-info") {
+    return Promise.resolve({
+      message: "system-info",
+      results: {
+        env: process.env,
+      },
+    });
+  } else if (cmd === "scratchPad") {
     try {
       const answer = await scratchPad();
       return { message: "scratchPad", results: answer };

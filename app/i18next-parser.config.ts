@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default {
   input: ["src/**/*.ts", "src/**/*.tsx"],
   output: path.resolve(__dirname, "public/locales/$LOCALE/$NAMESPACE.json"),
-  locales: ["en", "he"],
+  locales: ["en", "he", "zz"],
   sort: true,
   verbose: true,
 

@@ -6,7 +6,7 @@ export const i18nConfig = {
   debug: process.env.NODE_ENV === "development",
   reloadOnPrerender: process.env.NODE_ENV === "development",
   i18n: {
-    locales: ["en", "he"],
+    locales: ["en", "he", "zz"],
     defaultLocale: process.env.NODE_ENV === "development" ? "en" : "he",
   },
   // ns: ['common'],

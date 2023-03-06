@@ -1,3 +1,9 @@
 {
-  "message": "scratchPad"
+  "message": "getFeaturesFlags",
+  "results": {
+    "flags": {
+      "enableBackdoorLogin": false
+    },
+    "sample": 1
+  }
 }

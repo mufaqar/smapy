@@ -9,11 +9,13 @@ import type {
 import { useController } from "react-hook-form";
 import { printUseEnumWarning } from "./logging";
 import { errorFromRhfErrorObject } from "./zodObjectErrors";
-import { ZodMetaDataItem } from "../../../utils/zod-meta";
+import { MetaInfo, ZodMetaDataItem } from "../../../utils/zod-meta";
 import { TranslationFn } from "../../../utils/i18n-utils";
 
 export interface FormContext {
   t: TranslationFn;
+
+  formMeta: MetaInfo;
 }
 
 export const FieldContext = createContext<null | {
@@ -22,7 +24,7 @@ export const FieldContext = createContext<null | {
   // label?: string;
   // placeholder?: string;
   formContext: FormContext;
-  meta?: ZodMetaDataItem;
+  meta: ZodMetaDataItem;
   enumValues?: string[];
   addToCoerceUndefined: (v: string) => void;
   removeFromCoerceUndefined: (v: string) => void;
@@ -43,7 +45,7 @@ export function FieldContextProvider({
   name: string;
   control: Control<any>;
   formContext: FormContext;
-  meta?: ZodMetaDataItem;
+  meta: ZodMetaDataItem;
   // label?: string;
   // placeholder?: string;
   enumValues?: string[];
@@ -170,7 +172,7 @@ export function requiredDescriptionDataNotPassedError(
  * ```
  * @returns `{label: string, placeholder: string}`
  */
-export function useMeta(): ZodMetaDataItem | undefined {
+export function useMeta(): ZodMetaDataItem {
   const { meta } = useContextProt("useReqDescription");
   return meta;
 }

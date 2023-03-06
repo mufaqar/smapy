@@ -1,7 +1,6 @@
 import { Box, VStack } from "@chakra-ui/react";
 import { FormHeader } from "./FormHeader";
 import { Form } from "../forms/Form";
-import Image from "next/image";
 import React from "react";
 import type { WizardControlProps } from "./useWizardFlow";
 import type { TranslationFn } from "../../../utils/i18n-utils";
@@ -10,8 +9,6 @@ import NoSSR from "react-no-ssr";
 import { Loading } from "../Loading";
 
 interface Props<T> extends WizardControlProps {
-  t: TranslationFn;
-
   recordData: T;
 
   formData: any;
@@ -26,9 +23,8 @@ export const WizardForm = ({
   handleSubmit,
   recordData,
   formData,
-  t,
 }: Props<any>) => {
-  const { schema, control, step } = wizard;
+  const { schema, control, step, formContext } = wizard;
 
   // console.log(`muly:WizardForm render`, { wizard, recordData });
 
@@ -48,7 +44,7 @@ export const WizardForm = ({
             control({ wizard })
           ) : (
             <Form
-              formContext={{ t }}
+              formContext={formContext}
               schema={schema}
               onSubmit={handleSubmit}
               // preprocessField={preprocessField}

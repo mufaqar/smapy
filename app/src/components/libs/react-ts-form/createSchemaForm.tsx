@@ -29,7 +29,11 @@ import {
 } from "./createFieldSchema";
 import { ZodNullableType } from "zod/lib/types";
 import type { BrowserNativeObject } from "react-hook-form";
-import { getZodMetaInfo } from "../../../utils/zod-meta";
+import {
+  getZodMetaInfo,
+  MetaInfo,
+  ZodMetaDataItem,
+} from "../../../utils/zod-meta";
 import { formResolver } from "../../common/forms/form-resolver";
 
 export type PreprocessField = (
@@ -461,22 +465,33 @@ export function createTsForm<
                 noMatchingSchemaErrorMessage(key, type._def.typeName)
               );
             }
-            const meta = getMetaInformationForZodType(type);
+
+            if (
+              !formContext.formMeta.children ||
+              !formContext.formMeta.children[key]
+            ) {
+              throw new Error(`Form error, not found meta info ${key}`);
+            }
+
+            const fieldMetaInfo: MetaInfo = formContext.formMeta.children[key]!;
+            const meta: ZodMetaDataItem = fieldMetaInfo.meta;
+
+            // const meta = getMetaInformationForZodType(type);
 
             const fieldProps = props && props[key] ? (props[key] as any) : {};
 
             const mergedProps = {
               ...(propsMap.name && { [propsMap.name]: key }),
               ...(propsMap.control && { [propsMap.control]: control }),
-              ...(propsMap.enumValues && {
-                [propsMap.enumValues]: meta.enumValues,
-              }),
-              ...(propsMap.descriptionLabel && {
-                [propsMap.descriptionLabel]: meta.meta.meta.label,
-              }),
-              ...(propsMap.descriptionPlaceholder && {
-                [propsMap.descriptionPlaceholder]: meta.meta?.meta.placeholder,
-              }),
+              // ...(propsMap.enumValues && {
+              //   [propsMap.enumValues]: meta.enumValues,
+              // }),
+              // ...(propsMap.descriptionLabel && {
+              //   [propsMap.descriptionLabel]: meta.meta.meta.label,
+              // }),
+              // ...(propsMap.descriptionPlaceholder && {
+              //   [propsMap.descriptionPlaceholder]: meta.meta?.meta.placeholder,
+              // }),
               ...fieldProps,
             };
 
@@ -491,8 +506,8 @@ export function createTsForm<
             //   }
             // );
 
-            if (meta.meta?.meta.condition) {
-              const cond = meta.meta.meta?.condition(meta.meta, _form.watch());
+            if (meta.condition) {
+              const cond = meta.condition(fieldMetaInfo, _form.watch());
               // console.log(`muly:condition ${key} ${cond}`, {
               //   meta,
               //   cond,
@@ -531,7 +546,7 @@ export function createTsForm<
                   control={control}
                   name={key}
                   formContext={formContext}
-                  meta={meta.meta.meta}
+                  meta={meta}
                   // label={ctxLabel}
                   // placeholder={ctxPlaceholder}
                   enumValues={enumValues as string[] | undefined}

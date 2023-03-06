@@ -1,5 +1,4 @@
 {
-  "AdvisorRegistrationFlow2": "DEF AdvisorRegistrationFlow",
   "register": {
     "id_card_number": {
       "validation": "*TRANSLATE*",
@@ -9,263 +8,12 @@
       "validation": "*TRANSLATE*",
       "label": "Phone Number"
     },
-    "label": "Complete missing details",
+    "label": "schemaRegister",
     "first_name": {
       "label": "First Name"
     },
     "last_name": {
       "label": "Last Name"
-    }
-  },
-  "schemaRegister": "schemaRegister",
-  "knowTheAgent": {
-    "label": "Partnership start with a good recognition",
-    "placeholder": "Some of your experience",
-    "years_experience": {
-      "label": "Advisory years of experience",
-      "placeholder": "Years..."
-    },
-    "worker_type": {
-      "label": "Are you",
-      "placeholder": "PlaceHolder",
-      "choices": {
-        "freelancer": "Freelancer",
-        "hired": "Hired"
-      }
-    },
-    "workplace_name": {
-      "label": "Name of workplace",
-      "placeholder": "Name..."
-    },
-    "number_of_files": {
-      "label": "Number of files a month (Optional)",
-      "placeholder": "Average...,"
-    }
-  },
-  "certificate_id_picture": {
-    "label": "Upload ID Picture"
-  },
-  "certificate_id_picture_later": {
-    "label": "Will upload ID later"
-  },
-  "bankDetails": {
-    "label": "Where to deposit your money?",
-    "bank_name": {
-      "label": "Bank",
-      "placeholder": "Bank name"
-    },
-    "bank_number": {
-      "label": "Bank Number",
-      "placeholder": "Bank Number..."
-    },
-    "bank_branch": {
-      "label": "Branch",
-      "placeholder": "Branch..."
-    },
-    "bank_branch_number": {
-      "label": "Branch Number",
-      "placeholder": "Branch Number..."
-    },
-    "bank_account": {
-      "label": "Account Number",
-      "placeholder": "Account Number..."
-    },
-    "bank_details_later": {
-      "label": "Will fill later"
-    }
-  },
-  "agreeToTerms": {
-    "label": "Terms",
-    "signed_terms": {
-      "label": "Confirm terms"
-    }
-  },
-  "dummySchemaThanks": {
-    "label": "thanksPage"
-  },
-  "Complete missing details": "Complete missing details",
-  "Partnership start with a good recognition": "Partnership start with a good recognition",
-  "Some of your experience": "Some of your experience",
-  "Where to deposit your money?": "Where to deposit your money?",
-  "Terms": "Terms",
-  "thanksPage": "thanksPage",
-  "thanksPage-v2": "thanksPage-v2",
-  "AdvisorUpdateSchema": {
-    "register": {
-      "label": "Complete missing details",
-      "first_name": {
-        "label": "First Name"
-      },
-      "last_name": {
-        "label": "Last Name"
-      }
-    },
-    "knowTheAgent": {
-      "label": "Partnership start with a good recognition",
-      "placeholder": "Some of your experience",
-      "years_experience": {
-        "label": "Advisory years of experience",
-        "placeholder": "Years..."
-      },
-      "worker_type": {
-        "label": "Are you",
-        "placeholder": "PlaceHolder"
-      },
-      "workplace_name": {
-        "label": "Name of workplace",
-        "placeholder": "Name..."
-      },
-      "number_of_files": {
-        "label": "Number of files a month (Optional)",
-        "placeholder": "Average...,"
-      }
-    },
-    "certificate_id_picture": {
-      "label": "Upload ID Picture"
-    },
-    "certificate_id_picture_later": {
-      "label": "Will upload ID later"
-    },
-    "bankDetails": {
-      "label": "Where to deposit your money?",
-      "bank_name": {
-        "label": "Bank",
-        "placeholder": "Bank name"
-      },
-      "bank_number": {
-        "label": "Bank Number",
-        "placeholder": "Bank Number..."
-      },
-      "bank_branch": {
-        "label": "Branch",
-        "placeholder": "Branch..."
-      },
-      "bank_branch_number": {
-        "label": "Branch Number",
-        "placeholder": "Branch Number..."
-      },
-      "bank_account": {
-        "label": "Account Number",
-        "placeholder": "Account Number..."
-      },
-      "bank_details_later": {
-        "label": "Will fill later"
-      }
-    },
-    "agreeToTerms": {
-      "label": "Terms",
-      "signed_terms": {
-        "label": "Confirm terms"
-      }
-    },
-    "dummySchemaThanks": {
-      "label": "thanksPage"
-    }
-  },
-  "AdvisorRegistrationFlow": {
-    "label": "Registration",
-    "register": {
-      "label": "Complete missing details",
-      "first_name": {
-        "label": "First Name"
-      },
-      "last_name": {
-        "label": "Last Name"
-      }
-    },
-    "knowTheAgent": {
-      "label": "Partnership start with a good recognition",
-      "placeholder": "Some of your experience",
-      "years_experience": {
-        "label": "Advisory years of experience",
-        "placeholder": "Years..."
-      },
-      "worker_type": {
-        "label": "Are you",
-        "placeholder": "PlaceHolder",
-        "choices": {
-          "freelancer": "Freelancer",
-          "hired": "Hired"
-        }
-      },
-      "workplace_name": {
-        "label": "Name of workplace",
-        "placeholder": "Name..."
-      },
-      "number_of_files": {
-        "label": "Number of files a month (Optional)",
-        "placeholder": "Average...,"
-      }
-    },
-    "certificate_id_picture": {
-      "label": "Upload ID Picture"
-    },
-    "certificate_id_picture_later": {
-      "label": "Will upload ID later"
-    },
-    "bankDetails": {
-      "label": "Where to deposit your money?",
-      "bank_name": {
-        "label": "Bank",
-        "placeholder": "Bank name"
-      },
-      "bank_number": {
-        "label": "Bank Number",
-        "placeholder": "Bank Number..."
-      },
-      "bank_branch": {
-        "label": "Branch",
-        "placeholder": "Branch..."
-      },
-      "bank_branch_number": {
-        "label": "Branch Number",
-        "placeholder": "Branch Number..."
-      },
-      "bank_account": {
-        "label": "Account Number",
-        "placeholder": "Account Number..."
-      },
-      "bank_details_later": {
-        "label": "Will fill later"
-      }
-    },
-    "agreeToTerms": {
-      "label": "Terms",
-      "signed_terms": {
-        "label": "Confirm terms"
-      }
-    },
-    "dummySchemaThanks": {
-      "label": "thanksPage"
-    },
-    "registrationThanksPage": {
-      "label": "registrationThanksPage"
-    },
-    "uploadIdPicture": {
-      "certificate_id_picture": {
-        "label": "Upload ID Picture"
-      },
-      "certificate_id_picture_later": {
-        "label": "Will upload ID later"
-      }
-    }
-  },
-  "Registration": "Registration",
-  "AdvisorNewLifeInsuranceSchema": {
-    "label": "New Life Insurance for Mortgage",
-    "dummySchemaWelcome": {
-      "label": "welcomePage"
-    },
-    "number_of_persons": {
-      "label": "How many persons"
-    },
-    "newInsuranceThanksPage": {
-      "label": "newInsuranceThanksPage"
-    },
-    "personDetails1": {
-      "gender": {
-        "label": "Gender"
-      }
     }
   },
   "test": {
@@ -274,654 +22,9 @@
     }
   },
   "test3": "Test 3 - default test",
-  "AdvisorNewLifeInsurance": {
-    "dummySchemaWelcome": {
-      "label": "welcomePage"
-    },
-    "numberOfPersons": {
-      "number_of_persons": {
-        "label": "How many persons"
-      }
-    },
-    "person1_details1": {
-      "gender": {
-        "label": "Gender"
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?"
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      }
-    },
-    "person1_details2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?"
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      }
-    },
-    "person2_details1": {
-      "gender": {
-        "label": "Gender"
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?"
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      }
-    },
-    "person2_details2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?"
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      }
-    },
-    "loanTracksCount": {
-      "loan_tracks_count": {
-        "label": "How many mortgage path?",
-        "choices": {
-          "1": "1",
-          "2": "2",
-          "3": "3",
-          "4": "4",
-          "5": "5",
-          "6": "6",
-          "7": "7",
-          "8": "8"
-        }
-      },
-      "label": "General Details"
-    },
-    "track1": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track2": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track3": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track4": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track5": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track6": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track7": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track8": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "track9": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type"
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "personMoreDetails": {
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "card_id": {
-        "label": "Card ID"
-      },
-      "phone": {
-        "label": "Phone"
-      },
-      "email": {
-        "label": "Email"
-      },
-      "city": {
-        "label": "City name"
-      },
-      "street": {
-        "label": "Street"
-      },
-      "street_number": {
-        "label": "Street Number"
-      },
-      "apartment_number": {
-        "label": "Apartment Number"
-      },
-      "same_address_mortgage": {
-        "label": "Same address for mortgage property?"
-      }
-    },
-    "mortgagePropertyAddress": {
-      "property_city": {
-        "label": "City name"
-      },
-      "property_street": {
-        "label": "Street"
-      },
-      "property_street_number": {
-        "label": "Street Number"
-      },
-      "property_apartment_number": {
-        "label": "Apartment Number"
-      }
-    },
-    "insuranceDetails": {
-      "insurance_start_date": {
-        "label": "Insurance start date"
-      },
-      "bank_name": {
-        "label": "Bank",
-        "placeholder": "Bank name"
-      },
-      "bank_number": {
-        "label": "Bank Number",
-        "placeholder": "Bank Number..."
-      },
-      "bank_branch": {
-        "label": "Branch",
-        "placeholder": "Branch..."
-      },
-      "bank_branch_number": {
-        "label": "Branch Number",
-        "placeholder": "Branch Number..."
-      },
-      "label": "Complete Personal Details"
-    },
-    "sendLinksToComplete": {
-      "email_customer1": {
-        "label": "Email customer 1"
-      },
-      "phone_customer1": {
-        "label": "Phone customer 1"
-      },
-      "email_customer2": {
-        "label": "Email customer 2"
-      },
-      "phone_customer2": {
-        "label": "Phone customer 2"
-      },
-      "details_approval": {
-        "label": "I confirm all details are correct and complete"
-      },
-      "label": "Send links to complete"
-    },
-    "newInsuranceThanksPage": {
-      "label": "newInsuranceThanksPage"
-    },
-    "numberOfCustomers": {
-      "number_of_customers": {
-        "label": "How many customers",
-        "choices": {
-          "1": "One",
-          "2": "Two"
-        }
-      },
-      "label": "How does it work"
-    },
-    "customer1_details1": {
-      "gender": {
-        "label": "Gender"
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?"
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      }
-    },
-    "customer1_details2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?"
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      }
-    },
-    "customer2_details1": {
-      "gender": {
-        "label": "Gender"
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?"
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      }
-    },
-    "customer2_details2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?"
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      }
-    },
-    "customerMoreDetails": {
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "card_id": {
-        "label": "Card ID"
-      },
-      "phone": {
-        "label": "Phone"
-      },
-      "email": {
-        "label": "Email"
-      },
-      "city": {
-        "label": "City name"
-      },
-      "street": {
-        "label": "Street"
-      },
-      "street_number": {
-        "label": "Street Number"
-      },
-      "apartment_number": {
-        "label": "Apartment Number"
-      },
-      "same_address_mortgage": {
-        "label": "Same address for mortgage property?"
-      },
-      "label": "Results"
-    },
-    "customer0_details1": {
-      "gender": {
-        "label": "Gender"
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?"
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      }
-    },
-    "customer0_details2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?"
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      }
-    },
-    "track0": {
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "label": "Interest Type"
-      },
-      "linkage_type": {
-        "label": "Linkage Type",
-        "choices": {
-          "fixed": "fixed",
-          "change": "change"
-        }
-      },
-      "loan_type": {
-        "label": "Loan Type"
-      }
-    },
-    "loanTracks": {
-      "linkage_type": {
-        "choices": {
-          "fixed": "fixed",
-          "change": "change",
-          "cpi": "cpi",
-          "dollar": "dollar"
-        },
-        "label": "Linkage Type"
-      },
-      "balance": {
-        "label": "Balance"
-      },
-      "endDate": {
-        "label": "Loan end Date"
-      },
-      "interest_rate": {
-        "label": "Interest percentage"
-      },
-      "interest_type": {
-        "choices": {
-          "fixed": "fixed",
-          "change": "change"
-        },
-        "label": "Interest Type"
-      },
-      "loan_type": {
-        "choices": {
-          "ballon": "ballon",
-          "shpizer": "shpizer",
-          "equal": "equal"
-        },
-        "label": "Loan Type"
-      },
-      "label": "Select mortgage track count"
-    },
-    "customerDetails1": {
-      "gender": {
-        "label": "Gender",
-        "choices": {
-          "male": "Male",
-          "female": "Female"
-        }
-      },
-      "smoking": {
-        "label": "Smoked last 2 years?",
-        "choices": {
-          "yes": "Yes",
-          "no": "No",
-          "stop": "Stop Last 2 Years"
-        }
-      },
-      "smoking_stop_month": {
-        "label": "How long ago you stop?"
-      },
-      "first_name": {
-        "label": "First name"
-      },
-      "last_name": {
-        "label": "First name"
-      },
-      "family_status": {
-        "choices": {
-          "Single": "Single",
-          "Married": "Married",
-          "Divorced": "Divorced",
-          "Separated": "Separated",
-          "Widowed": "Widowed"
-        },
-        "label": "Family Status"
-      },
-      "birthDate": {
-        "label": "Date of birth"
-      },
-      "label": "Choose number of customers"
-    },
-    "customerDetails2": {
-      "occupation": {
-        "label": "Customer occupation"
-      },
-      "dangerous_hobby_has": {
-        "label": "Customer has dangerous hobby?",
-        "choices": {
-          "0": "No",
-          "1": "Yes"
-        }
-      },
-      "dangerous_hobby": {
-        "label": "Hobby"
-      },
-      "dangerous_hobby_desc": {
-        "label": "Hobby Description"
-      },
-      "label": "General Details"
-    }
+  "": {
+    "label": "New Life Insurance for Mortgage"
   },
-  "Bank name is required": "Bank name is required",
-  "Required": "Required",
-  "Expected number, received string": "Expected number, received string",
-  "Expected number, received nan": "Expected number, received nan",
-  "Expected string, received null": "Expected string, received null",
-  "Number must be greater than or equal to 1": "Number must be greater than or equal to 1",
   "numberOfCustomers": {
     "label": "Choose number of customers",
     "number_of_customers": {
@@ -1040,36 +143,6 @@
         "equal": "equal"
       },
       "label": "Loan Type"
-    },
-    "first_name": {
-      "label": "First name"
-    },
-    "last_name": {
-      "label": "First name"
-    },
-    "card_id": {
-      "label": "Card ID"
-    },
-    "phone": {
-      "label": "Phone"
-    },
-    "email": {
-      "label": "Email"
-    },
-    "city": {
-      "label": "City name"
-    },
-    "street": {
-      "label": "Street"
-    },
-    "street_number": {
-      "label": "Street Number"
-    },
-    "apartment_number": {
-      "label": "Apartment Number"
-    },
-    "same_address_mortgage": {
-      "label": "Same address for mortgage property?"
     }
   },
   "customerMoreDetails": {
@@ -1100,12 +173,13 @@
     },
     "apartment_number": {
       "label": "Apartment Number"
-    },
-    "same_address_mortgage": {
-      "label": "Same address for mortgage property?"
     }
   },
   "mortgagePropertyAddress": {
+    "label": "Property Address",
+    "same_address_mortgage": {
+      "label": "Same address for mortgage property?"
+    },
     "property_city": {
       "label": "City name"
     },
@@ -1117,11 +191,7 @@
     },
     "property_apartment_number": {
       "label": "Apartment Number"
-    },
-    "same_address_mortgage": {
-      "label": "Same address for mortgage property?"
-    },
-    "label": "Property Address"
+    }
   },
   "insuranceDetails": {
     "label": "Insurance details",
@@ -1166,194 +236,29 @@
   "newInsuranceThanksPage": {
     "label": "newInsuranceThanksPage"
   },
-  "": {
-    "label": "New Life Insurance for Mortgage"
-  },
-  "customer0_details1": {
-    "gender": {
+  "knowTheAgent": {
+    "label": "Partnership start with a good recognition",
+    "placeholder": "Some of your experience",
+    "years_experience": {
+      "label": "Advisory years of experience",
+      "placeholder": "Years..."
+    },
+    "worker_type": {
       "choices": {
-        "male": "Male",
-        "female": "Female"
+        "freelancer": "Freelancer",
+        "hired": "Hired"
       },
-      "label": "Gender"
+      "label": "Are you"
     },
-    "smoking": {
-      "choices": {
-        "yes": "Yes",
-        "no": "No",
-        "stop": "Stop Last 2 Years"
-      },
-      "label": "Smoked last 2 years?"
+    "workplace_name": {
+      "label": "Name of workplace",
+      "placeholder": "Name..."
     },
-    "smoking_stop_month": {
-      "label": "How long ago you stop?"
-    },
-    "first_name": {
-      "label": "First name"
-    },
-    "last_name": {
-      "label": "First name"
-    },
-    "family_status": {
-      "choices": {
-        "Single": "Single",
-        "Married": "Married",
-        "Divorced": "Divorced",
-        "Separated": "Separated",
-        "Widowed": "Widowed"
-      },
-      "label": "Family Status"
-    },
-    "birthDate": {
-      "label": "Date of birth"
+    "number_of_files": {
+      "label": "Number of files a month (Optional)",
+      "placeholder": "Average...,"
     }
   },
-  "customer1_details1": {
-    "gender": {
-      "choices": {
-        "male": "Male",
-        "female": "Female"
-      },
-      "label": "Gender"
-    },
-    "smoking": {
-      "choices": {
-        "yes": "Yes",
-        "no": "No",
-        "stop": "Stop Last 2 Years"
-      },
-      "label": "Smoked last 2 years?"
-    },
-    "smoking_stop_month": {
-      "label": "How long ago you stop?"
-    },
-    "first_name": {
-      "label": "First name"
-    },
-    "last_name": {
-      "label": "First name"
-    },
-    "family_status": {
-      "choices": {
-        "Single": "Single",
-        "Married": "Married",
-        "Divorced": "Divorced",
-        "Separated": "Separated",
-        "Widowed": "Widowed"
-      },
-      "label": "Family Status"
-    },
-    "birthDate": {
-      "label": "Date of birth"
-    }
-  },
-  "Please select how many month ago stopped to smoke": "Please select how many month ago stopped to smoke",
-  "customer0_details2": {
-    "occupation": {
-      "label": "Customer occupation"
-    },
-    "dangerous_hobby_has": {
-      "choices": {
-        "0": "No",
-        "1": "Yes"
-      },
-      "label": "Customer has dangerous hobby?"
-    },
-    "dangerous_hobby": {
-      "label": "Hobby"
-    },
-    "dangerous_hobby_desc": {
-      "label": "Hobby Description"
-    }
-  },
-  "customer1_details2": {
-    "occupation": {
-      "label": "Customer occupation"
-    },
-    "dangerous_hobby_has": {
-      "choices": {
-        "0": "No",
-        "1": "Yes"
-      },
-      "label": "Customer has dangerous hobby?"
-    },
-    "dangerous_hobby": {
-      "label": "Hobby"
-    },
-    "dangerous_hobby_desc": {
-      "label": "Hobby Description"
-    }
-  },
-  "Please fill dangerous hobby": "Please fill dangerous hobby",
-  "customer0_moreDetails": {
-    "label": "Complete Personal Details",
-    "first_name": {
-      "label": "First name"
-    },
-    "last_name": {
-      "label": "First name"
-    },
-    "card_id": {
-      "label": "Card ID"
-    },
-    "phone": {
-      "label": "Phone"
-    },
-    "email": {
-      "label": "Email"
-    },
-    "city": {
-      "label": "City name"
-    },
-    "street": {
-      "label": "Street"
-    },
-    "street_number": {
-      "label": "Street Number"
-    },
-    "apartment_number": {
-      "label": "Apartment Number"
-    },
-    "same_address_mortgage": {
-      "label": "Same address for mortgage property?"
-    }
-  },
-  "customer1_moreDetails": {
-    "label": "Complete Personal Details",
-    "first_name": {
-      "label": "First name"
-    },
-    "last_name": {
-      "label": "First name"
-    },
-    "card_id": {
-      "label": "Card ID"
-    },
-    "phone": {
-      "label": "Phone"
-    },
-    "email": {
-      "label": "Email"
-    },
-    "city": {
-      "label": "City name"
-    },
-    "street": {
-      "label": "Street"
-    },
-    "street_number": {
-      "label": "Street Number"
-    },
-    "apartment_number": {
-      "label": "Apartment Number"
-    },
-    "same_address_mortgage": {
-      "label": "Same address for mortgage property?"
-    }
-  },
-  "Invalid email": "Invalid email",
-  "Expected date, received null": "Expected date, received null",
-  "Must approve all details are correct": "Must approve all details are correct",
   "uploadIdPicture": {
     "label": "Identification",
     "certificate_id_picture": {
@@ -1363,7 +268,47 @@
       "label": "Will upload ID later"
     }
   },
+  "bankDetails": {
+    "bank_name": {
+      "label": "Bank",
+      "placeholder": "Bank name"
+    },
+    "bank_number": {
+      "label": "Bank Number",
+      "placeholder": "Bank Number..."
+    },
+    "bank_branch": {
+      "label": "Branch",
+      "placeholder": "Branch..."
+    },
+    "bank_branch_number": {
+      "label": "Branch Number",
+      "placeholder": "Branch Number..."
+    },
+    "bank_account": {
+      "label": "Account Number",
+      "placeholder": "Account Number..."
+    },
+    "bank_details_later": {
+      "label": "Will fill later"
+    }
+  },
+  "agreeToTerms": {
+    "label": "Terms",
+    "signed_terms": {
+      "label": "Confirm terms"
+    }
+  },
   "registrationThanksPage": {
     "label": "registrationThanksPage"
-  }
+  },
+  "How many customers": "How many customers",
+  "Balance": "Balance",
+  "Interest percentage": "Interest percentage",
+  "Interest Type": "Interest Type",
+  "Linkage Type": "Linkage Type",
+  "Loan Type": "Loan Type",
+  "Required": "Required",
+  "Expected number, received nan": "Expected number, received nan",
+  "Please select how many month ago stopped to smoke": "Please select how many month ago stopped to smoke"
 }
