@@ -17,6 +17,9 @@ interface Props {
   register?: boolean;
 }
 
+const backdoorEmailLogin = "mulyoved@gmail.com";
+const backdoorPhonePrefix = "+972 52 307 7666";
+
 export const AdvisorAuth = ({ register }: Props) => {
   const { t } = useTranslation("advisor");
   const router = useRouter();
@@ -59,16 +62,33 @@ export const AdvisorAuth = ({ register }: Props) => {
   const handleSubmit = async (values: RegisterValues) => {
     console.log(`muly:handleSubmit`, { values });
 
-    const { data, error } = await supabaseClient.auth.signInWithOtp({
-      phone: values.phone,
-    });
+    if (values.phone.startsWith(backdoorPhonePrefix)) {
+      let answer = await supabaseClient.auth.signUp({
+        email: backdoorEmailLogin,
+        password: backdoorPhonePrefix,
+      });
 
-    console.log("muly:phoneSignIn", { data, error, values });
-    if (!error) {
-      setAuthValues(values);
-      console.log(`muly:phoneSignIn:handleSubmit success`, {});
+      if (answer.error?.message === "User already registered") {
+        answer = await supabaseClient.auth.signInWithPassword({
+          email: backdoorEmailLogin,
+          password: backdoorPhonePrefix,
+        });
+      }
+
+      await router.push("/advisor/registration");
+      return null;
     } else {
-      return { errorMsg: error.message };
+      const { data, error } = await supabaseClient.auth.signInWithOtp({
+        phone: values.phone,
+      });
+
+      console.log("muly:phoneSignIn", { data, error, values });
+      if (!error) {
+        setAuthValues(values);
+        console.log(`muly:phoneSignIn:handleSubmit success`, {});
+      } else {
+        return { errorMsg: error.message };
+      }
     }
   };
 

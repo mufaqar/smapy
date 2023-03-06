@@ -302,13 +302,5 @@
   "registrationThanksPage": {
     "label": "registrationThanksPage"
   },
-  "How many customers": "How many customers",
-  "Balance": "Balance",
-  "Interest percentage": "Interest percentage",
-  "Interest Type": "Interest Type",
-  "Linkage Type": "Linkage Type",
-  "Loan Type": "Loan Type",
-  "Required": "Required",
-  "Expected number, received nan": "Expected number, received nan",
-  "Please select how many month ago stopped to smoke": "Please select how many month ago stopped to smoke"
+  "Not a valid phone number": "Not a valid phone number"
 }

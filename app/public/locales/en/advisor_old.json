@@ -8,6 +8,7 @@
       "label": "Confirm terms"
     }
   },
+  "Balance": "Balance",
   "bankDetails": {
     "bank_account": {
       "label": "Account Number",
@@ -122,6 +123,8 @@
       "label": "Street Number"
     }
   },
+  "Expected number, received nan": "Expected number, received nan",
+  "How many customers": "How many customers",
   "insuranceDetails": {
     "bank_branch": {
       "label": "Branch",
@@ -144,6 +147,8 @@
     },
     "label": "Insurance details"
   },
+  "Interest percentage": "Interest percentage",
+  "Interest Type": "Interest Type",
   "knowTheAgent": {
     "label": "Partnership start with a good recognition",
     "number_of_files": {
@@ -167,6 +172,8 @@
       "placeholder": "Years..."
     }
   },
+  "Linkage Type": "Linkage Type",
+  "Loan Type": "Loan Type",
   "loanTracks": {
     "balance": {
       "label": "Balance"
@@ -249,6 +256,7 @@
       "label": "How many customers"
     }
   },
+  "Please select how many month ago stopped to smoke": "Please select how many month ago stopped to smoke",
   "register": {
     "first_name": {
       "label": "First Name"
@@ -256,7 +264,7 @@
     "id_card_number": {
       "label": "ID Card Number"
     },
-    "label": "Complete missing details",
+    "label": "schemaRegister",
     "last_name": {
       "label": "Last Name"
     },
@@ -267,6 +275,7 @@
   "registrationThanksPage": {
     "label": "registrationThanksPage"
   },
+  "Required": "Required",
   "sendLinksToComplete": {
     "details_approval": {
       "label": "I confirm all details are correct and complete"

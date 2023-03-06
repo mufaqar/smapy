@@ -828,6 +828,7 @@
       "label": "Confirm terms"
     }
   },
+  "Balance": "Balance",
   "Bank name is required": "Bank name is required",
   "bankDetails": {
     "bank_account": {
@@ -1141,6 +1142,7 @@
   "Expected number, received nan": "Expected number, received nan",
   "Expected number, received string": "Expected number, received string",
   "Expected string, received null": "Expected string, received null",
+  "How many customers": "How many customers",
   "insuranceDetails": {
     "bank_branch": {
       "label": "Branch",
@@ -1163,6 +1165,8 @@
     },
     "label": "Insurance details"
   },
+  "Interest percentage": "Interest percentage",
+  "Interest Type": "Interest Type",
   "Invalid email": "Invalid email",
   "knowTheAgent": {
     "label": "Partnership start with a good recognition",
@@ -1188,6 +1192,8 @@
       "placeholder": "Years..."
     }
   },
+  "Linkage Type": "Linkage Type",
+  "Loan Type": "Loan Type",
   "loanTracks": {
     "apartment_number": {
       "label": "Apartment Number"
@@ -1312,7 +1318,7 @@
     "id_card_number": {
       "label": "ID Card Number"
     },
-    "label": "Complete missing details",
+    "label": "schemaRegister",
     "last_name": {
       "label": "Last Name"
     },

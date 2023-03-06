@@ -11,11 +11,15 @@ import { getZodMetaInfo } from "../../utils/zod-meta";
 export const extractRuntimeTranslation = (nsMap: {
   [ns: string]: TranslationFn;
 }) => {
+  let count = 0;
+
   const translate: TranslationFn = (key: string, def?: string) => {
-    console.log(`translate ${ns} ${key}=${def}`);
+    // console.log(`translate ${ns} ${key}=${def}`);
     if (!nsMap[ns]) {
       throw new Error(`Missing translator for namespace ${ns}`);
     }
+
+    count++;
     return nsMap[ns](key, def);
   };
 
@@ -32,5 +36,5 @@ export const extractRuntimeTranslation = (nsMap: {
   [schemaRegister].forEach(translateSchema);
   [AdvisorNewLifeInsurancePages, AdvisorUpdatePages].forEach(translateWizard);
 
-  return { message: "done" };
+  return { message: `done count:${count}` };
 };

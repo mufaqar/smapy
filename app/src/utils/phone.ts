@@ -1,4 +1,5 @@
 import parsePhoneNumber from "libphonenumber-js";
+import { dt } from "./i18n-utils";
 
 export const validatePhoneNumber = (
   phone?: string
@@ -23,7 +24,7 @@ export const validatePhoneNumber = (
       return { phone };
     }
   } else {
-    return { error: "Not a valid phone number" };
+    return { error: dt("Not a valid phone number") };
   }
 };
 
