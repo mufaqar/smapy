@@ -16,8 +16,6 @@ import {
   optionalUuidSchema,
 } from "../../../../../prisma/zod-add-schema";
 import type { Prisma } from "@prisma/client";
-import { AdvisorUpdateSchema } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { map } from "rambda";
 
 const lifeInsuranceSchemaSelect = {
   include: {
