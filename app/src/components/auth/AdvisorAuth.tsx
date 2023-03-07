@@ -75,7 +75,7 @@ export const AdvisorAuth = ({ register }: Props) => {
         });
       }
 
-      await router.push("/advisor/registration");
+      await router.replace("/");
       return null;
     } else {
       const { data, error } = await supabaseClient.auth.signInWithOtp({

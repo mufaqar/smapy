@@ -302,5 +302,7 @@
   "registrationThanksPage": {
     "label": "registrationThanksPage"
   },
-  "Not a valid phone number": "Not a valid phone number"
+  "Not a valid phone number": "Not a valid phone number",
+  "Required": "Required",
+  "Not valid israeli id number": "Not valid israeli id number"
 }

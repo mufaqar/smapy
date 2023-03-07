@@ -30,7 +30,7 @@ export const getUserProfile = protectedProcedure
   .output(UserProfileSchema.nullish())
   .query(async ({ ctx }) => {
     console.log(`muly:`, { user: ctx.user });
-    return ctx.prisma.userProfile.findUnique({
+    return ctx.prisma.userProfile.findUniqueOrThrow({
       where: { id: ctx.user.id },
       select: UserProfileSchemaSelect,
     });

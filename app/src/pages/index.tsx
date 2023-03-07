@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Smapy</title>
+        <title>Smapy v0.0.2</title>
         <meta name="description" content="Smapy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
