@@ -1,0 +1,16 @@
+{
+  "reason": {
+    "title": {
+      "1": "reason.title.1",
+      "2": "reason.title.2",
+      "3": "reason.title.3",
+      "4": "reason.title.4"
+    },
+    "text": {
+      "1": "reason.text.1",
+      "2": "reason.text.2",
+      "3": "reason.text.3",
+      "4": "reason.text.4"
+    }
+  }
+}
