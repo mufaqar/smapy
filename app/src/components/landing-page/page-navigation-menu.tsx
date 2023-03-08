@@ -12,15 +12,17 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { PhoneIcon } from "@/components/landing-page/Icons";
+import { SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageNavigationMenu = () => {
   return (
-    <NavigationMenu className="m-auto max-w-5xl">
+    <NavigationMenu className="m-top m-auto mt-8 max-w-5xl">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              LOGO
+              <SmapyLogo />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -59,7 +61,7 @@ export const PageNavigationMenu = () => {
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              C
+              <PhoneIcon />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

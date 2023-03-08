@@ -1,4 +1,3 @@
-import { Box, Button, Card, Stack, Text } from "@chakra-ui/react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { PageNavigationMenu } from "@/components/landing-page/page-navigation-menu";
@@ -13,6 +12,14 @@ import { TestimonialCard } from "@/components/landing-page/testimonial-card";
 import { ConnectButton } from "@/components/landing-page/connect-button";
 import { i18nGetServerSideProps } from "@/utils/i18n-ssr";
 import { useTranslation } from "next-i18next";
+import { Footer } from "@/components/layout/footer";
+import Image from "next/image";
+import React from "react";
+import {
+  EmailIcon,
+  PhoneOutlineIcon,
+  WhatsappIcon,
+} from "@/components/landing-page/Icons";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
@@ -99,31 +106,52 @@ const Home: NextPage = () => {
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
             Four reason to choose smapy
           </h1>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-row gap-8">
             <ImageCard
               idx={1}
               title={t("reason.title.1")}
               text={t("reason.text.1")}
-              image=""
+              image="/images/image-card/image1.svg"
             />
             <ImageCard
               idx={2}
               title={t("reason.title.2")}
               text={t("reason.text.2")}
-              image=""
+              image="/images/image-card/image2.svg"
             />
             <ImageCard
               idx={3}
               title={t("reason.title.3")}
               text={t("reason.text.3")}
-              image=""
+              image="/images/image-card/image3.svg"
             />
             <ImageCard
               idx={4}
               title={t("reason.title.4")}
               text={t("reason.text.4")}
-              image=""
-            />
+              image="/images/image-card/image4.svg"
+            >
+              <div className="flex flex-row">
+                <Image
+                  src="/images/doing-well/image 19.png"
+                  alt=""
+                  width={95}
+                  height={70}
+                />
+                <Image
+                  src="/images/doing-well/image 20.png"
+                  alt=""
+                  width={85}
+                  height={70}
+                />
+                <Image
+                  src="/images/doing-well/image 21.png"
+                  alt=""
+                  width={92}
+                  height={70}
+                />
+              </div>
+            </ImageCard>
           </div>
         </section>
 
@@ -199,12 +227,13 @@ const Home: NextPage = () => {
             Will love to help
           </h1>
           <div className="flex flex-row gap-8">
-            <ConnectButton icon="" text="Whatsapp" href="" />
-            <ConnectButton icon="" text="email" href="" />
-            <ConnectButton icon="" text="Phone" href="" />
+            <ConnectButton icon={<WhatsappIcon />} text="Whatsapp" href="" />
+            <ConnectButton icon={<EmailIcon />} text="email" href="" />
+            <ConnectButton icon={<PhoneOutlineIcon />} text="Phone" href="" />
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

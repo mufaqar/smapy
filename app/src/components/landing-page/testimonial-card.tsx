@@ -33,15 +33,15 @@ export const TestimonialCard = ({
     .join("");
 
   return (
-    <div className="flex flex-col items-center rounded-md border">
+    <div className="flex flex-col items-center gap-2 rounded-md border">
       <Avatar>
         <AvatarImage src={image} />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
       <p>{rate}</p>
       {children}
-      <p>{name}</p>
-      <p>{duration}</p>
+      <p className="self-end">{name}</p>
+      <p className="self-end">{duration}</p>
     </div>
   );
 };
