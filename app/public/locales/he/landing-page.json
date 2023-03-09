@@ -16,6 +16,7 @@
   "header": "hebrew - header - v2",
   "header_2": "hebrew - header_2",
   "floating": {
-    "1": "floating.1-tr"
+    "1": "floating.1-tr",
+    "2": "floating.2"
   }
 }

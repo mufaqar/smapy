@@ -52,7 +52,7 @@ const Home: NextPage = () => {
             ></FloatingCard>
             <FloatingCard
               logo=""
-              title="Mortgage insurance"
+              title={t("floating.2", "Mortgage insurance")}
               linkText="compare & buy"
               href="/buy/mortgage-insurance"
             ></FloatingCard>
