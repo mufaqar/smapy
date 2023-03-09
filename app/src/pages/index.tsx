@@ -37,16 +37,16 @@ const Home: NextPage = () => {
         <PageNavigationMenu />
         <section>
           <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
-            Check our prices
+            {t("header")}
           </h1>
           <p className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl">
-            We get best prices
+            {t("header_2")}
           </p>
 
           <div className="flex flex-col gap-4">
             <FloatingCard
               logo=""
-              title="Life insurance"
+              title={t("floating.1")}
               linkText="compare & buy"
               href="/buy/life-insurance"
             ></FloatingCard>

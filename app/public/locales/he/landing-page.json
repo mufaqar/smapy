@@ -12,5 +12,10 @@
       "3": "reason.text.3",
       "4": "reason.text.4"
     }
+  },
+  "header": "hebrew - header - v2",
+  "header_2": "hebrew - header_2",
+  "floating": {
+    "1": "floating.1-tr"
   }
 }
