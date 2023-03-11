@@ -10,14 +10,25 @@ import { LoanTrack, LoanTracks } from "../../../../prisma/zod-add-schema";
 import { MortgageSummary } from "./MortgageSummary";
 import type { ConditionCallback } from "../../../utils/zod-meta";
 import { dt } from "../../../utils/i18n-utils";
+import { HowDoesItWork } from "@/components/common/controls/how-does-it-work";
+import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
+import { WizardEndQuestion } from "./WizardEndQuestion";
 
-const dummySchemaWelcome = z
+const howDoesItWork = z
   .undefined()
-  .describe("welcomePage")
+  .describe("How Does It Work?")
   .meta({
-    control: (props: WizardControlProps) => <WelcomePage {...props} />,
-  })
-  .describe("How does it work");
+    control: (wizard) => <HowDoesItWork {...wizard} />,
+    text: {
+      text_1: "text_1",
+      text_2: "text_2",
+      text_3: "text_3",
+      text_life4: "text_life4",
+      text_mortgage4: "text_mortgage4",
+      text_property4: "text_property4",
+      next: "Compare",
+    },
+  });
 
 const numberOfCustomers = z
   .object({
@@ -35,9 +46,9 @@ const numberOfCustomers = z
   })
   .describe("Choose number of customers");
 
-const customerPageCondition: ConditionCallback = (step, data) => {
+const customerPageCondition: ConditionCallback = (wizardInfo, data) => {
   const regexCustomer = /customer(\d)/gm;
-  const matchCustomer = regexCustomer.exec(step.name);
+  const matchCustomer = regexCustomer.exec(wizardInfo.step.name);
   const idxCustomer = matchCustomer ? Number(matchCustomer[1]) : 0;
 
   // console.log(`muly:condition`, { step, data, idxCustomer });
@@ -67,7 +78,7 @@ const customerDetails1 = z
       .number()
       .nullish()
       .describe("How long ago you stop?")
-      .meta({ condition: (step, { smoking }) => smoking === "stop" }),
+      .meta({ condition: (_wizardInfo, { smoking }) => smoking === "stop" }),
 
     first_name: z.string().describe("First name"),
     last_name: z.string().describe("First name"),
@@ -126,14 +137,16 @@ const customerDetails2 = z
       .nullish()
       .describe("Hobby")
       .meta({
-        condition: (step, { dangerous_hobby_has }) => !!dangerous_hobby_has,
+        condition: (_wizardInfo, { dangerous_hobby_has }) =>
+          !!dangerous_hobby_has,
       }),
     dangerous_hobby_desc: z
       .string()
       .nullish()
       .describe("Hobby Description")
       .meta({
-        condition: (step, { dangerous_hobby_has }) => !!dangerous_hobby_has,
+        condition: (_wizardInfo, { dangerous_hobby_has }) =>
+          !!dangerous_hobby_has,
       }),
   })
   .refine(
@@ -193,9 +206,9 @@ const loanTracks = z
   })
   .describe("Mortgage track details")
   .meta({
-    condition: (step, data) => {
+    condition: (wizardInfo, data) => {
       const regexTrack = /track(\d)/gm;
-      const matchTrack = regexTrack.exec(step.name);
+      const matchTrack = regexTrack.exec(wizardInfo.step.name);
       const idxTrack = matchTrack ? Number(matchTrack[1]) : 0;
 
       // console.log(`muly:condition`, { step, data, idxTrack });
@@ -212,11 +225,24 @@ const mortgageSummary = z
   })
   .describe("Results");
 
-const newInsuranceThanksPage = z
+const end = z
   .undefined()
-  .describe("newInsuranceThanksPage")
+  .describe("Thanks for choosing Smapy // Order received successfully")
   .meta({
-    control: (props: WizardControlProps) => <WelcomePage {...props} />,
+    control: (wizard) => (
+      <WizardEndStep {...wizard}>
+        <WizardEndQuestion {...wizard} />
+      </WizardEndStep>
+    ),
+    text: {
+      text1: "Link to complete was sent",
+      text2: "In 2 years we will compare again",
+      question: "Customer need property insurance?",
+      yesMessage: "Cool, we will call him",
+      yes: "yes",
+      no: "no",
+      end: "end",
+    },
   });
 
 const customerMoreDetails = z
@@ -356,9 +382,9 @@ const sendLinksToComplete = z
   })
   .describe("Send links to complete");
 
-export const AdvisorNewLifeInsurancePages = {
+export const AdvisorLifeInsurancePages = {
   pages: {
-    // dummySchemaWelcome,
+    howDoesItWork,
     numberOfCustomers,
     customer0_details1: customerDetails1,
     customer0_details2: customerDetails2,
@@ -380,8 +406,8 @@ export const AdvisorNewLifeInsurancePages = {
     mortgagePropertyAddress,
     insuranceDetails,
     sendLinksToComplete,
-    newInsuranceThanksPage,
+    end,
   },
   description: "New Life Insurance for Mortgage",
-  name: "AdvisorNewLifeInsurance",
+  name: "lifeInsurance",
 } satisfies WizardPagesDefinition;

@@ -1,15 +1,11 @@
 import type { z } from "zod";
-import { Box, VStack } from "@chakra-ui/react";
 import { api } from "../../../utils/api";
 import type { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
 import { AdvisorUpdatePages } from "./advisor-registration-flow-schema";
 import React, { useState } from "react";
-import { Form } from "../../common/forms/Form";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
 import type { UseFormReturn } from "react-hook-form";
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import { FormHeader } from "../../common/wizard/FormHeader";
 import { WizardForm } from "../../common/wizard/WizardForm";
 
 type RecordType = z.infer<typeof AdvisorUpdateSchema>;

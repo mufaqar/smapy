@@ -3,6 +3,7 @@ import { schemaRegister } from "../../auth/advisor-auth-schema";
 import "../../../utils/zod-meta";
 import { WelcomeText } from "./WelcomeText";
 import type { WizardPagesDefinition } from "../../common/wizard/useWizardFlow";
+import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
 
 export const missingName = schemaRegister
   .pick({
@@ -47,7 +48,7 @@ export const knowTheAgent = z
 
 export const uploadIdPicture = z
   .object({
-    certificate_id_picture: z.string().nullish().meta("Upload ID Picture"),
+    certificate_id_picture: z.string().nullish().describe("Upload ID Picture"),
     certificate_id_picture_later: z
       .boolean()
       .default(false)
@@ -165,11 +166,14 @@ export const agreeToTerms = z
   })
   .describe("Terms");
 
-const registrationThanksPage = z
+const end = z
   .undefined()
-  .describe("registrationThanksPage")
+  .describe("Thanks for join the Smapy // really excited")
   .meta({
-    control: (props) => <WelcomeText />,
+    control: (wizard) => <WizardEndStep {...wizard} />,
+    text: {
+      text2: "Will do everything to give service to you and your customers",
+    },
   });
 
 export const AdvisorUpdateSchema = z.union([
@@ -178,7 +182,6 @@ export const AdvisorUpdateSchema = z.union([
   uploadIdPicture,
   bankDetails,
   agreeToTerms,
-  registrationThanksPage,
 ]);
 
 export const AdvisorUpdatePages = {
@@ -188,8 +191,8 @@ export const AdvisorUpdatePages = {
     uploadIdPicture,
     bankDetails,
     agreeToTerms,
-    registrationThanksPage,
+    end,
   },
   description: "Registration",
-  name: "AdvisorRegistrationFlow",
+  name: "registrationFlow",
 } satisfies WizardPagesDefinition;

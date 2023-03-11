@@ -17,7 +17,10 @@ import Image from "next/image";
 import React from "react";
 import {
   EmailIcon,
+  LifeInsuranceIcon,
+  MortgageInsuranceIcon,
   PhoneOutlineIcon,
+  PropertyInsuranceIcon,
   WhatsappIcon,
 } from "@/components/landing-page/Icons";
 
@@ -33,7 +36,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Smapy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col gap-8">
+      <main className="align- flex flex-col gap-8">
         <PageNavigationMenu />
         <section>
           <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
@@ -43,24 +46,24 @@ const Home: NextPage = () => {
             {t("header_2")}
           </p>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4">
             <FloatingCard
-              logo=""
+              icon={<LifeInsuranceIcon />}
               title={t("floating.1")}
               linkText="compare & buy"
-              href="/buy/life-insurance"
+              href="/customer/compare/life"
             ></FloatingCard>
             <FloatingCard
-              logo=""
+              icon={<MortgageInsuranceIcon />}
               title={t("floating.2", "Mortgage insurance")}
               linkText="compare & buy"
-              href="/buy/mortgage-insurance"
+              href="/customer/compare/mortgage"
             ></FloatingCard>
             <FloatingCard
-              logo=""
+              icon={<PropertyInsuranceIcon />}
               title="Property insurance"
               linkText="compare & buy"
-              href="/buy/property-insurance"
+              href="/customer/compare/property"
             ></FloatingCard>
           </div>
         </section>
@@ -227,9 +230,21 @@ const Home: NextPage = () => {
             Will love to help
           </h1>
           <div className="flex flex-row gap-8">
-            <ConnectButton icon={<WhatsappIcon />} text="Whatsapp" href="" />
-            <ConnectButton icon={<EmailIcon />} text="email" href="" />
-            <ConnectButton icon={<PhoneOutlineIcon />} text="Phone" href="" />
+            <ConnectButton
+              icon={<WhatsappIcon />}
+              text="Whatsapp"
+              href="/customer/contact/whatsapp"
+            />
+            <ConnectButton
+              icon={<EmailIcon />}
+              text="email"
+              href="/customer/contact/email"
+            />
+            <ConnectButton
+              icon={<PhoneOutlineIcon />}
+              text="Phone"
+              href="/customer/contact/phone"
+            />
           </div>
         </section>
       </main>

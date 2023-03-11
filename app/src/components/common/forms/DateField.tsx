@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import type { ZodMetaDataItem } from "../../../utils/zod-meta";
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
+import { maybeConvertChild } from "../wizard/useWizardFlow";
 
 interface Props {
   controlName?: ZodMetaDataItem["control"];
@@ -52,7 +53,7 @@ export const DateField = (
           field.onChange(e.target.checked ? new Date() : undefined);
         }}
       >
-        {label}
+        {maybeConvertChild(label)}
       </Checkbox>
     );
   } else {
@@ -71,7 +72,7 @@ export const DateField = (
     <FormControl isInvalid={!!error} my={5}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
         <FormLabel mb={1} whiteSpace="nowrap">
-          {label}
+          {maybeConvertChild(label)}
         </FormLabel>
       )}
       {control}

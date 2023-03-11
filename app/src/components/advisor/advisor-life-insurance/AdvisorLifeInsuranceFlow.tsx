@@ -2,12 +2,12 @@ import { api } from "../../../utils/api";
 import React, { useState } from "react";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
 import { useTranslation } from "next-i18next";
-import { AdvisorNewLifeInsurancePages } from "./advisor-new-life-insurance-schema";
+import { AdvisorLifeInsurancePages } from "./advisor-life-insurance-schema";
 import { useQueryState } from "next-usequerystate";
 import { WizardForm } from "../../common/wizard/WizardForm";
 import type { LifeInsuranceType } from "../../../server/api/routers/advisor/life-insurance";
 
-export const AdvisorNewLifeInsuranceFlow = () => {
+export const AdvisorLifeInsuranceFlow = () => {
   const { t } = useTranslation("advisor");
   const [id, setId] = useQueryState<string>("id", {
     history: "replace",
@@ -21,7 +21,7 @@ export const AdvisorNewLifeInsuranceFlow = () => {
     onSuccess: (data) => setRecordData(data || null),
   });
 
-  const wizard = useWizardFlow(AdvisorNewLifeInsurancePages, {
+  const wizard = useWizardFlow(AdvisorLifeInsurancePages, {
     recordData,
     translate: t,
     onCompleteUrl: "/advisor/dashboard",

@@ -13,6 +13,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import { RadioButtonGroup } from "./RadioButtonGroup";
 import { CheckboxGroup } from "./CheckboxGroup";
 import type { ChoiceType, ZodMetaDataItem } from "../../../utils/zod-meta";
+import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 
 interface Props {
   choices?: ChoiceType[];
@@ -121,7 +122,7 @@ export const TextField = (
           );
         }}
       >
-        {label}
+        {maybeConvertChild(label)}
       </Checkbox>
     );
   } else if (controlName === "Switch") {
@@ -138,7 +139,7 @@ export const TextField = (
           );
         }}
       >
-        {label}
+        {maybeConvertChild(label)}
       </Switch>
     );
   } else if (controlName === "CheckboxGroup") {
@@ -194,7 +195,7 @@ export const TextField = (
     <FormControl isInvalid={!!error} {...style}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
         <FormLabel mb={1} whiteSpace="nowrap">
-          {label}
+          {maybeConvertChild(label)}
         </FormLabel>
       )}
       {control}

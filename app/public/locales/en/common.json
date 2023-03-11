@@ -4,5 +4,10 @@
   "property_city_validation": "*TRANSLATE*",
   "property_street_number_validation": "*TRANSLATE*",
   "property_street_validation": "*TRANSLATE*",
-  "smoking_stop_month_validation": "*TRANSLATE*"
+  "smoking_stop_month_validation": "*TRANSLATE*",
+  "wizard": {
+    "end": {
+      "button": "End"
+    }
+  }
 }

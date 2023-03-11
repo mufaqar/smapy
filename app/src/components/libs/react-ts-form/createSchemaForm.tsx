@@ -506,8 +506,11 @@ export function createTsForm<
             //   }
             // );
 
-            if (meta.condition) {
-              const cond = meta.condition(fieldMetaInfo, _form.watch());
+            if (meta.condition && formContext.flowContext) {
+              const cond = meta.condition(
+                formContext.flowContext,
+                _form.watch()
+              );
               // console.log(`muly:condition ${key} ${cond}`, {
               //   meta,
               //   cond,

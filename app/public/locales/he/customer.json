@@ -1,0 +1,29 @@
+{
+  "customerCompareAndBuy": {
+    "title_life": "Compare and buy Life Insurance",
+    "title_mortgage": "Compare and buy Mortgage Insurance",
+    "title_property": "Compare and buy property Insurance",
+    "howDoesItWork": {
+      "label": "How Does It Work?",
+      "text_1": "text_1",
+      "text_2": "text_2",
+      "text_3": "text_3",
+      "text_life4": "text_life4",
+      "text_mortgage4": "text_mortgage4",
+      "text_property4": "text_property4",
+      "next": "Compare"
+    },
+    "thanks": {
+      "label": "Thanks for your interest in Smapy",
+      "placeholder": "Right now the service is available only through agents",
+      "text1": "Soon will be able to buy from the site",
+      "text2": "You will enjoy great service"
+    },
+    "end": {
+      "label": "Thanks for your interest in Smapy",
+      "placeholder": "Right now the service is available only through agents",
+      "text1": "Soon will be able to buy from the site",
+      "text2": "You will enjoy great service"
+    }
+  }
+}

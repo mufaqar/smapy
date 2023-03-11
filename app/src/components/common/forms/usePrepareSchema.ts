@@ -6,6 +6,8 @@ import { getPagesZodMetaInfo } from "../wizard/useWizardFlow";
 import { getZodMetaInfo } from "../../../utils/zod-meta";
 import type { FormContext } from "../../libs/react-ts-form/FieldContext";
 
+// const fakeWizard = {};
+
 export const usePrepareSchema = (
   translate: TranslationFn,
   schema: ZodTypeAny
@@ -16,5 +18,16 @@ export const usePrepareSchema = (
     return info;
   }, [translate, schema]);
 
-  return { t: translate, formMeta: info };
+  return {
+    t: translate,
+    formMeta: info,
+    // Ugly buy it save some not needed code
+    // @ts-ignore
+    flowContext: {
+      // ...fakeWizard,
+      step: info,
+      meta: info,
+      formContext: { t: translate, formMeta: info },
+    },
+  };
 };

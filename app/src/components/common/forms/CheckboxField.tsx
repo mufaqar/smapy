@@ -9,6 +9,7 @@ import {
   Checkbox,
   Textarea,
 } from "@chakra-ui/react";
+import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 
 export const CheckboxField = () => {
   const { field, error, formContext } = useTsController<boolean>();
@@ -31,7 +32,7 @@ export const CheckboxField = () => {
           field.onChange(e.target.checked);
         }}
       >
-        {label}
+        {maybeConvertChild(label)}
       </Checkbox>
       {!error ? null : (
         // <FormHelperText>

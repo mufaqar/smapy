@@ -1,7 +1,7 @@
 import { Box, Button } from "@chakra-ui/react";
 import type { WizardControlProps } from "../../common/wizard/useWizardFlow";
 
-export const WelcomePage = ({ wizard: { onStepNext } }: WizardControlProps) => {
+export const WelcomePage = ({ onStepNext }: WizardControlProps) => {
   return (
     <Box>
       <Box>WelcomePage</Box>
