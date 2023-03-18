@@ -7,26 +7,47 @@ import {
 } from "@/components/customer/compare/compare-flow-schema";
 import { useRouter } from "next/router";
 import { WizardPage } from "@/components/common/wizard/WizardPage";
-import { HowToContactType } from "@/components/customer/contact-us/contact-us-schema";
+import {
+  contactUsEmailPages,
+  contactUsPhonePages,
+  HowToContactType,
+} from "@/components/customer/contact-us/contact-us-schema";
+import { api } from "@/utils/api";
 
 export const ContactUsFlow = () => {
   const { t } = useTranslation("customer");
   const router = useRouter();
-  const { howToContact } = router.query;
+  const { howToContact: howToContactRow } = router.query;
+
+  const howToContact = String(howToContactRow) as HowToContactType;
 
   const wizard = useWizardFlow(
-    compareFlowPages,
+    howToContact === "email" ? contactUsEmailPages : contactUsPhonePages,
     {
       translate: t,
       onCompleteUrl: "/",
-    },
-    { howToContact: String(howToContact) as HowToContactType }
+    }
   );
+
+  const registerAccount = api.customer.contactUs.useMutation();
+  const { onStepNext } = wizard;
+
+  const handleSubmit = async (data: any) => {
+    const { product, name, contact_info, subject } = data;
+    await registerAccount.mutateAsync({
+      product,
+      name,
+      contact_info,
+      subject,
+    });
+
+    await onStepNext();
+  };
 
   return (
     <WizardPage
       wizard={wizard}
-      handleSubmit={async (data: any) => {}}
+      handleSubmit={handleSubmit}
       recordData={{}}
       formData={{}}
     />

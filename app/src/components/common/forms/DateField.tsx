@@ -69,7 +69,7 @@ export const DateField = (
   }
 
   return (
-    <FormControl isInvalid={!!error} my={5}>
+    <FormControl isInvalid={!!error} className={options.className}>
       {controlName !== "Checkbox" && controlName !== "Switch" && (
         <FormLabel mb={1} whiteSpace="nowrap">
           {maybeConvertChild(label)}

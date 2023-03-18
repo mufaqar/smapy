@@ -661,7 +661,7 @@
       }
     }
   },
-  "AdvisorRegistrationFlow": {
+  "CustomerRegistrationFlow": {
     "agreeToTerms": {
       "label": "Terms",
       "signed_terms": {
@@ -749,7 +749,7 @@
       }
     }
   },
-  "AdvisorRegistrationFlow2": "DEF AdvisorRegistrationFlow",
+  "AdvisorRegistrationFlow2": "DEF CustomerRegistrationFlow",
   "AdvisorUpdateSchema": {
     "agreeToTerms": {
       "label": "Terms",

@@ -18,5 +18,33 @@
   "floating": {
     "1": "floating.1",
     "2": "Mortgage insurance"
-  }
+  },
+  "login": {
+    "label": "Happy to see you",
+    "id_card_number": {
+      "label": "ID Card Number"
+    },
+    "phone": {
+      "label": "Phone Number"
+    },
+    "placeholder": "Happy to see you",
+    "entry": "",
+    "entry_customer": "Customer entry",
+    "entry_advisor": "Advisor entry"
+  },
+  "Required": "Required",
+  "Not valid israeli id number": "Not valid israeli id number",
+  "otp": {
+    "label": "Confirmation and continue",
+    "placeholder": "Sent you confirmation code in SMS message",
+    "pin": {
+      "label": "What is your code"
+    },
+    "entry_customer": "Customer entry",
+    "entry_advisor": "Advisor entry"
+  },
+  "String must contain at least 6 character(s)": "String must contain at least 6 character(s)",
+  "Token has expired or is invalid": "Token has expired or is invalid",
+  "Not a valid phone number": "Not a valid phone number",
+  "Error sending sms otp: vonage error: Quota Exceeded - rejected (status: 9)": "Error sending sms otp: vonage error: Quota Exceeded - rejected (status: 9)"
 }

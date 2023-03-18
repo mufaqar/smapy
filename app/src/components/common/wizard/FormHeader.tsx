@@ -4,7 +4,7 @@ import { evaluateControlCallback } from "./useWizardFlow";
 
 export const FormHeader = (wizard: WizardControlProps) => {
   const { stepRange, step, meta, onStepBack, currentStep } = wizard;
-  console.log(`muly:FormHeader ${currentStep}:${step.meta.label}`, { meta });
+  // console.log(`muly:FormHeader ${currentStep}:${step.meta.label}`, { meta });
 
   const showBack =
     typeof step.meta.showBack === "boolean" && !step.meta.showBack;

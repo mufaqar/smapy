@@ -54,18 +54,12 @@ export const WizardForm = ({
               // }}
               defaultValues={formData || recordData}
               formProps={{
-                style: {
-                  // Merged with schema dsk style, priority to dsk
-                  mt: 18,
-                },
                 submit: {
                   notification: false,
                   text: "Next",
-                  alignSelf: "center",
-                  mt: 16,
                 },
               }}
-            ></Form>
+            />
           )}
 
           <FormSideBackgroundImage image={step.meta.props?.image} />

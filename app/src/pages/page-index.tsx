@@ -8,14 +8,21 @@ const Home: NextPage = () => {
   const supabaseClient = useSupabaseClient();
   const user = useUser();
   const links = [
-    { href: "/signup", title: "Advisor -> Sign up" },
-    { href: "/signin", title: "Advisor -> Sign In" },
+    { href: "/signin?user=advisor", title: "Advisor -> Sign In" },
+    { href: "/signin?user=advisor&debug=otp", title: "Advisor -> OTP" },
     { href: "/advisor/registration", title: "Advisor -> Registration Flow" },
     {
       href: "/advisor/new-life-insurance",
       title: "Advisor -> New Life Insurance",
     },
-    { href: "/advisor/dashboard", title: "Advisor -> Dashboard" },
+    { href: "/advisor", title: "Advisor -> Dashboard" },
+
+    { href: "/contact/email", title: "Contact by Email" },
+    { href: "/compare/life", title: "Compare Life Insurance" },
+    { href: "/signin?user=customer", title: "Customer -> Sign In" },
+    { href: "/signin?user=customer&debug=otp", title: "Customer -> OTP" },
+    { href: "/customer/registration", title: "Advisor -> Registration Flow" },
+    { href: "/customer", title: "Customer -> Dashboard" },
   ];
 
   return (

@@ -304,5 +304,86 @@
   },
   "Not a valid phone number": "Not a valid phone number",
   "Required": "Required",
-  "Not valid israeli id number": "Not valid israeli id number"
+  "Not valid israeli id number": "Not valid israeli id number",
+  "registrationFlow": {
+    "label": "Registration",
+    "register": {
+      "label": "Complete missing details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
+    },
+    "knowTheAgent": {
+      "label": "Partnership start with a good recognition",
+      "placeholder": "Some of your experience",
+      "years_experience": {
+        "label": "Advisory years of experience",
+        "placeholder": "Years..."
+      },
+      "worker_type": {
+        "choices": {
+          "freelancer": "Freelancer",
+          "hired": "Hired"
+        },
+        "label": "Are you"
+      },
+      "workplace_name": {
+        "label": "Name of workplace",
+        "placeholder": "Name..."
+      },
+      "number_of_files": {
+        "label": "Number of files a month (Optional)",
+        "placeholder": "Average...,"
+      }
+    },
+    "uploadIdPicture": {
+      "label": "Identification",
+      "certificate_id_picture": {
+        "label": "Upload ID Picture"
+      },
+      "certificate_id_picture_later": {
+        "label": "Will upload ID later"
+      }
+    },
+    "bankDetails": {
+      "bank_name": {
+        "label": "Bank",
+        "placeholder": "Bank name"
+      },
+      "bank_number": {
+        "label": "Bank Number",
+        "placeholder": "Bank Number..."
+      },
+      "bank_branch": {
+        "label": "Branch",
+        "placeholder": "Branch..."
+      },
+      "bank_branch_number": {
+        "label": "Branch Number",
+        "placeholder": "Branch Number..."
+      },
+      "bank_account": {
+        "label": "Account Number",
+        "placeholder": "Account Number..."
+      },
+      "bank_details_later": {
+        "label": "Will fill later"
+      }
+    },
+    "agreeToTerms": {
+      "label": "Terms",
+      "signed_terms": {
+        "label": "Confirm terms"
+      }
+    },
+    "end": {
+      "label": "Thanks for join the Smapy",
+      "placeholder": "really excited",
+      "text2": "Will do everything to give service to you and your customers"
+    }
+  },
+  "Bank name is required": "Bank name is required"
 }

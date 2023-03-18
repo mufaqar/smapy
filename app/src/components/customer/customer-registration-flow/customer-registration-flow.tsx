@@ -1,22 +1,22 @@
 import type { z } from "zod";
 import { api } from "../../../utils/api";
-import type { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
-import { AdvisorUpdatePages } from "./advisor-registration-flow-schema";
+import type { CustomerUpdateSchema } from "./customer-registration-flow-schema";
+import { CustomerUpdatePages } from "./customer-registration-flow-schema";
 import React, { useState } from "react";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
 import type { UseFormReturn } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import { WizardForm } from "../../common/wizard/WizardForm";
 
-type RecordType = z.infer<typeof AdvisorUpdateSchema>;
+type RecordType = z.infer<typeof CustomerUpdateSchema>;
 
-export const AdvisorRegistrationFlow = () => {
-  const { t } = useTranslation("advisor");
+export const CustomerRegistrationFlow = () => {
+  const { t } = useTranslation("customer");
   // const { data: sampleBankList } = api.advisor.sampleBankList.useQuery();
 
-  const wizard = useWizardFlow(AdvisorUpdatePages, {
+  const wizard = useWizardFlow(CustomerUpdatePages, {
     translate: t,
-    onCompleteUrl: "/advisor/dashboard",
+    onCompleteUrl: "/advisor",
   });
 
   const { setStepRange, onStepNext, control, step, schema } = wizard;
@@ -24,10 +24,10 @@ export const AdvisorRegistrationFlow = () => {
 
   const query = api.advisor.getUserProfile.useQuery(undefined, {
     onSuccess: async (data) => {
-      console.log(`muly:onSuccess`, {});
-      if (data?.first_name && data?.last_name) {
-        await setStepRange(1, undefined);
-      }
+      // console.log(`muly:onSuccess`, {});
+      // if (data?.first_name && data?.last_name) {
+      //   await setStepRange(1, undefined);
+      // }
       if (data) {
         // @ts-ignore
         setRecordData(data);
@@ -45,7 +45,7 @@ export const AdvisorRegistrationFlow = () => {
   };
 
   // console.log(
-  //   `muly:AdvisorRegistrationFlow ${query.isSuccess} ${!!recordData}`,
+  //   `muly:CustomerRegistrationFlow ${query.isSuccess} ${!!recordData}`,
   //   {
   //     recordData,
   //     query,

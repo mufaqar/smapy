@@ -51,19 +51,19 @@ const Home: NextPage = () => {
               icon={<LifeInsuranceIcon />}
               title={t("floating.1")}
               linkText="compare & buy"
-              href="/customer/compare/life"
+              href="/compare/life"
             ></FloatingCard>
             <FloatingCard
               icon={<MortgageInsuranceIcon />}
               title={t("floating.2", "Mortgage insurance")}
               linkText="compare & buy"
-              href="/customer/compare/mortgage"
+              href="/compare/mortgage"
             ></FloatingCard>
             <FloatingCard
               icon={<PropertyInsuranceIcon />}
               title="Property insurance"
               linkText="compare & buy"
-              href="/customer/compare/property"
+              href="/compare/property"
             ></FloatingCard>
           </div>
         </section>
@@ -136,19 +136,19 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-row">
                 <Image
-                  src="/images/doing-well/image 19.png"
+                  src="/images/doing-well/image19.png"
                   alt=""
                   width={95}
                   height={70}
                 />
                 <Image
-                  src="/images/doing-well/image 20.png"
+                  src="/images/doing-well/image20.png"
                   alt=""
                   width={85}
                   height={70}
                 />
                 <Image
-                  src="/images/doing-well/image 21.png"
+                  src="/images/doing-well/image21.png"
                   alt=""
                   width={92}
                   height={70}
@@ -233,17 +233,17 @@ const Home: NextPage = () => {
             <ConnectButton
               icon={<WhatsappIcon />}
               text="Whatsapp"
-              href="/customer/contact/whatsapp"
+              href="/contact/whatsapp"
             />
             <ConnectButton
               icon={<EmailIcon />}
               text="email"
-              href="/customer/contact/email"
+              href="/contact/email"
             />
             <ConnectButton
               icon={<PhoneOutlineIcon />}
               text="Phone"
-              href="/customer/contact/phone"
+              href="/contact/phone"
             />
           </div>
         </section>

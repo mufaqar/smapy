@@ -1,6 +1,6 @@
 import { AdvisorLifeInsurancePages } from "../../components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
 import { AdvisorUpdatePages } from "../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { schemaRegister } from "../../components/auth/advisor-auth-schema";
+import { schemaLogin } from "../../components/auth/user-auth-schema";
 import type { ZodTypeAny } from "zod/lib/types";
 import type { TranslationFn } from "../../utils/i18n-utils";
 import { translateSchemaInfo } from "../../utils/i18n-utils";
@@ -8,6 +8,10 @@ import type { WizardPagesDefinition } from "../../components/common/wizard/useWi
 import { getPagesZodMetaInfo } from "../../components/common/wizard/useWizardFlow";
 import { getZodMetaInfo } from "../../utils/zod-meta";
 import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
+import {
+  contactUsEmailPages,
+  contactUsPhonePages,
+} from "@/components/customer/contact-us/contact-us-schema";
 // import { HowDoesItWork } from "@/components/customer/compare/how-does-it-work";
 
 export const extractRuntimeTranslation = (nsMap: {
@@ -40,12 +44,18 @@ export const extractRuntimeTranslation = (nsMap: {
   };
 
   let ns: string;
+
+  ns = "landing-page";
+  [schemaLogin].forEach(translateSchema);
+
   ns = "advisor";
-  [schemaRegister].forEach(translateSchema);
   [AdvisorLifeInsurancePages, AdvisorUpdatePages].forEach(translateWizard);
 
   ns = "customer";
   [compareFlowPages].forEach(translateWizard);
+  [contactUsPhonePages, contactUsEmailPages, compareFlowPages].forEach(
+    translateWizard
+  );
 
   return { message: `done count:${count}` };
 };

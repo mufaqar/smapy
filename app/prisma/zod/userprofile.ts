@@ -1,5 +1,6 @@
 import * as z from "zod"
 import * as imports from "../zod-add-schema"
+import { UserStatus } from "@prisma/client"
 import { CompletelifeInsurance, RelatedlifeInsuranceModel, Completecustomer, RelatedcustomerModel } from "./index"
 
 export const UserProfileModel = z.object({
@@ -34,6 +35,9 @@ export const UserProfileModel = z.object({
   bank_branch_number: z.string().nullish(),
   bank_account: z.string().nullish(),
   bank_details_later: z.boolean().nullish(),
+  is_advisor: z.boolean(),
+  advisor_status: z.nativeEnum(UserStatus),
+  notes: z.string().nullish(),
   signed_terms: z.date().nullish(),
 })
 

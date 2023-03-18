@@ -1,16 +1,15 @@
 import { z } from "zod";
-import { schemaRegister } from "../../auth/advisor-auth-schema";
 import "../../../utils/zod-meta";
-import { WelcomeText } from "./WelcomeText";
 import type { WizardPagesDefinition } from "../../common/wizard/useWizardFlow";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
+import { Terms } from "./Terms";
 
-export const missingName = schemaRegister
-  .pick({
-    first_name: true,
-    last_name: true,
+export const userNames = z
+  .object({
+    first_name: z.string().describe("First Name"),
+    last_name: z.string().describe("Last Name"),
   })
-  .describe("Complete missing details");
+  .describe("Advisor details");
 
 export const knowTheAgent = z
   .object({
@@ -94,24 +93,18 @@ export const bankDetails = z
       .nullish()
       .describe("Will fill later")
       .meta({
-        style: {
-          gridColumn: "1/3",
-          textAlign: "center",
-          mt: 8,
-        },
+        className: "col-span-2",
       }),
   })
   .describe("Where to deposit your money?")
   .meta({
-    style: {
-      templateColumns: "2fr 1fr",
-      gap: 6,
-    },
+    className: "gap-6 grid grid-cols-[2fr_1fr]",
     props: {
       image: "/images/advisor-register-bank.svg",
     },
   })
   .superRefine((arg, ctx) => {
+    console.log(`muly:superRefine `, { arg });
     if (arg.bank_details_later) {
       return;
     }
@@ -162,7 +155,7 @@ export const agreeToTerms = z
     signed_terms: z
       .date({ invalid_type_error: "Must agree to terms" })
       .describe("Confirm terms")
-      .meta({ control: "Checkbox", before: "Terms" }),
+      .meta({ control: "Checkbox", beforeElement: () => <Terms /> }),
   })
   .describe("Terms");
 
@@ -177,7 +170,7 @@ const end = z
   });
 
 export const AdvisorUpdateSchema = z.union([
-  missingName,
+  userNames,
   knowTheAgent,
   uploadIdPicture,
   bankDetails,
@@ -186,7 +179,7 @@ export const AdvisorUpdateSchema = z.union([
 
 export const AdvisorUpdatePages = {
   pages: {
-    missingName,
+    userNames,
     knowTheAgent,
     uploadIdPicture,
     bankDetails,

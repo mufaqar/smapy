@@ -10,7 +10,6 @@ import type { ZodEffects } from "zod";
 import { z, ZodType } from "zod";
 import type { ZodTypeAny } from "zod/lib/types";
 import type React from "react";
-import type { ChakraProps, GridProps } from "@chakra-ui/react";
 import type { WizardControlProps } from "../components/common/wizard/useWizardFlow";
 import { WizardInfo } from "../components/common/wizard/useWizardFlow";
 
@@ -20,12 +19,16 @@ const ChoiceSchema = z
   .object({
     id: z.string().or(z.number()),
     title: z.string(),
+    info: z.any().optional(),
   })
   .or(z.string());
 
 export type ChoiceType = z.infer<typeof ChoiceSchema>;
 
-export type ControlCallback = (wizard: WizardControlProps) => React.ReactNode;
+export type ControlCallback = (
+  wizard: WizardControlProps,
+  options?: { submit?: () => void }
+) => React.ReactNode;
 
 export type ConditionCallback = (wizardInfo: WizardInfo, data?: any) => boolean;
 
@@ -36,10 +39,14 @@ export interface ZodMetaDataItem {
   text?: Record<string, string>;
   control?: string | ControlCallback;
   choices?: ChoiceType[];
-  style?: ChakraProps | GridProps;
+  className?: string;
   props?: Record<string, any>;
-  before?: React.ReactNode;
-  after?: React.ReactNode;
+  beforeElement?: ControlCallback;
+  afterElement?: ControlCallback;
+  render?: (
+    controls: Record<string, React.ReactNode>,
+    wizard: WizardControlProps
+  ) => React.ReactNode;
 
   condition?: ConditionCallback;
 

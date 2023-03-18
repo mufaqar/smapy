@@ -9,6 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        primary:
+          "text-white text-base bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] rounded-[20px]",
         default:
           "bg-slate-900 text-white hover:bg-slate-700 dark:bg-slate-50 dark:text-slate-900",
         destructive:
@@ -22,7 +24,7 @@ const buttonVariants = cva(
         link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
       },
       size: {
-        default: "h-10 py-2 px-4",
+        default: "h-12 py-2 px-14",
         sm: "h-9 px-2 rounded-md",
         lg: "h-11 px-8 rounded-md",
       },
@@ -36,7 +38,10 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  // TODO:TW need to implement
+  isLoading?: boolean;
+}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {

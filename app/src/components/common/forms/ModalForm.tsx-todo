@@ -2,28 +2,12 @@ import { createTsForm } from "../../libs/react-ts-form";
 import { mapping } from "./mapping";
 import type { FormEvent } from "react";
 import React, { useContext } from "react";
-import {
-  Button,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Modal,
-  Stack,
-  useDisclosure,
-} from "@chakra-ui/react";
-import type { GridProps } from "@chakra-ui/layout/dist/grid";
-import { FormLayout } from "./FormLayout";
 import { useSubmitAction } from "./useSubmitAction";
 import {
   type Action,
   ModalFormActionContext,
 } from "../modal/ModalFormActionContext";
 import { useFormContext } from "react-hook-form";
-import { DeleteIcon } from "@chakra-ui/icons";
-import type { ChakraProps } from "@chakra-ui/system/dist/system.types";
 
 interface CommonFormProps {
   // onClose: () => void;
@@ -32,8 +16,7 @@ interface CommonFormProps {
   onSubmit: (values: unknown) => Promise<void>;
   children: React.ReactNode;
   actions?: React.ReactNode;
-
-  style?: ChakraProps | GridProps;
+  className?: string;
 }
 
 const CommonForm = ({
@@ -41,7 +24,7 @@ const CommonForm = ({
   title,
   onSubmit,
   children,
-  style,
+  className,
   actions,
 }: CommonFormProps) => {
   const onClose = useContext<Action>(ModalFormActionContext);

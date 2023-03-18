@@ -67,9 +67,11 @@ export const translateSchemaInfo = (
             if (typeof value === "string") {
               return value;
             } else {
+              const { id, title, ...rest } = value;
               return {
-                id: value.id,
-                title: translate(`${path}.choices.${value.id}`, value.title),
+                id,
+                title: translate(`${path}.choices.${id}`, title),
+                ...rest,
               };
             }
           })
