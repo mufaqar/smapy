@@ -10,7 +10,6 @@ JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = 'update_he/input.xlsx'
 SKIP_PATH = 'update_he/skip.json'
-pp = pprint.PrettyPrinter()
 
 
 def fmt_bi(content: str):
