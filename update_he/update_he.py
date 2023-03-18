@@ -1,4 +1,3 @@
-import argparse
 import os
 import re
 import json
@@ -8,9 +7,9 @@ import subprocess
 import pandas as pd
 from bidi.algorithm import get_display
 
-JSON_PATH = 'app/public/locales/he/landing-page.json'
+JSON_PATH = '../app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-INP_PATH = './input.xlsx'
+INP_PATH = 'input.xlsx'
 pp = pprint.PrettyPrinter()
 
 
@@ -25,6 +24,8 @@ def fmt_bi(content: str):
 
 def init_excel_sheet():
     """Reload Excel sheet with current json entries."""
+    with open('skip.json') as fp:
+        skip_lst = json.load(fp)
 
     def init_keys(obj: dict, data: dict,
                   prev_keys: tuple = ()):
@@ -32,8 +33,14 @@ def init_excel_sheet():
             current_value = obj[key]
             current_loc = prev_keys + (key,)
             if isinstance(current_value, str):
-                data['key'].append('.'.join(current_loc))
-                data['value'].append(fmt_bi(obj[key]))
+                current_key = '.'.join(current_loc)
+                data['key'].append(current_key)
+                data['value'].append(obj[key])
+                if current_key in skip_lst:
+                    flag = True
+                else:
+                    flag = False
+                data['skip_fmt'].append(flag)
             else:
                 init_keys(current_value, data,
                           prev_keys=current_loc)
@@ -41,7 +48,7 @@ def init_excel_sheet():
     with open(JSON_PATH, mode='r',
               encoding='utf-8') as fp:
         json_obj = json.load(fp)
-    d = dict(key=[], value=[])
+    d = dict(key=[], value=[], skip_fmt=[])
     init_keys(json_obj, d)
     df = pd.DataFrame(d)
     df.to_excel(INP_PATH, index=False)
@@ -52,21 +59,29 @@ def update_json():
     """Update json file from given dataframe."""
     df = pd.read_excel(INP_PATH)
 
-    def set_value(obj, key, value):
+    def set_value(obj, index: int):
         """Update given key with value within json."""
-        steps = key.split('.')
+        row = df.iloc[index]
+        steps = row['key'].split('.')
         for step in steps[:-1]:
             obj = obj[step]
         prev_value = obj[steps[-1]]
-        res = fmt_bi(value)
+        res = row['value']
+        if not row['skip_fmt']:
+            res = fmt_bi(res)
+            print(f'formatted {row["key"]}.')
+            df.loc[index, 'skip_fmt'] = True
         if res != prev_value:
             obj[steps[-1]] = res
-            print(f'updated {key} with "{res}".')
+            print(f'updated {row["key"]} with "{res}".')
 
     with open(JSON_PATH, encoding='utf-8') as fp:
         json_obj = json.load(fp)
-    for _, (k, val) in df.iterrows():
-        set_value(json_obj, k, val)
+
+    for i in range(len(df)):
+        set_value(json_obj, i)
+    temp = df.query('skip_fmt == True')['key']
+    temp.to_json('skip.json', orient='records')
 
     with open(JSON_PATH, mode='w', encoding='utf-8') as fp:
         json.dump(json_obj, fp)
