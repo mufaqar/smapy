@@ -1,4 +1,3 @@
-import os
 import re
 import json
 import pprint
@@ -7,9 +6,10 @@ import subprocess
 import pandas as pd
 from bidi.algorithm import get_display
 
-JSON_PATH = '../app/public/locales/he/landing-page.json'
+JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-INP_PATH = 'input.xlsx'
+INP_PATH = 'update_he/input.xlsx'
+SKIP_PATH = 'update_he/skip.json'
 pp = pprint.PrettyPrinter()
 
 
@@ -24,7 +24,7 @@ def fmt_bi(content: str):
 
 def init_excel_sheet():
     """Reload Excel sheet with current json entries."""
-    with open('skip.json') as fp:
+    with open(SKIP_PATH) as fp:
         skip_lst = json.load(fp)
 
     def init_keys(obj: dict, data: dict,
@@ -81,7 +81,7 @@ def update_json():
     for i in range(len(df)):
         set_value(json_obj, i)
     temp = df.query('skip_fmt == True')['key']
-    temp.to_json('skip.json', orient='records')
+    temp.to_json(SKIP_PATH, orient='records')
 
     with open(JSON_PATH, mode='w', encoding='utf-8') as fp:
         json.dump(json_obj, fp)
