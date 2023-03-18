@@ -1,3 +1,3 @@
 # smapy
 
-Open `tempfile.yml` as a sample.
+run `python update_he.py` to modify hebrew text.

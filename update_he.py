@@ -48,7 +48,6 @@ def init_excel_sheet():
     subprocess.run([EXCEL_PATH, INP_PATH])
 
 
-
 def update_json():
     """Update json file from given dataframe."""
     df = pd.read_excel(INP_PATH)
@@ -76,5 +75,3 @@ def update_json():
 if __name__ == '__main__':
     init_excel_sheet()
     update_json()
-
-
