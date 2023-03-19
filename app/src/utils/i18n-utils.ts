@@ -5,6 +5,7 @@ import { i18nConfig } from "../../next-i18next.config.mjs";
 import { trpcVanillaClient } from "./api";
 import { callAsync } from "./call-async";
 import type { MetaInfo } from "./zod-meta";
+import { map } from "rambda";
 
 const itemSent: { [key: string]: boolean } = {};
 export type TranslationFn = (key: string, def?: string) => string;
@@ -50,7 +51,8 @@ export const translateSchemaInfo = (
   let tDesc = {};
 
   if (meta) {
-    const { label, placeholder, name, choices, props, ...restDesc } = meta;
+    const { label, placeholder, text, name, choices, props, ...restDesc } =
+      meta;
 
     const translationKey = props?.translationKey || name;
     if (translationKey) {
@@ -65,16 +67,22 @@ export const translateSchemaInfo = (
             if (typeof value === "string") {
               return value;
             } else {
+              const { id, title, ...rest } = value;
               return {
-                id: value.id,
-                title: translate(`${path}.choices.${value.id}`, value.title),
+                id,
+                title: translate(`${path}.choices.${id}`, title),
+                ...rest,
               };
             }
           })
         : choices,
 
-      label: label && translate(`${path}.label`, label),
+      label:
+        typeof label === "string" ? translate(`${path}.label`, label) : label,
       placeholder: placeholder && translate(`${path}.placeholder`, placeholder),
+      text: text
+        ? map((value, key: string) => translate(`${path}.${key}`, value), text)
+        : undefined,
     };
   }
 

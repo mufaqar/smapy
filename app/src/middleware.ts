@@ -22,13 +22,19 @@ export async function middleware(req: NextRequest) {
     return res;
   }
 
+  console.log(`muly:middleware ${req.nextUrl}`, {});
+
   // Auth condition not met, redirect to home page.
   const redirectUrl = req.nextUrl.clone();
-  redirectUrl.pathname = "/";
+  redirectUrl.pathname = "/signin";
   redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname);
+  redirectUrl.searchParams.set(
+    `user`,
+    req.nextUrl.pathname.includes("/advisor") ? "advisor" : "customer"
+  );
   return NextResponse.redirect(redirectUrl);
 }
 
 export const config = {
-  matcher: "/(advisor|client)/(.*)",
+  matcher: ["/(advisor|customer)/(.*)", "/(advisor|customer)"],
 };

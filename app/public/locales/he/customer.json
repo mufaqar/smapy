@@ -1,0 +1,98 @@
+{
+  "customerCompareAndBuy": {
+    "title_life": "Compare and buy Life Insurance",
+    "title_mortgage": "Compare and buy Mortgage Insurance",
+    "title_property": "Compare and buy property Insurance",
+    "howDoesItWork": {
+      "label": "How Does It Work?",
+      "text_1": "text_1",
+      "text_2": "text_2",
+      "text_3": "text_3",
+      "text_life4": "text_life4",
+      "text_mortgage4": "text_mortgage4",
+      "text_property4": "text_property4",
+      "next": "Compare"
+    },
+    "thanks": {
+      "label": "Thanks for your interest in Smapy",
+      "placeholder": "Right now the service is available only through agents",
+      "text1": "Soon will be able to buy from the site",
+      "text2": "You will enjoy great service"
+    },
+    "end": {
+      "label": "Thanks for your interest in Smapy",
+      "placeholder": "Right now the service is available only through agents",
+      "text1": "Soon will be able to buy from the site",
+      "text2": "You will enjoy great service"
+    }
+  },
+  "contactUsEmail": {
+    "label": "Contact Me",
+    "contactDetailsEmail": {
+      "full_name": {
+        "label": "Full name"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "subject": {
+        "label": "Message"
+      },
+      "product": {
+        "label": "Which insurance you want us to help?",
+        "choices": {
+          "life": "life",
+          "life-mortgage": "life-mortgage",
+          "property": "property",
+          "property-mortgage": "property-mortgage"
+        }
+      },
+      "header": "Fill details and will return to you",
+      "contact_info": {
+        "label": "Email"
+      },
+      "name": {
+        "label": "Full name"
+      }
+    },
+    "end": {
+      "label": "Thanks for choosing Smapy",
+      "placeholder": "Thanks",
+      "text1": "Will contact you soon",
+      "text2": "You will enjoy great service"
+    }
+  },
+  "Required": "Required",
+  "contactUsPhone": {
+    "label": "Contact Me",
+    "contactDetailsPhone": {
+      "full_name": {
+        "label": "Full name"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "subject": {
+        "label": "Message"
+      },
+      "product": {
+        "label": "Which insurance you want us to help?",
+        "choices": {
+          "life": "life",
+          "life-mortgage": "life-mortgage",
+          "property": "property",
+          "property-mortgage": "property-mortgage"
+        },
+        "header": "Fill details and will return to you"
+      },
+      "header": "Fill details and will return to you"
+    },
+    "end": {
+      "label": "Thanks for choosing Smapy",
+      "placeholder": "Thanks",
+      "text1": "Will contact you soon",
+      "text2": "You will enjoy great service"
+    }
+  },
+  "Invalid email": "Invalid email"
+}

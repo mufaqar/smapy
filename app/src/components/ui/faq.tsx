@@ -13,7 +13,7 @@ interface Props {
 
 export const Faq = ({ value, question, answer }: Props) => {
   return (
-    <AccordionItem value="item-1">
+    <AccordionItem value={value}>
       <AccordionTrigger>{question}</AccordionTrigger>
       <AccordionContent>{answer}</AccordionContent>
     </AccordionItem>

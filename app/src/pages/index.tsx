@@ -17,9 +17,13 @@ import Image from "next/image";
 import React from "react";
 import {
   EmailIcon,
+  LifeInsuranceIcon,
+  MortgageInsuranceIcon,
   PhoneOutlineIcon,
+  PropertyInsuranceIcon,
   WhatsappIcon,
 } from "@/components/landing-page/Icons";
+import { SectionContactUs } from "@/components/landing-page/section-contact-us";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
@@ -33,7 +37,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Smapy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col gap-8">
+      <main className="align- flex flex-col gap-8">
         <PageNavigationMenu />
         <section>
           <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
@@ -43,24 +47,24 @@ const Home: NextPage = () => {
             {t("header_2")}
           </p>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4">
             <FloatingCard
-              logo=""
+              icon={<LifeInsuranceIcon />}
               title={t("floating.1")}
               linkText="compare & buy"
-              href="/buy/life-insurance"
+              href="/compare/life"
             ></FloatingCard>
             <FloatingCard
-              logo=""
+              icon={<MortgageInsuranceIcon />}
               title={t("floating.2", "Mortgage insurance")}
               linkText="compare & buy"
-              href="/buy/mortgage-insurance"
+              href="/compare/mortgage"
             ></FloatingCard>
             <FloatingCard
-              logo=""
+              icon={<PropertyInsuranceIcon />}
               title="Property insurance"
               linkText="compare & buy"
-              href="/buy/property-insurance"
+              href="/compare/property"
             ></FloatingCard>
           </div>
         </section>
@@ -133,19 +137,19 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-row">
                 <Image
-                  src="/images/doing-well/image 19.png"
+                  src="/images/doing-well/image19.png"
                   alt=""
                   width={95}
                   height={70}
                 />
                 <Image
-                  src="/images/doing-well/image 20.png"
+                  src="/images/doing-well/image20.png"
                   alt=""
                   width={85}
                   height={70}
                 />
                 <Image
-                  src="/images/doing-well/image 21.png"
+                  src="/images/doing-well/image21.png"
                   alt=""
                   width={92}
                   height={70}
@@ -222,16 +226,11 @@ const Home: NextPage = () => {
           </Link>
         </section>
 
-        <section>
+        <SectionContactUs>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            Will love to help
+            {t("contact.header")}
           </h1>
-          <div className="flex flex-row gap-8">
-            <ConnectButton icon={<WhatsappIcon />} text="Whatsapp" href="" />
-            <ConnectButton icon={<EmailIcon />} text="email" href="" />
-            <ConnectButton icon={<PhoneOutlineIcon />} text="Phone" href="" />
-          </div>
-        </section>
+        </SectionContactUs>
       </main>
       <Footer />
     </>

@@ -66,14 +66,14 @@ export const PageNavigationMenu = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="mx-2">
-          <Link href="/customer/entry" legacyBehavior passHref>
+          <Link href="/customer" legacyBehavior passHref>
             <NavigationMenuLink className={cn(buttonVariants())}>
               Customer Entry
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="mx-2">
-          <Link href="/advisor/entry" legacyBehavior passHref>
+          <Link href="/advisor" legacyBehavior passHref>
             <NavigationMenuLink className={cn(buttonVariants())}>
               Agency Entry
             </NavigationMenuLink>

@@ -11,11 +11,14 @@ import { printUseEnumWarning } from "./logging";
 import { errorFromRhfErrorObject } from "./zodObjectErrors";
 import { MetaInfo, ZodMetaDataItem } from "../../../utils/zod-meta";
 import { TranslationFn } from "../../../utils/i18n-utils";
+import { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
 export interface FormContext {
   t: TranslationFn;
 
   formMeta: MetaInfo;
+
+  flowContext?: WizardControlProps;
 }
 
 export const FieldContext = createContext<null | {
