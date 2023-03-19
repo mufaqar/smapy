@@ -24,6 +24,7 @@ import {
   WhatsappIcon,
 } from "@/components/landing-page/Icons";
 import { SectionContactUs } from "@/components/landing-page/section-contact-us";
+import { faq } from "@/components/landing-page/faq";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
@@ -216,9 +217,9 @@ const Home: NextPage = () => {
             FAQ
           </h1>
           <Accordion type="single" collapsible>
-            <Faq value="q1" question="q1" answer="a1" />
-            <Faq value="q2" question="q1" answer="a1" />
-            <Faq value="q3" question="q1" answer="a1" />
+            {faq.slice(0, 3).map(({ q, a }, idx: number) => (
+              <Faq key={idx} value={`${idx}`} question={q} answer={a} />
+            ))}
           </Accordion>
 
           <Link href="/faq" legacyBehavior passHref>

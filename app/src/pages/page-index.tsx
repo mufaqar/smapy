@@ -23,6 +23,9 @@ const Home: NextPage = () => {
     { href: "/signin?user=customer&debug=otp", title: "Customer -> OTP" },
     { href: "/customer/registration", title: "Advisor -> Registration Flow" },
     { href: "/customer", title: "Customer -> Dashboard" },
+
+    { href: "/blog/sample-blog-post", title: "Blog (Style:Square)" },
+    { href: "/blog/sample-blog-polygon-style", title: "Blog (Style:Polygon)" },
   ];
 
   return (

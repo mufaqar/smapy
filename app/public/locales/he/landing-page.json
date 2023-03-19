@@ -137,5 +137,13 @@
   },
   "contact": {
     "header": "contact.header"
+  },
+  "blog": {
+    "action": "blog.action",
+    "summary": {
+      "life-insurance": "blog.summary.life-insurance",
+      "lifeinsurance": "blog.summary.lifeinsurance",
+      "life": "blog.summary.life"
+    }
   }
 }
