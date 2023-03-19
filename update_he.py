@@ -32,10 +32,11 @@ def json_to_sheet():
             for key in obj:
                 current_value = obj[key]
                 current_loc = prev_keys + (key,)
-                if isinstance(current_value, (str, float, int)):
+                if isinstance(current_value,
+                              (str, float, int)):
                     current_id = '.'.join(current_loc)
                     data['key'].append(current_id)
-                    data['value'].append(obj[key])
+                    data['value'].append(current_value)
                 else:
                     fill_data(current_value,
                               prev_keys=current_loc)
