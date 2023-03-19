@@ -226,6 +226,7 @@ const Home: NextPage = () => {
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
             {t('index.sections.7.header')}
           </h1>
+          <span>{t('index.sections.7.text')}</span>
         </SectionContactUs>
       </main>
       <Footer />

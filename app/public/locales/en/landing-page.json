@@ -251,7 +251,8 @@
         "more_faqs": "index.sections.6.more_faqs"
       },
       "7": {
-        "header": "index.sections.7.header"
+        "header": "index.sections.7.header",
+        "text": "index.sections.7.text"
       }
     }
   },

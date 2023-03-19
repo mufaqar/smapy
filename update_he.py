@@ -13,13 +13,15 @@ EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = 'update_assets/input.xlsx'
 
 
-def fmt_bi(content):
+def fmt_bi(content, *, direct):
     """Format hebrew content in correct direction and in one line.
     @:param content: content to format to html
     """
     pat = re.compile(r'\s+')
-    directed = get_display(str(content))
-    return pat.sub(repl=' ', string=directed)
+    res = str(content)
+    if direct:
+        res = get_display(res)
+    return pat.sub(repl=' ', string=res)
 
 
 def json_to_sheet():
@@ -50,7 +52,9 @@ def json_to_sheet():
     with open(JSON_PATH, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
-    json_to_df(json_obj).to_excel(INP_PATH, index=False)
+    result = json_to_df(json_obj)
+    result.to_excel(INP_PATH, index=False, engine='xlsxwriter')
+
     subprocess.run([EXCEL_PATH, INP_PATH])
 
 
@@ -73,8 +77,10 @@ def sheet_to_json():
             if is_scalar(prev_value):
                 res = row['value']
                 if row['format_flag'] and not pd.isna(row['format_flag']):
-                    res = fmt_bi(res)
-                    print(f'formatted {row["key"]}.')
+                    res = fmt_bi(res, direct=True)
+                    print(f'redirected {row["key"]}.')
+                else:
+                    res = fmt_bi(res, direct=False)
                 if res != prev_value and not pd.isna(res):
                     obj[steps[-1]] = res
                     print(f'updated {row["key"]} with "{res}".')
