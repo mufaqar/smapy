@@ -3,8 +3,9 @@ import json
 import argparse
 import subprocess
 
-import numpy as np
+
 import pandas as pd
+from pandas.api.types import is_scalar
 from bidi.algorithm import get_display
 
 JSON_PATH = 'app/public/locales/he/landing-page.json'
@@ -12,12 +13,12 @@ EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = 'update_assets/input.xlsx'
 
 
-def fmt_bi(content: str):
+def fmt_bi(content):
     """Format hebrew content in correct direction and in one line.
-    @:param: content (str) the string to format to html
+    @:param content: content to format to html
     """
     pat = re.compile(r'\s+')
-    directed = get_display(content)
+    directed = get_display(str(content))
     return pat.sub(repl=' ', string=directed)
 
 
@@ -32,8 +33,7 @@ def json_to_sheet():
             for key in obj:
                 current_value = obj[key]
                 current_loc = prev_keys + (key,)
-                if isinstance(current_value,
-                              (str, float, int)):
+                if is_scalar(current_value):
                     current_id = '.'.join(current_loc)
                     data['key'].append(current_id)
                     data['value'].append(current_value)
@@ -59,17 +59,29 @@ def sheet_to_json():
 
     def row_to_json_obj(row: pd.Series, *, obj):
         """Update given json by dataframe row value."""
+        invalid_key_message = f'ignored {row["key"]}, non-existent json entry.'
+        broad_key_message = f'ignored {row["key"]}, too broad json entry.'
         steps = row['key'].split('.')
         for step in steps[:-1]:
-            obj = obj[step]
-        prev_value = obj[steps[-1]]
-        res = row['value']
-        if row['format_flag'] and not np.isnan(row['format_flag']):
-            res = fmt_bi(res)
-            print(f'formatted {row["key"]}.')
-        if res != prev_value and not np.isnan(res):
-            obj[steps[-1]] = res
-            print(f'updated {row["key"]} with "{res}".')
+            try:
+                obj = obj[step]
+            except KeyError:
+                print(invalid_key_message)
+                return
+        if steps[-1] in obj:
+            prev_value = obj[steps[-1]]
+            if is_scalar(prev_value):
+                res = row['value']
+                if row['format_flag'] and not pd.isna(row['format_flag']):
+                    res = fmt_bi(res)
+                    print(f'formatted {row["key"]}.')
+                if res != prev_value and not pd.isna(res):
+                    obj[steps[-1]] = res
+                    print(f'updated {row["key"]} with "{res}".')
+            else:
+                print(broad_key_message)
+        else:
+            print(invalid_key_message)
 
     with open(JSON_PATH, encoding='utf-8') as fp:
         json_obj = json.load(fp)
