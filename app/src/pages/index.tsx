@@ -41,59 +41,59 @@ const Home: NextPage = () => {
         <PageNavigationMenu />
         <section>
           <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
-            {t("header")}
+            {t("index.header")}
           </h1>
           <p className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl">
-            {t("header_2")}
+            {t("index.header_2")}
           </p>
 
           <div className="flex flex-col items-center gap-4">
             <FloatingCard
               icon={<LifeInsuranceIcon />}
-              title={t("floating.1")}
-              linkText="compare & buy"
+              title={t("index.floating.1")}
+              linkText={t('index.floating.link_text')}
               href="/compare/life"
             ></FloatingCard>
             <FloatingCard
               icon={<MortgageInsuranceIcon />}
-              title={t("floating.2", "Mortgage insurance")}
-              linkText="compare & buy"
+              title={t("index.floating.2")}
+              linkText={t('index.floating.link_text')}
               href="/compare/mortgage"
             ></FloatingCard>
             <FloatingCard
               icon={<PropertyInsuranceIcon />}
-              title="Property insurance"
-              linkText="compare & buy"
+              title={t("index.floating.3")}
+              linkText={t('index.floating.link_text')}
               href="/compare/property"
             ></FloatingCard>
           </div>
         </section>
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            Advance platform
+            {t('index.sections.1.header')}
           </h1>
           <p className="text-2xl font-bold tracking-tight lg:text-2xl">
-            Smapy is advance
+            {t('index.sections.1.text.1')}
           </p>
           <p className="text-2xl lg:text-2xl">
-            Smapy is a platform based on AI
+            {t('index.sections.1.text.2')}
           </p>
         </section>
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            How does it work
+            {t('index.sections.2.header')}
           </h1>
           <div className="flex flex-row gap-8">
-            <StepCard idx={1} title="Personal info" text="fill details" />
-            <StepCard idx={2} title="Personal info" text="fill details" />
-            <StepCard idx={3} title="Personal info" text="fill details" />
-            <StepCard idx={4} title="Personal info" text="fill details" />
+            <StepCard idx={1} title={t('index.sections.2.steps.1.title')} text={t('index.sections.2.steps.1.text')} />
+            <StepCard idx={2} title={t('index.sections.2.steps.2.title')} text={t('index.sections.2.steps.2.text')} />
+            <StepCard idx={3} title={t('index.sections.2.steps.3.title')} text={t('index.sections.2.steps.3.text')} />
+            <StepCard idx={4} title={t('index.sections.2.steps.4.title')} text={t('index.sections.2.steps.4.text')} />
           </div>
         </section>
 
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            Platforms for your choice
+            {t('index.sections.3.header')}
           </h1>
           <div className="flex flex-row flex-wrap justify-center gap-8">
             <CompanyLogo name="cmp1" src="/images/company-logo/klal.png" />
@@ -108,31 +108,31 @@ const Home: NextPage = () => {
 
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            Four reason to choose smapy
+            {t('index.sections.4.header')}
           </h1>
           <div className="flex flex-row gap-8">
             <ImageCard
               idx={1}
-              title={t("reason.title.1")}
-              text={t("reason.text.1")}
+              title={t('index.sections.4.reasons.1.title')}
+              text={t('index.sections.4.reasons.1.text')}
               image="/images/image-card/image1.svg"
             />
             <ImageCard
               idx={2}
-              title={t("reason.title.2")}
-              text={t("reason.text.2")}
+              title={t('index.sections.4.reasons.2.title')}
+              text={t('index.sections.4.reasons.2.text')}
               image="/images/image-card/image2.svg"
             />
             <ImageCard
               idx={3}
-              title={t("reason.title.3")}
-              text={t("reason.text.3")}
+              title={t('index.sections.4.reasons.3.title')}
+              text={t('index.sections.4.reasons.3.text')}
               image="/images/image-card/image3.svg"
             />
             <ImageCard
               idx={4}
-              title={t("reason.title.4")}
-              text={t("reason.text.4")}
+              title={t('index.sections.4.reasons.4.title')}
+              text={t('index.sections.4.reasons.4.text')}
               image="/images/image-card/image4.svg"
             >
               <div className="flex flex-row">
@@ -161,51 +161,47 @@ const Home: NextPage = () => {
 
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            What they say about us
+            {t('index.sections.5.header')}
           </h1>
           <div className="flex flex-row gap-8">
             <TestimonialCard
-              name="Ms. Tony Rutherford"
+              name={t('index.sections.5.cards.1.name')}
               date="2022-12-04"
               rate={5}
               image=""
             >
               <p>
-                Everyone’s on the same page. Many of our people are not very
-                organized naturally, so Pharps is a godsend!
+                {t('index.sections.5.cards.1.text')}
               </p>
             </TestimonialCard>
             <TestimonialCard
-              name="Ms. Tony Rutherford"
+              name={t('index.sections.5.cards.2.name')}
               date="2022-12-04"
               rate={5}
               image=""
             >
               <p>
-                Everyone’s on the same page. Many of our people are not very
-                organized naturally, so Pharps is a godsend!
+                {t('index.sections.5.cards.2.text')}
               </p>
             </TestimonialCard>
             <TestimonialCard
-              name="Ms. Tony Rutherford"
+              name={t('index.sections.5.cards.3.name')}
               date="2022-12-04"
               rate={5}
               image=""
             >
               <p>
-                Everyone’s on the same page. Many of our people are not very
-                organized naturally, so Pharps is a godsend!
+                {t('index.sections.5.cards.3.text')}
               </p>
             </TestimonialCard>
             <TestimonialCard
-              name="Ms. Tony Rutherford"
+              name={t('index.sections.5.cards.4.name')}
               date="2022-12-04"
               rate={5}
               image=""
             >
               <p>
-                Everyone’s on the same page. Many of our people are not very
-                organized naturally, so Pharps is a godsend!
+                {t('index.sections.5.cards.4.text')}
               </p>
             </TestimonialCard>
           </div>
@@ -213,22 +209,22 @@ const Home: NextPage = () => {
 
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            FAQ
+            {t('index.sections.6.header')}
           </h1>
           <Accordion type="single" collapsible>
-            <Faq value="q1" question="q1" answer="a1" />
-            <Faq value="q2" question="q1" answer="a1" />
-            <Faq value="q3" question="q1" answer="a1" />
+            <Faq value="q1" question={t('index.sections.6.faqs.1.q')} answer={t('index.sections.6.faqs.1.a')} />
+            <Faq value="q2" question={t('index.sections.6.faqs.2.q')} answer={t('index.sections.6.faqs.2.a')} />
+            <Faq value="q3" question={t('index.sections.6.faqs.3.q')} answer={t('index.sections.6.faqs.3.a')} />
           </Accordion>
 
           <Link href="/faq" legacyBehavior passHref>
-            <a>More FAQ</a>
+            <a>{t('index.sections.6.more_faqs')}</a>
           </Link>
         </section>
 
         <SectionContactUs>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            {t("contact.header")}
+            {t('index.sections.7.header')}
           </h1>
         </SectionContactUs>
       </main>
