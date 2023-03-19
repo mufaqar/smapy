@@ -1,15 +1,15 @@
 import re
 import json
-import pprint
+import argparse
 import subprocess
 
+import numpy as np
 import pandas as pd
 from bidi.algorithm import get_display
 
 JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-INP_PATH = 'update_he/input.xlsx'
-SKIP_PATH = 'update_he/skip.json'
+INP_PATH = 'update_assets/input.xlsx'
 
 
 def fmt_bi(content: str):
@@ -21,55 +21,51 @@ def fmt_bi(content: str):
     return pat.sub(repl=' ', string=directed)
 
 
-def init_excel_sheet():
+def json_to_sheet():
     """Reload Excel sheet with current json entries."""
-    with open(SKIP_PATH) as fp:
-        skip_lst = json.load(fp)
 
-    def init_keys(obj: dict, data: dict,
-                  prev_keys: tuple = ()):
-        for key in obj:
-            current_value = obj[key]
-            current_loc = prev_keys + (key,)
-            if isinstance(current_value, str):
-                current_key = '.'.join(current_loc)
-                data['key'].append(current_key)
-                data['value'].append(obj[key])
-                if current_key in skip_lst:
-                    flag = True
+    def json_to_df(main_obj):
+        """Return a DataFrame from given main_obj."""
+
+        def fill_data(obj: dict, prev_keys: tuple = ()):
+            """Fill `data` dictionary with json data."""
+            for key in obj:
+                current_value = obj[key]
+                current_loc = prev_keys + (key,)
+                if isinstance(current_value, str):
+                    current_id = '.'.join(current_loc)
+                    data['key'].append(current_id)
+                    data['value'].append(obj[key])
                 else:
-                    flag = False
-                data['skip_fmt'].append(flag)
-            else:
-                init_keys(current_value, data,
-                          prev_keys=current_loc)
+                    fill_data(current_value,
+                              prev_keys=current_loc)
 
-    with open(JSON_PATH, mode='r',
-              encoding='utf-8') as fp:
+        data = dict(key=[], value=[])
+        fill_data(main_obj)
+        df = pd.DataFrame(data)
+        df['format_flag'] = fmt_flag
+        return df
+
+    with open(JSON_PATH, encoding='utf-8') as fp:
         json_obj = json.load(fp)
-    d = dict(key=[], value=[], skip_fmt=[])
-    init_keys(json_obj, d)
-    df = pd.DataFrame(d)
-    df.to_excel(INP_PATH, index=False)
+
+    json_to_df(json_obj).to_excel(INP_PATH, index=False)
     subprocess.run([EXCEL_PATH, INP_PATH])
 
 
-def update_json():
-    """Update json file from given dataframe."""
-    df = pd.read_excel(INP_PATH)
+def sheet_to_json():
+    """Update json entries with sheet data."""
 
-    def set_value(obj, index: int):
-        """Update given key with value within json."""
-        row = df.iloc[index]
+    def row_to_json_obj(row: pd.Series, *, obj):
+        """Update given json by dataframe row value."""
         steps = row['key'].split('.')
         for step in steps[:-1]:
             obj = obj[step]
         prev_value = obj[steps[-1]]
         res = row['value']
-        if not row['skip_fmt']:
+        if row['format_flag'] and not np.isnan(row['format_flag']):
             res = fmt_bi(res)
             print(f'formatted {row["key"]}.')
-            df.loc[index, 'skip_fmt'] = True
         if res != prev_value:
             obj[steps[-1]] = res
             print(f'updated {row["key"]} with "{res}".')
@@ -77,15 +73,18 @@ def update_json():
     with open(JSON_PATH, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
-    for i in range(len(df)):
-        set_value(json_obj, i)
-    temp = df.query('skip_fmt == True')['key']
-    temp.to_json(SKIP_PATH, orient='records')
+    df = pd.read_excel(INP_PATH)
+    df.apply(row_to_json_obj, axis=1, obj=json_obj)
 
     with open(JSON_PATH, mode='w', encoding='utf-8') as fp:
         json.dump(json_obj, fp)
 
 
 if __name__ == '__main__':
-    init_excel_sheet()
-    update_json()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--init', action='store_true',
+                        help='Format all by default.')
+    args = parser.parse_args()
+    fmt_flag = args.init
+    json_to_sheet()
+    sheet_to_json()
