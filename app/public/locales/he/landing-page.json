@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-{"reason": {"title": {"1": "reason.title.1", "2": "reason.title.2", "3": "reason.title.3", "4": "reason.title.4"}, "text": {"1": "reason.text.1", "2": "reason.text.2", "3": "reason.text.3", "4": "reason.text.4"}}, "header": "hebrew - header - v2", "header_2": "hebrew - header_2", "floating": {"1": "\u05d1\u05d5\u05d0\u05d5", "2": "floating.2"}}
-=======
+
 {
   "reason": {
     "title": {
@@ -142,4 +140,3 @@
     "header": "contact.header"
   }
 }
->>>>>>> 3f599743a4bf2e49d2569574768a6066956b168c

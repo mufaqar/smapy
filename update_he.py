@@ -32,7 +32,7 @@ def json_to_sheet():
             for key in obj:
                 current_value = obj[key]
                 current_loc = prev_keys + (key,)
-                if isinstance(current_value, str):
+                if isinstance(current_value, (str, float, int)):
                     current_id = '.'.join(current_loc)
                     data['key'].append(current_id)
                     data['value'].append(obj[key])
@@ -66,7 +66,7 @@ def sheet_to_json():
         if row['format_flag'] and not np.isnan(row['format_flag']):
             res = fmt_bi(res)
             print(f'formatted {row["key"]}.')
-        if res != prev_value:
+        if res != prev_value and not np.isnan(res):
             obj[steps[-1]] = res
             print(f'updated {row["key"]} with "{res}".')
 
