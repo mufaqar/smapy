@@ -106,3 +106,5 @@ dist
 design/figma-plugin-apply-changes/build/
 design/figma-json/smapy.json
 .secret
+# Local Netlify folder
+.netlify
