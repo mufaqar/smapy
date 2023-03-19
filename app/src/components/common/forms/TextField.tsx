@@ -1,23 +1,29 @@
 import { useMeta, useTsController } from "../../libs/react-ts-form";
-import {
-  Input,
-  Select,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Switch,
-  Checkbox,
-  Textarea,
-} from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
 import { RadioButtonGroup } from "./RadioButtonGroup";
-import { CheckboxGroup } from "./CheckboxGroup";
 import type { ChoiceType, ZodMetaDataItem } from "../../../utils/zod-meta";
+import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
+import { FormControl } from "./FormControl";
+import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Switch } from "@/components/ui/switch";
 
-interface Props {
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+export interface Props {
   choices?: ChoiceType[];
   type?: string;
-
   controlName?: ZodMetaDataItem["control"];
 }
 
@@ -34,7 +40,7 @@ export const TextField = (
     label,
     placeholder,
     choices: choicesDescription,
-    style,
+    className,
   } = meta || {
     label: "",
     placeholder: "",
@@ -49,24 +55,24 @@ export const TextField = (
 
   controlName = controlName || meta?.control;
 
-  console.log(
-    `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
-    {
-      meta,
-      choices,
-      field,
-      label,
-      placeholder,
-    }
-  );
+  // console.log(
+  //   `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
+  //   {
+  //     error,
+  //     meta,
+  //     choices,
+  //     field,
+  //     label,
+  //     placeholder,
+  //   }
+  // );
 
   let control;
   if (!choices) {
     if (controlName === "Textarea") {
       control = (
         <Textarea
-          maxW="sm"
-          minH={32}
+          className={cn({ error: "border-red-500" })}
           name={field.name}
           placeholder={placeholder}
           value={field.value ? field.value + "" : ""}
@@ -78,6 +84,7 @@ export const TextField = (
     } else if (controlName === "File") {
       control = (
         <input
+          className={clsx([{ error: "file-input-error" }])}
           type="file"
           name={field.name}
           onChange={(e) => {
@@ -94,10 +101,12 @@ export const TextField = (
         />
       );
     } else {
+      // console.log(`muly:TextField`, { error });
       control = (
         <Input
-          maxW="sm"
+          error={error}
           name={field.name}
+          id={field.name}
           type={type || undefined}
           placeholder={placeholder}
           value={field.value ? field.value + "" : ""}
@@ -112,46 +121,58 @@ export const TextField = (
       typeof choices[0] === "string" ? choices : [false, true];
 
     control = (
-      <Checkbox
-        name={field.name}
-        isChecked={field.value == valueTrue}
-        onChange={(e) => {
-          field.onChange(
-            e.target.checked ? String(valueTrue) : String(valueFalse)
-          );
-        }}
-      >
-        {label}
-      </Checkbox>
+      <div className="flex items-center space-x-2">
+        <Checkbox
+          className={clsx(["checkbox", { error: "checkbox-error" }])}
+          id={field.name}
+          name={field.name}
+          checked={field.value == valueTrue}
+          onCheckedChange={(checked) => {
+            field.onChange(checked ? String(valueTrue) : String(valueFalse));
+          }}
+        />
+        <label
+          htmlFor={field.name}
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          {maybeConvertChild(label)}
+        </label>
+      </div>
     );
   } else if (controlName === "Switch") {
     const [valueFalse, valueTrue] =
       typeof choices[0] === "string" ? choices : [false, true];
 
     control = (
-      <Switch
-        name={field.name}
-        isChecked={field.value == valueTrue}
-        onChange={(e) => {
-          field.onChange(
-            e.target.checked ? String(valueTrue) : String(valueFalse)
-          );
-        }}
-      >
-        {label}
-      </Switch>
+      <div className="flex items-center space-x-2">
+        <Switch
+          className="flex h-10 w-full rounded-md border border-slate-300 bg-transparent py-2 px-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900"
+          id={field.name}
+          name={field.name}
+          checked={field.value == valueTrue}
+          onCheckedChange={(checked) => {
+            field.onChange(checked ? String(valueTrue) : String(valueFalse));
+          }}
+        />
+        <label
+          htmlFor={field.name}
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          {maybeConvertChild(label)}
+        </label>
+      </div>
     );
-  } else if (controlName === "CheckboxGroup") {
-    control = (
-      <CheckboxGroup
-        value={(field.value || "").split(",")}
-        choices={choices}
-        onChange={(value) => {
-          console.log(`muly:onCjange`, { value });
-          field.onChange(value.join(","));
-        }}
-      />
-    );
+    // } else if (controlName === "CheckboxGroup") {
+    //   control = (
+    //     <CheckboxGroup
+    //       value={(field.value || "").split(",")}
+    //       choices={choices}
+    //       onChange={(value) => {
+    //         console.log(`muly:onCjange`, { value });
+    //         field.onChange(value.join(","));
+    //       }}
+    //     />
+    //   );
   } else if (controlName === "RadioGroup") {
     control = (
       <RadioButtonGroup
@@ -166,24 +187,29 @@ export const TextField = (
   } else {
     control = (
       <Select
-        maxW="sm"
         name={field.name}
-        placeholder={placeholder}
         value={field.value ? field.value + "" : ""}
-        onChange={(e) => {
-          console.log(`muly:Select on change`, { e });
-          field.onChange(e.target.value);
+        onValueChange={(value) => {
+          field.onChange(value);
         }}
       >
-        {choices.map((choice, idx) => {
-          const { id, title } =
-            typeof choice === "string" ? { id: choice, title: choice } : choice;
-          return (
-            <option key={idx} value={id}>
-              {title}
-            </option>
-          );
-        })}
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder={placeholder} />
+        </SelectTrigger>
+
+        <SelectContent>
+          {choices.map((choice, idx) => {
+            const { id, title } =
+              typeof choice === "string"
+                ? { id: choice, title: choice }
+                : choice;
+            return (
+              <SelectItem key={idx} value={String(id)}>
+                {title}
+              </SelectItem>
+            );
+          })}
+        </SelectContent>
       </Select>
     );
   }
@@ -191,21 +217,10 @@ export const TextField = (
   // console.log(`muly:TextField`, { formContext });
 
   return (
-    <FormControl isInvalid={!!error} {...style}>
-      {controlName !== "Checkbox" && controlName !== "Switch" && (
-        <FormLabel mb={1} whiteSpace="nowrap">
-          {label}
-        </FormLabel>
-      )}
+    <FormControl
+      showLabel={controlName !== "Checkbox" && controlName !== "Switch"}
+    >
       {control}
-      {!error ? null : (
-        // <FormHelperText>
-        //   Enter the email you'd like to receive the newsletter on.
-        // </FormHelperText>
-        <FormErrorMessage>
-          {formContext.t(error?.errorMessage)}
-        </FormErrorMessage>
-      )}
     </FormControl>
   );
 };

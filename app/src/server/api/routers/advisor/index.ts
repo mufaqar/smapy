@@ -1,5 +1,9 @@
 import { createTRPCRouter } from "../../trpc";
-import { getUserProfile, updateUserProfile } from "./account";
+import {
+  getUserProfile,
+  getUserProfileCheckComplete,
+  updateUserProfile,
+} from "./account";
 import { sampleBankList } from "./select-lists";
 import {
   createLifeInsurance,
@@ -8,6 +12,7 @@ import {
 } from "./life-insurance";
 
 export const advisorRouter = createTRPCRouter({
+  getUserProfileCheckComplete,
   getUserProfile,
   updateUserProfile,
 

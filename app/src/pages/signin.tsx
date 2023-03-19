@@ -1,10 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 
-import { AdvisorAuth } from "../components/auth/AdvisorAuth";
+import { UserAuth } from "../components/auth/UserAuth";
 import { i18nGetServerSideProps } from "../utils/i18n-ssr";
 
-export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
+export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
 const Page: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Page: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <AdvisorAuth />
+        <UserAuth />
       </main>
     </>
   );

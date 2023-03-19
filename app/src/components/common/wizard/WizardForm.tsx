@@ -8,12 +8,13 @@ import { FormSideBackgroundImage } from "./FormSideBackgroundImage";
 import NoSSR from "react-no-ssr";
 import { Loading } from "../Loading";
 
-interface Props<T> extends WizardControlProps {
+interface Props<T> {
+  wizard: WizardControlProps;
   recordData: T;
 
   formData: any;
 
-  handleSubmit: (data: T) => Promise<void>;
+  handleSubmit: (data: T) => Promise<void> | void;
 
   // preprocessField;
 }
@@ -26,8 +27,6 @@ export const WizardForm = ({
 }: Props<any>) => {
   const { schema, control, step, formContext } = wizard;
 
-  // console.log(`muly:WizardForm render`, { wizard, recordData });
-
   if (recordData === undefined) {
     return <Box>Loading...</Box>;
   }
@@ -37,14 +36,14 @@ export const WizardForm = ({
     // Server has no access to url parameters so it render step 0
     // Maybe we can revisit this in the future
     <NoSSR onSSR={<Loading />}>
-      <VStack maxW="lg" m="auto">
-        <FormHeader wizard={wizard} />
+      <div className="m-auto flex max-w-6xl flex-col gap-8">
+        <FormHeader {...wizard} />
         <Box position="relative" key={step.name}>
           {!!control ? (
-            control({ wizard })
+            control(wizard)
           ) : (
             <Form
-              formContext={formContext}
+              formContext={{ ...formContext, flowContext: wizard }}
               schema={schema}
               onSubmit={handleSubmit}
               // preprocessField={preprocessField}
@@ -55,24 +54,18 @@ export const WizardForm = ({
               // }}
               defaultValues={formData || recordData}
               formProps={{
-                style: {
-                  // Merged with schema dsk style, priority to dsk
-                  mt: 18,
-                },
                 submit: {
                   notification: false,
                   text: "Next",
-                  alignSelf: "center",
-                  mt: 16,
                 },
               }}
-            ></Form>
+            />
           )}
 
           <FormSideBackgroundImage image={step.meta.props?.image} />
         </Box>
-        <pre>{JSON.stringify(recordData, null, 2)}</pre>
-      </VStack>
+        {/*<pre>{JSON.stringify(recordData, null, 2)}</pre>*/}
+      </div>
     </NoSSR>
   );
 };

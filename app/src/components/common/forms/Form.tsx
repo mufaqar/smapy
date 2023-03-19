@@ -2,27 +2,35 @@ import { createTsForm } from "../../libs/react-ts-form";
 import { mapping } from "./mapping";
 import type { FormEvent } from "react";
 import React from "react";
-import { Button, Stack } from "@chakra-ui/react";
-import type { GridProps } from "@chakra-ui/layout/dist/grid";
-import { FormLayout } from "./FormLayout";
 import { useSubmitAction } from "./useSubmitAction";
-import type { ButtonProps } from "@chakra-ui/button/dist/button";
-import type { ChakraProps } from "@chakra-ui/system/dist/system.types";
+import { clsx } from "clsx";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export interface CommonFormProps {
   onSubmit: (values: unknown) => Promise<void>;
   children: React.ReactNode;
 
-  submit?: ButtonProps & {
+  submit?: {
+    className?: string;
     text?: string;
     notification?: boolean;
   };
 
-  style?: ChakraProps | GridProps;
+  className?: string;
 }
 
-const CommonForm = ({ onSubmit, children, submit, style }: CommonFormProps) => {
-  const { text, notification, ...buttonProps } = submit || {
+const CommonForm = ({
+  onSubmit,
+  children,
+  submit,
+  className,
+}: CommonFormProps) => {
+  const {
+    text,
+    notification,
+    className: buttonClassName,
+  } = submit || {
     text: "Save",
     notification: false,
   };
@@ -32,26 +40,18 @@ const CommonForm = ({ onSubmit, children, submit, style }: CommonFormProps) => {
   });
 
   return (
-    <form
-      onSubmit={(e: FormEvent) => {
-        e.preventDefault();
-        void handleSubmit(e);
-      }}
-      noValidate
-    >
-      <Stack>
-        <FormLayout style={style}>{children}</FormLayout>
+    <form onSubmit={handleSubmit} noValidate>
+      <div className="flex flex-col items-center">
+        <div className={cn("flex flex-col gap-4", className)}>{children}</div>
         <Button
-          // Defaults
-          minW={36}
-          mt={8}
-          type="submit"
+          variant="primary"
+          className={buttonClassName}
           isLoading={isLoading}
-          {...buttonProps}
+          type="submit"
         >
           {text}
         </Button>
-      </Stack>
+      </div>
     </form>
   );
 };

@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { AdvisorRegistrationFlow } from "../../components/advisor/advisor-registration-flow/AdvisorRegistrationFlow";
+import { AdvisorRegistrationFlow } from "../../components/advisor/advisor-registration-flow/advisor-registration-flow";
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
 
 export const getServerSideProps = i18nGetServerSideProps(["advisor"]);

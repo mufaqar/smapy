@@ -12,6 +12,7 @@ const server = z.object({
   ADMIN_SECRET: z.string(),
   UI_URL: z.string().url(),
   SENDGRID_API_KEY: z.string(),
+  NOVU_API_KEY: z.string(),
 });
 
 /**
@@ -40,6 +41,7 @@ const processEnv = {
   ADMIN_SECRET: process.env.ADMIN_SECRET,
   UI_URL: process.env.UI_URL,
   SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+  NOVU_API_KEY: process.env.NOVU_API_KEY,
   NEXT_PUBLIC_FLAGS_ENV_KEY: process.env.NEXT_PUBLIC_FLAGS_ENV_KEY,
 };
 

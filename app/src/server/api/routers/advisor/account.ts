@@ -1,6 +1,10 @@
+import { z } from "zod";
 import { protectedProcedure } from "../../trpc";
 import { UserProfileModel } from "../../../../../prisma/zod";
-import { AdvisorUpdateSchema } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import {
+  AdvisorUpdatePages,
+  AdvisorUpdateSchema,
+} from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { TRPCError } from "@trpc/server";
 
 const UserProfileSchemaSelect = {
@@ -22,9 +26,40 @@ const UserProfileSchemaSelect = {
   bank_account: true,
   bank_details_later: true,
   signed_terms: true,
+  advisor_status: true,
 } as const;
 
 const UserProfileSchema = UserProfileModel.pick(UserProfileSchemaSelect);
+
+export const getUserProfileCheckComplete = protectedProcedure
+  .output(
+    z.object({
+      user: UserProfileSchema.nullish(),
+      inCompleteStep: z.number(),
+    })
+  )
+  .query(async ({ ctx }) => {
+    console.log(`muly:`, { user: ctx.user });
+    const user = await ctx.prisma.userProfile.findUniqueOrThrow({
+      where: { id: ctx.user.id },
+      select: UserProfileSchemaSelect,
+    });
+
+    // console.log(`muly:getUserProfileCheckComplete`, { user });
+    const inCompleteStep = Object.values(AdvisorUpdatePages.pages).findIndex(
+      (page, idx) => {
+        if (page._def.typeName !== "ZodUndefined") {
+          const result = page.safeParse(user);
+          console.log(`muly:page validate`, { result });
+          return !result.success;
+        }
+
+        return false;
+      }
+    );
+
+    return { user, inCompleteStep };
+  });
 
 export const getUserProfile = protectedProcedure
   .output(UserProfileSchema.nullish())
@@ -46,9 +81,10 @@ export const updateUserProfile = protectedProcedure
 
     const userProfile = await ctx.prisma.userProfile.upsert({
       where: { id: ctx.user.id },
-      update: input,
+      update: { is_advisor: true, ...input },
       create: {
         id: ctx.user.id,
+        is_advisor: true,
         ...input,
       },
       select: UserProfileSchemaSelect,

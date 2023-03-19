@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["extendedWhereUnique"]
 }
 
@@ -94,9 +94,20 @@ model UserProfile {
   bank_account       String?
   bank_details_later Boolean?
 
+  is_advisor Boolean @default(false)
+
+  advisor_status UserStatus @default(init)
+  notes          String?
+
   signed_terms  DateTime?
   lifeInsurance lifeInsurance[]
   customer      customer[]
+}
+
+enum UserStatus {
+  init
+  approved
+  rejected
 }
 
 enum InsuranceStatus {
@@ -137,7 +148,7 @@ model lifeInsurance {
 
   total Float?
 
-  status                InsuranceStatus         @default(init)
+  status InsuranceStatus @default(init)
 
   lifeInsuranceCustomer lifeInsuranceCustomer[]
 }
@@ -205,4 +216,14 @@ model customer {
   dangerous_hobby_desc String?
 
   lifeInsuranceCustomer lifeInsuranceCustomer[]
+}
+
+model contactUsRequest {
+  id        String   @id @default(dbgenerated("uuid_generate_v4()"))
+  createdAt DateTime @default(now())
+
+  product      String?
+  name         String?
+  subject      String?
+  contact_info String
 }

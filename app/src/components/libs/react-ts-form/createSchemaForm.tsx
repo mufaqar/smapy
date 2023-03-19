@@ -9,14 +9,12 @@ import type { ErrorOption, NestedValue, UseFormReturn } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
 import type { AnyZodObject, z, ZodEffects } from "zod";
 import { getComponentForZodType } from "./getComponentForZodType";
-// import { zodResolver } from "@hookform/resolvers/zod";
 import type {
   IndexOf,
   IndexOfUnwrapZodType,
   RequireKeysWithRequiredChildren,
   UnwrapMapping,
 } from "./typeUtilities";
-import { getMetaInformationForZodType } from "./getMetaInformationForZodType";
 import { unwrapEffects } from "./unwrap";
 import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
 import { FieldContextProvider, FormContext } from "./FieldContext";
@@ -35,6 +33,8 @@ import {
   ZodMetaDataItem,
 } from "../../../utils/zod-meta";
 import { formResolver } from "../../common/forms/form-resolver";
+import { cn } from "@/lib/utils";
+import { map } from "rambda";
 
 export type PreprocessField = (
   name: string,
@@ -263,8 +263,8 @@ export function createTsForm<
     formProps,
     preprocessField,
     defaultValues,
-    renderAfter,
-    renderBefore,
+    // renderAfter,
+    // renderBefore,
     form,
   }: {
     formContext: FormContext;
@@ -296,7 +296,7 @@ export function createTsForm<
      * />
      * ```
      */
-    renderAfter?: (vars: { submit: () => void }) => ReactNode;
+    // renderAfter?: (vars: { submit: () => void }) => ReactNode;
     /**
      * A function that renders components before the form, the function is passed a `submit` function that can be used to trigger
      * form submission.
@@ -308,7 +308,7 @@ export function createTsForm<
      * />
      * ```
      */
-    renderBefore?: (vars: { submit: () => void }) => ReactNode;
+    // renderBefore?: (vars: { submit: () => void }) => ReactNode;
     /**
      * Use this if you need access to the `react-hook-form` useForm() in the component containing the form component (if you need access to any of its other properties.)
      * This will give you full control over you form state (in case you need check if it's dirty or reset it or anything.)
@@ -429,11 +429,11 @@ export function createTsForm<
     }
 
     function _submit(data: z.infer<SchemaType>) {
-      resolver(removeUndefined(data), {} as any, {} as any).then((e) => {
+      return resolver(removeUndefined(data), {} as any, {} as any).then((e) => {
         const errorKeys = Object.keys(e.errors);
         if (!errorKeys.length) {
-          onSubmit(data);
-          return;
+          // console.log(`muly:_submit A`, {});
+          return onSubmit(data);
         }
         for (const key of errorKeys) {
           setError(
@@ -447,119 +447,131 @@ export function createTsForm<
 
     // console.log(`muly:Component:formContext`, { formContext });
 
+    const controls = map((value, key) => {
+      const type = shape[key] as RTFSupportedZodTypes;
+      const Component = getComponentForZodType(type, componentMap);
+      if (!Component) {
+        throw new Error(noMatchingSchemaErrorMessage(key, type._def.typeName));
+      }
+
+      if (
+        !formContext.formMeta.children ||
+        !formContext.formMeta.children[key]
+      ) {
+        throw new Error(`Form error, not found meta info ${key}`);
+      }
+
+      const fieldMetaInfo: MetaInfo = formContext.formMeta.children[key]!;
+      const meta: ZodMetaDataItem = fieldMetaInfo.meta;
+
+      // const meta = getMetaInformationForZodType(type);
+
+      const fieldProps = props && props[key] ? (props[key] as any) : {};
+
+      const mergedProps = {
+        ...(propsMap.name && { [propsMap.name]: key }),
+        ...(propsMap.control && { [propsMap.control]: control }),
+        // ...(propsMap.enumValues && {
+        //   [propsMap.enumValues]: meta.enumValues,
+        // }),
+        // ...(propsMap.descriptionLabel && {
+        //   [propsMap.descriptionLabel]: meta.meta.meta.label,
+        // }),
+        // ...(propsMap.descriptionPlaceholder && {
+        //   [propsMap.descriptionPlaceholder]: meta.meta?.meta.placeholder,
+        // }),
+        ...fieldProps,
+      };
+
+      // console.log(
+      //   `muly:mergedProps, ${key} good place to put hook to preprocess meta ${key}`,
+      //   {
+      //     preprocessField,
+      //     fieldProps,
+      //     mergedProps,
+      //     meta,
+      //     _form,
+      //   }
+      // );
+
+      if (meta.condition && formContext.flowContext) {
+        const cond = meta.condition(formContext.flowContext, _form.watch());
+        // console.log(`muly:condition ${key} ${cond}`, {
+        //   meta,
+        //   cond,
+        //   _form: _form.watch(),
+        //   condition: meta.meta.meta?.condition,
+        // });
+
+        if (!cond) {
+          return null;
+        }
+      }
+
+      const controlProps: any = {
+        ...meta,
+        ...mergedProps,
+        ...fieldProps,
+      };
+
+      if (preprocessField) {
+        preprocessField(key, _form, controlProps);
+      }
+      const {
+        beforeElement,
+        afterElement,
+        description,
+        enumValues,
+        ...mergedPropsM
+      } = controlProps;
+
+      // const ctxLabel = meta.description?.label;
+      // const ctxPlaceholder = meta.description?.placeholder;
+      return (
+        <Fragment key={key}>
+          {beforeElement && beforeElement(formContext.flowContext)}
+          <FieldContextProvider
+            control={control}
+            name={key}
+            formContext={formContext}
+            meta={meta}
+            // label={ctxLabel}
+            // placeholder={ctxPlaceholder}
+            enumValues={enumValues as string[] | undefined}
+            addToCoerceUndefined={addToCoerceUndefined}
+            removeFromCoerceUndefined={removeFromCoerceUndefined}
+          >
+            <Component key={key} {...mergedPropsM} />
+          </FieldContextProvider>
+          {afterElement && afterElement(formContext.flowContext)}
+        </Fragment>
+      );
+    }, shape);
+
+    if (!formContext.flowContext) {
+      throw new Error("Missing formContext.flowContext");
+    }
+
     return (
       <FormProvider {..._form}>
         {/* @ts-ignore */}
         <ActualFormComponent
           {...propsDesc}
           {...formProps}
-          style={{ ...formProps?.style, ...propsDesc?.style }}
+          className={cn(formProps?.className, propsDesc?.className)}
           onSubmit={submitFn}
         >
-          {renderBefore && renderBefore({ submit: submitFn })}
-          {Object.keys(shape).map((key) => {
-            const type = shape[key] as RTFSupportedZodTypes;
-            const Component = getComponentForZodType(type, componentMap);
-            if (!Component) {
-              throw new Error(
-                noMatchingSchemaErrorMessage(key, type._def.typeName)
-              );
-            }
-
-            if (
-              !formContext.formMeta.children ||
-              !formContext.formMeta.children[key]
-            ) {
-              throw new Error(`Form error, not found meta info ${key}`);
-            }
-
-            const fieldMetaInfo: MetaInfo = formContext.formMeta.children[key]!;
-            const meta: ZodMetaDataItem = fieldMetaInfo.meta;
-
-            // const meta = getMetaInformationForZodType(type);
-
-            const fieldProps = props && props[key] ? (props[key] as any) : {};
-
-            const mergedProps = {
-              ...(propsMap.name && { [propsMap.name]: key }),
-              ...(propsMap.control && { [propsMap.control]: control }),
-              // ...(propsMap.enumValues && {
-              //   [propsMap.enumValues]: meta.enumValues,
-              // }),
-              // ...(propsMap.descriptionLabel && {
-              //   [propsMap.descriptionLabel]: meta.meta.meta.label,
-              // }),
-              // ...(propsMap.descriptionPlaceholder && {
-              //   [propsMap.descriptionPlaceholder]: meta.meta?.meta.placeholder,
-              // }),
-              ...fieldProps,
-            };
-
-            // console.log(
-            //   `muly:mergedProps, ${key} good place to put hook to preprocess meta ${key}`,
-            //   {
-            //     preprocessField,
-            //     fieldProps,
-            //     mergedProps,
-            //     meta,
-            //     _form,
-            //   }
-            // );
-
-            if (meta.condition) {
-              const cond = meta.condition(fieldMetaInfo, _form.watch());
-              // console.log(`muly:condition ${key} ${cond}`, {
-              //   meta,
-              //   cond,
-              //   _form: _form.watch(),
-              //   condition: meta.meta.meta?.condition,
-              // });
-
-              if (!cond) {
-                return null;
-              }
-            }
-
-            const controlProps: any = {
-              ...meta,
-              ...mergedProps,
-              ...fieldProps,
-            };
-
-            if (preprocessField) {
-              preprocessField(key, _form, controlProps);
-            }
-            const {
-              beforeElement,
-              afterElement,
-              description,
-              enumValues,
-              ...mergedPropsM
-            } = controlProps;
-
-            // const ctxLabel = meta.description?.label;
-            // const ctxPlaceholder = meta.description?.placeholder;
-            return (
-              <Fragment key={key}>
-                {beforeElement}
-                <FieldContextProvider
-                  control={control}
-                  name={key}
-                  formContext={formContext}
-                  meta={meta}
-                  // label={ctxLabel}
-                  // placeholder={ctxPlaceholder}
-                  enumValues={enumValues as string[] | undefined}
-                  addToCoerceUndefined={addToCoerceUndefined}
-                  removeFromCoerceUndefined={removeFromCoerceUndefined}
-                >
-                  <Component key={key} {...mergedPropsM} />
-                </FieldContextProvider>
-                {afterElement}
-              </Fragment>
-            );
-          })}
-          {renderAfter && renderAfter({ submit: submitFn })}
+          {propsDesc.beforeElement &&
+            propsDesc.beforeElement(formContext.flowContext, {
+              submit: submitFn,
+            })}
+          {propsDesc.render
+            ? propsDesc.render(controls, formContext.flowContext)
+            : Object.values(controls)}
+          {propsDesc.afterElement &&
+            propsDesc.afterElement(formContext.flowContext, {
+              submit: submitFn,
+            })}
         </ActualFormComponent>
       </FormProvider>
     );

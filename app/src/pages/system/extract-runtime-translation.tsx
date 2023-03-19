@@ -18,12 +18,10 @@ const ExtractRuntimeTranslation = () => {
   };
 
   return (
-    <VStack>
-      <Box>ExtractRuntimeTranslation</Box>
-      <Button isLoading={isLoading} onClick={() => handleExtract()}>
-        EXTRACT
-      </Button>
-    </VStack>
+    <div className="flex flex-col">
+      <div>ExtractRuntimeTranslation</div>
+      <button onClick={() => handleExtract()}>EXTRACT</button>
+    </div>
   );
 };
 
