@@ -5,7 +5,8 @@ import {
   evaluateFormControlCallback,
   usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
-import { CustomerRole, schemaOTP } from "./user-auth-schema";
+import type { CustomerRole } from "./user-auth-schema";
+import { schemaOTP } from "./user-auth-schema";
 import { FormError } from "../common/forms/useSubmitAction";
 import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
 
@@ -39,7 +40,12 @@ export const OTP = ({ role, onVerifyOTP }: Props) => {
 
   return (
     <div className="flex flex-row items-center">
-      <img src="/images/forms/otp.svg" width={364} className="row-span-3" />
+      <img
+        src="/images/forms/otp.svg"
+        width={364}
+        className="row-span-3"
+        alt=""
+      />
       <div className="flex flex-col items-start">
         <h3 className="text-4xl font-light">
           {(text && text[`entry_${role}`]) || null}

@@ -11,7 +11,7 @@ import { z, ZodType } from "zod";
 import type { ZodTypeAny } from "zod/lib/types";
 import type React from "react";
 import type { WizardControlProps } from "../components/common/wizard/useWizardFlow";
-import { WizardInfo } from "../components/common/wizard/useWizardFlow";
+import type { WizardInfo } from "../components/common/wizard/useWizardFlow";
 
 export const SPLIT_DESCRIPTION_SYMBOL = " // ";
 

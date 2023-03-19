@@ -14,7 +14,7 @@ interface Props<T> {
 
   formData: any;
 
-  handleSubmit: (data: T) => Promise<void>;
+  handleSubmit: (data: T) => Promise<void> | void;
 
   // preprocessField;
 }

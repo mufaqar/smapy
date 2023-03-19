@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
+import type { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
 
 export type HowToContactType = "whatsapp" | "phone" | "email";
@@ -23,6 +23,7 @@ const product = z
           src="/images/forms/contact-us.jpg"
           width={240}
           className="row-span-3"
+          alt=""
         />
       </>
     ),

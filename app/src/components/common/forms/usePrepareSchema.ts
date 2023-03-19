@@ -1,12 +1,14 @@
 import type { TranslationFn } from "../../../utils/i18n-utils";
 import { translateSchemaInfo } from "../../../utils/i18n-utils";
 import type { ZodTypeAny } from "zod/lib/types";
-import React, { useMemo } from "react";
+import type React from "react";
+import { useMemo } from "react";
 import {
   getPagesZodMetaInfo,
   WizardControlProps,
 } from "../wizard/useWizardFlow";
-import { ControlCallback, getZodMetaInfo } from "../../../utils/zod-meta";
+import type { ControlCallback } from "../../../utils/zod-meta";
+import { getZodMetaInfo } from "../../../utils/zod-meta";
 import type { FormContext } from "../../libs/react-ts-form/FieldContext";
 import { z, ZodEffects } from "zod";
 

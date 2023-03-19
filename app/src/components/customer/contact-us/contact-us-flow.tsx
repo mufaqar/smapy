@@ -7,10 +7,10 @@ import {
 } from "@/components/customer/compare/compare-flow-schema";
 import { useRouter } from "next/router";
 import { WizardPage } from "@/components/common/wizard/WizardPage";
+import type { HowToContactType } from "@/components/customer/contact-us/contact-us-schema";
 import {
   contactUsEmailPages,
   contactUsPhonePages,
-  HowToContactType,
 } from "@/components/customer/contact-us/contact-us-schema";
 import { api } from "@/utils/api";
 

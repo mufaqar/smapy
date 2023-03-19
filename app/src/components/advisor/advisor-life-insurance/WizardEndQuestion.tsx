@@ -1,4 +1,4 @@
-import { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 import { useState } from "react";
 
 export const WizardEndQuestion = ({ onStepNext, step }: WizardControlProps) => {

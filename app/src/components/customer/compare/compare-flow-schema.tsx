@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { HowDoesItWork } from "../../common/controls/how-does-it-work";
-import { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
+import type { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
 
 export type ProductType = "life" | "mortgage" | "property";

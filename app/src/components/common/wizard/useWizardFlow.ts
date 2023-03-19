@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { useRouter } from "next/router";
-import React, { useMemo, useState } from "react";
+import type React from "react";
+import { useMemo, useState } from "react";
 import type {
   MetaInfo,
   ControlCallback,
@@ -13,7 +14,7 @@ import { translateSchemaInfo } from "../../../utils/i18n-utils";
 import { useQueryState } from "next-usequerystate";
 import type { ZodTypeAny } from "zod/lib/types";
 import { map } from "rambda";
-import { FormContext } from "@/components/libs/react-ts-form/FieldContext";
+import type { FormContext } from "@/components/libs/react-ts-form/FieldContext";
 
 // type CustomRefMap = Record<string, () => Promise<any>>;
 // export type CustomControlDef = (props: WizardControlProps) => React.ReactNode;

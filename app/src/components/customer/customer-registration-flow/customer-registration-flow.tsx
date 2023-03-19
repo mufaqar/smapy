@@ -23,7 +23,7 @@ export const CustomerRegistrationFlow = () => {
   const [recordData, setRecordData] = useState<RecordType>();
 
   const query = api.advisor.getUserProfile.useQuery(undefined, {
-    onSuccess: async (data) => {
+    onSuccess: (data) => {
       // console.log(`muly:onSuccess`, {});
       // if (data?.first_name && data?.last_name) {
       //   await setStepRange(1, undefined);

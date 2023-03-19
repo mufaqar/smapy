@@ -7,7 +7,7 @@ interface Props {
 export const HowDoesItWorkCard = ({ text, image, idx }: Props) => {
   return (
     <div className="flex flex-col items-center">
-      <img src={image} />
+      <img src={image} alt="" />
       <div>{idx}</div>
       <div>{text}</div>
     </div>

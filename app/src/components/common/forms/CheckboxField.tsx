@@ -4,7 +4,7 @@ import { FormControl } from "./FormControl";
 import { clsx } from "clsx";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
-import { Props } from "./TextField";
+import type { Props } from "./TextField";
 
 export const CheckboxField = ({ controlName }: Props) => {
   const { field, error, formContext } = useTsController<boolean>();

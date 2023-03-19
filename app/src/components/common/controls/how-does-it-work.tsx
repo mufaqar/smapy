@@ -1,5 +1,5 @@
 import { HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
-import { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
 export const HowDoesItWork = ({
   onStepNext,
@@ -20,7 +20,9 @@ export const HowDoesItWork = ({
             idx={idx}
             image={`/images/how-does-it-work/${idx}.svg`}
             text={
-              step.meta.text?.[`text_${idx === 4 ? product + idx : idx}`] || ""
+              step.meta.text?.[
+                `text_${idx === 4 ? `${product}${idx}` : idx}`
+              ] || ""
             }
           />
         ))}

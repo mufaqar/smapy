@@ -23,6 +23,7 @@ import {
   PropertyInsuranceIcon,
   WhatsappIcon,
 } from "@/components/landing-page/Icons";
+import { SectionContactUs } from "@/components/landing-page/section-contact-us";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
@@ -225,28 +226,11 @@ const Home: NextPage = () => {
           </Link>
         </section>
 
-        <section>
+        <SectionContactUs>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            Will love to help
+            {t("contact.header")}
           </h1>
-          <div className="flex flex-row gap-8">
-            <ConnectButton
-              icon={<WhatsappIcon />}
-              text="Whatsapp"
-              href="/contact/whatsapp"
-            />
-            <ConnectButton
-              icon={<EmailIcon />}
-              text="email"
-              href="/contact/email"
-            />
-            <ConnectButton
-              icon={<PhoneOutlineIcon />}
-              text="Phone"
-              href="/contact/phone"
-            />
-          </div>
-        </section>
+        </SectionContactUs>
       </main>
       <Footer />
     </>
