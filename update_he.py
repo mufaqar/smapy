@@ -63,8 +63,8 @@ def sheet_to_json():
 
     def row_to_json_obj(row: pd.Series, *, obj):
         """Update given json by dataframe row value."""
-        invalid_key_message = f'{Fore.LIGHTRED_EX}ignored {row["key"]}, non-existent json entry.{Fore.RESET}'
-        broad_key_message = f'{Fore.LIGHTRED_EX}ignored {row["key"]}, too broad json entry.{Fore.RESET}'
+        invalid_key_message = f'\n{Fore.LIGHTRED_EX}ignored {row["key"]}, non-existent json entry.{Fore.RESET}\n'
+        broad_key_message = f'\n{Fore.LIGHTRED_EX}ignored {row["key"]}, too broad json entry.{Fore.RESET}\n'
         steps = row['key'].split('.')
         for step in steps[:-1]:
             try:
@@ -78,12 +78,12 @@ def sheet_to_json():
                 res = row['value']
                 if row['format_flag'] and not pd.isna(row['format_flag']):
                     res = fmt_bi(res, direct=True)
-                    print(f'redirected {row["key"]}.')
+                    print(f'\nredirected {row["key"]}.\n')
                 else:
                     res = fmt_bi(res, direct=False)
                 if res != prev_value and not pd.isna(res):
                     obj[steps[-1]] = res
-                    print(f'updated {row["key"]} with "{res}".')
+                    print(f'\nupdated {row["key"]} with "{res}".\n')
             else:
                 print(broad_key_message)
         else:
