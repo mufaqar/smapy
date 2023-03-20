@@ -2,26 +2,26 @@ interface FAQItemType {
   a: string;
   q: string;
 }
-
+// TODO - Add hebrew and additional faq's.
 export const faq: FAQItemType[] = [
   {
-    a: "Q1",
-    q: "A1",
+    a: "A1",
+    q: "Q1",
   },
   {
-    a: "Q2",
-    q: "A2",
+    a: "A2",
+    q: "Q2",
   },
   {
-    a: "Q3",
-    q: "A3",
+    a: "A3",
+    q: "Q3",
   },
   {
-    a: "Q4",
-    q: "A",
+    a: "A4",
+    q: "Q4",
   },
   {
-    a: "Q5",
-    q: "A5",
+    a: "A5",
+    q: "Q5",
   },
 ];

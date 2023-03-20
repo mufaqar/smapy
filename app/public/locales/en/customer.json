@@ -85,7 +85,13 @@
         },
         "header": "Fill details and will return to you"
       },
-      "header": "Fill details and will return to you"
+      "header": "Fill details and will return to you",
+      "name": {
+        "label": "Full name"
+      },
+      "contact_info": {
+        "label": "Phone"
+      }
     },
     "end": {
       "label": "Thanks for choosing Smapy",

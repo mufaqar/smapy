@@ -87,6 +87,9 @@
         "role_he": "about.profile.3.role_he",
         "text": "about.profile.3.text"
       }
+    },
+    "about_us": {
+      "header": "about.about_us.header"
     }
   },
   "faq": {
