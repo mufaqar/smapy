@@ -45,6 +45,8 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
+    // console.log(`muly:Button`, { variant, size, className });
+
     return (
       <button
         className={cn(buttonVariants({ variant, size, className }))}

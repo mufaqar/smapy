@@ -16,11 +16,9 @@ import { appWithTranslation } from "next-i18next";
 import { i18nConfig } from "../../next-i18next.config.mjs";
 
 import { api } from "../utils/api";
-import { ChakraProvider } from "@chakra-ui/react";
 
 import "../styles/globals.css";
 
-import { theme } from "../components/chakra-ui-theme";
 import { cookieOptions } from "../utils/cookie-options";
 import { missingKeyHandler } from "../utils/i18n-utils";
 import "../utils/zod-meta";
@@ -40,9 +38,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
-        </ChakraProvider>
+        <Component {...pageProps} />
       </SessionContextProvider>
     </FlagBagProvider>
   );
