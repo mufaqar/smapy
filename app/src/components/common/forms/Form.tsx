@@ -1,9 +1,7 @@
 import { createTsForm } from "../../libs/react-ts-form";
 import { mapping } from "./mapping";
-import type { FormEvent } from "react";
 import React from "react";
 import { useSubmitAction } from "./useSubmitAction";
-import { clsx } from "clsx";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 

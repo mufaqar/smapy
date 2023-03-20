@@ -18,7 +18,7 @@ Work is Frontend only, no backend is needed
 ## Scope of work
 - Configure tailwind, fonts and such
 - Apply tailwind classes to the current code to fit Figma design
-- Add storybook stories to demonstrate the design  
+- Add storybook stories to controls to demonstrate the design in a testing environment  
 
 ## Notes
 - Also the site is in Hebrew all code should be in English, all text should be using t(key) from i18next, keys should be in english   
