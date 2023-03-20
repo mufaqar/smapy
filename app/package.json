@@ -53,6 +53,7 @@
     "chakra-ui": "^0.3.9",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
+    "contentlayer": "^0.3.0",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^2.0.0",
     "dayzed": "^3.2.3",
@@ -61,6 +62,7 @@
     "json-colorz": "^0.2.7",
     "libphonenumber-js": "^1.10.21",
     "lucide-react": "^0.124.0",
+    "markdown-wasm": "^1.2.0",
     "next": "13.2.3",
     "next-i18next": "^13.2.1",
     "next-usequerystate": "^1.7.2",
@@ -87,9 +89,12 @@
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
     "env-cmd": "^10.1.0",
     "eslint": "^8.35.0",
     "eslint-config-next": "13.2.3",
+    "next-contentlayer": "^0.3.0",
+    "pg": "^8.10.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.4",
@@ -97,7 +102,8 @@
     "storybook-addon-designs": "^6.3.1",
     "tailwindcss": "^3.2.7",
     "typescript": "^4.9.4",
-    "zod-prisma": "^0.5.4"
+    "zod-prisma": "^0.5.4",
+    "zx": "^7.2.1"
   },
   "ct3aMetadata": {
     "initVersion": "7.5.1"

@@ -10,3 +10,19 @@
 button.radio-group-tbd[data-state="on"] {
   border: 1px solid blue;
 }
+
+.blog h2 {
+  font-weight: bold;
+}
+
+.blog li {
+  @apply mt-2;
+}
+
+.blog ul {
+  @apply my-6 ml-6 list-disc;
+}
+
+.blog ol {
+  @apply my-6 ml-6 list-disc;
+}

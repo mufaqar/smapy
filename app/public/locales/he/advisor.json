@@ -383,6 +383,15 @@
       "label": "Thanks for join the Smapy",
       "placeholder": "really excited",
       "text2": "Will do everything to give service to you and your customers"
+    },
+    "userNames": {
+      "label": "Advisor details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
     }
   },
   "Bank name is required": "Bank name is required"
