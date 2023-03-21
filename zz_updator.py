@@ -30,7 +30,7 @@ def gen_address_json(src_path: Path, target_path: Path):
         json.dump(json_obj, fp)
 
 
-def refresh_address_jsons(src_dir=SRC_PATH: str, target_dir=TARGET_PATH: str):
+def refresh_address_jsons(src_dir: str = SRC_PATH, target_dir: str = TARGET_PATH):
     """Copy given directory json files to another directory."""
     src_dir = Path(src_dir)
     target_dir = Path(target_dir)
