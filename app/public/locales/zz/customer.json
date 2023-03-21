@@ -1,1 +1,104 @@
-{"customerCompareAndBuy": {"title_life": "customerCompareAndBuy.title_life", "title_mortgage": "customerCompareAndBuy.title_mortgage", "title_property": "customerCompareAndBuy.title_property", "howDoesItWork": {"label": "customerCompareAndBuy.howDoesItWork.label", "text_1": "customerCompareAndBuy.howDoesItWork.text_1", "text_2": "customerCompareAndBuy.howDoesItWork.text_2", "text_3": "customerCompareAndBuy.howDoesItWork.text_3", "text_life4": "customerCompareAndBuy.howDoesItWork.text_life4", "text_mortgage4": "customerCompareAndBuy.howDoesItWork.text_mortgage4", "text_property4": "customerCompareAndBuy.howDoesItWork.text_property4", "next": "customerCompareAndBuy.howDoesItWork.next"}, "thanks": {"label": "customerCompareAndBuy.thanks.label", "placeholder": "customerCompareAndBuy.thanks.placeholder", "text1": "customerCompareAndBuy.thanks.text1", "text2": "customerCompareAndBuy.thanks.text2"}, "end": {"label": "customerCompareAndBuy.end.label", "placeholder": "customerCompareAndBuy.end.placeholder", "text1": "customerCompareAndBuy.end.text1", "text2": "customerCompareAndBuy.end.text2"}}, "contactUsEmail": {"label": "contactUsEmail.label", "contactDetailsEmail": {"full_name": {"label": "contactUsEmail.contactDetailsEmail.full_name.label"}, "email": {"label": "contactUsEmail.contactDetailsEmail.email.label"}, "subject": {"label": "contactUsEmail.contactDetailsEmail.subject.label"}, "product": {"label": "contactUsEmail.contactDetailsEmail.product.label", "choices": {"life": "contactUsEmail.contactDetailsEmail.product.choices.life", "life-mortgage": "contactUsEmail.contactDetailsEmail.product.choices.life-mortgage", "property": "contactUsEmail.contactDetailsEmail.product.choices.property", "property-mortgage": "contactUsEmail.contactDetailsEmail.product.choices.property-mortgage"}}, "header": "contactUsEmail.contactDetailsEmail.header", "contact_info": {"label": "contactUsEmail.contactDetailsEmail.contact_info.label"}, "name": {"label": "contactUsEmail.contactDetailsEmail.name.label"}}, "end": {"label": "contactUsEmail.end.label", "placeholder": "contactUsEmail.end.placeholder", "text1": "contactUsEmail.end.text1", "text2": "contactUsEmail.end.text2"}}, "Required": "Required", "contactUsPhone": {"label": "contactUsPhone.label", "contactDetailsPhone": {"full_name": {"label": "contactUsPhone.contactDetailsPhone.full_name.label"}, "phone": {"label": "contactUsPhone.contactDetailsPhone.phone.label"}, "subject": {"label": "contactUsPhone.contactDetailsPhone.subject.label"}, "product": {"label": "contactUsPhone.contactDetailsPhone.product.label", "choices": {"life": "contactUsPhone.contactDetailsPhone.product.choices.life", "life-mortgage": "contactUsPhone.contactDetailsPhone.product.choices.life-mortgage", "property": "contactUsPhone.contactDetailsPhone.product.choices.property", "property-mortgage": "contactUsPhone.contactDetailsPhone.product.choices.property-mortgage"}, "header": "contactUsPhone.contactDetailsPhone.product.header"}, "header": "contactUsPhone.contactDetailsPhone.header", "name": {"label": "contactUsPhone.contactDetailsPhone.name.label"}, "contact_info": {"label": "contactUsPhone.contactDetailsPhone.contact_info.label"}}, "end": {"label": "contactUsPhone.end.label", "placeholder": "contactUsPhone.end.placeholder", "text1": "contactUsPhone.end.text1", "text2": "contactUsPhone.end.text2"}}, "Invalid email": "Invalid email"}
+{
+  "customerCompareAndBuy": {
+    "title_life": "customerCompareAndBuy.title_life",
+    "title_mortgage": "customerCompareAndBuy.title_mortgage",
+    "title_property": "customerCompareAndBuy.title_property",
+    "howDoesItWork": {
+      "label": "customerCompareAndBuy.howDoesItWork.label",
+      "text_1": "customerCompareAndBuy.howDoesItWork.text_1",
+      "text_2": "customerCompareAndBuy.howDoesItWork.text_2",
+      "text_3": "customerCompareAndBuy.howDoesItWork.text_3",
+      "text_life4": "customerCompareAndBuy.howDoesItWork.text_life4",
+      "text_mortgage4": "customerCompareAndBuy.howDoesItWork.text_mortgage4",
+      "text_property4": "customerCompareAndBuy.howDoesItWork.text_property4",
+      "next": "customerCompareAndBuy.howDoesItWork.next"
+    },
+    "thanks": {
+      "label": "customerCompareAndBuy.thanks.label",
+      "placeholder": "customerCompareAndBuy.thanks.placeholder",
+      "text1": "customerCompareAndBuy.thanks.text1",
+      "text2": "customerCompareAndBuy.thanks.text2"
+    },
+    "end": {
+      "label": "customerCompareAndBuy.end.label",
+      "placeholder": "customerCompareAndBuy.end.placeholder",
+      "text1": "customerCompareAndBuy.end.text1",
+      "text2": "customerCompareAndBuy.end.text2"
+    }
+  },
+  "contactUsEmail": {
+    "label": "contactUsEmail.label",
+    "contactDetailsEmail": {
+      "full_name": {
+        "label": "contactUsEmail.contactDetailsEmail.full_name.label"
+      },
+      "email": {
+        "label": "contactUsEmail.contactDetailsEmail.email.label"
+      },
+      "subject": {
+        "label": "contactUsEmail.contactDetailsEmail.subject.label"
+      },
+      "product": {
+        "label": "contactUsEmail.contactDetailsEmail.product.label",
+        "choices": {
+          "life": "contactUsEmail.contactDetailsEmail.product.choices.life",
+          "life-mortgage": "contactUsEmail.contactDetailsEmail.product.choices.life-mortgage",
+          "property": "contactUsEmail.contactDetailsEmail.product.choices.property",
+          "property-mortgage": "contactUsEmail.contactDetailsEmail.product.choices.property-mortgage"
+        }
+      },
+      "header": "contactUsEmail.contactDetailsEmail.header",
+      "contact_info": {
+        "label": "contactUsEmail.contactDetailsEmail.contact_info.label"
+      },
+      "name": {
+        "label": "contactUsEmail.contactDetailsEmail.name.label"
+      }
+    },
+    "end": {
+      "label": "contactUsEmail.end.label",
+      "placeholder": "contactUsEmail.end.placeholder",
+      "text1": "contactUsEmail.end.text1",
+      "text2": "contactUsEmail.end.text2"
+    }
+  },
+  "Required": "Required",
+  "contactUsPhone": {
+    "label": "contactUsPhone.label",
+    "contactDetailsPhone": {
+      "full_name": {
+        "label": "contactUsPhone.contactDetailsPhone.full_name.label"
+      },
+      "phone": {
+        "label": "contactUsPhone.contactDetailsPhone.phone.label"
+      },
+      "subject": {
+        "label": "contactUsPhone.contactDetailsPhone.subject.label"
+      },
+      "product": {
+        "label": "contactUsPhone.contactDetailsPhone.product.label",
+        "choices": {
+          "life": "contactUsPhone.contactDetailsPhone.product.choices.life",
+          "life-mortgage": "contactUsPhone.contactDetailsPhone.product.choices.life-mortgage",
+          "property": "contactUsPhone.contactDetailsPhone.product.choices.property",
+          "property-mortgage": "contactUsPhone.contactDetailsPhone.product.choices.property-mortgage"
+        },
+        "header": "contactUsPhone.contactDetailsPhone.product.header"
+      },
+      "header": "contactUsPhone.contactDetailsPhone.header",
+      "name": {
+        "label": "contactUsPhone.contactDetailsPhone.name.label"
+      },
+      "contact_info": {
+        "label": "contactUsPhone.contactDetailsPhone.contact_info.label"
+      }
+    },
+    "end": {
+      "label": "contactUsPhone.end.label",
+      "placeholder": "contactUsPhone.end.placeholder",
+      "text1": "contactUsPhone.end.text1",
+      "text2": "contactUsPhone.end.text2"
+    }
+  },
+  "Invalid email": "Invalid email"
+}

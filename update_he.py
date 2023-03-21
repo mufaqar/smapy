@@ -8,6 +8,8 @@ import pandas as pd
 from pandas.api.types import is_scalar
 from bidi.algorithm import get_display
 
+from zz_updator import refresh_address_jsons
+
 JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = 'update_assets/input.xlsx'
@@ -24,7 +26,7 @@ def fmt_bi(content, *, direct):
     return pat.sub(repl=' ', string=res)
 
 
-def json_to_sheet():
+def json_to_sheet(fmt_flag):
     """Reload Excel sheet with current json entries."""
 
     def json_to_df(main_obj):
@@ -104,6 +106,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--init', action='store_true',
                         help='Format all by default.')
     args = parser.parse_args()
-    fmt_flag = args.init
-    json_to_sheet()
+    flag = args.init
+    refresh_address_jsons()
+    json_to_sheet(flag)
     sheet_to_json()
