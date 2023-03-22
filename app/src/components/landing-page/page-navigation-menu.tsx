@@ -17,7 +17,7 @@ import { SmapyLogo } from "@/components/layout/SmapyLogo";
 import { useTranslation } from "next-i18next";
 
 export const PageNavigationMenu = () => {
-  const {t} = useTranslation('common')
+  const {t} = useTranslation('landing-page')
   return (
     <NavigationMenu className="m-top m-auto mt-8 max-w-5xl">
       <NavigationMenuList>

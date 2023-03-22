@@ -1,1 +1,13 @@
-{"dangerous_hobby_validation": "dangerous_hobby_validation", "property_apartment_number_validation": "property_apartment_number_validation", "property_city_validation": "property_city_validation", "property_street_number_validation": "property_street_number_validation", "property_street_validation": "property_street_validation", "smoking_stop_month_validation": "smoking_stop_month_validation", "wizard": {"end": {"button": "wizard.end.button"}}, "nav": {"about": "nav.about", "faq": "nav.faq", "price": "nav.price", "security": "nav.security", "customer_entry": "nav.customer_entry", "agent_entry": "nav.agent_entry"}}
+{
+  "dangerous_hobby_validation": "dangerous_hobby_validation",
+  "property_apartment_number_validation": "property_apartment_number_validation",
+  "property_city_validation": "property_city_validation",
+  "property_street_number_validation": "property_street_number_validation",
+  "property_street_validation": "property_street_validation",
+  "smoking_stop_month_validation": "smoking_stop_month_validation",
+  "wizard": {
+    "end": {
+      "button": "wizard.end.button"
+    }
+  }
+}

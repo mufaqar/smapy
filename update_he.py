@@ -10,7 +10,7 @@ from bidi.algorithm import get_display
 
 from zz_updator import refresh_address_jsons
 
-JSON_PATH = 'app/public/locales/he/common.json'
+JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = 'update_assets/input.xlsx'
 

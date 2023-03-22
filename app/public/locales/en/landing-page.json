@@ -264,5 +264,13 @@
       }
     }
   },
-  "section": "Advance platform"
+  "section": "Advance platform",
+  "nav": {
+    "about": "nav.about",
+    "faq": "nav.faq",
+    "price": "nav.price",
+    "security": "nav.security",
+    "customer_entry": "nav.customer_entry",
+    "agent_entry": "nav.agent_entry"
+  }
 }
