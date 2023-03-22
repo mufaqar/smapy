@@ -14,8 +14,10 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { PhoneIcon } from "@/components/landing-page/Icons";
 import { SmapyLogo } from "@/components/layout/SmapyLogo";
+import { useTranslation } from "next-i18next";
 
 export const PageNavigationMenu = () => {
+  const {t} = useTranslation('common')
   return (
     <NavigationMenu className="m-top m-auto mt-8 max-w-5xl">
       <NavigationMenuList>
@@ -30,28 +32,28 @@ export const PageNavigationMenu = () => {
         <NavigationMenuItem>
           <Link href="/about-us" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About Us
+              {t('nav.about')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/faq" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              FAQ
+              {t('nav.faq')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/prices" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Price List
+              {t('nav.price')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/security-privacy" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Security & Privacy
+              {t('nav.security')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -68,14 +70,14 @@ export const PageNavigationMenu = () => {
         <NavigationMenuItem className="mx-2">
           <Link href="/customer" legacyBehavior passHref>
             <NavigationMenuLink className={cn(buttonVariants())}>
-              Customer Entry
+              {t('nav.customer_entry')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="mx-2">
           <Link href="/advisor" legacyBehavior passHref>
             <NavigationMenuLink className={cn(buttonVariants())}>
-              Agency Entry
+              {t('nav.agent_entry')}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
