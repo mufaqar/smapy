@@ -2,7 +2,7 @@ import { z } from "zod";
 import "../../../utils/zod-meta";
 import type { WizardPagesDefinition } from "../../common/wizard/useWizardFlow";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
-import { Terms } from "./Terms";
+import { Terms } from "./terms";
 
 export const userNames = z
   .object({

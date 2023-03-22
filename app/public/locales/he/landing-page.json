@@ -121,7 +121,12 @@
     },
     "header": "price.header",
     "text": "price.text",
-    "header2": "price.header2"
+    "header2": "price.header2",
+    "cost": "price.cost",
+    "cost_service": "price.cost_service",
+    "free": "price.free",
+    "footer": "price.footer",
+    "footer2": "price.footer2"
   },
   "security": {
     "header": "security.header",

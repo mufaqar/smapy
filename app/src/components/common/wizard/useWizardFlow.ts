@@ -61,7 +61,7 @@ export const useWizardFlow = (
   const [currentStep, setCurrentStep] = useQueryState<number>("step", {
     history: "push",
     parse: (val: string) => (val ? Number(val) : 0),
-    defaultValue: 0,
+    defaultValue: Number(props?.step) || 0,
   });
   const [currentStepREPLACE, setCurrentStepREPLACE] = useQueryState<number>(
     "step",

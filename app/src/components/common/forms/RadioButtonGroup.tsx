@@ -73,7 +73,7 @@ export const RadioButtonGroup = ({ choices, value, name, onChange }: Props) => {
             value={value}
             key={value}
           >
-            <img src={info} width={40} height={40} alt="" />
+            {!!info && <img src={info} width={40} height={40} alt="" />}
             <div>{title}</div>
           </ToggleGroup.Item>
         );

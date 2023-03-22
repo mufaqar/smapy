@@ -1,9 +1,8 @@
 import { useSessionContext, useUser } from "@supabase/auth-helpers-react";
-import { Box, Button, Stack } from "@chakra-ui/react";
 import { api } from "../../utils/api";
 import { Loading } from "@/components/common/Loading";
-import { getUserProfileCheckComplete } from "@/server/api/routers/advisor/account";
 import { useRouter } from "next/router";
+import { Button } from "@/components/ui/button";
 
 export const CustomerDashboard = () => {
   const router = useRouter();
@@ -54,11 +53,11 @@ export const CustomerDashboard = () => {
   }
 
   return (
-    <Stack>
-      <Box>Customer Dashboard</Box>
+    <div>
+      <div>Customer Dashboard</div>
       <Button onClick={handleSignout}>Sign out</Button>
-      <Box>USER PROFILE</Box>
+      <div>USER PROFILE</div>
       <pre>{JSON.stringify(userProfile, null, 2)}</pre>
-    </Stack>
+    </div>
   );
 };

@@ -12,7 +12,7 @@ import {
 import { useFlagBag } from "@/flags/client";
 import type { CustomerRole } from "./user-auth-schema";
 import { schemaLogin } from "./user-auth-schema";
-import { OTP } from "./OTP";
+import { OTP } from "./otp";
 import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
 
 const schema = schemaLogin;
@@ -23,7 +23,7 @@ interface Props {
   role: CustomerRole;
 }
 
-export const UserID = ({ onSubmit, role }: Props) => {
+export const UserId = ({ onSubmit, role }: Props) => {
   const { t } = useTranslation("landing-page");
 
   const formContext = usePrepareSchema(t, schema);

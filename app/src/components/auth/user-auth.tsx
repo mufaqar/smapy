@@ -3,12 +3,11 @@ import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
-import { useTranslation } from "next-i18next";
 import { useFlagBag } from "@/flags/client";
 import type { CustomerRole } from "./user-auth-schema";
 import { schemaLogin } from "./user-auth-schema";
-import { OTP } from "./OTP";
-import { UserID } from "@/components/auth/UserID";
+import { OTP } from "./otp";
+import { UserId } from "@/components/auth/user-id";
 import { FormError } from "@/components/common/forms/useSubmitAction";
 
 const schema = schemaLogin;
@@ -118,7 +117,7 @@ export const UserAuth = () => {
   } else {
     return (
       <div>
-        <UserID onSubmit={handleSubmit} role={role} />
+        <UserId onSubmit={handleSubmit} role={role} />
         {!!enableBackdoorLogin && (
           <button onClick={backdoorLogin}>backdoor</button>
         )}
