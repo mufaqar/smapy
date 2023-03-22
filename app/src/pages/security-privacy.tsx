@@ -47,7 +47,6 @@ const Security: NextPage = () => {
           <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
             {t("security.header")}
           </h1>
-          <p>{t("security.text")}</p>
         </section>
 
         <section>
