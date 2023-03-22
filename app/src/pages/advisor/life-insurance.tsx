@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
-import { AdvisorLifeInsuranceFlow } from "../../components/advisor/advisor-life-insurance/AdvisorLifeInsuranceFlow";
+import { AdvisorLifeInsuranceFlow } from "../../components/advisor/advisor-life-insurance/advisor-life-insurance-flow";
 
 export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 

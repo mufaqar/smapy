@@ -1,17 +1,10 @@
 import { useMeta, useTsController } from "../../libs/react-ts-form";
-import {
-  Input,
-  Select,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Switch,
-  Checkbox,
-  Textarea,
-} from "@chakra-ui/react";
 import type { ZodMetaDataItem } from "../../../utils/zod-meta";
-import { SingleDatepicker } from "chakra-dayzed-datepicker";
 import { maybeConvertChild } from "../wizard/useWizardFlow";
+import { Checkbox } from "@/components/ui/checkbox";
+import { clsx } from "clsx";
+import { FormControl } from "@/components/common/forms/FormControl";
+import DatePicker from "react-date-picker/dist/entry.nostyle";
 
 interface Props {
   controlName?: ZodMetaDataItem["control"];
@@ -46,44 +39,39 @@ export const DateField = (
   let control;
   if (controlName === "Checkbox") {
     control = (
-      <Checkbox
-        name={field.name}
-        isChecked={!!field.value?.getTime()}
-        onChange={(e) => {
-          field.onChange(e.target.checked ? new Date() : undefined);
-        }}
-      >
-        {maybeConvertChild(label)}
-      </Checkbox>
+      <div className="flex items-center space-x-2">
+        <Checkbox
+          className={clsx(["checkbox", { error: "checkbox-error" }])}
+          id={field.name}
+          name={field.name}
+          checked={!!field.value?.getTime()}
+          onCheckedChange={(checked) => {
+            field.onChange(checked ? new Date() : undefined);
+          }}
+        />
+        <label
+          htmlFor={field.name}
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          {maybeConvertChild(label)}
+        </label>
+      </div>
     );
   } else {
     control = (
-      <SingleDatepicker
-        // maxW="sm"
-        // placeholder={placeholder}
+      <DatePicker
         name={field.name}
-        date={field.value || new Date()}
-        onDateChange={field.onChange}
+        onChange={field.onChange}
+        value={field.value}
       />
     );
   }
 
   return (
-    <FormControl isInvalid={!!error} className={options.className}>
-      {controlName !== "Checkbox" && controlName !== "Switch" && (
-        <FormLabel mb={1} whiteSpace="nowrap">
-          {maybeConvertChild(label)}
-        </FormLabel>
-      )}
+    <FormControl
+      showLabel={controlName !== "Checkbox" && controlName !== "Switch"}
+    >
       {control}
-      {!error?.errorMessage ? null : (
-        // <FormHelperText>
-        //   Enter the email you'd like to receive the newsletter on.
-        // </FormHelperText>
-        <FormErrorMessage>
-          {formContext.t(error?.errorMessage)}
-        </FormErrorMessage>
-      )}
     </FormControl>
   );
 };

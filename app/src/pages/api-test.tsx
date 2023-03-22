@@ -5,7 +5,6 @@
 
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Box, SimpleGrid } from "@chakra-ui/react";
 import type { MetaInfo } from "../utils/zod-meta";
 import { getZodMetaInfo } from "../utils/zod-meta";
 import { AdvisorUpdateSchema } from "../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
@@ -40,13 +39,13 @@ const Page: NextPage = (props, context) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Box maxW="7xl" mx="auto" my={12}>
-          <Box>{t("test3", "Test 3 - default test")}</Box>
-          <Box>{t("test.layer1.layer2", "default test")}</Box>
-          <SimpleGrid columns={2}>
+        <div className="m-auto my-12 max-w-7xl">
+          <div>{t("test3", "Test 3 - default test")}</div>
+          <div>{t("test.layer1.layer2", "default test")}</div>
+          <div>
             <pre>{JSON.stringify(data2, null, 2)}</pre>
-          </SimpleGrid>
-        </Box>
+          </div>
+        </div>
       </main>
     </>
   );

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { WelcomePage } from "./WelcomePage";
+import { WelcomePage } from "./welcome-page";
 import type {
   WizardControlProps,
   WizardPagesDefinition,
@@ -7,12 +7,12 @@ import type {
 import { customerModel } from "../../../../prisma/zod";
 import { range } from "rambda";
 import { LoanTrack, LoanTracks } from "../../../../prisma/zod-add-schema";
-import { MortgageSummary } from "./MortgageSummary";
+import { MortgageSummary } from "./mortgage-summary";
 import type { ConditionCallback } from "../../../utils/zod-meta";
 import { dt } from "../../../utils/i18n-utils";
 import { HowDoesItWork } from "@/components/common/controls/how-does-it-work";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
-import { WizardEndQuestion } from "./WizardEndQuestion";
+import { WizardEndQuestion } from "./wizard-end-question";
 
 const howDoesItWork = z
   .undefined()

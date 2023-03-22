@@ -1,7 +1,6 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -9,15 +8,14 @@ module.exports = {
     {
       name: "@storybook/addon-styling",
       options: {
-        // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
-        // For more details on this addon's options.
         postCss: true,
       },
     },
+    "@storybook/addon-mdx-gfm",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
   },
   webpackFinal: async (config) => {
     config.resolve.plugins = [
@@ -26,6 +24,16 @@ module.exports = {
         extensions: config.resolve.extensions,
       }),
     ];
+
+    // https://github.com/i18next/next-i18next/issues/935
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "next-i18next": "react-i18next",
+    };
+
     return config;
+  },
+  docs: {
+    autodocs: true,
   },
 };

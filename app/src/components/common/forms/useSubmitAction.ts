@@ -1,9 +1,9 @@
-import { useToast } from "@chakra-ui/react";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { castError } from "../../../utils/errors";
 import type { CommonFormProps } from "./Form";
 import { useFormContext } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
 
 export class FormError extends Error {
   formErrors: Record<string, string>;
@@ -22,8 +22,8 @@ interface Options {
 }
 
 export const useSubmitAction = ({ onSubmit, notification }: Options) => {
+  const { toast } = useToast();
   const { handleSubmit, setError } = useFormContext();
-  const toast = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
   const save = async (fieldValues: FieldValues) => {
@@ -39,9 +39,9 @@ export const useSubmitAction = ({ onSubmit, notification }: Options) => {
         toast({
           title: "Saved",
           // description: "We've created your account for you.",
-          status: "success",
+          // status: "success",
           duration: 5000,
-          isClosable: true,
+          // isClosable: true,
         });
       }
     } catch (_err) {
@@ -62,11 +62,10 @@ export const useSubmitAction = ({ onSubmit, notification }: Options) => {
         console.error(`Error submit form ${err.message}`, { err: err.stack });
         if (notification) {
           toast({
+            variant: "destructive",
             title: "Failed to save",
             description: `Error: ${err.message}`,
-            status: "error",
             duration: 10000,
-            isClosable: true,
           });
         }
       }

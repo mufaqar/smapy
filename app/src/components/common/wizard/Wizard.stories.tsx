@@ -1,26 +1,20 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { Form } from "@/components/common/forms/Form";
-import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
 import { t } from "../../../../.storybook/stories-utils";
-import { z } from "zod";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import {
-  contactUsEmailPages,
-  contactUsPhonePages,
-  HowToContactType,
-} from "@/components/customer/contact-us/contact-us-schema";
 import { useWizardFlow } from "@/components/common/wizard/useWizardFlow";
-import { api } from "@/utils/api";
 import { AdvisorUpdatePages } from "@/components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { WizardPage } from "./WizardPage";
+import { FormHeader } from "@/components/common/wizard/FormHeader";
+import React from "react";
+import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
 
 const WizardTest = (args: any) => {
-  const wizard = useWizardFlow(AdvisorUpdatePages, {
-    translate: t,
-    onCompleteUrl: "/",
-  });
+  const wizard = useWizardFlow(
+    args.pages || AdvisorUpdatePages,
+    {
+      translate: t,
+      onCompleteUrl: "/",
+    },
+    { step: args.step ? args.step - 1 : 0 }
+  );
 
   const { onStepNext } = wizard;
 
@@ -28,24 +22,65 @@ const WizardTest = (args: any) => {
     await onStepNext();
   };
 
-  return (
-    <WizardPage
-      wizard={wizard}
-      handleSubmit={handleSubmit}
-      recordData={{}}
-      formData={{}}
-    />
-  );
+  if (args.component === "FormHeader") {
+    return <FormHeader {...wizard} />;
+  } else {
+    return (
+      <WizardPage
+        wizard={wizard}
+        handleSubmit={handleSubmit}
+        recordData={{}}
+        formData={{}}
+      />
+    );
+  }
 };
 
-export default {
-  title: "Wizard",
+const meta = {
   component: WizardTest,
-} as ComponentMeta<typeof WizardTest>;
+};
 
-const Template: ComponentStory<typeof WizardTest> = (args) => (
-  <WizardTest {...args} />
-);
+export default meta;
 
-export const WizardPage = Template.bind({});
-WizardPage.args = {};
+export const Header = {
+  ...WizardTest,
+  args: { component: "FormHeader" },
+};
+
+export const Step1 = {
+  ...WizardTest,
+  args: { step: 1 },
+};
+
+export const Step2 = {
+  ...WizardTest,
+  args: { step: 2 },
+};
+
+export const Step3 = {
+  ...WizardTest,
+  args: { step: 3 },
+};
+export const Step4 = {
+  ...WizardTest,
+  args: { step: 4 },
+};
+export const Step5 = {
+  ...WizardTest,
+  args: { step: 5 },
+};
+
+export const Step6 = {
+  ...WizardTest,
+  args: { step: 6 },
+};
+
+export const LifeStep1 = {
+  ...WizardTest,
+  args: { pages: AdvisorLifeInsurancePages, step: 1 },
+};
+
+export const LifeStep2 = {
+  ...LifeStep1,
+  args: { step: 2 },
+};
