@@ -6,7 +6,7 @@ import { FormHeader } from "@/components/common/wizard/FormHeader";
 import React from "react";
 import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
 
-const WizardTest = (args: any) => {
+export const WizardTest = (args: any) => {
   const wizard = useWizardFlow(
     args.pages || AdvisorUpdatePages,
     {
@@ -50,37 +50,4 @@ export const Header = {
 export const Step1 = {
   ...WizardTest,
   args: { step: 1 },
-};
-
-export const Step2 = {
-  ...WizardTest,
-  args: { step: 2 },
-};
-
-export const Step3 = {
-  ...WizardTest,
-  args: { step: 3 },
-};
-export const Step4 = {
-  ...WizardTest,
-  args: { step: 4 },
-};
-export const Step5 = {
-  ...WizardTest,
-  args: { step: 5 },
-};
-
-export const Step6 = {
-  ...WizardTest,
-  args: { step: 6 },
-};
-
-export const LifeStep1 = {
-  ...WizardTest,
-  args: { pages: AdvisorLifeInsurancePages, step: 1 },
-};
-
-export const LifeStep2 = {
-  ...LifeStep1,
-  args: { step: 2 },
 };

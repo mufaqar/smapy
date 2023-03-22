@@ -3,7 +3,6 @@ import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
-import { useTranslation } from "next-i18next";
 import { useFlagBag } from "@/flags/client";
 import type { CustomerRole } from "./user-auth-schema";
 import { schemaLogin } from "./user-auth-schema";
