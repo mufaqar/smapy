@@ -13,8 +13,8 @@ const Home: NextPage = () => {
     { href: "/signin?user=advisor&debug=otp", title: "Advisor -> OTP" },
     { href: "/advisor/registration", title: "Advisor -> Registration Flow" },
     {
-      href: "/advisor/new-life-insurance",
-      title: "Advisor -> New Life Insurance",
+      href: "/advisor/life-insurance",
+      title: "Advisor -> Life Insurance",
       auth: true,
     },
     { href: "/advisor", title: "Advisor -> Dashboard", auth: true },
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
     { href: "/compare/life", title: "Compare Life Insurance" },
     { href: "/signin?user=customer", title: "Customer -> Sign In" },
     { href: "/signin?user=customer&debug=otp", title: "Customer -> OTP" },
-    { href: "/customer/registration", title: "Advisor -> Registration Flow" },
+    { href: "/customer/registration", title: "Customer -> Registration Flow" },
     { href: "/customer", title: "Customer -> Dashboard", auth: true },
 
     { href: "/blog/sample-blog-post", title: "Blog (Style:Square)" },

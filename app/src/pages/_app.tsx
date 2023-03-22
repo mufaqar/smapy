@@ -16,16 +16,17 @@ import { appWithTranslation } from "next-i18next";
 import { i18nConfig } from "../../next-i18next.config.mjs";
 
 import { api } from "../utils/api";
-import { ChakraProvider } from "@chakra-ui/react";
 
 import "../styles/globals.css";
+import "react-date-picker/dist/DatePicker.css";
+import "react-calendar/dist/Calendar.css";
 
-import { theme } from "../components/chakra-ui-theme";
 import { cookieOptions } from "../utils/cookie-options";
 import { missingKeyHandler } from "../utils/i18n-utils";
 import "../utils/zod-meta";
 import { useFlags } from "../flags/client";
 import { FlagBagProvider } from "@happykit/flags/context";
+import { Toaster } from "@/components/ui/toaster";
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   const [supabaseClient] = useState(() =>
@@ -40,9 +41,8 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
-        </ChakraProvider>
+        <Component {...pageProps} />
+        <Toaster />
       </SessionContextProvider>
     </FlagBagProvider>
   );

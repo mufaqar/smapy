@@ -1,9 +1,7 @@
-import { Box, VStack } from "@chakra-ui/react";
 import { FormHeader } from "./FormHeader";
 import { Form } from "../forms/Form";
 import React from "react";
 import type { WizardControlProps } from "./useWizardFlow";
-import type { TranslationFn } from "../../../utils/i18n-utils";
 import { FormSideBackgroundImage } from "./FormSideBackgroundImage";
 import NoSSR from "react-no-ssr";
 import { Loading } from "../Loading";
@@ -28,7 +26,7 @@ export const WizardForm = ({
   const { schema, control, step, formContext } = wizard;
 
   if (recordData === undefined) {
-    return <Box>Loading...</Box>;
+    return <Loading />;
   }
 
   return (
@@ -38,7 +36,7 @@ export const WizardForm = ({
     <NoSSR onSSR={<Loading />}>
       <div className="m-auto flex max-w-6xl flex-col gap-8">
         <FormHeader {...wizard} />
-        <Box position="relative" key={step.name}>
+        <div className="relative" key={step.name}>
           {!!control ? (
             control(wizard)
           ) : (
@@ -63,7 +61,7 @@ export const WizardForm = ({
           )}
 
           <FormSideBackgroundImage image={step.meta.props?.image} />
-        </Box>
+        </div>
         {/*<pre>{JSON.stringify(recordData, null, 2)}</pre>*/}
       </div>
     </NoSSR>

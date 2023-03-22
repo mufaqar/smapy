@@ -1,7 +1,3 @@
-import { boolean } from "zod";
-import { getServerSideProps } from "../pages/advisor/registration";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { i18nConfig } from "../../next-i18next.config.mjs";
 import { trpcVanillaClient } from "./api";
 import { callAsync } from "./call-async";
 import type { MetaInfo } from "./zod-meta";

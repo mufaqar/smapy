@@ -1,11 +1,11 @@
-import { Box, Button } from "@chakra-ui/react";
 import type { WizardControlProps } from "../../common/wizard/useWizardFlow";
+import { Button } from "@/components/ui/button";
 
 export const MortgageSummary = ({ onStepNext }: WizardControlProps) => {
   return (
-    <Box>
-      <Box>MortgageSummary</Box>
+    <div>
+      <div>MortgageSummary</div>
       <Button onClick={onStepNext}>Next</Button>
-    </Box>
+    </div>
   );
 };

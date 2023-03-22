@@ -1,4 +1,3 @@
-import { Box, Button, SimpleGrid, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import { extractRuntimeTranslation } from "../../server/process/extract-runtime-translation";
 import { useTranslation } from "next-i18next";

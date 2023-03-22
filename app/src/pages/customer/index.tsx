@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { AdvisorDashboard } from "../../components/advisor/AdvisorDashboard";
+import { AdvisorDashboard } from "../../components/advisor/advisor-dashboard";
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
-import { CustomerDashboard } from "@/components/customer/CustomerDashboard";
+import { CustomerDashboard } from "@/components/customer/customer-dashboard";
 
 export const getServerSideProps = i18nGetServerSideProps(["customer"]);
 
