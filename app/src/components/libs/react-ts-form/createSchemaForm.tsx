@@ -28,6 +28,7 @@ import {
 import { ZodNullableType } from "zod/lib/types";
 import type { BrowserNativeObject } from "react-hook-form";
 import {
+  ChoiceType,
   getZodMetaInfo,
   MetaInfo,
   ZodMetaDataItem,
@@ -64,6 +65,7 @@ export type MappingItem<PropType extends ReactProps> = readonly [
 
 export type FormComponentMapping = readonly MappingItem<any>[];
 export type MappableProp =
+  | "choices"
   | "control"
   | "name"
   | "enumValues"
@@ -96,6 +98,8 @@ export type ExtraProps = {
    * An element to render after the field.
    */
   afterElement?: ReactNode;
+
+  choices?: ChoiceType[];
 };
 
 /**
@@ -155,6 +159,7 @@ function checkForDuplicateUniqueFields(array: RTFSupportedZodTypes[]) {
 const defaultPropsMap = [
   ["name", "name"] as const,
   ["control", "control"] as const,
+  ["choices", "choices"] as const,
   ["enumValues", "enumValues"] as const,
 ] as const;
 
@@ -458,7 +463,10 @@ export function createTsForm<
         !formContext.formMeta.children ||
         !formContext.formMeta.children[key]
       ) {
-        throw new Error(`Form error, not found meta info ${key}`);
+        console.error(`Form error, not found meta info [${key}]`, {
+          formContext,
+        });
+        throw new Error(`Form error, not found meta info [${key}]`);
       }
 
       const fieldMetaInfo: MetaInfo = formContext.formMeta.children[key]!;

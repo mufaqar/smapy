@@ -5,6 +5,12 @@
   "repository": "https://github.com/smapy-com/smapy.git",
   "author": "mulyo <mulyoved@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "app"
+    ]
+  },
   "devDependencies": {
     "dotenv": "^16.0.3",
     "env-cmd": "^10.1.0",
