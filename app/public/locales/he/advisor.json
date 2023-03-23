@@ -1,1 +1,630 @@
-{"register": {"id_card_number": {"validation": "*TRANSLATE*", "label": "ID Card Number"}, "phone": {"validation": "*TRANSLATE*", "label": "Phone Number"}, "label": "schemaRegister", "first_name": {"label": "First Name"}, "last_name": {"label": "Last Name"}}, "test": {"layer1": {"layer2": "default test"}}, "test3": "Test 3 - default test", "": {"label": "New Life Insurance for Mortgage"}, "numberOfCustomers": {"label": "Choose number of customers", "number_of_customers": {"choices": {"1": "One", "2": "Two"}, "label": "How many customers"}}, "customerDetails1": {"label": "Personal Details", "gender": {"choices": {"male": "Male", "female": "Female"}, "label": "Gender"}, "smoking": {"choices": {"yes": "Yes", "no": "No", "stop": "Stop Last 2 Years"}, "label": "Smoked last 2 years?"}, "smoking_stop_month": {"label": "How long ago you stop?"}, "first_name": {"label": "First name"}, "last_name": {"label": "First name"}, "family_status": {"choices": {"Single": "Single", "Married": "Married", "Divorced": "Divorced", "Separated": "Separated", "Widowed": "Widowed"}, "label": "Family Status"}, "birthDate": {"label": "Date of birth"}}, "customerDetails2": {"label": "General Details", "occupation": {"label": "Customer occupation"}, "dangerous_hobby_has": {"choices": {"0": "No", "1": "Yes"}, "label": "Customer has dangerous hobby?"}, "dangerous_hobby": {"label": "Hobby"}, "dangerous_hobby_desc": {"label": "Hobby Description"}}, "loanTracksCount": {"label": "Select mortgage track count", "loan_tracks_count": {"choices": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "label": "How many mortgage path?"}}, "loanTracks": {"label": "Mortgage track details", "balance": {"label": "Balance"}, "endDate": {"label": "Loan end Date"}, "interest_rate": {"label": "Interest percentage"}, "interest_type": {"choices": {"fixed": "fixed", "change": "change"}, "label": "Interest Type"}, "linkage_type": {"choices": {"fixed": "fixed", "cpi": "cpi", "dollar": "dollar"}, "label": "Linkage Type"}, "loan_type": {"choices": {"ballon": "ballon", "shpizer": "shpizer", "equal": "equal"}, "label": "Loan Type"}}, "customerMoreDetails": {"label": "Complete Personal Details", "first_name": {"label": "First name"}, "last_name": {"label": "First name"}, "card_id": {"label": "Card ID"}, "phone": {"label": "Phone"}, "email": {"label": "Email"}, "city": {"label": "City name"}, "street": {"label": "Street"}, "street_number": {"label": "Street Number"}, "apartment_number": {"label": "Apartment Number"}}, "mortgagePropertyAddress": {"label": "Property Address", "same_address_mortgage": {"label": "Same address for mortgage property?"}, "property_city": {"label": "City name"}, "property_street": {"label": "Street"}, "property_street_number": {"label": "Street Number"}, "property_apartment_number": {"label": "Apartment Number"}}, "insuranceDetails": {"label": "Insurance details", "insurance_start_date": {"label": "Insurance start date"}, "bank_name": {"label": "Bank", "placeholder": "Bank name"}, "bank_number": {"label": "Bank Number", "placeholder": "Bank Number..."}, "bank_branch": {"label": "Branch", "placeholder": "Branch..."}, "bank_branch_number": {"label": "Branch Number", "placeholder": "Branch Number..."}}, "sendLinksToComplete": {"label": "Send links to complete", "email_customer1": {"label": "Email customer 1"}, "phone_customer1": {"label": "Phone customer 1"}, "email_customer2": {"label": "Email customer 2"}, "phone_customer2": {"label": "Phone customer 2"}, "details_approval": {"label": "I confirm all details are correct and complete"}}, "newInsuranceThanksPage": {"label": "newInsuranceThanksPage"}, "knowTheAgent": {"label": "Partnership start with a good recognition", "placeholder": "Some of your experience", "years_experience": {"label": "Advisory years of experience", "placeholder": "Years..."}, "worker_type": {"choices": {"freelancer": "Freelancer", "hired": "Hired"}, "label": "Are you"}, "workplace_name": {"label": "Name of workplace", "placeholder": "Name..."}, "number_of_files": {"label": "Number of files a month (Optional)", "placeholder": "Average...,"}}, "uploadIdPicture": {"label": "Identification", "certificate_id_picture": {"label": "Upload ID Picture"}, "certificate_id_picture_later": {"label": "Will upload ID later"}}, "bankDetails": {"bank_name": {"label": "Bank", "placeholder": "Bank name"}, "bank_number": {"label": "Bank Number", "placeholder": "Bank Number..."}, "bank_branch": {"label": "Branch", "placeholder": "Branch..."}, "bank_branch_number": {"label": "Branch Number", "placeholder": "Branch Number..."}, "bank_account": {"label": "Account Number", "placeholder": "Account Number..."}, "bank_details_later": {"label": "Will fill later"}}, "agreeToTerms": {"label": "Terms", "signed_terms": {"label": "Confirm terms"}}, "registrationThanksPage": {"label": "registrationThanksPage"}, "Not a valid phone number": "Not a valid phone number", "Required": "Required", "Not valid israeli id number": "Not valid israeli id number", "registrationFlow": {"label": "Registration", "register": {"label": "Complete missing details", "first_name": {"label": "First Name"}, "last_name": {"label": "Last Name"}}, "knowTheAgent": {"label": "Partnership start with a good recognition", "placeholder": "Some of your experience", "years_experience": {"label": "Advisory years of experience", "placeholder": "Years..."}, "worker_type": {"choices": {"freelancer": "Freelancer", "hired": "Hired"}, "label": "Are you"}, "workplace_name": {"label": "Name of workplace", "placeholder": "Name..."}, "number_of_files": {"label": "Number of files a month (Optional)", "placeholder": "Average...,"}}, "uploadIdPicture": {"label": "Identification", "certificate_id_picture": {"label": "Upload ID Picture"}, "certificate_id_picture_later": {"label": "Will upload ID later"}}, "bankDetails": {"bank_name": {"label": "Bank", "placeholder": "Bank name"}, "bank_number": {"label": "Bank Number", "placeholder": "Bank Number..."}, "bank_branch": {"label": "Branch", "placeholder": "Branch..."}, "bank_branch_number": {"label": "Branch Number", "placeholder": "Branch Number..."}, "bank_account": {"label": "Account Number", "placeholder": "Account Number..."}, "bank_details_later": {"label": "Will fill later"}}, "agreeToTerms": {"label": "Terms", "signed_terms": {"label": "Confirm terms"}}, "end": {"label": "Thanks for join the Smapy", "placeholder": "really excited", "text2": "Will do everything to give service to you and your customers"}, "userNames": {"label": "Advisor details", "first_name": {"label": "First Name"}, "last_name": {"label": "Last Name"}}}, "Bank name is required": "Bank name is required", "lifeInsurance": {"label": "New Life Insurance for Mortgage", "howDoesItWork": {"label": "How Does It Work?", "text_1": "text_1", "text_2": "text_2", "text_3": "text_3", "text_life4": "text_life4", "text_mortgage4": "text_mortgage4", "text_property4": "text_property4", "next": "Compare"}, "numberOfCustomers": {"label": "Choose number of customers", "number_of_customers": {"choices": {"1": "One", "2": "Two"}, "label": "How many customers"}}, "customerDetails1": {"label": "Personal Details", "gender": {"choices": {"male": "Male", "female": "Female"}, "label": "Gender"}, "smoking": {"choices": {"yes": "Yes", "no": "No", "stop": "Stop Last 2 Years"}, "label": "Smoked last 2 years?"}, "smoking_stop_month": {"label": "How long ago you stop?"}, "first_name": {"label": "First name"}, "last_name": {"label": "First name"}, "family_status": {"choices": {"Single": "Single", "Married": "Married", "Divorced": "Divorced", "Separated": "Separated", "Widowed": "Widowed"}, "label": "Family Status"}, "birthDate": {"label": "Date of birth"}}, "customerDetails2": {"label": "General Details", "occupation": {"label": "Customer occupation"}, "dangerous_hobby_has": {"choices": {"0": "No", "1": "Yes"}, "label": "Customer has dangerous hobby?"}, "dangerous_hobby": {"label": "Hobby"}, "dangerous_hobby_desc": {"label": "Hobby Description"}}, "loanTracksCount": {"label": "Select mortgage track count", "loan_tracks_count": {"choices": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "label": "How many mortgage path?"}}, "loanTracks": {"label": "Mortgage track details", "balance": {"label": "Balance"}, "endDate": {"label": "Loan end Date"}, "interest_rate": {"label": "Interest percentage"}, "interest_type": {"choices": {"fixed": "fixed", "change": "change"}, "label": "Interest Type"}, "linkage_type": {"choices": {"fixed": "fixed", "cpi": "cpi", "dollar": "dollar"}, "label": "Linkage Type"}, "loan_type": {"choices": {"ballon": "ballon", "shpizer": "shpizer", "equal": "equal"}, "label": "Loan Type"}}, "customerMoreDetails": {"label": "Complete Personal Details", "first_name": {"label": "First name"}, "last_name": {"label": "First name"}, "card_id": {"label": "Card ID"}, "phone": {"label": "Phone"}, "email": {"label": "Email"}, "city": {"label": "City name"}, "street": {"label": "Street"}, "street_number": {"label": "Street Number"}, "apartment_number": {"label": "Apartment Number"}}, "mortgagePropertyAddress": {"label": "Property Address", "same_address_mortgage": {"label": "Same address for mortgage property?"}, "property_city": {"label": "City name"}, "property_street": {"label": "Street"}, "property_street_number": {"label": "Street Number"}, "property_apartment_number": {"label": "Apartment Number"}}, "insuranceDetails": {"label": "Insurance details", "insurance_start_date": {"label": "Insurance start date"}, "bank_name": {"label": "Bank", "placeholder": "Bank name"}, "bank_number": {"label": "Bank Number", "placeholder": "Bank Number..."}, "bank_branch": {"label": "Branch", "placeholder": "Branch..."}, "bank_branch_number": {"label": "Branch Number", "placeholder": "Branch Number..."}}, "sendLinksToComplete": {"label": "Send links to complete", "email_customer1": {"label": "Email customer 1"}, "phone_customer1": {"label": "Phone customer 1"}, "email_customer2": {"label": "Email customer 2"}, "phone_customer2": {"label": "Phone customer 2"}, "details_approval": {"label": "I confirm all details are correct and complete"}}, "end": {"label": "Thanks for choosing Smapy", "placeholder": "Order received successfully", "text1": "Link to complete was sent", "text2": "In 2 years we will compare again", "question": "Customer need property insurance?", "yesMessage": "Cool, we will call him", "yes": "yes", "no": "no", "end": "end"}}}
+{
+  "register": {
+    "id_card_number": {
+      "validation": "*TRANSLATE*",
+      "label": "ID Card Number"
+    },
+    "phone": {
+      "validation": "*TRANSLATE*",
+      "label": "Phone Number"
+    },
+    "label": "schemaRegister",
+    "first_name": {
+      "label": "First Name"
+    },
+    "last_name": {
+      "label": "Last Name"
+    }
+  },
+  "test": {
+    "layer1": {
+      "layer2": "default test"
+    }
+  },
+  "test3": "Test 3 - default test",
+  "": {
+    "label": "New Life Insurance for Mortgage"
+  },
+  "numberOfCustomers": {
+    "label": "Choose number of customers",
+    "number_of_customers": {
+      "choices": {
+        "1": "One",
+        "2": "Two"
+      },
+      "label": "How many customers"
+    }
+  },
+  "customerDetails1": {
+    "label": "Personal Details",
+    "gender": {
+      "choices": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "label": "Gender"
+    },
+    "smoking": {
+      "choices": {
+        "yes": "Yes",
+        "no": "No",
+        "stop": "Stop Last 2 Years"
+      },
+      "label": "Smoked last 2 years?"
+    },
+    "smoking_stop_month": {
+      "label": "How long ago you stop?"
+    },
+    "first_name": {
+      "label": "First name"
+    },
+    "last_name": {
+      "label": "First name"
+    },
+    "family_status": {
+      "choices": {
+        "Single": "Single",
+        "Married": "Married",
+        "Divorced": "Divorced",
+        "Separated": "Separated",
+        "Widowed": "Widowed"
+      },
+      "label": "Family Status"
+    },
+    "birthDate": {
+      "label": "Date of birth"
+    }
+  },
+  "customerDetails2": {
+    "label": "General Details",
+    "occupation": {
+      "label": "Customer occupation"
+    },
+    "dangerous_hobby_has": {
+      "choices": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "label": "Customer has dangerous hobby?"
+    },
+    "dangerous_hobby": {
+      "label": "Hobby"
+    },
+    "dangerous_hobby_desc": {
+      "label": "Hobby Description"
+    }
+  },
+  "loanTracksCount": {
+    "label": "Select mortgage track count",
+    "loan_tracks_count": {
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8"
+      },
+      "label": "How many mortgage path?"
+    }
+  },
+  "loanTracks": {
+    "label": "Mortgage track details",
+    "balance": {
+      "label": "Balance"
+    },
+    "endDate": {
+      "label": "Loan end Date"
+    },
+    "interest_rate": {
+      "label": "Interest percentage"
+    },
+    "interest_type": {
+      "choices": {
+        "fixed": "fixed",
+        "change": "change"
+      },
+      "label": "Interest Type"
+    },
+    "linkage_type": {
+      "choices": {
+        "fixed": "fixed",
+        "cpi": "cpi",
+        "dollar": "dollar"
+      },
+      "label": "Linkage Type"
+    },
+    "loan_type": {
+      "choices": {
+        "ballon": "ballon",
+        "shpizer": "shpizer",
+        "equal": "equal"
+      },
+      "label": "Loan Type"
+    }
+  },
+  "customerMoreDetails": {
+    "label": "Complete Personal Details",
+    "first_name": {
+      "label": "First name"
+    },
+    "last_name": {
+      "label": "First name"
+    },
+    "card_id": {
+      "label": "Card ID"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "label": "Email"
+    },
+    "city": {
+      "label": "City name"
+    },
+    "street": {
+      "label": "Street"
+    },
+    "street_number": {
+      "label": "Street Number"
+    },
+    "apartment_number": {
+      "label": "Apartment Number"
+    }
+  },
+  "mortgagePropertyAddress": {
+    "label": "Property Address",
+    "same_address_mortgage": {
+      "label": "Same address for mortgage property?"
+    },
+    "property_city": {
+      "label": "City name"
+    },
+    "property_street": {
+      "label": "Street"
+    },
+    "property_street_number": {
+      "label": "Street Number"
+    },
+    "property_apartment_number": {
+      "label": "Apartment Number"
+    }
+  },
+  "insuranceDetails": {
+    "label": "Insurance details",
+    "insurance_start_date": {
+      "label": "Insurance start date"
+    },
+    "bank_name": {
+      "label": "Bank",
+      "placeholder": "Bank name"
+    },
+    "bank_number": {
+      "label": "Bank Number",
+      "placeholder": "Bank Number..."
+    },
+    "bank_branch": {
+      "label": "Branch",
+      "placeholder": "Branch..."
+    },
+    "bank_branch_number": {
+      "label": "Branch Number",
+      "placeholder": "Branch Number..."
+    }
+  },
+  "sendLinksToComplete": {
+    "label": "Send links to complete",
+    "email_customer1": {
+      "label": "Email customer 1"
+    },
+    "phone_customer1": {
+      "label": "Phone customer 1"
+    },
+    "email_customer2": {
+      "label": "Email customer 2"
+    },
+    "phone_customer2": {
+      "label": "Phone customer 2"
+    },
+    "details_approval": {
+      "label": "I confirm all details are correct and complete"
+    }
+  },
+  "newInsuranceThanksPage": {
+    "label": "newInsuranceThanksPage"
+  },
+  "knowTheAgent": {
+    "label": "Partnership start with a good recognition",
+    "placeholder": "Some of your experience",
+    "years_experience": {
+      "label": "Advisory years of experience",
+      "placeholder": "Years..."
+    },
+    "worker_type": {
+      "choices": {
+        "freelancer": "Freelancer",
+        "hired": "Hired"
+      },
+      "label": "Are you"
+    },
+    "workplace_name": {
+      "label": "Name of workplace",
+      "placeholder": "Name..."
+    },
+    "number_of_files": {
+      "label": "Number of files a month (Optional)",
+      "placeholder": "Average...,"
+    }
+  },
+  "uploadIdPicture": {
+    "label": "Identification",
+    "certificate_id_picture": {
+      "label": "Upload ID Picture"
+    },
+    "certificate_id_picture_later": {
+      "label": "Will upload ID later"
+    }
+  },
+  "bankDetails": {
+    "bank_name": {
+      "label": "Bank",
+      "placeholder": "Bank name"
+    },
+    "bank_number": {
+      "label": "Bank Number",
+      "placeholder": "Bank Number..."
+    },
+    "bank_branch": {
+      "label": "Branch",
+      "placeholder": "Branch..."
+    },
+    "bank_branch_number": {
+      "label": "Branch Number",
+      "placeholder": "Branch Number..."
+    },
+    "bank_account": {
+      "label": "Account Number",
+      "placeholder": "Account Number..."
+    },
+    "bank_details_later": {
+      "label": "Will fill later"
+    }
+  },
+  "agreeToTerms": {
+    "label": "Terms",
+    "signed_terms": {
+      "label": "Confirm terms"
+    }
+  },
+  "registrationThanksPage": {
+    "label": "registrationThanksPage"
+  },
+  "Not a valid phone number": "Not a valid phone number",
+  "Required": "Required",
+  "Not valid israeli id number": "Not valid israeli id number",
+  "registrationFlow": {
+    "label": "Registration",
+    "register": {
+      "label": "Complete missing details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
+    },
+    "knowTheAgent": {
+      "label": "Partnership start with a good recognition",
+      "placeholder": "Some of your experience",
+      "years_experience": {
+        "label": "Advisory years of experience",
+        "placeholder": "Years..."
+      },
+      "worker_type": {
+        "choices": {
+          "freelancer": "Freelancer",
+          "hired": "Hired"
+        },
+        "label": "Are you"
+      },
+      "workplace_name": {
+        "label": "Name of workplace",
+        "placeholder": "Name..."
+      },
+      "number_of_files": {
+        "label": "Number of files a month (Optional)",
+        "placeholder": "Average...,"
+      }
+    },
+    "uploadIdPicture": {
+      "label": "Identification",
+      "certificate_id_picture": {
+        "label": "Upload ID Picture"
+      },
+      "certificate_id_picture_later": {
+        "label": "Will upload ID later"
+      }
+    },
+    "bankDetails": {
+      "bank_name": {
+        "label": "Bank",
+        "placeholder": "Bank name"
+      },
+      "bank_number": {
+        "label": "Bank Number",
+        "placeholder": "Bank Number..."
+      },
+      "bank_branch": {
+        "label": "Branch",
+        "placeholder": "Branch..."
+      },
+      "bank_branch_number": {
+        "label": "Branch Number",
+        "placeholder": "Branch Number..."
+      },
+      "bank_account": {
+        "label": "Account Number",
+        "placeholder": "Account Number..."
+      },
+      "bank_details_later": {
+        "label": "Will fill later"
+      }
+    },
+    "agreeToTerms": {
+      "label": "Terms",
+      "signed_terms": {
+        "label": "Confirm terms"
+      }
+    },
+    "end": {
+      "label": "Thanks for join the Smapy",
+      "placeholder": "really excited",
+      "text2": "Will do everything to give service to you and your customers"
+    },
+    "userNames": {
+      "label": "Advisor details",
+      "first_name": {
+        "label": "First Name"
+      },
+      "last_name": {
+        "label": "Last Name"
+      }
+    }
+  },
+  "Bank name is required": "Bank name is required",
+  "lifeInsurance": {
+    "label": "New Life Insurance for Mortgage",
+    "howDoesItWork": {
+      "label": "How Does It Work?",
+      "text_1": "text_1",
+      "text_2": "text_2",
+      "text_3": "text_3",
+      "text_life4": "text_life4",
+      "text_mortgage4": "text_mortgage4",
+      "text_property4": "text_property4",
+      "next": "Compare"
+    },
+    "numberOfCustomers": {
+      "label": "Choose number of customers",
+      "number_of_customers": {
+        "choices": {
+          "1": "One",
+          "2": "Two"
+        },
+        "label": "How many customers"
+      }
+    },
+    "customerDetails1": {
+      "label": "Personal Details",
+      "gender": {
+        "choices": {
+          "male": "Male",
+          "female": "Female"
+        },
+        "label": "Gender"
+      },
+      "smoking": {
+        "choices": {
+          "yes": "Yes",
+          "no": "No",
+          "stop": "Stop Last 2 Years"
+        },
+        "label": "Smoked last 2 years?"
+      },
+      "smoking_stop_month": {
+        "label": "How long ago you stop?"
+      },
+      "first_name": {
+        "label": "First name"
+      },
+      "last_name": {
+        "label": "First name"
+      },
+      "family_status": {
+        "choices": {
+          "Single": "Single",
+          "Married": "Married",
+          "Divorced": "Divorced",
+          "Separated": "Separated",
+          "Widowed": "Widowed"
+        },
+        "label": "Family Status"
+      },
+      "birthDate": {
+        "label": "Date of birth"
+      }
+    },
+    "customerDetails2": {
+      "label": "General Details",
+      "occupation": {
+        "label": "Customer occupation"
+      },
+      "dangerous_hobby_has": {
+        "choices": {
+          "0": "No",
+          "1": "Yes"
+        },
+        "label": "Customer has dangerous hobby?"
+      },
+      "dangerous_hobby": {
+        "label": "Hobby"
+      },
+      "dangerous_hobby_desc": {
+        "label": "Hobby Description"
+      }
+    },
+    "loanTracksCount": {
+      "label": "Select mortgage track count",
+      "loan_tracks_count": {
+        "choices": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8"
+        },
+        "label": "How many mortgage path?"
+      }
+    },
+    "loanTracks": {
+      "label": "Mortgage track details",
+      "balance": {
+        "label": "Balance"
+      },
+      "endDate": {
+        "label": "Loan end Date"
+      },
+      "interest_rate": {
+        "label": "Interest percentage"
+      },
+      "interest_type": {
+        "choices": {
+          "fixed": "fixed",
+          "change": "change"
+        },
+        "label": "Interest Type"
+      },
+      "linkage_type": {
+        "choices": {
+          "fixed": "fixed",
+          "cpi": "cpi",
+          "dollar": "dollar"
+        },
+        "label": "Linkage Type"
+      },
+      "loan_type": {
+        "choices": {
+          "ballon": "ballon",
+          "shpizer": "shpizer",
+          "equal": "equal"
+        },
+        "label": "Loan Type"
+      }
+    },
+    "customerMoreDetails": {
+      "label": "Complete Personal Details",
+      "first_name": {
+        "label": "First name"
+      },
+      "last_name": {
+        "label": "First name"
+      },
+      "card_id": {
+        "label": "Card ID"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "city": {
+        "label": "City name"
+      },
+      "street": {
+        "label": "Street"
+      },
+      "street_number": {
+        "label": "Street Number"
+      },
+      "apartment_number": {
+        "label": "Apartment Number"
+      }
+    },
+    "mortgagePropertyAddress": {
+      "label": "Property Address",
+      "same_address_mortgage": {
+        "label": "Same address for mortgage property?"
+      },
+      "property_city": {
+        "label": "City name"
+      },
+      "property_street": {
+        "label": "Street"
+      },
+      "property_street_number": {
+        "label": "Street Number"
+      },
+      "property_apartment_number": {
+        "label": "Apartment Number"
+      }
+    },
+    "insuranceDetails": {
+      "label": "Insurance details",
+      "insurance_start_date": {
+        "label": "Insurance start date"
+      },
+      "bank_name": {
+        "label": "Bank",
+        "placeholder": "Bank name"
+      },
+      "bank_number": {
+        "label": "Bank Number",
+        "placeholder": "Bank Number..."
+      },
+      "bank_branch": {
+        "label": "Branch",
+        "placeholder": "Branch..."
+      },
+      "bank_branch_number": {
+        "label": "Branch Number",
+        "placeholder": "Branch Number..."
+      }
+    },
+    "sendLinksToComplete": {
+      "label": "Send links to complete",
+      "email_customer1": {
+        "label": "Email customer 1"
+      },
+      "phone_customer1": {
+        "label": "Phone customer 1"
+      },
+      "email_customer2": {
+        "label": "Email customer 2"
+      },
+      "phone_customer2": {
+        "label": "Phone customer 2"
+      },
+      "details_approval": {
+        "label": "I confirm all details are correct and complete"
+      }
+    },
+    "end": {
+      "label": "Thanks for choosing Smapy",
+      "placeholder": "Order received successfully",
+      "text1": "Link to complete was sent",
+      "text2": "In 2 years we will compare again",
+      "question": "Customer need property insurance?",
+      "yesMessage": "Cool, we will call him",
+      "yes": "yes",
+      "no": "no",
+      "end": "end"
+    }
+  }
+}
