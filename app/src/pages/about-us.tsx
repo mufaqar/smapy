@@ -69,7 +69,7 @@ const AboutUs: NextPage = () => {
 
         <section>
           <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-            {t("about.aboutus.header")}
+            {t("about.about_us.header")}
           </h1>
           <div className="flex flex-row flex-wrap justify-center gap-8">
             <ProfileCard

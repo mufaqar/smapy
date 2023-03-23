@@ -110,5 +110,6 @@ design/figma-json/smapy.json
 .netlify
 
 
+venv
 # Contentlayer
 .contentlayer

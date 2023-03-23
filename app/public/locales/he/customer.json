@@ -1,17 +1,17 @@
 {
   "customerCompareAndBuy": {
-    "title_life": "Compare and buy Life Insurance",
-    "title_mortgage": "Compare and buy Mortgage Insurance",
-    "title_property": "Compare and buy property Insurance",
+    "title_life": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd ",
+    "title_mortgage": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05e9\u05db\u05e0\u05ea\u05d4",
+    "title_property": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d3\u05d9\u05e8\u05d4",
     "howDoesItWork": {
-      "label": "How Does It Work?",
-      "text_1": "text_1",
-      "text_2": "text_2",
-      "text_3": "text_3",
-      "text_life4": "text_life4",
-      "text_mortgage4": "text_mortgage4",
-      "text_property4": "text_property4",
-      "next": "Compare"
+      "label": " \u05d0\u05d9\u05da \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3?",
+      "text_1": "\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd \u05d0\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05dc\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d4\u05d0\u05d9\u05e9\u05d9\u05d9\u05dd \u05e9\u05dc\u05db\u05dd, \u05de\u05de\u05e9 \u05db\u05de\u05d5 \u05db\u05e4\u05e4\u05d4 \u05dc\u05d9\u05d3",
+      "text_2": "\u05de\u05e9\u05d5\u05d5\u05d9\u05dd \u05dc\u05db\u05dd \u05de\u05d7\u05d9\u05e8\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d0\u05d9\u05e0\u05d8\u05e8\u05e1, \u05d5\u05d0\u05ea\u05dd \u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05d1\u05d4\u05e6\u05e2\u05d4 \u05d4\u05de\u05e9\u05ea\u05dc\u05de\u05ea \u05d1\u05d9\u05d5\u05ea\u05e8",
+      "text_3": "\u05d0\u05e0\u05d5 \u05e2\u05d5\u05e7\u05d1\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9 \u05de\u05d7\u05d9\u05e8 \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e9\u05dc\u05db\u05dd, \u05db\u05da \u05e0\u05d3\u05d0\u05d2 \u05e9\u05ea\u05d7\u05e1\u05db\u05d5 \u05e2\u05d3 \u05e2\u05e9\u05e8\u05d5\u05ea \u05d0\u05dc\u05e4\u05d9 \u20aa",
+      "text_life4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
+      "text_mortgage4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d4? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
+      "text_property4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d3\u05d9\u05e8\u05d4? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
+      "next": "\u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4"
     },
     "thanks": {
       "label": "Thanks for your interest in Smapy",
@@ -20,14 +20,14 @@
       "text2": "You will enjoy great service"
     },
     "end": {
-      "label": "Thanks for your interest in Smapy",
-      "placeholder": "Right now the service is available only through agents",
-      "text1": "Soon will be able to buy from the site",
-      "text2": "You will enjoy great service"
+      "label": "Smapy -\u05ea\u05d5\u05d3\u05d4 \u05e9\u05d4\u05ea\u05e2\u05e0\u05d9\u05d9\u05e0\u05ea \u05d1",
+      "placeholder": "\u05db\u05e8\u05d2\u05e2 \u05d4\u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc\u05e0\u05d5 \u05e0\u05d9\u05ea\u05df \u05d3\u05e8\u05da \u05d9\u05d5\u05e2\u05e6\u05d9 \u05de\u05e9\u05db\u05e0\u05ea\u05d0\u05d5\u05ea \u05d5\u05e1\u05d5\u05db\u05e0\u05d9 \u05d1\u05d9\u05d8\u05d5\u05d7. ",
+      "text1": "\u05d1\u05e7\u05e8\u05d5\u05d1 \u05d9\u05d4\u05d9\u05d4 \u05e0\u05d9\u05ea\u05df \u05dc\u05e8\u05db\u05d5\u05e9 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05e1\u05de\u05d0\u05e4\u05d9 \u05de\u05d4\u05d0\u05ea\u05e8.",
+      "text2": "\u05d1\u05e1\u05de\u05d0\u05e4\u05d9 \u05ea\u05d4\u05e0\u05d5 \u05de\u05d7\u05d5\u05d5\u05d9\u05ea \u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05d8\u05e8\u05dd \u05d4\u05db\u05e8\u05ea\u05dd."
     }
   },
   "contactUsEmail": {
-    "label": "Contact Me",
+    "label": "\u05e6\u05e8\u05d5 \u05d0\u05d9\u05ea\u05d9 \u05e7\u05e9\u05e8",
     "contactDetailsEmail": {
       "full_name": {
         "label": "Full name"
@@ -36,23 +36,23 @@
         "label": "Email"
       },
       "subject": {
-        "label": "Message"
+        "label": "\u05d4\u05d5\u05d3\u05e2\u05d4"
       },
       "product": {
-        "label": "Which insurance you want us to help?",
+        "label": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d4\u05d9\u05d9\u05ea \u05e8\u05d5\u05e6\u05d4 \u05e9\u05e0\u05e2\u05d6\u05d5\u05e8 \u05dc\u05da?",
         "choices": {
-          "life": "life",
-          "life-mortgage": "life-mortgage",
-          "property": "property",
-          "property-mortgage": "property-mortgage"
+          "life": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd",
+          "life-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d0",
+          "property": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4",
+          "property-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4 \u05de\u05e9\u05db\u05e0\u05ea\u05d0"
         }
       },
-      "header": "Fill details and will return to you",
+      "header": "\u05de\u05dc\u05d0\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd \u05d5\u05e0\u05d7\u05d6\u05d5\u05e8 \u05d0\u05dc\u05d9\u05db\u05dd \u05d1\u05d4\u05e7\u05d3\u05dd",
       "contact_info": {
-        "label": "Email"
+        "label": "\u05de\u05d9\u05d9\u05dc"
       },
       "name": {
-        "label": "Full name"
+        "label": "\u05e9\u05dd \u05de\u05dc\u05d0"
       }
     },
     "end": {
@@ -62,30 +62,36 @@
       "text2": "You will enjoy great service"
     }
   },
-  "Required": "Required",
+  "Required": "\u05e9\u05d3\u05d4 \u05d7\u05d5\u05d1\u05d4",
   "contactUsPhone": {
-    "label": "Contact Me",
+    "label": "\u05e6\u05e8\u05d5 \u05d0\u05d9\u05ea\u05d9 \u05e7\u05e9\u05e8",
     "contactDetailsPhone": {
       "full_name": {
-        "label": "Full name"
+        "label": "contactUsPhone.contactDetailsPhone.full_name.label"
       },
       "phone": {
-        "label": "Phone"
+        "label": "\u05de\u05e1\u05e4\u05e8 \u05d8\u05dc\u05e4\u05d5\u05df"
       },
       "subject": {
-        "label": "Message"
+        "label": "\u05e0\u05d5\u05e9\u05d0"
       },
       "product": {
-        "label": "Which insurance you want us to help?",
+        "label": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d4\u05d9\u05d9\u05ea \u05e8\u05d5\u05e6\u05d4 \u05e9\u05e0\u05e2\u05d6\u05d5\u05e8 \u05dc\u05da?",
         "choices": {
-          "life": "life",
-          "life-mortgage": "life-mortgage",
-          "property": "property",
-          "property-mortgage": "property-mortgage"
+          "life": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd",
+          "life-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d0",
+          "property": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4",
+          "property-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4 \u05de\u05e9\u05db\u05e0\u05ea\u05d0"
         },
         "header": "Fill details and will return to you"
       },
-      "header": "Fill details and will return to you"
+      "header": "\u05de\u05dc\u05d0\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd \u05d5\u05e0\u05d7\u05d6\u05d5\u05e8 \u05d0\u05dc\u05d9\u05db\u05dd \u05d1\u05d4\u05e7\u05d3\u05dd",
+      "name": {
+        "label": "\u05e9\u05dd \u05de\u05dc\u05d0"
+      },
+      "contact_info": {
+        "label": "\u05de\u05e1\u05e4\u05e8 \u05d8\u05dc\u05e4\u05d5\u05df"
+      }
     },
     "end": {
       "label": "Thanks for choosing Smapy",
@@ -94,5 +100,5 @@
       "text2": "You will enjoy great service"
     }
   },
-  "Invalid email": "Invalid email"
+  "Invalid email": "\u05de\u05d9\u05d9\u05dc \u05d1\u05dc\u05ea\u05d9 \u05d7\u05d5\u05e7\u05d9"
 }
