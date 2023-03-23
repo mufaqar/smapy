@@ -16,7 +16,7 @@ const product = z
     className: "col-span-2",
     afterElement: (wizard) => (
       <>
-        <h2 className="col-span-2 text-center">
+        <h2 className="col-span-2 max-w-full text-center">
           {wizard.step.meta.text?.header || null}
         </h2>
         <img
