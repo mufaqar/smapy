@@ -108,3 +108,7 @@ design/figma-json/smapy.json
 .secret
 # Local Netlify folder
 .netlify
+
+
+# Contentlayer
+.contentlayer
