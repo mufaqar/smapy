@@ -111,3 +111,5 @@ design/figma-json/smapy.json
 
 
 venv
+# Contentlayer
+.contentlayer

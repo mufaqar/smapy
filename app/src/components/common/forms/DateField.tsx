@@ -4,7 +4,7 @@ import { maybeConvertChild } from "../wizard/useWizardFlow";
 import { Checkbox } from "@/components/ui/checkbox";
 import { clsx } from "clsx";
 import { FormControl } from "@/components/common/forms/FormControl";
-import DatePicker from "react-date-picker/dist/entry.nostyle";
+import DatePicker from "react-datepicker";
 
 interface Props {
   controlName?: ZodMetaDataItem["control"];
@@ -61,8 +61,8 @@ export const DateField = (
     control = (
       <DatePicker
         name={field.name}
-        onChange={field.onChange}
-        value={field.value}
+        onChange={(date: Date | null) => field.onChange(date)}
+        selected={field.value}
       />
     );
   }
