@@ -113,3 +113,5 @@ design/figma-json/smapy.json
 venv
 # Contentlayer
 .contentlayer
+tempfile.yml
+update_assets/input.xlsx
