@@ -1,7 +1,7 @@
-import { Checkbox } from "./checkbox";
+import { Switch } from "@/components/ui/switch";
 
 const meta = {
-  component: Checkbox,
+  component: Switch,
 };
 
 export default meta;
@@ -11,7 +11,7 @@ export const Primary = {
     console.log(`muly:render`, { args });
     return (
       <div className="items-top flex space-x-2">
-        <Checkbox id="terms1" {...args} />
+        <Switch id="terms1" {...args} />
         <div className="grid gap-1.5 leading-none">
           <label
             htmlFor="terms1"

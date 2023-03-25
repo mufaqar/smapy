@@ -92,15 +92,15 @@
       "header": "about.about_us.header"
     }
   },
-  "faq": {
-    "header": "faq.header",
-    "text": "faq.text",
+  "faqData": {
+    "header": "faqData.header",
+    "text": "faqData.text",
     "questions": {
-      "header": "faq.questions.header"
+      "header": "faqData.questions.header"
     },
     "contact": {
-      "header": "faq.contact.header",
-      "text": "faq.contact.text"
+      "header": "faqData.contact.header",
+      "text": "faqData.contact.text"
     }
   },
   "price": {
@@ -267,7 +267,7 @@
   "section": "Advance platform",
   "nav": {
     "about": "nav.about",
-    "faq": "nav.faq",
+    "faqData": "nav.faqData",
     "price": "nav.price",
     "security": "nav.security",
     "customer_entry": "nav.customer_entry",

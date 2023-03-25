@@ -1,21 +1,16 @@
-import { Loading } from "./Loading";
+import { Loading as LoadingC } from "./Loading";
 import { Dialog } from "@/components/common/dialog";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { pause } from "@/utils/pause";
-import { DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
-import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
-import { t } from "../../../.storybook/stories-utils";
 
 const meta = {
-  component: Loading,
+  component: LoadingC,
 };
 
 export default meta;
 
-export const Component = {
-  render: () => <Loading />,
-  name: "Loading",
+export const Loading = {
+  render: () => <LoadingC />,
 };
 
 const SampleDialog = (props: any) => {

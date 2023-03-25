@@ -1,4 +1,5 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
 module.exports = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -12,6 +13,9 @@ module.exports = {
       },
     },
     // "@storybook/addon-mdx-gfm",
+    // "@meza/storybook-react-i18next",
+    // "storybook-addon-pseudo-states",
+    "storybook-addon-designs",
   ],
   framework: {
     name: "@storybook/nextjs",

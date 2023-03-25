@@ -1,10 +1,11 @@
 import { useSessionContext, useUser } from "@supabase/auth-helpers-react";
-import { api } from "../../utils/api";
+import { api } from "../../../utils/api";
 import { Loading } from "@/components/common/Loading";
 import { getUserProfileCheckComplete } from "@/server/api/routers/advisor/account";
 import { useRouter } from "next/router";
-import { AdvisorPendingRequest } from "./advisor-pending-request";
+import { AdvisorPendingRequest } from "../advisor-pending-request";
 import { Button } from "@/components/ui/button";
+import { AdvisorDashboardUi } from "@/components/advisor/dashboard/advisor-dashboard-ui";
 
 export const AdvisorDashboard = () => {
   const router = useRouter();
@@ -60,11 +61,9 @@ export const AdvisorDashboard = () => {
   }
 
   return (
-    <div>
-      <div>Advisor Dashboard</div>
-      <Button onClick={handleSignout}>Sign out</Button>
-      <div>USER PROFILE</div>
-      <pre>{JSON.stringify(userProfile, null, 2)}</pre>
-    </div>
+    <AdvisorDashboardUi
+      userProfile={userProfile}
+      handleSignout={handleSignout}
+    />
   );
 };

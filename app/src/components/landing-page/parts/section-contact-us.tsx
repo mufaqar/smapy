@@ -1,9 +1,9 @@
-import { ConnectButton } from "@/components/landing-page/connect-button";
+import { ConnectButton } from "@/components/landing-page/parts/connect-button";
 import {
   EmailIcon,
   PhoneOutlineIcon,
   WhatsappIcon,
-} from "@/components/landing-page/Icons";
+} from "@/components/landing-page/parts/Icons";
 import React from "react";
 
 interface Props {

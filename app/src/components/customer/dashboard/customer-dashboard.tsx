@@ -1,8 +1,8 @@
 import { useSessionContext, useUser } from "@supabase/auth-helpers-react";
-import { api } from "../../utils/api";
+import { api } from "../../../utils/api";
 import { Loading } from "@/components/common/Loading";
 import { useRouter } from "next/router";
-import { Button } from "@/components/ui/button";
+import { CustomerDashboardUi } from "@/components/customer/dashboard/customer-dashboard-ui";
 
 export const CustomerDashboard = () => {
   const router = useRouter();
@@ -53,11 +53,9 @@ export const CustomerDashboard = () => {
   }
 
   return (
-    <div>
-      <div>Customer Dashboard</div>
-      <Button onClick={handleSignout}>Sign out</Button>
-      <div>USER PROFILE</div>
-      <pre>{JSON.stringify(userProfile, null, 2)}</pre>
-    </div>
+    <CustomerDashboardUi
+      userProfile={userProfile}
+      handleSignout={handleSignout}
+    />
   );
 };

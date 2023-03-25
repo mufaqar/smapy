@@ -16,7 +16,7 @@ export const CustomerRegistrationFlow = () => {
 
   const wizard = useWizardFlow(CustomerUpdatePages, {
     translate: t,
-    onCompleteUrl: "/advisor",
+    onCompleteUrl: "/customer",
   });
 
   const { setStepRange, onStepNext, control, step, schema } = wizard;

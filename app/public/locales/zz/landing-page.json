@@ -77,11 +77,14 @@
     },
     "about_us": { "header": "about.about_us.header" }
   },
-  "faq": {
-    "header": "faq.header",
-    "text": "faq.text",
-    "questions": { "header": "faq.questions.header" },
-    "contact": { "header": "faq.contact.header", "text": "faq.contact.text" }
+  "faqData": {
+    "header": "faqData.header",
+    "text": "faqData.text",
+    "questions": { "header": "faqData.questions.header" },
+    "contact": {
+      "header": "faqData.contact.header",
+      "text": "faqData.contact.text"
+    }
   },
   "price": {
     "0": {
@@ -237,7 +240,7 @@
   "section": "section",
   "nav": {
     "about": "nav.about",
-    "faq": "nav.faq",
+    "faqData": "nav.faqData",
     "price": "nav.price",
     "security": "nav.security",
     "customer_entry": "nav.customer_entry",
