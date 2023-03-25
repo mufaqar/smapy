@@ -27,7 +27,7 @@ const FormTestComponent = (args: any) => {
 };
 
 export const FormTest = {
-  render: () => <FormTestComponent />,
+  render: (args: any) => <FormTestComponent {...args} />,
   parameters: {
     design: {
       type: "figma",

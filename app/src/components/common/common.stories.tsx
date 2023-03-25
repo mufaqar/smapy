@@ -1,17 +1,33 @@
-import { Loading as LoadingC } from "./Loading";
+import { Loading } from "./Loading";
 import { Dialog } from "@/components/common/dialog";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
+import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
+import { t } from "../../../.storybook/stories-utils";
+import { EditIcon, PlusIcon, Trash2Icon } from "lucide-react";
+import { z } from "zod";
 
 const meta = {
-  component: LoadingC,
+  component: Loading,
 };
 
 export default meta;
 
-export const Loading = {
-  render: () => <LoadingC />,
+export const Component = {
+  render: () => <Loading />,
+  name: "Loading",
 };
+
+const schema = z.object({
+  first_name: z.string().describe("First Name // place holder..."),
+  not_required: z.string().optional().describe("First Name // place holder..."),
+});
+
+// export const Test2 = {
+//   render: () => <DateRangeSelect />,
+//   name: "DateRangeSelect",
+// };
 
 const SampleDialog = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +36,12 @@ const SampleDialog = (props: any) => {
     <Dialog
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-      trigger={<Button>Trigger</Button>}
+      trigger={
+        <Button>
+          <EditIcon className="mr-2 h-4 w-4" />
+          Trigger
+        </Button>
+      }
       title="Dialog Title"
       description="Dialog Description"
     >
@@ -37,4 +58,25 @@ export const Test3 = {
 export const Test4 = {
   render: () => <SampleDialog isOpen />,
   name: "Open Dialog",
+};
+
+export const DialogForm = () => {
+  const formContext = usePrepareSchema(t, schema);
+  return (
+    <DialogFormComponent
+      formContext={formContext}
+      schema={schema}
+      onSubmit={(newRec) => newRec}
+      formProps={{
+        trigger: (
+          <Button>
+            <PlusIcon className="mr-2 h-4 w-4" />
+            Add
+          </Button>
+        ),
+        title: "Title",
+        actionName: "Add",
+      }}
+    />
+  );
 };
