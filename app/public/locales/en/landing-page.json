@@ -43,7 +43,8 @@
       "label": "What is your code"
     },
     "entry_customer": "Customer entry",
-    "entry_advisor": "Advisor entry"
+    "entry_advisor": "Advisor entry",
+    "next": "otp.next"
   },
   "String must contain at least 6 character(s)": "String must contain at least 6 character(s)",
   "Token has expired or is invalid": "Token has expired or is invalid",
@@ -272,5 +273,8 @@
     "security": "nav.security",
     "customer_entry": "nav.customer_entry",
     "agent_entry": "nav.agent_entry"
+  },
+  "user_id": {
+    "next": "user_id.next"
   }
 }

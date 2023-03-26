@@ -59,7 +59,7 @@ export const UserId = ({ onSubmit, role }: Props) => {
           formProps={{
             submit: {
               notification: false,
-              text: "Next",
+              text: t('user_id.next') || '',
             },
           }}
         ></Form>
