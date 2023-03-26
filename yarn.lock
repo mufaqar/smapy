@@ -3052,11 +3052,6 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.25.24.tgz#8c7688559979f7079aacaf31aa881c3aa410b718"
   integrity sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==
 
-"@smapy/storybook-react-i18next@file:C:/smapy/storybook-react-i18next-main":
-  version "1.1.2"
-  dependencies:
-    storybook-i18n "^1.1.4"
-
 "@storybook/addon-actions@7.0.0-rc.5":
   version "7.0.0-rc.5"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-rc.5.tgz#bf0b0ba9379a37bbe86d8340d6e13212c7b68e81"
