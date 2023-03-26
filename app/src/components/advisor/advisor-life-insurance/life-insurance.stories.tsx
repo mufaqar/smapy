@@ -11,7 +11,7 @@ const pages = AdvisorLifeInsurancePages;
 
 export const howDoesItWork = {
   ...WizardTest,
-  args: { pages, step: 1 },
+  args: { pages, step: "0-1" },
   parameters: {
     design: {
       type: "figma",
@@ -22,7 +22,7 @@ export const howDoesItWork = {
 
 export const numberOfCustomers = {
   ...howDoesItWork,
-  args: { pages, step: 2 },
+  args: { pages, step: "1-1" },
   parameters: {
     design: {
       type: "figma",
@@ -32,7 +32,7 @@ export const numberOfCustomers = {
 };
 export const customer0_details1 = {
   ...howDoesItWork,
-  args: { pages, step: 3 },
+  args: { pages, step: "1-2" },
   parameters: {
     design: {
       type: "figma",
@@ -43,7 +43,7 @@ export const customer0_details1 = {
 
 export const customer0_details2 = {
   ...howDoesItWork,
-  args: { pages, step: 4 },
+  args: { pages, step: "1-3" },
   parameters: {
     design: {
       type: "figma",
@@ -53,7 +53,7 @@ export const customer0_details2 = {
 };
 export const customer1_details1 = {
   ...howDoesItWork,
-  args: { pages, step: 5 },
+  args: { pages, step: "1-4" },
   parameters: {
     design: {
       type: "figma",
@@ -63,7 +63,7 @@ export const customer1_details1 = {
 };
 export const customer1_details2 = {
   ...howDoesItWork,
-  args: { pages, step: 6 },
+  args: { pages, step: "1-5" },
   parameters: {
     design: {
       type: "figma",
@@ -74,7 +74,7 @@ export const customer1_details2 = {
 
 export const loanDetailsIntro = {
   ...howDoesItWork,
-  args: { pages, step: 7 },
+  args: { pages, step: "1-6" },
   parameters: {
     design: {
       type: "figma",
@@ -85,7 +85,7 @@ export const loanDetailsIntro = {
 
 export const loanTracksCount = {
   ...howDoesItWork,
-  args: { pages, step: 8 },
+  args: { pages, step: "1-7" },
   parameters: {
     design: {
       type: "figma",
@@ -95,7 +95,7 @@ export const loanTracksCount = {
 };
 export const track0 = {
   ...howDoesItWork,
-  args: { pages, step: 9 },
+  args: { pages, step: "1-8" },
   parameters: {
     design: {
       type: "figma",
@@ -105,7 +105,7 @@ export const track0 = {
 };
 export const customer0_moreDetails = {
   ...howDoesItWork,
-  args: { pages, step: 18 },
+  args: { pages, step: "3-1" },
   parameters: {
     design: {
       type: "figma",
@@ -115,7 +115,7 @@ export const customer0_moreDetails = {
 };
 export const customer1_moreDetails = {
   ...howDoesItWork,
-  args: { pages, step: 19 },
+  args: { pages, step: "3-2" },
   parameters: {
     design: {
       type: "figma",
@@ -125,7 +125,7 @@ export const customer1_moreDetails = {
 };
 export const mortgagePropertyAddress = {
   ...howDoesItWork,
-  args: { pages, step: 20 },
+  args: { pages, step: "3-3" },
   parameters: {
     design: {
       type: "figma",
@@ -135,7 +135,7 @@ export const mortgagePropertyAddress = {
 };
 export const insuranceDetails = {
   ...howDoesItWork,
-  args: { pages, step: 21 },
+  args: { pages, step: "3-4" },
   parameters: {
     design: {
       type: "figma",
@@ -145,7 +145,7 @@ export const insuranceDetails = {
 };
 export const sendLinksToComplete = {
   ...howDoesItWork,
-  args: { pages, step: 22 },
+  args: { pages, step: "4-1" },
   parameters: {
     design: {
       type: "figma",
@@ -155,7 +155,7 @@ export const sendLinksToComplete = {
 };
 export const end = {
   ...howDoesItWork,
-  args: { pages, step: 23 },
+  args: { pages, step: "4-2" },
   parameters: {
     design: {
       type: "figma",

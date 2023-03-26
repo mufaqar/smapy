@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     // "@storybook/addon-mdx-gfm",
-    "@smapy/storybook-react-i18next",
+    // "@smapy/storybook-react-i18next",
     // "storybook-addon-pseudo-states",
     "storybook-addon-designs",
   ],

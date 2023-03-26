@@ -14,7 +14,7 @@ const pages = contactUsEmailPages;
 
 export const contactDetailsEmail = {
   ...WizardTest,
-  args: { pages, step: 1 },
+  args: { pages, step: "0-1" },
   parameters: {
     design: {
       type: "figma",
@@ -24,7 +24,7 @@ export const contactDetailsEmail = {
 };
 export const contactDetailsPhone = {
   ...WizardTest,
-  args: { pages: contactUsPhonePages, step: 1 },
+  args: { pages: contactUsPhonePages, step: "0-1" },
   parameters: {
     design: {
       type: "figma",
@@ -34,7 +34,7 @@ export const contactDetailsPhone = {
 };
 export const end = {
   ...contactDetailsEmail,
-  args: { pages, step: 2 },
+  args: { pages, step: "0-2" },
   parameters: {
     design: {
       type: "figma",

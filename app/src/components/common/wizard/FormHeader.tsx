@@ -1,9 +1,10 @@
 import React from "react";
 import type { WizardControlProps } from "./useWizardFlow";
 import { evaluateControlCallback } from "./useWizardFlow";
+import { backDisabled } from "@/components/common/wizard/steps-info";
 
 export const FormHeader = (wizard: WizardControlProps) => {
-  const { stepRange, step, meta, onStepBack, currentStep } = wizard;
+  const { step, meta, onStepBack, stepsInfo, stepCode } = wizard;
   // console.log(`muly:FormHeader ${currentStep}:${step.meta.label}`, { meta });
 
   const showBack =
@@ -27,7 +28,7 @@ export const FormHeader = (wizard: WizardControlProps) => {
           <button
             className="absolute right-0 self-end"
             onClick={() => onStepBack()}
-            disabled={currentStep === stepRange.start}
+            disabled={backDisabled(stepsInfo, stepCode)}
           >
             Back
           </button>

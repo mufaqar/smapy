@@ -337,7 +337,8 @@
       "number_of_files": {
         "label": "Number of files a month (Optional)",
         "placeholder": "Average...,"
-      }
+      },
+      "step_sub": "Personal details"
     },
     "uploadIdPicture": {
       "label": "Identification",
@@ -346,7 +347,8 @@
       },
       "certificate_id_picture_later": {
         "label": "Will upload ID later"
-      }
+      },
+      "step_sub": "Identify"
     },
     "bankDetails": {
       "bank_name": {
@@ -371,18 +373,21 @@
       },
       "bank_details_later": {
         "label": "Will fill later"
-      }
+      },
+      "step_sub": "Identify"
     },
     "agreeToTerms": {
       "label": "Terms",
       "signed_terms": {
         "label": "Confirm terms"
-      }
+      },
+      "step_sub": "Terms"
     },
     "end": {
       "label": "Thanks for join the Smapy",
       "placeholder": "really excited",
-      "text2": "Will do everything to give service to you and your customers"
+      "text2": "Will do everything to give service to you and your customers",
+      "step_sub": "End"
     },
     "userNames": {
       "label": "Advisor details",
@@ -391,7 +396,9 @@
       },
       "last_name": {
         "label": "Last Name"
-      }
+      },
+      "step_sub": "registrationFlow.userNames.step_sub",
+      "step_name": "Initial details"
     }
   },
   "Bank name is required": "Bank name is required",
@@ -415,7 +422,9 @@
           "2": "Two"
         },
         "label": "How many customers"
-      }
+      },
+      "step_name": "Initial details",
+      "step_sub": "Persons"
     },
     "customerDetails1": {
       "label": "Personal Details",
@@ -455,7 +464,8 @@
       },
       "birthDate": {
         "label": "Date of birth"
-      }
+      },
+      "step_sub": "Personal details"
     },
     "customerDetails2": {
       "label": "General Details",
@@ -474,7 +484,8 @@
       },
       "dangerous_hobby_desc": {
         "label": "Hobby Description"
-      }
+      },
+      "step_sub": "General details"
     },
     "loanTracksCount": {
       "label": "Select mortgage track count",
@@ -490,7 +501,8 @@
           "8": "8"
         },
         "label": "How many mortgage path?"
-      }
+      },
+      "step_sub": "Loan details"
     },
     "loanTracks": {
       "label": "Mortgage track details",
@@ -525,7 +537,8 @@
           "equal": "equal"
         },
         "label": "Loan Type"
-      }
+      },
+      "step_sub": "Loan details"
     },
     "customerMoreDetails": {
       "label": "Complete Personal Details",
@@ -555,7 +568,9 @@
       },
       "apartment_number": {
         "label": "Apartment Number"
-      }
+      },
+      "step_name": "Complete Details",
+      "step_sub": "Complete Personal Details"
     },
     "mortgagePropertyAddress": {
       "label": "Property Address",
@@ -573,7 +588,8 @@
       },
       "property_apartment_number": {
         "label": "Apartment Number"
-      }
+      },
+      "step_sub": "Property Address"
     },
     "insuranceDetails": {
       "label": "Insurance details",
@@ -595,7 +611,8 @@
       "bank_branch_number": {
         "label": "Branch Number",
         "placeholder": "Branch Number..."
-      }
+      },
+      "step_sub": "Insurance details"
     },
     "sendLinksToComplete": {
       "label": "Send links to complete",
@@ -613,7 +630,9 @@
       },
       "details_approval": {
         "label": "I confirm all details are correct and complete"
-      }
+      },
+      "step_name": "Process End",
+      "step_sub": "Confirm and End"
     },
     "end": {
       "label": "Thanks for choosing Smapy",
@@ -625,6 +644,16 @@
       "yes": "yes",
       "no": "no",
       "end": "end"
+    },
+    "loanDetailsIntro": {
+      "label": "loanDetailsIntro",
+      "step_sub": "Loan details"
+    },
+    "mortgageSummary": {
+      "label": "Results",
+      "step_name": "Reciver Offers",
+      "step_sub": "Reciver Offers"
     }
-  }
+  },
+  "Expected string, received null": "Expected string, received null"
 }
