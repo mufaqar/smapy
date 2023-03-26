@@ -40,7 +40,6 @@
     "@radix-ui/react-tooltip": "^1.0.5",
     "@react-hook/debounce": "^4.0.0",
     "@sentry/nextjs": "^7.44.2",
-    "@smapy/storybook-react-i18next": "file:C:/smapy/storybook-react-i18next-main",
     "@supabase/auth-helpers-nextjs": "^0.5.6",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/supabase-js": "^2.12.0",
