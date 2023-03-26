@@ -23,6 +23,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 import "../styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   const [supabaseClient] = useState(() =>
@@ -37,7 +38,9 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <Component {...pageProps} />
+        <TooltipProvider>
+          <Component {...pageProps} />
+        </TooltipProvider>
         <Toaster />
       </SessionContextProvider>
     </FlagBagProvider>

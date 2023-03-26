@@ -14,8 +14,9 @@ export const missingKeyHandler = (
   updateMissing: boolean,
   options: any
 ) => {
+  const isServer = typeof window === "undefined";
   const sent = `${ns}:${key}`;
-  if (!itemSent[sent]) {
+  if (!itemSent[sent] && !isServer) {
     console.log(`muly:missingKeyHandler`, {
       lngs,
       ns,

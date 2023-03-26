@@ -164,14 +164,13 @@ const customerDetails2 = z
     props: { translationKey: "customerDetails2" },
   });
 
-// const mortgageDetailsIntro = z
-//   .undefined()
-//   .describe("mortgageDetailsIntro")
-//   .meta({
-//     name: "mortgageDetailsIntro",
-//     control: (props: WizardControlProps) => <WelcomePage {...props} />,
-//   });
-//
+const loanDetailsIntro = z
+  .undefined()
+  .describe("loanDetailsIntro")
+  .meta({
+    name: "loanDetailsIntro",
+    control: (props: WizardControlProps) => <WelcomePage {...props} />,
+  });
 
 const loanTracksCount = z
   .object({
@@ -390,7 +389,7 @@ export const AdvisorLifeInsurancePages = {
     customer0_details2: customerDetails2,
     customer1_details1: customerDetails1,
     customer1_details2: customerDetails2,
-    // mortgageDetailsIntro,
+    loanDetailsIntro,
     loanTracksCount,
     track0: loanTracks,
     track1: loanTracks,

@@ -1,11 +1,5 @@
 import React from "react";
-import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
-import { WizardTest } from "@/components/common/wizard/Wizard.stories";
-import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
-import {
-  contactUsEmailPages,
-  contactUsPhonePages,
-} from "@/components/customer/contact-us/contact-us-schema";
+import { WizardTest } from "@/components/common/wizard/wizard-test";
 import { CustomerUpdatePages } from "@/components/customer/customer-registration-flow/customer-registration-flow-schema";
 
 const meta = {
@@ -15,5 +9,23 @@ const meta = {
 export default meta;
 const pages = CustomerUpdatePages;
 
-export const userNames = { ...WizardTest, args: { pages, step: 1 } };
-export const end = { ...userNames, args: { pages, step: 2 } };
+export const userNames = {
+  ...WizardTest,
+  args: { pages, step: 1 },
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=294-27563&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
+};
+export const end = {
+  ...userNames,
+  args: { pages, step: 2 },
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=294-45114&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
+};

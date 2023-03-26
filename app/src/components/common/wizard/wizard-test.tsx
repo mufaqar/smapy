@@ -35,19 +35,3 @@ export const WizardTest = (args: any) => {
     );
   }
 };
-
-const meta = {
-  component: WizardTest,
-};
-
-export default meta;
-
-export const Header = {
-  ...WizardTest,
-  args: { component: "FormHeader" },
-};
-
-export const Step1 = {
-  ...WizardTest,
-  args: { step: 1 },
-};

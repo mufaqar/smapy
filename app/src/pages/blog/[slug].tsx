@@ -3,7 +3,7 @@ import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { useTranslation } from "next-i18next";
 import { BLogAction } from "@/components/landing-page/blog/action";
-import { PageNavigationMenu } from "@/components/landing-page/page-navigation-menu";
+import { PageNavigationMenu } from "@/components/landing-page/parts/page-navigation-menu";
 import React from "react";
 import Image from "next/image";
 

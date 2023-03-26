@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { PhoneIcon } from "@/components/landing-page/Icons";
+import { PhoneIcon } from "@/components/landing-page/parts/Icons";
 import { SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageHeader = () => {

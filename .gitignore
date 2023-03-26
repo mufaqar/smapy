@@ -109,6 +109,9 @@ design/figma-json/smapy.json
 # Local Netlify folder
 .netlify
 
+.idea
+.ipynb_checkpoints/
+__pycache__/
 
 venv
 # Contentlayer
