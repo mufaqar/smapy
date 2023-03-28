@@ -21,7 +21,7 @@ i18n
   .use(LanguageDetector)
   .use(Backend)
   .init({
-    //debug: true,
+    // debug: true,
     lng: "en",
     fallbackLng: "en",
     defaultNS: "common",
