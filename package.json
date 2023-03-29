@@ -8,8 +8,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "app",
-      "storybook-react-i18next-main"
+      "app"
     ]
   },
   "devDependencies": {

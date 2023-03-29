@@ -15,7 +15,7 @@
     "get-env": "netlify env:list --json > .env-staging.json && zx ./scripts/netlify-env-json-to-dot-env.mjs --envName=staging",
     "set-env": "netlify env:import .env-staging",
     "i18next-scan-translation": "../node_modules/.bin/i18next && (cd ../scripts && node ./generate-zz-translation-files/generate-zz-translation-files.mjs) && echo OPEN http://localhost:3002/system/extract-runtime-translation",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6002",
     "build-storybook": "storybook build",
     "publish-storybook": "chromatic --project-token=fee8af4deece"
   },
@@ -103,6 +103,7 @@
     "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
+    "chromatic": "^6.17.2",
     "dotenv": "^16.0.3",
     "env-cmd": "^10.1.0",
     "eslint": "^8.36.0",
