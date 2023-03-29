@@ -1,10 +1,11 @@
+//
 import "../src/styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";
 import i18n from "./i18next.js";
-import React from "react";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { Preview } from "@storybook/react";
+import { withI18next } from "./decorators";
 
-export const parameters = {
+const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -21,12 +22,26 @@ export const parameters = {
   },
 };
 
-// .storybook/preview.js
+const decorators = [withI18next];
 
-export const decorators = [
-  (Story) => (
-    <TooltipProvider>
-      <Story />
-    </TooltipProvider>
-  ),
-];
+const preview = {
+  parameters: parameters,
+  decorators: decorators,
+  globalTypes: {
+    locale: {
+      name: "Locale",
+      description: "Internationalization locale",
+      toolbar: {
+        icon: "globe",
+        items: [
+          { value: "en", title: "English" },
+          { value: "he", title: "Hebrew" },
+          { value: "zz", title: "Keys" },
+        ],
+        showName: true,
+      },
+    },
+  },
+};
+
+export default preview;

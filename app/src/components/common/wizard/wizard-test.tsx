@@ -1,4 +1,5 @@
 import { t } from "../../../../.storybook/stories-utils";
+import type { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
 import { useWizardFlow } from "@/components/common/wizard/useWizardFlow";
 import { AdvisorUpdatePages } from "@/components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { WizardPage } from "./WizardPage";
@@ -6,14 +7,22 @@ import { FormHeader } from "@/components/common/wizard/FormHeader";
 import React from "react";
 import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
 
-export const WizardTest = (args: any) => {
+export const WizardTest = ({
+  pages,
+  step,
+  component,
+}: {
+  pages: WizardPagesDefinition;
+  step: string;
+  component?: string;
+}) => {
   const wizard = useWizardFlow(
-    args.pages || AdvisorUpdatePages,
+    pages,
     {
       translate: t,
       onCompleteUrl: "/",
     },
-    { step: args.step ? args.step - 1 : 0 }
+    { step }
   );
 
   const { onStepNext } = wizard;
@@ -22,7 +31,7 @@ export const WizardTest = (args: any) => {
     await onStepNext();
   };
 
-  if (args.component === "FormHeader") {
+  if (component === "FormHeader") {
     return <FormHeader {...wizard} />;
   } else {
     return (

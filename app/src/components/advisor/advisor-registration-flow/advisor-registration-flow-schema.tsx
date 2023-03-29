@@ -9,7 +9,8 @@ export const userNames = z
     first_name: z.string().describe("First Name"),
     last_name: z.string().describe("Last Name"),
   })
-  .describe("Advisor details");
+  .describe("Advisor details")
+  .meta({ stepInfo: { sub: "Personal details" } });
 
 export const knowTheAgent = z
   .object({
@@ -43,7 +44,8 @@ export const knowTheAgent = z
   })
   .describe(
     "Partnership start with a good recognition // Some of your experience"
-  );
+  )
+  .meta({ stepInfo: { sub: "Know You" } });
 
 export const uploadIdPicture = z
   .object({
@@ -62,7 +64,8 @@ export const uploadIdPicture = z
       path: ["certificate_id_picture"],
     }
   )
-  .describe("Identification");
+  .describe("Identification")
+  .meta({ stepInfo: { sub: "Identify" } });
 
 export const bankDetails = z
   .object({
@@ -148,7 +151,8 @@ export const bankDetails = z
         path: ["bank_account"],
       });
     }
-  });
+  })
+  .meta({ stepInfo: { sub: "Bank Details" } });
 
 export const agreeToTerms = z
   .object({
@@ -157,7 +161,8 @@ export const agreeToTerms = z
       .describe("Confirm terms")
       .meta({ control: "Checkbox", beforeElement: () => <Terms /> }),
   })
-  .describe("Terms");
+  .describe("Terms")
+  .meta({ stepInfo: { sub: "Terms" } });
 
 const end = z
   .undefined()
@@ -167,6 +172,7 @@ const end = z
     text: {
       text2: "Will do everything to give service to you and your customers",
     },
+    stepInfo: { sub: "End" },
   });
 
 export const AdvisorUpdateSchema = z.union([

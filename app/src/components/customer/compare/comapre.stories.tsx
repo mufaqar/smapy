@@ -11,7 +11,7 @@ const pages = compareFlowPages;
 
 export const howDoesItWork = {
   ...WizardTest,
-  args: { pages, step: 1 },
+  args: { pages, step: "0-1" },
   parameters: {
     design: {
       type: "figma",
@@ -22,7 +22,7 @@ export const howDoesItWork = {
 
 export const end = {
   ...howDoesItWork,
-  args: { pages, step: 2 },
+  args: { pages, step: "0-2" },
   parameters: {
     design: {
       type: "figma",

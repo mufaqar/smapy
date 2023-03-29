@@ -48,8 +48,16 @@ export const translateSchemaInfo = (
   let tDesc = {};
 
   if (meta) {
-    const { label, placeholder, text, name, choices, props, ...restDesc } =
-      meta;
+    const {
+      label,
+      placeholder,
+      text,
+      stepInfo,
+      name,
+      choices,
+      props,
+      ...restDesc
+    } = meta;
 
     const translationKey = props?.translationKey || name;
     if (translationKey) {
@@ -80,6 +88,15 @@ export const translateSchemaInfo = (
       text: text
         ? map((value, key: string) => translate(`${path}.${key}`, value), text)
         : undefined,
+      stepInfo:
+        stepInfo && stepInfo !== "none"
+          ? {
+              name: stepInfo.name
+                ? translate(`${path}.step_name`, stepInfo.name)
+                : stepInfo.name,
+              sub: translate(`${path}.step_sub`, stepInfo.sub),
+            }
+          : stepInfo,
     };
   }
 

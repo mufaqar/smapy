@@ -11,7 +11,7 @@ const pages = AdvisorUpdatePages;
 
 export const userNames = {
   ...WizardTest,
-  args: { pages, step: 1 },
+  args: { pages, step: "0-1" },
   parameters: {
     design: {
       type: "figma",
@@ -21,7 +21,7 @@ export const userNames = {
 };
 export const knowTheAgent = {
   ...userNames,
-  args: { pages, step: 2 },
+  args: { pages, step: "0-2" },
   parameters: {
     design: {
       type: "figma",
@@ -31,7 +31,7 @@ export const knowTheAgent = {
 };
 export const uploadIdPicture = {
   ...userNames,
-  args: { pages, step: 3 },
+  args: { pages, step: "0-3" },
   parameters: {
     design: {
       type: "figma",
@@ -41,7 +41,7 @@ export const uploadIdPicture = {
 };
 export const bankDetails = {
   ...userNames,
-  args: { pages, step: 4 },
+  args: { pages, step: "0-4" },
   parameters: {
     design: {
       type: "figma",
@@ -51,7 +51,7 @@ export const bankDetails = {
 };
 export const agreeToTerms = {
   ...userNames,
-  args: { pages, step: 5 },
+  args: { pages, step: "0-5" },
   parameters: {
     design: {
       type: "figma",
@@ -61,7 +61,7 @@ export const agreeToTerms = {
 };
 export const end = {
   ...userNames,
-  args: { pages, step: 6 },
+  args: { pages, step: "0-6" },
   parameters: {
     design: {
       type: "figma",

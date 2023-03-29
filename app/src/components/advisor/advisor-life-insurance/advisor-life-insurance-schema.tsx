@@ -6,7 +6,7 @@ import type {
 } from "../../common/wizard/useWizardFlow";
 import { customerModel } from "../../../../prisma/zod";
 import { range } from "rambda";
-import { LoanTrack, LoanTracks } from "../../../../prisma/zod-add-schema";
+import { LoanTrack } from "../../../../prisma/zod-add-schema";
 import { MortgageSummary } from "./mortgage-summary";
 import type { ConditionCallback } from "../../../utils/zod-meta";
 import { dt } from "../../../utils/i18n-utils";
@@ -19,6 +19,7 @@ const howDoesItWork = z
   .describe("How Does It Work?")
   .meta({
     control: (wizard) => <HowDoesItWork {...wizard} />,
+    stepInfo: "none",
     text: {
       text_1: "text_1",
       text_2: "text_2",
@@ -44,7 +45,13 @@ const numberOfCustomers = z
         ],
       }),
   })
-  .describe("Choose number of customers");
+  .describe("Choose number of customers")
+  .meta({
+    stepInfo: {
+      name: "Initial details",
+      sub: "Persons",
+    },
+  });
 
 const customerPageCondition: ConditionCallback = (wizardInfo, data) => {
   const regexCustomer = /customer(\d)/gm;
@@ -117,6 +124,9 @@ const customerDetails1 = z
   .meta({
     condition: customerPageCondition,
     props: { translationKey: "customerDetails1" },
+    stepInfo: {
+      sub: "Personal details",
+    },
   });
 
 const customerDetails2 = z
@@ -162,6 +172,9 @@ const customerDetails2 = z
   .meta({
     condition: customerPageCondition,
     props: { translationKey: "customerDetails2" },
+    stepInfo: {
+      sub: "General details",
+    },
   });
 
 const loanDetailsIntro = z
@@ -170,6 +183,9 @@ const loanDetailsIntro = z
   .meta({
     name: "loanDetailsIntro",
     control: (props: WizardControlProps) => <WelcomePage {...props} />,
+    stepInfo: {
+      sub: "Loan details",
+    },
   });
 
 const loanTracksCount = z
@@ -183,7 +199,12 @@ const loanTracksCount = z
         choices: range(1, 9).map((idx) => ({ id: idx, title: `${idx}` })),
       }),
   })
-  .describe("Select mortgage track count");
+  .describe("Select mortgage track count")
+  .meta({
+    stepInfo: {
+      sub: "Loan details",
+    },
+  });
 
 const loanTracks = z
   .object({
@@ -214,6 +235,9 @@ const loanTracks = z
       return idxTrack < data?.loan_tracks_count;
     },
     props: { translationKey: "loanTracks" },
+    stepInfo: {
+      sub: "Loan details",
+    },
   });
 
 const mortgageSummary = z
@@ -222,25 +246,11 @@ const mortgageSummary = z
   .meta({
     control: (props: WizardControlProps) => <MortgageSummary {...props} />,
   })
-  .describe("Results");
-
-const end = z
-  .undefined()
-  .describe("Thanks for choosing Smapy // Order received successfully")
+  .describe("Results")
   .meta({
-    control: (wizard) => (
-      <WizardEndStep {...wizard}>
-        <WizardEndQuestion {...wizard} />
-      </WizardEndStep>
-    ),
-    text: {
-      text1: "Link to complete was sent",
-      text2: "In 2 years we will compare again",
-      question: "Customer need property insurance?",
-      yesMessage: "Cool, we will call him",
-      yes: "yes",
-      no: "no",
-      end: "end",
+    stepInfo: {
+      name: "Reciver Offers",
+      sub: "Reciver Offers",
     },
   });
 
@@ -261,6 +271,10 @@ const customerMoreDetails = z
   .meta({
     condition: customerPageCondition,
     props: { translationKey: "customerMoreDetails" },
+    stepInfo: {
+      name: "Complete Details",
+      sub: "Complete Personal Details",
+    },
   });
 
 const sameAddress: ConditionCallback = (step, { same_address_mortgage }) =>
@@ -327,7 +341,12 @@ const mortgagePropertyAddress = z
       message: dt("property_apartment_number_validation", "Required"),
     }
   )
-  .describe("Property Address");
+  .describe("Property Address")
+  .meta({
+    stepInfo: {
+      sub: "Property Address",
+    },
+  });
 
 const insuranceDetails = z
   .object({
@@ -353,7 +372,12 @@ const insuranceDetails = z
       .default("")
       .describe("Branch Number // Branch Number..."),
   })
-  .describe("Insurance details");
+  .describe("Insurance details")
+  .meta({
+    stepInfo: {
+      sub: "Insurance details",
+    },
+  });
 
 const sendLinksToComplete = z
   .object({
@@ -379,7 +403,34 @@ const sendLinksToComplete = z
       .describe("I confirm all details are correct and complete")
       .meta({ control: "Checkbox" }),
   })
-  .describe("Send links to complete");
+  .describe("Send links to complete")
+  .meta({
+    stepInfo: {
+      name: "Process End",
+      sub: "Confirm and End",
+    },
+  });
+
+const end = z
+  .undefined()
+  .describe("Thanks for choosing Smapy // Order received successfully")
+  .meta({
+    control: (wizard) => (
+      <WizardEndStep {...wizard}>
+        <WizardEndQuestion {...wizard} />
+      </WizardEndStep>
+    ),
+    stepInfo: "none",
+    text: {
+      text1: "Link to complete was sent",
+      text2: "In 2 years we will compare again",
+      question: "Customer need property insurance?",
+      yesMessage: "Cool, we will call him",
+      yes: "yes",
+      no: "no",
+      end: "end",
+    },
+  });
 
 export const AdvisorLifeInsurancePages = {
   pages: {
@@ -400,6 +451,7 @@ export const AdvisorLifeInsurancePages = {
     track6: loanTracks,
     track7: loanTracks,
     track8: loanTracks,
+    mortgageSummary,
     customer0_moreDetails: customerMoreDetails,
     customer1_moreDetails: customerMoreDetails,
     mortgagePropertyAddress,

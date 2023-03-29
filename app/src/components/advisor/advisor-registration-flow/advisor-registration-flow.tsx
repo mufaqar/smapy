@@ -19,7 +19,7 @@ export const AdvisorRegistrationFlow = () => {
     onCompleteUrl: "/advisor",
   });
 
-  const { setStepRange, onStepNext, control, step, schema } = wizard;
+  const { onStepNext } = wizard;
   const [recordData, setRecordData] = useState<RecordType>();
 
   const query = api.advisor.getUserProfile.useQuery(undefined, {

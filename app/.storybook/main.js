@@ -1,10 +1,11 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-module.exports = {
+const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     // "@storybook/addon-essentials",
+    "@storybook/addon-toolbars",
     // "@storybook/addon-interactions",
     {
       name: "@storybook/addon-styling",
@@ -13,9 +14,9 @@ module.exports = {
       },
     },
     // "@storybook/addon-mdx-gfm",
-    "@smapy/storybook-react-i18next",
     // "storybook-addon-pseudo-states",
     "storybook-addon-designs",
+    "@meza/storybook-react-i18next",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -41,4 +42,9 @@ module.exports = {
     autodocs: true,
   },
   staticDirs: ["../public"],
+  refs: {
+    "package-name": { disable: true },
+  },
 };
+
+export default config;
