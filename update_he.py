@@ -10,9 +10,7 @@ from bidi.algorithm import get_display
 
 from zz_updator import refresh_address_jsons
 
-JSON_PATH = 'app/public/locales/he/landing-page.json'
-EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-INP_PATH = 'update_assets/input.xlsx'
+
 
 
 def fmt_bi(content, *, direct):
@@ -102,11 +100,17 @@ def sheet_to_json():
 
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--init', action='store_true',
                         help='Format all by default.')
+    parser.add_argument('-p', '--path',
+                        help='filepath to modify.')
     args = parser.parse_args()
     flag = args.init
+    JSON_PATH = args.path
+    EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+    INP_PATH = 'update_assets/input.xlsx'
     refresh_address_jsons()
     json_to_sheet(flag)
     sheet_to_json()
