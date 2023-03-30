@@ -115,3 +115,4 @@ venv
 .contentlayer
 tempfile.yml
 update_assets/input.xlsx
+.env*
