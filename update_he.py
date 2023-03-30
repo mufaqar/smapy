@@ -10,7 +10,8 @@ from bidi.algorithm import get_display
 
 from zz_updator import refresh_address_jsons
 
-
+EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+INP_PATH = r'C:\Users\Nadav\Documents\ALL_PROJECTS\smapy\update_assets\input.xlsx'
 
 
 def fmt_bi(content, *, direct):
@@ -24,7 +25,7 @@ def fmt_bi(content, *, direct):
     return pat.sub(repl=' ', string=res)
 
 
-def json_to_sheet(fmt_flag):
+def json_to_sheet(json_path):
     """Reload Excel sheet with current json entries."""
 
     def json_to_df(main_obj):
@@ -46,10 +47,10 @@ def json_to_sheet(fmt_flag):
         data = dict(key=[], value=[])
         fill_data(main_obj)
         df = pd.DataFrame(data)
-        df['format_flag'] = fmt_flag
+        df['format_flag'] = False
         return df
 
-    with open(JSON_PATH, encoding='utf-8') as fp:
+    with open(json_path, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
     result = json_to_df(json_obj)
@@ -58,7 +59,7 @@ def json_to_sheet(fmt_flag):
     subprocess.run([EXCEL_PATH, INP_PATH])
 
 
-def sheet_to_json():
+def sheet_to_json(json_path):
     """Update json entries with sheet data."""
 
     def row_to_json_obj(row: pd.Series, *, obj):
@@ -89,28 +90,24 @@ def sheet_to_json():
         else:
             print(invalid_key_message)
 
-    with open(JSON_PATH, encoding='utf-8') as fp:
+    with open(json_path, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
     df = pd.read_excel(INP_PATH)
     df.apply(row_to_json_obj, axis=1, obj=json_obj)
 
-    with open(JSON_PATH, mode='w', encoding='utf-8') as fp:
+    with open(json_path, mode='w', encoding='utf-8') as fp:
         json.dump(json_obj, fp)
 
 
 if __name__ == '__main__':
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--init', action='store_true',
-                        help='Format all by default.')
+    parser = argparse.ArgumentParser(
+        description='Script to update values in'
+                    ' hebrew locale.')
     parser.add_argument('-p', '--path',
                         help='filepath to modify.')
     args = parser.parse_args()
-    flag = args.init
-    JSON_PATH = args.path
-    EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-    INP_PATH = 'update_assets/input.xlsx'
+
     refresh_address_jsons()
-    json_to_sheet(flag)
-    sheet_to_json()
+    json_to_sheet(args.path)
+    sheet_to_json(args.path)
