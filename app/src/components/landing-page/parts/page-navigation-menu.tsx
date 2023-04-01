@@ -30,28 +30,28 @@ export const PageNavigationMenu = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="/app/src/pages/about-us" legacyBehavior passHref>
+          <Link href="/about-us" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t("nav.about")}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/app/src/pages/faq" legacyBehavior passHref>
+          <Link href="/faq" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t("nav.faqData")}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/app/src/pages/prices" legacyBehavior passHref>
+          <Link href="/prices" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t("nav.price")}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/app/src/pages/security-privacy" legacyBehavior passHref>
+          <Link href="/security-privacy" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t("nav.security")}
             </NavigationMenuLink>
