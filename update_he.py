@@ -13,6 +13,11 @@ from zz_updator import refresh_address_jsons
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
 INP_PATH = r'C:\Users\Nadav\Documents\ALL_PROJECTS\smapy\update_assets\input.xlsx'
 
+CUSTOMER_HE_PATH = 'app/public/locales/he/customer.json'
+COMMON_HE_PATH = 'app/public/locales/he/common.json'
+ADVISOR_HE_PATH = 'app/public/locales/he/advisor.json'
+LANDING_PAGE_HE_PATH = 'app/public/locales/he/landing-page.json'
+
 
 def fmt_bi(content, *, direct):
     """Format hebrew content in correct direction and in one line.
@@ -97,7 +102,7 @@ def sheet_to_json(json_path):
     df.apply(row_to_json_obj, axis=1, obj=json_obj)
 
     with open(json_path, mode='w', encoding='utf-8') as fp:
-        json.dump(json_obj, fp)
+        json.dump(json_obj, fp, ensure_ascii=False)
 
 
 if __name__ == '__main__':
@@ -108,6 +113,18 @@ if __name__ == '__main__':
                         help='filepath to modify.')
     args = parser.parse_args()
 
+    match args.path:
+        case 'landing':
+            target = LANDING_PAGE_HE_PATH
+        case 'common':
+            target = COMMON_HE_PATH
+        case 'advisor':
+            target = ADVISOR_HE_PATH
+        case 'customer':
+            target = CUSTOMER_HE_PATH
+        case _:
+            raise ValueError('Unknown json')
+
     refresh_address_jsons()
-    json_to_sheet(args.path)
-    sheet_to_json(args.path)
+    json_to_sheet(target)
+    sheet_to_json(target)
