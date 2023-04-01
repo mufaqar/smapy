@@ -32,4 +32,5 @@ export const CustomerUpdatePages = {
   },
   description: "Registration",
   name: "registrationFlow",
+  ns: "customer",
 } satisfies WizardPagesDefinition;

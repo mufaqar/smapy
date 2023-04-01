@@ -1,11 +1,9 @@
-import { t } from "../../../../.storybook/stories-utils";
 import type { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
 import { useWizardFlow } from "@/components/common/wizard/useWizardFlow";
-import { AdvisorUpdatePages } from "@/components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { WizardPage } from "./WizardPage";
 import { FormHeader } from "@/components/common/wizard/FormHeader";
 import React from "react";
-import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
+import { useTranslation } from "next-i18next";
 
 export const WizardTest = ({
   pages,
@@ -16,6 +14,8 @@ export const WizardTest = ({
   step: string;
   component?: string;
 }) => {
+  const { t } = useTranslation(pages.ns);
+
   const wizard = useWizardFlow(
     pages,
     {

@@ -52,4 +52,5 @@ export const compareFlowPages = {
     title_property: "Compare and buy property Insurance",
   },
   name: "customerCompareAndBuy",
+  ns: "customer",
 } satisfies WizardPagesDefinition;
