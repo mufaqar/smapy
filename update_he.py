@@ -112,7 +112,7 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--path',
                         help='filepath to modify.')
     args = parser.parse_args()
-
+    allowed_values = ['landing', 'common', 'advisor', 'customer']
     match args.path:
         case 'landing':
             target = LANDING_PAGE_HE_PATH
@@ -123,7 +123,7 @@ if __name__ == '__main__':
         case 'customer':
             target = CUSTOMER_HE_PATH
         case _:
-            raise ValueError('Unknown json')
+            raise ValueError(f'Value should be in {allowed_values}.')
 
     refresh_address_jsons()
     json_to_sheet(target)
