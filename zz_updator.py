@@ -42,4 +42,4 @@ def refresh_address_jsons(src_dir: str = SRC_PATH, target_dir: str = TARGET_PATH
 
 
 if __name__ == '__main__':
-    pass
+    refresh_address_jsons()
