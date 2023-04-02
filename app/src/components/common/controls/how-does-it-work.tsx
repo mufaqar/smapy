@@ -1,12 +1,12 @@
 import { HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
 import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import { ProductType } from "@/components/customer/compare/compare-flow-schema";
 
-export const HowDoesItWork = ({
-  onStepNext,
-  step,
-  props,
-}: WizardControlProps) => {
-  const product = String(props?.product);
+interface Props extends WizardControlProps {
+  product: ProductType;
+}
+
+export const HowDoesItWork = ({ product, onStepNext, step, props }: Props) => {
   console.log(`muly:HowDoesItWork`, { step });
 
   const next = step.meta.text?.next || null;
