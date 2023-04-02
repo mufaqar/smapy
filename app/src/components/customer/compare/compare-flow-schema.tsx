@@ -9,7 +9,12 @@ const howDoesItWork = z
   .undefined()
   .describe("How Does It Work?")
   .meta({
-    control: (wizard) => <HowDoesItWork {...wizard} />,
+    control: (wizard) => (
+      <HowDoesItWork
+        product={wizard.props?.product as ProductType}
+        {...wizard}
+      />
+    ),
     text: {
       text_1: "text_1",
       text_2: "text_2",

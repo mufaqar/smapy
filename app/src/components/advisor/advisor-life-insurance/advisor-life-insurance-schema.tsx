@@ -18,7 +18,7 @@ const howDoesItWork = z
   .undefined()
   .describe("How Does It Work?")
   .meta({
-    control: (wizard) => <HowDoesItWork {...wizard} />,
+    control: (wizard) => <HowDoesItWork product={"life"} {...wizard} />,
     stepInfo: "none",
     text: {
       text_1: "text_1",
