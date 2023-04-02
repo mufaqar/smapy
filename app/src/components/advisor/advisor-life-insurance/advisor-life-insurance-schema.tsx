@@ -461,4 +461,5 @@ export const AdvisorLifeInsurancePages = {
   },
   description: "New Life Insurance for Mortgage",
   name: "lifeInsurance",
+  ns: "advisor",
 } satisfies WizardPagesDefinition;

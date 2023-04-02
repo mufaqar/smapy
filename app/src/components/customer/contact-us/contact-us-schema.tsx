@@ -105,6 +105,7 @@ export const contactUsPhonePages = {
   },
   description: "Contact Me",
   name: "contactUsPhone",
+  ns: "customer",
 } satisfies WizardPagesDefinition;
 
 export const contactUsEmailPages = {
@@ -114,4 +115,5 @@ export const contactUsEmailPages = {
   },
   description: "Contact Me",
   name: "contactUsEmail",
+  ns: "customer",
 } satisfies WizardPagesDefinition;

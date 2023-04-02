@@ -50,6 +50,8 @@ export interface WizardPagesDefinition {
   text?: Record<string, string>;
 
   name: string;
+
+  ns: string;
 }
 
 export const useWizardFlow = (

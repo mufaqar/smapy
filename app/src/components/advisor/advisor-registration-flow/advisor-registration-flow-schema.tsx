@@ -194,4 +194,5 @@ export const AdvisorUpdatePages = {
   },
   description: "Registration",
   name: "registrationFlow",
+  ns: "advisor",
 } satisfies WizardPagesDefinition;
