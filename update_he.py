@@ -109,10 +109,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Script to update values in'
                     ' hebrew locale.')
-    parser.add_argument('-p', '--path',
+    allowed_values = ['landing', 'common', 'advisor', 'customer']
+    parser.add_argument('-p', '--path', choices=allowed_values,
                         help='filepath to modify.')
     args = parser.parse_args()
-    allowed_values = ['landing', 'common', 'advisor', 'customer']
+
     match args.path:
         case 'landing':
             target = LANDING_PAGE_HE_PATH
