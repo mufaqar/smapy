@@ -4,7 +4,7 @@ import {
   getStepInfoSubTitles,
   getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
-import { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
 interface Props {
   wizard: WizardControlProps;
