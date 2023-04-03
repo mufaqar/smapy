@@ -58,7 +58,8 @@ export interface ZodMetaDataItem {
 declare module "zod" {
   interface ZodType {
     metadata(): ZodMetaDataItem;
-    meta(meta: /* string | */ ZodMetaDataItem): this;
+    meta(meta: ZodMetaDataItem): this;
+    extendMeta(meta: ZodMetaDataItem): this;
   }
 }
 
