@@ -32,7 +32,7 @@ const end = z
     "Thanks for your interest in Smapy // Right now the service is available only through agents"
   )
   .meta({
-    control: (wizard) => <WizardEndStep {...wizard} />,
+    control: (wizard) => <WizardEndStep wizard={wizard} />,
     text: {
       text1: "Soon will be able to buy from the site",
       text2: "You will enjoy great service",

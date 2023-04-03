@@ -4,7 +4,12 @@ import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlo
 import React from "react";
 import { useTranslation } from "next-i18next";
 
-export const WizardEndStep = (wizard: WizardControlProps) => {
+interface Props {
+  children?: React.ReactNode;
+  wizard: WizardControlProps;
+}
+
+export const WizardEndStep = ({ children, wizard }: Props) => {
   const { onStepNext, step } = wizard;
   const { t } = useTranslation("common");
 
@@ -27,6 +32,7 @@ export const WizardEndStep = (wizard: WizardControlProps) => {
         <img src="/images/end.svg" alt="" />
       </div>
       <p>{text2}</p>
+      {children}
       <button onClick={onStepNext}>{t("wizard.end.button", "End")}</button>
     </div>
   );

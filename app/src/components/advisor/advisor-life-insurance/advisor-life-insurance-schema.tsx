@@ -13,6 +13,7 @@ import { dt } from "../../../utils/i18n-utils";
 import { HowDoesItWork } from "@/components/common/controls/how-does-it-work";
 import { WizardEndStep } from "@/components/common/controls/wizard-end-step";
 import { WizardEndQuestion } from "./wizard-end-question";
+import { SendLinksHeader } from "@/components/advisor/advisor-life-insurance/send-links-header";
 
 const howDoesItWork = z
   .undefined()
@@ -409,6 +410,15 @@ const sendLinksToComplete = z
       name: "Process End",
       sub: "Confirm and End",
     },
+    text: {
+      subTitle: "subTitle",
+      subTitle2: "subTitle2",
+      imageTitle1: "imageTitle1",
+      imageTitle2: "imageTitle2",
+    },
+    beforeElement: (wizard: WizardControlProps) => (
+      <SendLinksHeader wizard={wizard} />
+    ),
   });
 
 const end = z
@@ -416,7 +426,7 @@ const end = z
   .describe("Thanks for choosing Smapy // Order received successfully")
   .meta({
     control: (wizard) => (
-      <WizardEndStep {...wizard}>
+      <WizardEndStep wizard={wizard}>
         <WizardEndQuestion {...wizard} />
       </WizardEndStep>
     ),
@@ -436,24 +446,54 @@ export const AdvisorLifeInsurancePages = {
   pages: {
     howDoesItWork,
     numberOfCustomers,
-    customer0_details1: customerDetails1,
-    customer0_details2: customerDetails2,
-    customer1_details1: customerDetails1,
-    customer1_details2: customerDetails2,
+    customer0_details1: customerDetails1.extendMeta({
+      text: { subTitle: "subTitle.person1" },
+    }),
+    customer0_details2: customerDetails2.extendMeta({
+      text: { subTitle: "subTitle.person1" },
+    }),
+    customer1_details1: customerDetails1.extendMeta({
+      text: { subTitle: "subTitle.person2" },
+    }),
+    customer1_details2: customerDetails2.extendMeta({
+      text: { subTitle: "subTitle.person2" },
+    }),
     loanDetailsIntro,
     loanTracksCount,
-    track0: loanTracks,
-    track1: loanTracks,
-    track2: loanTracks,
-    track3: loanTracks,
-    track4: loanTracks,
-    track5: loanTracks,
-    track6: loanTracks,
-    track7: loanTracks,
-    track8: loanTracks,
+    track0: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track1" },
+    }),
+    track1: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track2" },
+    }),
+    track2: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track3" },
+    }),
+    track3: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track4" },
+    }),
+    track4: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track5" },
+    }),
+    track5: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track6" },
+    }),
+    track6: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track7" },
+    }),
+    track7: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track8" },
+    }),
+    track8: loanTracks.extendMeta({
+      text: { subTitle: "subTitle.track9" },
+    }),
     mortgageSummary,
-    customer0_moreDetails: customerMoreDetails,
-    customer1_moreDetails: customerMoreDetails,
+    customer0_moreDetails: customerMoreDetails.extendMeta({
+      text: { subTitle: "subTitle.person1" },
+    }),
+    customer1_moreDetails: customerMoreDetails.extendMeta({
+      text: { subTitle: "subTitle.person2" },
+    }),
     mortgagePropertyAddress,
     insuranceDetails,
     sendLinksToComplete,
