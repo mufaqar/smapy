@@ -49,7 +49,11 @@ export const knowTheAgent = z
 
 export const uploadIdPicture = z
   .object({
-    certificate_id_picture: z.string().nullish().describe("Upload ID Picture"),
+    certificate_id_picture: z
+      .string()
+      .nullish()
+      .describe("Upload ID Picture")
+      .meta({ control: "File" }),
     certificate_id_picture_later: z
       .boolean()
       .default(false)

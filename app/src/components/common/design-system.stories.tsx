@@ -14,6 +14,13 @@ const meta = {
 
 export default meta;
 
+const parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
+  },
+};
+
 export const Typography = {
   render: () => (
     <div>
@@ -26,12 +33,7 @@ export const Typography = {
       <p className="text-sm">Small text</p>
     </div>
   ),
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
-    },
-  },
+  parameters,
 };
 
 export const ProseTypography = {
@@ -46,12 +48,7 @@ export const ProseTypography = {
       </p>
     </div>
   ),
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
-    },
-  },
+  parameters,
 };
 
 export const Colors = {
@@ -59,18 +56,13 @@ export const Colors = {
     <>
       <div className="bg-primary-from h-20 w-20">Primary from</div>
       <div className="bg-primary-to  h-20 w-20">Primary to</div>
-      <div className="bg-primary  h-20 w-20">Primary gradient</div>
+      <div className="h-20  w-20 bg-primary">Primary gradient</div>
       <div className="bg-secondary-from  h-20 w-20">Secondary from</div>
       <div className="bg-secondary-to  h-20 w-20">Secondary to</div>
-      <div className="bg-secondary  h-20 w-20">Secondary gradient</div>
+      <div className="h-20  w-20 bg-secondary">Secondary gradient</div>
     </>
   ),
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
-    },
-  },
+  parameters,
 };
 
 export const Tags = {
@@ -81,12 +73,7 @@ export const Tags = {
       <div>Outline</div>
     </>
   ),
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
-    },
-  },
+  parameters,
 };
 
 export const Tooltip = {
@@ -105,10 +92,5 @@ export const Tooltip = {
       </TooltipC>
     </div>
   ),
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3443&t=Omiw4Kd4jROxXo3N-4",
-    },
-  },
+  parameters,
 };

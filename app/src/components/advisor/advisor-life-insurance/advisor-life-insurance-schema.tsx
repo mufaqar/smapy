@@ -244,14 +244,12 @@ const loanTracks = z
 const mortgageSummary = z
   .undefined()
   .describe("mortgageSummary")
-  .meta({
-    control: (props: WizardControlProps) => <MortgageSummary {...props} />,
-  })
   .describe("Results")
   .meta({
+    control: (props: WizardControlProps) => <MortgageSummary {...props} />,
     stepInfo: {
-      name: "Reciver Offers",
-      sub: "Reciver Offers",
+      name: "Receiver Offers",
+      sub: "Receiver Offers",
     },
   });
 
