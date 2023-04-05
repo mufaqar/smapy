@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { i18nGetServerSideProps } from "@/utils/i18n-ssr";

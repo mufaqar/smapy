@@ -32,7 +32,7 @@ export const usePrepareSchema = (
     flowContext: {
       // ...fakeWizard,
       step: info,
-      meta: info.meta,
+      meta: info,
       formContext: { t: translate, formMeta: info },
     },
   };

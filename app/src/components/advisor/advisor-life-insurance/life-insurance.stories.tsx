@@ -103,18 +103,6 @@ export const track0 = {
     },
   },
 };
-
-export const mortgageSummary = {
-  ...howDoesItWork,
-  args: { pages, step: "2-1" },
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-design?node-id=294-42041&t=yhfLoEoqhsCAgWp1-4",
-    },
-  },
-};
-
 export const customer0_moreDetails = {
   ...howDoesItWork,
   args: { pages, step: "3-1" },

@@ -1,9 +1,8 @@
 import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
+import { t } from "../../../../.storybook/stories-utils";
 import { Form } from "@/components/common/forms/Form";
-import { useTranslation } from "next-i18next";
 
 const FormTestComponent = (args: any) => {
-  const { t } = useTranslation("customer");
   const formContext = usePrepareSchema(t, args.schema);
 
   const onSubmit = (values: any) => {

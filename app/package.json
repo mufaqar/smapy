@@ -73,6 +73,8 @@
     "react-hook-form": "^7.43.7",
     "react-i18next": "^12.2.0",
     "react-no-ssr": "^1.1.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "superjson": "1.12.2",
     "tailwind-merge": "^1.10.0",
     "tailwindcss-animate": "^1.0.5",

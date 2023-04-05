@@ -14,13 +14,6 @@ const meta = {
 
 export default meta;
 
-const parameters = {
-  design: {
-    type: "figma",
-    url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
-  },
-};
-
 export const Typography = {
   render: () => (
     <div>
@@ -33,7 +26,12 @@ export const Typography = {
       <p className="text-sm">Small text</p>
     </div>
   ),
-  parameters,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
 };
 
 export const ProseTypography = {
@@ -48,7 +46,12 @@ export const ProseTypography = {
       </p>
     </div>
   ),
-  parameters,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
 };
 
 export const Colors = {
@@ -62,7 +65,12 @@ export const Colors = {
       <div className="bg-secondary  h-20 w-20">Secondary gradient</div>
     </>
   ),
-  parameters,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
 };
 
 export const Tags = {
@@ -73,7 +81,12 @@ export const Tags = {
       <div>Outline</div>
     </>
   ),
-  parameters,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3353&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
 };
 
 export const Tooltip = {
@@ -92,5 +105,10 @@ export const Tooltip = {
       </TooltipC>
     </div>
   ),
-  parameters,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/sAvmr55UwcNhZNAJ9XGpA6/smapy-landing-page?node-id=4-3443&t=Omiw4Kd4jROxXo3N-4",
+    },
+  },
 };

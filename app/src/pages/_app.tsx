@@ -25,6 +25,11 @@ import "../styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
+
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   const [supabaseClient] = useState(() =>
     createBrowserSupabaseClient({ cookieOptions })

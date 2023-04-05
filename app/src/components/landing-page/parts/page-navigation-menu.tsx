@@ -19,16 +19,18 @@ import { useTranslation } from "next-i18next";
 export const PageNavigationMenu = () => {
   const { t } = useTranslation("landing-page");
   return (
-    <NavigationMenu className="m-top m-auto mt-8 max-w-5xl">
-      <NavigationMenuList>
+    <NavigationMenu className="m-top z-10 hidden lg:block relative m-auto py-2">
+      <div className="absolute top-0  bottom-0 right-0 left-0 bg-white/10 blur-[5px]"/>
+      <section className="group z-10 flex flex-1 list-none container mx-auto items-center justify-center rtl:flex-row-reverse">
+        
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={`mt-5 ${navigationMenuTriggerStyle()}`}>
               <SmapyLogo />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-
+        
         <NavigationMenuItem>
           <Link href="/about-us" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -62,7 +64,7 @@ export const PageNavigationMenu = () => {
 
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={`p-0 pt-9 ${navigationMenuTriggerStyle()}`}>
               <PhoneIcon />
             </NavigationMenuLink>
           </Link>
@@ -76,12 +78,12 @@ export const PageNavigationMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem className="mx-2">
           <Link href="/advisor" legacyBehavior passHref>
-            <NavigationMenuLink className={cn(buttonVariants())}>
+            <NavigationMenuLink className={`border-[#16D1C6] ${cn(buttonVariants())}`}>
               {t("nav.agent_entry")}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-      </NavigationMenuList>
+      </section>
     </NavigationMenu>
   );
 };

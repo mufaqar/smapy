@@ -10,7 +10,6 @@ import {
   getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
 import { cn } from "@/lib/utils";
-import { SideWizardSteps } from "@/components/common/wizard/side-wizard-steps";
 
 interface Props<T> {
   wizard: WizardControlProps;
@@ -35,6 +34,9 @@ export const WizardForm = ({
     return <Loading />;
   }
 
+  // console.log(`muly:WizardForm`, { stepsInfo: wizard.stepsInfo });
+  const stepTitles = getStepInfoTitles(wizard.stepsInfo, wizard.stepCode);
+
   return (
     // SSR does not work with ?step=x url parameter, it fail on refresh hydration
     // Server has no access to url parameters so it render step 0
@@ -42,8 +44,42 @@ export const WizardForm = ({
     <NoSSR onSSR={<Loading />}>
       <div className="m-auto flex max-w-6xl flex-col gap-8">
         <FormHeader {...wizard} />
-        {/* TODO: move to anywhere fit for layout */}
-        <SideWizardSteps wizard={wizard} />
+        {stepTitles.length > 0 && (
+          <div>
+            STEPS{" "}
+            <div className="flex flex-row gap-2">
+              {stepTitles.map(({ title, status }) => (
+                <div
+                  key={title}
+                  className={cn([
+                    { "font-bold": status === "done" },
+                    { "text-red-300": status === "next" },
+                  ])}
+                >
+                  {title}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        <div>
+          SUB STEPS{" "}
+          <div className="flex flex-row gap-2">
+            {getStepInfoSubTitles(wizard.stepsInfo, wizard.stepCode).map(
+              ({ title, status }) => (
+                <div
+                  key={title}
+                  className={cn([
+                    { "font-bold": status === "done" },
+                    { "text-gray-300": status === "next" },
+                  ])}
+                >
+                  {title}
+                </div>
+              )
+            )}
+          </div>
+        </div>
         <div className="relative" key={step.name}>
           {!!control ? (
             control(wizard)

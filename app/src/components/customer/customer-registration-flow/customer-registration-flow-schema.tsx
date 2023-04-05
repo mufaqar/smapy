@@ -15,7 +15,7 @@ const end = z
   .undefined()
   .describe("Thanks for join the Smapy // really excited")
   .meta({
-    control: (wizard) => <WizardEndStep wizard={wizard} />,
+    control: (wizard) => <WizardEndStep {...wizard} />,
     text: {
       text2: "Will do everything to give you excellent service",
     },
@@ -32,5 +32,4 @@ export const CustomerUpdatePages = {
   },
   description: "Registration",
   name: "registrationFlow",
-  ns: "customer",
 } satisfies WizardPagesDefinition;

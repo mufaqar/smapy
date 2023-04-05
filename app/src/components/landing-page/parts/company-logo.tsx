@@ -8,7 +8,7 @@ interface Props {
 
 export const CompanyLogo = ({ name, src }: Props) => {
   return (
-    <div className="flex h-40 w-40 flex-col items-center justify-center rounded-2xl border">
+    <div className="flex h-20 w-20 md:h-32 md:w-32 lg:w-40 lg:h-40 bg-white flex-col items-center justify-center rounded-2xl shadow">
       <Image
         src={src || "/images/company-logo/klal.png"}
         alt={name}

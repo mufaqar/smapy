@@ -9,12 +9,7 @@ const howDoesItWork = z
   .undefined()
   .describe("How Does It Work?")
   .meta({
-    control: (wizard) => (
-      <HowDoesItWork
-        product={wizard.props?.product as ProductType}
-        {...wizard}
-      />
-    ),
+    control: (wizard) => <HowDoesItWork {...wizard} />,
     text: {
       text_1: "text_1",
       text_2: "text_2",
@@ -32,7 +27,7 @@ const end = z
     "Thanks for your interest in Smapy // Right now the service is available only through agents"
   )
   .meta({
-    control: (wizard) => <WizardEndStep wizard={wizard} />,
+    control: (wizard) => <WizardEndStep {...wizard} />,
     text: {
       text1: "Soon will be able to buy from the site",
       text2: "You will enjoy great service",
@@ -57,5 +52,4 @@ export const compareFlowPages = {
     title_property: "Compare and buy property Insurance",
   },
   name: "customerCompareAndBuy",
-  ns: "customer",
 } satisfies WizardPagesDefinition;

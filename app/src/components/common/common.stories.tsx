@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
 import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
+import { t } from "../../../.storybook/stories-utils";
 import { EditIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import { z } from "zod";
-import { useTranslation } from "next-i18next";
 
 const meta = {
   component: Loading,
@@ -31,7 +31,7 @@ const schema = z.object({
 
 const SampleDialog = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState<boolean>(props.isOpen);
+  const [isOpen, setIsOpen] = useState(props.isOpen);
   return (
     <Dialog
       isOpen={isOpen}
@@ -61,8 +61,6 @@ export const Test4 = {
 };
 
 export const DialogForm = () => {
-  const { t } = useTranslation("customer");
-
   const formContext = usePrepareSchema(t, schema);
   return (
     <DialogFormComponent

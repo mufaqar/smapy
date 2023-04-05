@@ -21,7 +21,7 @@ export const Header = {
   },
 };
 
-export const WithoutTopStepper = {
+export const WithTopStepper = {
   ...WizardTest,
   args: { pages: AdvisorUpdatePages, step: "0-1" },
   parameters: {
@@ -32,7 +32,7 @@ export const WithoutTopStepper = {
   },
 };
 
-export const WithTopStepper = {
+export const WithoutTopStepper = {
   ...WizardTest,
   args: { pages: AdvisorLifeInsurancePages, step: "1-2" },
   parameters: {
