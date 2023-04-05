@@ -22,7 +22,7 @@ import { useRef } from 'react';
 export const Home = () => {
   const { t } = useTranslation("landing-page");
 
-  var settings = {
+  const settings = {
     dots: true,
     infinite: false,
     arrows: false,
