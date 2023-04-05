@@ -56,10 +56,10 @@ export const Colors = {
     <>
       <div className="bg-primary-from h-20 w-20">Primary from</div>
       <div className="bg-primary-to  h-20 w-20">Primary to</div>
-      <div className="h-20  w-20 bg-primary">Primary gradient</div>
+      <div className="bg-primary  h-20 w-20">Primary gradient</div>
       <div className="bg-secondary-from  h-20 w-20">Secondary from</div>
       <div className="bg-secondary-to  h-20 w-20">Secondary to</div>
-      <div className="h-20  w-20 bg-secondary">Secondary gradient</div>
+      <div className="bg-secondary  h-20 w-20">Secondary gradient</div>
     </>
   ),
   parameters,
