@@ -91,7 +91,7 @@ const end = z
   .undefined()
   .describe("Thanks for choosing Smapy // Thanks")
   .meta({
-    control: (wizard) => <WizardEndStep {...wizard} />,
+    control: (wizard) => <WizardEndStep wizard={wizard} />,
     text: {
       text1: "Will contact you soon",
       text2: "You will enjoy great service",
@@ -105,6 +105,7 @@ export const contactUsPhonePages = {
   },
   description: "Contact Me",
   name: "contactUsPhone",
+  ns: "customer",
 } satisfies WizardPagesDefinition;
 
 export const contactUsEmailPages = {
@@ -114,4 +115,5 @@ export const contactUsEmailPages = {
   },
   description: "Contact Me",
   name: "contactUsEmail",
+  ns: "customer",
 } satisfies WizardPagesDefinition;

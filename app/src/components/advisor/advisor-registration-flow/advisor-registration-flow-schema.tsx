@@ -49,7 +49,11 @@ export const knowTheAgent = z
 
 export const uploadIdPicture = z
   .object({
-    certificate_id_picture: z.string().nullish().describe("Upload ID Picture"),
+    certificate_id_picture: z
+      .string()
+      .nullish()
+      .describe("Upload ID Picture")
+      .meta({ control: "File" }),
     certificate_id_picture_later: z
       .boolean()
       .default(false)
@@ -168,7 +172,7 @@ const end = z
   .undefined()
   .describe("Thanks for join the Smapy // really excited")
   .meta({
-    control: (wizard) => <WizardEndStep {...wizard} />,
+    control: (wizard) => <WizardEndStep wizard={wizard} />,
     text: {
       text2: "Will do everything to give service to you and your customers",
     },
@@ -194,4 +198,5 @@ export const AdvisorUpdatePages = {
   },
   description: "Registration",
   name: "registrationFlow",
+  ns: "advisor",
 } satisfies WizardPagesDefinition;

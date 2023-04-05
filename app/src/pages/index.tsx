@@ -5,13 +5,10 @@ import { i18nGetServerSideProps } from "@/utils/i18n-ssr";
 import { Footer } from "@/components/layout/footer";
 import React from "react";
 import { Home } from "@/components/landing-page/home";
-import { useRouter } from "next/router";
-import Link from "next/link";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
 const HomePage: NextPage = () => {
-
   return (
     <>
       <Head>
