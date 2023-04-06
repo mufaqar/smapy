@@ -1,16 +1,10 @@
 import { z } from "zod";
 import { protectedProcedure } from "../../trpc";
 import {
-  CompletelifeInsurance,
-  CompletelifeInsuranceCustomer,
   customerModel,
   lifeInsuranceCustomerModel,
   lifeInsuranceModel,
-  RelatedlifeInsuranceCustomerModel,
-  RelatedlifeInsuranceModel,
-  RelatedUserProfileModel,
 } from "../../../../../prisma/zod";
-import { TRPCError } from "@trpc/server";
 import {
   LoanTracks,
   optionalUuidSchema,

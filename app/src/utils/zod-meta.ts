@@ -12,6 +12,7 @@ import type { ZodTypeAny } from "zod/lib/types";
 import type React from "react";
 import type { WizardControlProps } from "../components/common/wizard/useWizardFlow";
 import type { WizardInfo } from "../components/common/wizard/useWizardFlow";
+import { mergeDeepRight } from "rambda";
 
 export const SPLIT_DESCRIPTION_SYMBOL = " // ";
 
@@ -37,6 +38,29 @@ export interface ZodMetaDataItem {
   label?: string | ControlCallback;
   placeholder?: string;
   text?: Record<string, string>;
+  type?:
+    | "text"
+    | "password"
+    | "submit"
+    | "reset"
+    | "radio"
+    | "checkbox"
+    | "button"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "range"
+    | "search"
+    | "tel"
+    | "time"
+    | "url"
+    | "week";
   stepInfo?: "none" | { name?: string; sub: string };
   control?: string | ControlCallback;
   choices?: ChoiceType[];
@@ -57,7 +81,8 @@ export interface ZodMetaDataItem {
 declare module "zod" {
   interface ZodType {
     metadata(): ZodMetaDataItem;
-    meta(meta: /* string | */ ZodMetaDataItem): this;
+    meta(meta: ZodMetaDataItem): this;
+    extendMeta(meta: ZodMetaDataItem): this;
   }
 }
 
@@ -77,6 +102,21 @@ ZodType.prototype.meta = function (meta: ZodMetaDataItem) {
   return new This({
     ...this._def,
     meta,
+  });
+};
+
+ZodType.prototype.extendMeta = function (extendMeta: ZodMetaDataItem) {
+  // if (typeof meta === "string") {
+  //   const [label, ...rest] = meta
+  //     .split(SPLIT_DESCRIPTION_SYMBOL)
+  //     .map((e) => e.trim());
+  //   meta = { label, placeholder: rest.join(SPLIT_DESCRIPTION_SYMBOL) };
+  // }
+  //
+  const This = (this as any).constructor;
+  return new This({
+    ...this._def,
+    meta: mergeDeepRight(this._def.meta || {}, extendMeta),
   });
 };
 

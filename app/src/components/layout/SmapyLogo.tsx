@@ -3,9 +3,10 @@ import * as React from "react";
 export const SmapyLogo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      width={240}
-      height={56}
+      // width={240}
+      // height={56}
       fill="none"
+      className="max-w-[240px] max-h-[56px] w-full"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
