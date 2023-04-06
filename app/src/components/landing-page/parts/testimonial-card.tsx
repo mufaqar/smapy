@@ -48,9 +48,9 @@ export const TestimonialCard = ({
             </Avatar>
           </div>
           <ul className="item-center my-6 flex gap-1">
-            {rating.map((item) => {
+            {rating.map((item, idx) => {
               return (
-                <li>
+                <li key={idx}>
                   <Image
                     src="/images/star.svg"
                     alt="star"
@@ -61,11 +61,15 @@ export const TestimonialCard = ({
               );
             })}
           </ul>
-          <div className="mb-4 text-[#050505] text-sm md:text-base rtl:text-right">{children}</div>
+          <div className="mb-4 text-sm text-[#050505] rtl:text-right md:text-base">
+            {children}
+          </div>
           <div className="flex w-full justify-between">
             <Image src="/images/google.svg" alt="star" width={30} height={30} />
             <div>
-              <p className="text-end text-xs md:text-sm font-semibold">{name}</p>
+              <p className="text-end text-xs font-semibold md:text-sm">
+                {name}
+              </p>
               <p className="text-end text-xs">{duration}</p>
             </div>
           </div>
