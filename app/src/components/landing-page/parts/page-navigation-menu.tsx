@@ -19,9 +19,9 @@ import { useTranslation } from "next-i18next";
 export const PageNavigationMenu = () => {
   const { t } = useTranslation("landing-page");
   return (
-    <NavigationMenu className="m-top z-10 hidden lg:block relative m-auto py-2">
-      <div className="absolute top-0  bottom-0 right-0 left-0 bg-white/10 blur-[5px]"/>
-      <section className="group z-10 flex flex-1 list-none container mx-auto items-center justify-center rtl:flex-row-reverse">
+    <NavigationMenu className="m-top relative z-10 m-auto hidden py-2 lg:block">
+      <div className="absolute inset-0  bg-white/10 blur-[5px]"/>
+      <section className="group container z-10 mx-auto flex flex-1 list-none items-center justify-center rtl:flex-row-reverse">
         
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -60,7 +60,7 @@ export const PageNavigationMenu = () => {
           </Link>
         </NavigationMenuItem>
 
-        <div className="flex-grow"></div>
+        <div className="grow"></div>
 
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>

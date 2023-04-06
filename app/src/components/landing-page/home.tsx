@@ -305,7 +305,7 @@ export const Home = () => {
           </Slider>
           <button
             onClick={() => slider?.current?.slickPrev()}
-            className="absolute top-1/2 -left-6 hidden -translate-y-1/2 transform cursor-pointer md:block"
+            className="absolute top-1/2 -left-6 hidden -translate-y-1/2 cursor-pointer md:block"
           >
             <Image
               src="/images/left-arrow.svg"
@@ -316,7 +316,7 @@ export const Home = () => {
           </button>
           <button
             onClick={() => slider?.current?.slickNext()}
-            className="absolute top-1/2 -right-6 hidden -translate-y-1/2 transform cursor-pointer md:block"
+            className="absolute top-1/2 -right-6 hidden -translate-y-1/2 cursor-pointer md:block"
           >
             <Image
               src="/images/right-arrow.svg"
