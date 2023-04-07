@@ -36,14 +36,14 @@ export const ImageCard = ({
   return (
     <>
       <div
-        className={`flex flex-col items-center lg:items-start justify-center gap-6 rounded-md px-4 text-center sm:justify-start lg:flex-row lg:px-0 lg:text-right ${wrapper}`}
+        className={`flex flex-col items-center justify-center gap-6 rounded-md px-4 text-center sm:justify-start lg:flex-row lg:items-start lg:px-0 lg:text-right ${wrapper}`}
       >
         <figure className={`${imageWrapper}`}>
           <img
             src={image}
             alt=""
             width={imageWidth}
-            className={`pl-16 hidden lg:block lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"} ${
+            className={`hidden pl-16 lg:block lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"} ${
               idx === 3 && "lg:scale-105"
             }`}
             height={250}
@@ -66,7 +66,7 @@ export const ImageCard = ({
           <h2 className="mt-6 justify-center gap-4 text-[26px] font-medium sm:mt-0 lg:flex lg:justify-start">
             {idx} <span>{title}</span>
           </h2>
-          <p className="mt-4 text-[18px] text-maingray">{text}</p>
+          <p className="text-maingray mt-4 text-[18px]">{text}</p>
           {children}
         </div>
       </div>

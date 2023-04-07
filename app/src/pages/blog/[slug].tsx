@@ -1,3 +1,5 @@
+/* eslint-disable tailwindcss/no-custom-classname */
+
 import Head from "next/head";
 import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";

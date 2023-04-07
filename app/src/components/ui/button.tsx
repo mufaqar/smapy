@@ -5,28 +5,28 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none  disabled:opacity-50  disabled:pointer-events-none ",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none active:scale-95  disabled:pointer-events-none  disabled:opacity-50 ",
   {
     variants: {
       variant: {
         primary:
-          "text-white text-base bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] rounded-[20px]",
+          "rounded-[20px] bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] text-base text-white",
         default:
-          " color-black border border-[rgba(254,5,85,1)] cursor-pointer rounded-full",
+          " color-black cursor-pointer rounded-full border border-[rgba(254,5,85,1)]",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         outline:
-          "bg-transparent border border-slate-200 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100",
+          "border border-slate-200 bg-transparent hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100",
         subtle:
           "bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100",
         ghost:
-          "bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
-        link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
+          "bg-transparent hover:bg-slate-100 data-[state=open]:bg-transparent dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:data-[state=open]:bg-transparent",
+        link: "bg-transparent text-slate-900 underline-offset-4 hover:bg-transparent hover:underline dark:bg-transparent dark:text-slate-100 dark:hover:bg-transparent",
       },
       size: {
         default: "h-12 py-2 px-14",
-        sm: "h-9 px-2 rounded-md",
-        lg: "h-11 px-8 rounded-md",
+        sm: "h-9 rounded-md px-2",
+        lg: "h-11 rounded-md px-8",
       },
     },
     defaultVariants: {

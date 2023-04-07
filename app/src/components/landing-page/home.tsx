@@ -16,13 +16,14 @@ import { Faq } from "@/components/ui/faq";
 import Link from "next/link";
 import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
 import React, { useEffect, useState } from "react";
+import type { Settings } from "react-slick";
 import Slider from "react-slick";
-import { useRef } from 'react';
+import { useRef } from "react";
 
 export const Home = () => {
   const { t } = useTranslation("landing-page");
 
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: false,
     arrows: false,
@@ -37,32 +38,27 @@ export const Home = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-        }
+        },
       },
       {
         breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
-
-  const slider = React.useRef(null);
-  
-  
-
-
+  const slider = React.useRef<Slider | null>(null);
 
   return (
     <>
@@ -118,54 +114,62 @@ export const Home = () => {
           <p className="mb-6 mt-4 text-lg font-bold tracking-tight lg:text-2xl">
             {t("index.sections.1.text.1")}
           </p>
-          <p className="text-base md:text-2xl">{t("index.sections.1.text.2")}</p>
+          <p className="text-base md:text-2xl">
+            {t("index.sections.1.text.2")}
+          </p>
         </div>
         <Image
           src="/images/orange-shape.png"
           alt="shape"
           width={140}
           height={100}
-          className="absolute -z-[1] left-0 mt-20 md:mt-0 lg:top-0"
+          className="absolute left-0 -z-[1] mt-20 md:mt-0 lg:top-0"
         />
         <Image
           src="/images/blue-shape.png"
           alt="shape"
           width={140}
           height={100}
-          className="absolute -z-[1] right-0 -top-20"
+          className="absolute right-0 -top-20 -z-[1]"
         />
       </section>
 
-       <section className="relative">
-        <div className="container mx-auto mt-12 text-center px-4 lg:px-0">
-        <h1 className="main-heading mb-6">{t("index.sections.2.header")}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <StepCard
-            idx={1}
-            title={t("index.sections.2.steps.1.title")}
-            text={t("index.sections.2.steps.1.text")}
-          />
-          <StepCard
-            idx={2}
-            title={t("index.sections.2.steps.2.title")}
-            text={t("index.sections.2.steps.2.text")}
-          />
-          <StepCard
-            idx={3}
-            title={t("index.sections.2.steps.3.title")}
-            text={t("index.sections.2.steps.3.text")}
-          />
-          <StepCard
-            idx={4}
-            title={t("index.sections.2.steps.4.title")}
-            text={t("index.sections.2.steps.4.text")}
-          />
+      <section className="relative">
+        <div className="container mx-auto mt-12 px-4 text-center lg:px-0">
+          <h1 className="main-heading mb-6">{t("index.sections.2.header")}</h1>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <StepCard
+              idx={1}
+              title={t("index.sections.2.steps.1.title")}
+              text={t("index.sections.2.steps.1.text")}
+            />
+            <StepCard
+              idx={2}
+              title={t("index.sections.2.steps.2.title")}
+              text={t("index.sections.2.steps.2.text")}
+            />
+            <StepCard
+              idx={3}
+              title={t("index.sections.2.steps.3.title")}
+              text={t("index.sections.2.steps.3.text")}
+            />
+            <StepCard
+              idx={4}
+              title={t("index.sections.2.steps.4.title")}
+              text={t("index.sections.2.steps.4.text")}
+            />
+          </div>
         </div>
-        </div>
-        <Image src="/images/mbl-r-shape.svg" alt="shape" className="absolute md:hidden bottom-20 right-0" width={120} height={200}/>
+        <Image
+          src="/images/mbl-r-shape.svg"
+          alt="shape"
+          className="absolute bottom-20 right-0 md:hidden"
+          width={120}
+          height={200}
+        />
       </section>
 
-     <section className="mt-10 md:mt-16 px-4 lg:px-0 lg:mt-24 text-center bg-[#E7F3F3] md:bg-transparent py-10">
+      <section className="mt-10 bg-[#E7F3F3] px-4 py-10 text-center md:mt-16 md:bg-transparent lg:mt-24 lg:px-0">
         <h1 className="main-heading mb-8">{t("index.sections.3.header")}</h1>
         <div className="container mx-auto flex flex-row flex-wrap justify-center gap-3 md:gap-5 lg:gap-8">
           <CompanyLogo name="cmp1" src="/images/company-logo/klal.png" />
@@ -182,7 +186,7 @@ export const Home = () => {
         <h1 className="main-heading mb-10 text-center">
           {t("index.sections.4.header")}
         </h1>
-        <div className="container mx-auto grid gap-8 md:px-16 sm:grid-cols-2">
+        <div className="container mx-auto grid gap-8 sm:grid-cols-2 md:px-16">
           <ImageCard
             idx={1}
             title={t("index.sections.4.reasons.1.title")}
@@ -240,23 +244,23 @@ export const Home = () => {
         <img
           src="/images/bg-1.png"
           alt="background"
-          className="absolute -top-5 hidden md:block right-0 -z-10 w-[35%] "
+          className="absolute -top-5 right-0 -z-10 hidden w-[35%] md:block "
         />
         <img
           src="/images/outline-bg-2.svg"
           alt="background"
-          className="absolute -bottom-72 hidden md:block right-0  w-[210px] "
+          className="absolute -bottom-72 right-0 hidden w-[210px]  md:block "
         />
         <img
           src="/images/bg-2.svg"
           alt="background"
-          className="absolute top-40 hidden md:block left-0 -z-10 w-[150px] "
+          className="absolute top-40 left-0 -z-10 hidden w-[150px] md:block "
         />
       </section>
 
-      <section className=" mt-10 lg:mt-20 bg-[#E7F3F3] py-10 pb-16 text-center _testimonial overflow-x-hidden px-4 md:px-0">
+      <section className=" _testimonial mt-10 overflow-x-hidden bg-[#E7F3F3] py-10 px-4 pb-16 text-center md:px-0 lg:mt-20">
         <h1 className="main-heading mb-6">{t("index.sections.5.header")}</h1>
-        <div className="container mx-auto relative gap-8">
+        <div className="container relative mx-auto gap-8">
           <Slider ref={slider} {...settings}>
             <TestimonialCard
               name={t("index.sections.5.cards.1.name")}
@@ -299,44 +303,61 @@ export const Home = () => {
               <p>{t("index.sections.5.cards.4.text")}</p>
             </TestimonialCard>
           </Slider>
-          <button onClick={() => slider?.current?.slickPrev()} className="absolute hidden md:block top-1/2 transform -translate-y-1/2 cursor-pointer -left-6">
-            <Image src="/images/left-arrow.svg" alt="arrow" width={15} height={30}/>
+          <button
+            onClick={() => slider?.current?.slickPrev()}
+            className="absolute top-1/2 -left-6 hidden -translate-y-1/2 cursor-pointer md:block"
+          >
+            <Image
+              src="/images/left-arrow.svg"
+              alt="arrow"
+              width={15}
+              height={30}
+            />
           </button>
-          <button onClick={() => slider?.current?.slickNext()} className="absolute hidden md:block top-1/2 transform -translate-y-1/2 cursor-pointer -right-6">
-          <Image src="/images/right-arrow.svg" alt="arrow" width={15} height={30}/>
+          <button
+            onClick={() => slider?.current?.slickNext()}
+            className="absolute top-1/2 -right-6 hidden -translate-y-1/2 cursor-pointer md:block"
+          >
+            <Image
+              src="/images/right-arrow.svg"
+              alt="arrow"
+              width={15}
+              height={30}
+            />
           </button>
-          <renderDots/>
+          {/*<renderDots />*/}
         </div>
       </section>
 
-      <section className="relative mt-10 px-4 lg:px-0 lg:mt-20">
+      <section className="relative mt-10 px-4 lg:mt-20 lg:px-0">
         <div className="container mx-auto">
-          <h1 className="main-heading text-center mb-6">
+          <h1 className="main-heading mb-6 text-center">
             {t("index.sections.6.header")}
           </h1>
           <Accordion type="single" collapsible>
             {faqData.slice(0, 3).map(({ q, a }, idx: number) => (
               <Faq key={idx} value={`${idx}`} question={q} answer={a} />
             ))}
-          </Accordion> 
-          <div className="rtl:text-left w-full text-base lg:text-[22px] mt-4 underline">
-          <Link href="/faq"  legacyBehavior passHref>
-            <a >{t("index.sections.6.more_faqs")}</a>
-          </Link>
+          </Accordion>
+          <div className="mt-4 w-full text-base underline rtl:text-left lg:text-[22px]">
+            <Link href="/faq" legacyBehavior passHref>
+              <a>{t("index.sections.6.more_faqs")}</a>
+            </Link>
           </div>
         </div>
-        <Image src="/images/faq-shape.svg" alt="shape" className="absolute hidden lg:block left-0 mt-10" width={150} height={100}/>
+        <Image
+          src="/images/faq-shape.svg"
+          alt="shape"
+          className="absolute left-0 mt-10 hidden lg:block"
+          width={150}
+          height={100}
+        />
       </section>
 
       <SectionContactUs>
-        <h1 className="main-heading">
-          {t("index.sections.7.header")}
-        </h1>
+        <h1 className="main-heading">{t("index.sections.7.header")}</h1>
         <span className="mt-2">{t("index.sections.7.text")}</span>
-      </SectionContactUs> 
+      </SectionContactUs>
     </>
   );
 };
-
-
-

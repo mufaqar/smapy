@@ -13,55 +13,62 @@ interface Props {
 export const SectionContactUs = ({ children }: Props) => {
   return (
     <>
-    <section className="lg:mt-40 2xl:mt-24 overflow-x-hidden hidden md:block">
-      <img src="/images/footer-bg.png" alt="img" className="hidden md:block h-full w-full" />
-      <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
-        <div className="absolute bottom-20 lg:left-40 2xl:bottom-60 2xl:left-60">
-          {children}
-          <div className="flex flex-row gap-8 mt-8">
-            <ConnectButton
-              icon={<WhatsappIcon />}
-              text="Whatsapp"
-              href="/contact/whatsapp"
-            />
-            <ConnectButton
-              icon={<EmailIcon />}
-              text="email"
-              href="/contact/email"
-            />
-            <ConnectButton
-              icon={<PhoneOutlineIcon />}
-              text="Phone"
-              href="/contact/phone"
-            />
+      <section className="hidden overflow-x-hidden md:block lg:mt-40 2xl:mt-24">
+        <img
+          src="/images/footer-bg.png"
+          alt="img"
+          className="hidden h-full w-full md:block"
+        />
+        <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
+          <div className="absolute bottom-20 lg:left-40 2xl:bottom-60 2xl:left-60">
+            {children}
+            <div className="mt-8 flex flex-row gap-8">
+              <ConnectButton
+                icon={<WhatsappIcon />}
+                text="Whatsapp"
+                href="/contact/whatsapp"
+              />
+              <ConnectButton
+                icon={<EmailIcon />}
+                text="email"
+                href="/contact/email"
+              />
+              <ConnectButton
+                icon={<PhoneOutlineIcon />}
+                text="Phone"
+                href="/contact/phone"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section className="h-[950px] overflow-hidden bg-no-repeat bg-cover md:hidden" style={{backgroundImage: `url("/images/mbl-footer-bg.png")`}}>'
-    <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
-      <div className="px-4 w-full mb-[350px]">
-        {children}
-        <div className="flex -mr-2 flex-row gap-2 lg:gap-8 mt-2 lg:mt-8">
-          <ConnectButton
-            icon={<WhatsappIcon />}
-            text="Whatsapp"
-            href="/contact/whatsapp"
-          />
-          <ConnectButton
-            icon={<EmailIcon />}
-            text="email"
-            href="/contact/email"
-          />
-          <ConnectButton
-            icon={<PhoneOutlineIcon />}
-            text="Phone"
-            href="/contact/phone"
-          />
+      </section>
+      <section
+        className="h-[950px] overflow-hidden bg-cover bg-no-repeat md:hidden"
+        style={{ backgroundImage: `url("/images/mbl-footer-bg.png")` }}
+      >
+        <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
+          <div className="mb-[350px] w-full px-4">
+            {children}
+            <div className="-mr-2 mt-2 flex flex-row gap-2 lg:mt-8 lg:gap-8">
+              <ConnectButton
+                icon={<WhatsappIcon />}
+                text="Whatsapp"
+                href="/contact/whatsapp"
+              />
+              <ConnectButton
+                icon={<EmailIcon />}
+                text="email"
+                href="/contact/email"
+              />
+              <ConnectButton
+                icon={<PhoneOutlineIcon />}
+                text="Phone"
+                href="/contact/phone"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  </>
+      </section>
+    </>
   );
 };

@@ -6,7 +6,7 @@ export const SmapyLogo = (props: React.SVGProps<SVGSVGElement>) => {
       // width={240}
       // height={56}
       fill="none"
-      className="max-w-[240px] max-h-[56px] w-full"
+      className="max-h-[56px] w-full max-w-[240px]"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
