@@ -27,6 +27,7 @@ function run_smapy {
 	param([Alias('l')] $lang = 'he')
 	python zz_updator.py
 	goto $server/$lang
+	goto $figma_url
 	Set-Location $project/app
 	wt -w 0 sp $shell -NoExit -c 'cd $project/app && yarn storybook'
 	yarn dev
