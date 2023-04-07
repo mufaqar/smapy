@@ -397,8 +397,7 @@
       "last_name": {
         "label": "Last Name"
       },
-      "step_sub": "registrationFlow.userNames.step_sub",
-      "step_name": "Initial details"
+      "step_sub": "Personal details"
     }
   },
   "Bank name is required": "Bank name is required",
