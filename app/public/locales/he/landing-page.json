@@ -215,5 +215,9 @@
     },
     "error_mismatch": "Phone is registered with different id"
   },
-  "Required": "Required"
+  "Required": "Required",
+  "sample": {
+    "translation_v2": "sample.translation_v2",
+    "translation_v6": "sample.translation_v6"
+  }
 }

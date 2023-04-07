@@ -273,5 +273,9 @@
     "security": "nav.security",
     "customer_entry": "nav.customer_entry",
     "agent_entry": "nav.agent_entry"
+  },
+  "sample": {
+    "translation_v2": "sample.translation_v2",
+    "translation_v6": "sample.translation_v6"
   }
 }
