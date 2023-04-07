@@ -3,7 +3,12 @@ import { extractRuntimeTranslation } from "../../server/process/extract-runtime-
 import { useTranslation } from "next-i18next";
 import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
 
-export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
+export const getServerSideProps = i18nGetServerSideProps([
+  "advisor",
+  "landing-page",
+  "customer",
+  "common",
+]);
 
 const ExtractRuntimeTranslation = () => {
   const { t: advisor } = useTranslation("advisor");

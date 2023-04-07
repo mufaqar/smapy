@@ -45,10 +45,10 @@ const updateMissing = () => {
     let changed = false;
     const path: string[] = item.key.split(".");
     let obj: TranslationData = nsData;
-    // console.log(`muly:appendMissingTranslation`, {
-    //   item,
-    //   path,
-    // });
+    console.log(`muly:appendMissingTranslation`, {
+      item,
+      path,
+    });
     path.slice(0, path.length - 1).forEach((key) => {
       if (typeof obj !== "string") {
         if (!obj[key]) {
@@ -84,7 +84,7 @@ const updateMissing = () => {
   queue = [];
   const langs = ["en", "he"];
 
-  console.log(`muly:updateMissing A`, {});
+  // console.log(`muly:updateMissing A`, {});
 
   const pairs: { ns: string; lang: string }[] = [];
   forEach((ns) => {
@@ -93,7 +93,7 @@ const updateMissing = () => {
     }, langs);
   }, uniq(map(({ ns }) => ns, q)));
 
-  console.log(`muly:updateMissing B`, { pairs });
+  console.log(`muly:updateMissing B`, { pairs, q });
 
   map(({ ns, lang }) => {
     let changed = false;
@@ -105,7 +105,7 @@ const updateMissing = () => {
     if (changed) {
       saveNSData(lang, ns, nsData);
     } else {
-      console.log(`muly:Nothing changed, not saving ${lang} ${ns}`);
+      // console.log(`muly:Nothing changed, not saving ${lang} ${ns}`);
     }
   }, pairs);
 };
