@@ -4,19 +4,27 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
 import { useFlagBag } from "@/flags/client";
-import type { CustomerRole } from "./user-auth-schema";
+import type { CustomerRole, LoginValues } from "./user-auth-schema";
 import { schemaLogin } from "./user-auth-schema";
 import { OTP } from "./otp";
 import { UserId } from "@/components/auth/user-id";
 import { FormError } from "@/components/common/forms/useSubmitAction";
-
-const schema = schemaLogin;
-type LoginValues = z.infer<typeof schema>;
+import { useTranslation } from "next-i18next";
+import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
 
 const backdoorEmailLogin = "mulyoved@gmail.com";
 const backdoorPhonePrefix = "+972 52 307 7666";
 
 export const UserAuth = () => {
+  const { t } = useTranslation("landing-page");
+
+  const formContext = usePrepareSchema(t, schemaLogin);
+  const {
+    formMeta: {
+      meta: { text },
+    },
+  } = formContext;
+
   const router = useRouter();
   const { user, debug } = router.query;
   const isAdvisor = user === "advisor";
@@ -35,6 +43,8 @@ export const UserAuth = () => {
     api.customer.getUserProfileCheckComplete.useQuery(undefined, {
       enabled: false,
     });
+
+  const preLoginCheckInfo = api.advisor.preLoginCheckInfo.useMutation();
 
   const checkUserInfo = async () => {
     const refetch = isAdvisor ? advisorRefetch : customerRefetch;
@@ -98,6 +108,18 @@ export const UserAuth = () => {
 
   const handleSubmit = async (values: LoginValues) => {
     console.log(`muly:handleSubmit`, { values });
+
+    const checkAnswer = await preLoginCheckInfo.mutateAsync({
+      id_card_number: values.id_card_number,
+      phone: values.phone,
+    });
+
+    console.log(`muly:handleSubmit:checkAnswer`, { checkAnswer });
+    if (checkAnswer.error === "mismatch") {
+      throw new FormError({
+        phone: text?.error_mismatch || "",
+      });
+    }
 
     const { data, error } = await supabaseClient.auth.signInWithOtp({
       phone: values.phone,

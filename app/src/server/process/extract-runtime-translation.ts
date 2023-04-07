@@ -18,12 +18,15 @@ export const extractRuntimeTranslation = (nsMap: {
   [ns: string]: TranslationFn;
 }) => {
   let count = 0;
+  let context = "";
 
   const translate: TranslationFn = (key: string, def?: string) => {
     // console.log(`translate ${ns} ${key}=${def}`);
     const map = nsMap[ns];
     if (!map) {
-      throw new Error(`Missing translator for namespace ${ns}`);
+      throw new Error(
+        `Missing translator for namespace ${ns} key ${key} def:${def} context ${context}`
+      );
     }
 
     count++;
@@ -31,16 +34,20 @@ export const extractRuntimeTranslation = (nsMap: {
   };
 
   const translateSchema = (schema: ZodTypeAny) => {
+    context = `translateSchema ns:${ns} name:${schema.metadata().name}`;
     translateSchemaInfo(getZodMetaInfo(schema), translate, "");
+    context = "";
   };
 
   const translateWizard = (pagesDefinition: WizardPagesDefinition) => {
+    context = `translateWizard ns:${ns} name:${pagesDefinition.name}}`;
     const stepsRaw = getPagesZodMetaInfo(pagesDefinition);
     const steps = translateSchemaInfo(
       stepsRaw,
       translate,
       pagesDefinition.name
     );
+    context = "";
   };
 
   let ns: string;

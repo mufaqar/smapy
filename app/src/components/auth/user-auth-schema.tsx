@@ -32,9 +32,13 @@ export const schemaLogin = z
     text: {
       entry_customer: "Customer entry",
       entry_advisor: "Advisor entry",
+      error_mismatch:
+        "Phone is registered with different id, please check if information is correct",
     },
     name: "login",
   });
+
+export type LoginValues = z.infer<typeof schemaLogin>;
 
 export const schemaOTP = z
   .object({

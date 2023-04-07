@@ -212,7 +212,8 @@
     },
     "phone": {
       "label": "מספר טלפון"
-    }
+    },
+    "error_mismatch": "Phone is registered with different id"
   },
   "Required": "Required"
 }

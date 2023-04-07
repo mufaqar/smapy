@@ -1,22 +1,15 @@
 import { Form } from "../common/forms/Form";
 import type { z } from "zod";
-import { useSessionContext } from "@supabase/auth-helpers-react";
 import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { api } from "../../utils/api";
 import { useTranslation } from "next-i18next";
 import {
   evaluateFormControlCallback,
   usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
-import { useFlagBag } from "@/flags/client";
-import type { CustomerRole } from "./user-auth-schema";
+import type { CustomerRole, LoginValues } from "./user-auth-schema";
 import { schemaLogin } from "./user-auth-schema";
-import { OTP } from "./otp";
-import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
 
 const schema = schemaLogin;
-type LoginValues = z.infer<typeof schema>;
 
 interface Props {
   onSubmit: (values: LoginValues) => Promise<void>;

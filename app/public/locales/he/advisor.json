@@ -465,7 +465,8 @@
       "birthDate": {
         "label": "Date of birth"
       },
-      "step_sub": "Personal details"
+      "step_sub": "Personal details",
+      "subTitle": "subTitle.person1"
     },
     "customerDetails2": {
       "label": "General Details",
@@ -485,7 +486,8 @@
       "dangerous_hobby_desc": {
         "label": "Hobby Description"
       },
-      "step_sub": "General details"
+      "step_sub": "General details",
+      "subTitle": "subTitle.person1"
     },
     "loanTracksCount": {
       "label": "Select mortgage track count",
@@ -538,7 +540,8 @@
         },
         "label": "Loan Type"
       },
-      "step_sub": "Loan details"
+      "step_sub": "Loan details",
+      "subTitle": "subTitle.track1"
     },
     "customerMoreDetails": {
       "label": "Complete Personal Details",
@@ -570,7 +573,8 @@
         "label": "Apartment Number"
       },
       "step_name": "Complete Details",
-      "step_sub": "Complete Personal Details"
+      "step_sub": "Complete Personal Details",
+      "subTitle": "subTitle.person1"
     },
     "mortgagePropertyAddress": {
       "label": "Property Address",
@@ -632,7 +636,11 @@
         "label": "I confirm all details are correct and complete"
       },
       "step_name": "Process End",
-      "step_sub": "Confirm and End"
+      "step_sub": "Confirm and End",
+      "subTitle": "subTitle",
+      "subTitle2": "subTitle2",
+      "imageTitle1": "imageTitle1",
+      "imageTitle2": "imageTitle2"
     },
     "end": {
       "label": "Thanks for choosing Smapy",
