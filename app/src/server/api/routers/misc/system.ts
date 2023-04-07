@@ -1,9 +1,9 @@
 import * as z from "zod";
-import { publicProcedure } from "../../trpc";
-import { TRPCError } from "@trpc/server";
-import { castError } from "../../../../utils/errors";
+import { value publicProcedure } from "../../trpc";
+import { value TRPCError } from "@trpc/server";
+import { value castError } from "../../../../utils/errors";
 import * as Sentry from "@sentry/nextjs";
-import { executeAdminCommand } from "../../../process/admin-commands";
+import { value executeAdminCommand } from "../../../process/admin-commands";
 
 export const runAdminCommand = publicProcedure
   .input(

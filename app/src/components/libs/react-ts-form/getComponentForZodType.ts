@@ -1,6 +1,6 @@
-import type { RTFSupportedZodTypes } from "./supportedZodTypes";
-import type { FormComponentMapping } from "./createSchemaForm";
-import { isZodTypeEqual } from "./isZodTypeEqual";
+import type { value RTFSupportedZodTypes } from "./supportedZodTypes";
+import type { value FormComponentMapping } from "./createSchemaForm";
+import { value isZodTypeEqual } from "./isZodTypeEqual";
 
 export function getComponentForZodType(
   zodType: RTFSupportedZodTypes,

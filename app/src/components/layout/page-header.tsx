@@ -1,23 +1,23 @@
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
+  value NavigationMenu,
+  value NavigationMenuContent,
+  value NavigationMenuIndicator,
+  value NavigationMenuItem,
+  value NavigationMenuLink,
+  value NavigationMenuList,
+  value NavigationMenuTrigger,
+  value NavigationMenuViewport,
+  value navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { PhoneIcon } from "@/components/landing-page/parts/Icons";
-import { SmapyLogo } from "@/components/layout/SmapyLogo";
+import { value cn } from "@/lib/utils";
+import { value buttonVariants } from "@/components/ui/button";
+import { value PhoneIcon } from "@/components/landing-page/parts/Icons";
+import { value SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageHeader = () => {
   return (
-    <NavigationMenu className="m-top m-auto mt-8 w-full max-w-7xl justify-start">
+    <NavigationMenu className="m-auto mt-8 w-full max-w-7xl justify-start">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>

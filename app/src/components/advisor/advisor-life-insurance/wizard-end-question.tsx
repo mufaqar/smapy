@@ -1,5 +1,5 @@
-import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
-import { useState } from "react";
+import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import { value useState } from "react";
 
 export const WizardEndQuestion = ({ onStepNext, step }: WizardControlProps) => {
   const [yes, setYes] = useState(false);

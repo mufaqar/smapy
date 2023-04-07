@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import { useTranslation } from "next-i18next";
+import type { value NextPage } from "next";
+import { value useTranslation } from "next-i18next";
 import React from "react";
-import { i18nGetServerSideProps } from "@/utils/i18n-ssr";
-import { Button } from "@/components/ui/button";
+import { value i18nGetServerSideProps } from "@/utils/i18n-ssr";
+import { value Button } from "@/components/ui/button";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 

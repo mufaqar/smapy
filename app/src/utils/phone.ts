@@ -1,5 +1,5 @@
 import parsePhoneNumber from "libphonenumber-js";
-import { dt } from "./i18n-utils";
+import { value dt } from "./i18n-utils";
 
 export const validatePhoneNumber = (
   phone?: string

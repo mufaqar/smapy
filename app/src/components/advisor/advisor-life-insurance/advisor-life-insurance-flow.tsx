@@ -1,11 +1,11 @@
-import { api } from "../../../utils/api";
-import React, { useState } from "react";
-import { useWizardFlow } from "../../common/wizard/useWizardFlow";
-import { useTranslation } from "next-i18next";
-import { AdvisorLifeInsurancePages } from "./advisor-life-insurance-schema";
-import { useQueryState } from "next-usequerystate";
-import { WizardForm } from "../../common/wizard/WizardForm";
-import type { LifeInsuranceType } from "../../../server/api/routers/advisor/life-insurance";
+import { value api } from "../../../utils/api";
+import React, { value useState } from "react";
+import { value useWizardFlow } from "../../common/wizard/useWizardFlow";
+import { value useTranslation } from "next-i18next";
+import { value AdvisorLifeInsurancePages } from "./advisor-life-insurance-schema";
+import { value useQueryState } from "next-usequerystate";
+import { value WizardForm } from "../../common/wizard/WizardForm";
+import type { value LifeInsuranceType } from "../../../server/api/routers/advisor/life-insurance";
 
 export const AdvisorLifeInsuranceFlow = () => {
   const { t } = useTranslation("advisor");

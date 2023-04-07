@@ -1,10 +1,10 @@
-import { useMeta, useTsController } from "../../libs/react-ts-form";
-import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
-import { FormControl } from "./FormControl";
-import { clsx } from "clsx";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Switch } from "@/components/ui/switch";
-import type { Props } from "./TextField";
+import { value useMeta, value useTsController } from "../../libs/react-ts-form";
+import { value maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
+import { value FormControl } from "./FormControl";
+import { value clsx } from "clsx";
+import { value Checkbox } from "@/components/ui/checkbox";
+import { value Switch } from "@/components/ui/switch";
+import type { value Props } from "./TextField";
 
 export const CheckboxField = ({ controlName }: Props) => {
   const { field, error, formContext } = useTsController<boolean>();

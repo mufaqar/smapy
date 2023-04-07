@@ -1,9 +1,9 @@
 import React from "react";
-import type { WizardControlProps } from "./useWizardFlow";
+import type { value WizardControlProps } from "./useWizardFlow";
 import Head from "next/head";
-import { WizardForm } from "@/components/common/wizard/WizardForm";
-import { PageHeader } from "@/components/layout/page-header";
-import { Footer } from "@/components/layout/footer";
+import { value WizardForm } from "@/components/common/wizard/WizardForm";
+import { value PageHeader } from "@/components/layout/page-header";
+import { value Footer } from "@/components/layout/footer";
 
 interface Props<T> {
   wizard: WizardControlProps;
@@ -30,7 +30,7 @@ export const WizardPage = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageHeader />
-      <main className="align- flex flex-col items-center gap-8">
+      <main className="flex flex-col items-center gap-8">
         <WizardForm
           wizard={wizard}
           handleSubmit={handleSubmit}

@@ -3,7 +3,7 @@
 */
 
 import React from "react";
-import type { ChoiceType } from "../../../utils/zod-meta";
+import type { value ChoiceType } from "../../../utils/zod-meta";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 
 // const RadioCard = ({ children, ...props }: RCProps) => {

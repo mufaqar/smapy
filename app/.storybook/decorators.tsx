@@ -1,9 +1,9 @@
 import "../src/styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";
 import i18n from "./i18next";
-import { Suspense } from "react";
-import { I18nextProvider } from "react-i18next";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { value Suspense } from "react";
+import { value I18nextProvider } from "react-i18next";
+import { value TooltipProvider } from "@radix-ui/react-tooltip";
 
 import "../src/utils/zod-meta";
 

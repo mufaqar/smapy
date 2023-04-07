@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
+import { value ChevronDown } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { value cn } from "@/lib/utils";
 import Image from "next/image";
 
 const Accordion = AccordionPrimitive.Root;
@@ -16,7 +16,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "border-b border-b-slate-200 mb-6 accordion cursor-pointer dark:border-b-slate-700",
+      "accordion mb-6 cursor-pointer border-b border-b-slate-200 dark:border-b-slate-700",
       className
     )}
     {...props}
@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex items-center text-right w-full justify-between px-4 lg:px-12 py-6 text-sm lg:text-2xl font-semibold transition-all [&[data-state=open]>svg]:rotate-180",
+        "flex w-full items-center justify-between px-4 py-6 text-right text-sm font-semibold transition-all lg:px-12 lg:text-2xl [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
@@ -40,7 +40,7 @@ const AccordionTrigger = React.forwardRef<
       <div>{children}</div>
       {/* <ChevronDown className="h-6 w-6 m-0 transition-transform duration-200" /> */}
       <figure>
-        <img src="/images/Union.svg" alt="icon" className="w-4 md:w-5"/>
+        <img src="/images/Union.svg" alt="icon" className="w-4 md:w-5" />
       </figure>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
@@ -54,7 +54,7 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      "overflow-hidden transition-all px-12 text-2xl text-maingray data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up",
+      "overflow-hidden px-12 text-2xl text-maingray transition-all data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up",
       className
     )}
     {...props}

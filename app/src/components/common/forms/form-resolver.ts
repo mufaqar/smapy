@@ -1,4 +1,4 @@
-import { zodResolver } from "@hookform/resolvers/zod";
+import { value zodResolver } from "@hookform/resolvers/zod";
 
 export const formResolver =
   (schema: any) => async (data: any, context: any, options: any) => {

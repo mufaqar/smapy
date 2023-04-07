@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 
-import { UserAuth } from "../components/auth/user-auth";
-import { i18nGetServerSideProps } from "../utils/i18n-ssr";
+import { value UserAuth } from "../components/auth/user-auth";
+import { value i18nGetServerSideProps } from "../utils/i18n-ssr";
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 

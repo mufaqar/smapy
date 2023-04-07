@@ -1,5 +1,10 @@
-import Document, { Html, Main, NextScript, Head } from "next/document";
-import { i18n } from "next-i18next";
+import Document, {
+  value Html,
+  value Main,
+  value NextScript,
+  value Head,
+} from "next/document";
+import { value i18n } from "next-i18next";
 
 class MyDocument extends Document {
   render() {

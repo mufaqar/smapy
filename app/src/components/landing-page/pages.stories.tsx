@@ -1,8 +1,8 @@
-import { Home as HomePage } from "./home";
-import { AboutUs } from "@/components/landing-page/about-us";
-import { FAQPage } from "@/components/landing-page/faq";
-import { Prices as PricesPage } from "./prices";
-import { SecurityPrivacy as SecurityPrivacyPage } from "@/components/landing-page/security-privacy";
+import { value Home as HomePage } from "./home";
+import { value AboutUs } from "@/components/landing-page/about-us";
+import { value FAQPage } from "@/components/landing-page/faq";
+import { value Prices as PricesPage } from "./prices";
+import { value SecurityPrivacy as SecurityPrivacyPage } from "@/components/landing-page/security-privacy";
 
 const meta = {
   component: HomePage,

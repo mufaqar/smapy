@@ -1,4 +1,4 @@
-import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
 export const SendLinksHeader = ({ wizard }: { wizard: WizardControlProps }) => {
   return (

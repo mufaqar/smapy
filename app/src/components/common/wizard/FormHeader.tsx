@@ -1,11 +1,11 @@
 import React from "react";
-import type { WizardControlProps } from "./useWizardFlow";
-import { evaluateControlCallback } from "./useWizardFlow";
+import type { value WizardControlProps } from "./useWizardFlow";
+import { value evaluateControlCallback } from "./useWizardFlow";
 import {
-  backDisabled,
-  getStepInfoTitles,
+  value backDisabled,
+  value getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
-import { TopWizardSteps } from "@/components/common/wizard/top-wizard-steps";
+import { value TopWizardSteps } from "@/components/common/wizard/top-wizard-steps";
 
 export const FormHeader = (wizard: WizardControlProps) => {
   const { step, meta, onStepBack, stepsInfo, stepCode } = wizard;

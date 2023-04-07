@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  value Avatar,
+  value AvatarFallback,
+  value AvatarImage,
+} from "@/components/ui/avatar";
 import * as React from "react";
-import { formatDistanceStrict, parse } from "date-fns";
+import { value formatDistanceStrict, value parse } from "date-fns";
 
 interface Props {
   name: string;
@@ -48,9 +52,9 @@ export const TestimonialCard = ({
             </Avatar>
           </div>
           <ul className="item-center my-6 flex gap-1">
-            {rating.map((item, idx) => {
+            {rating.map((_, i) => {
               return (
-                <li key={idx}>
+                <li key={i}>
                   <Image
                     src="/images/star.svg"
                     alt="star"

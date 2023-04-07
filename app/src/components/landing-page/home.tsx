@@ -1,27 +1,43 @@
-import { useTranslation } from "next-i18next";
-import { FloatingCard } from "@/components/landing-page/parts/floating-card";
+import { value useTranslation } from "next-i18next";
+import { value FloatingCard } from "@/components/landing-page/parts/floating-card";
 import {
-  LifeInsuranceIcon,
-  MortgageInsuranceIcon,
-  PropertyInsuranceIcon,
+  value LifeInsuranceIcon,
+  value MortgageInsuranceIcon,
+  value PropertyInsuranceIcon,
 } from "@/components/landing-page/parts/Icons";
-import { StepCard } from "@/components/landing-page/parts/step-card";
-import { CompanyLogo } from "@/components/landing-page/parts/company-logo";
-import { ImageCard } from "@/components/landing-page/parts/image-card";
+import { value StepCard } from "@/components/landing-page/parts/step-card";
+import { value CompanyLogo } from "@/components/landing-page/parts/company-logo";
+import { value ImageCard } from "@/components/landing-page/parts/image-card";
 import Image from "next/image";
-import { TestimonialCard } from "@/components/landing-page/parts/testimonial-card";
-import { Accordion } from "@/components/ui/accordion";
-import { faqData } from "@/components/landing-page/parts/faq-data";
-import { Faq } from "@/components/ui/faq";
+import { value TestimonialCard } from "@/components/landing-page/parts/testimonial-card";
+import { value Accordion } from "@/components/ui/accordion";
+import { value faqData } from "@/components/landing-page/parts/faq-data";
+import { value Faq } from "@/components/ui/faq";
 import Link from "next/link";
-import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
-import React, { useEffect, useState } from "react";
-import type { Settings } from "react-slick";
+import { value SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
+import React from "react";
 import Slider from "react-slick";
-import { useRef } from "react";
 
 export const Home = () => {
   const { t } = useTranslation("landing-page");
+
+  interface Settings {
+    dots: boolean;
+    infinite: boolean;
+    arrows: boolean;
+    speed: number;
+    slidesToShow: number;
+    slidesToScroll: number;
+    initialSlide: number;
+    responsive: {
+      breakpoint: number;
+      settings: {
+        slidesToShow: number;
+        slidesToScroll: number;
+        infinite: boolean;
+      };
+    }[];
+  }
 
   const settings: Settings = {
     dots: true,
@@ -33,42 +49,43 @@ export const Home = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1380,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
         },
       },
       {
-        breakpoint: 800,
+        breakpoint: 1140,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
+          infinite: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 680,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
     ],
   };
 
-  const slider = React.useRef<Slider | null>(null);
+  const slider = React.useRef<Slider>(null);
 
   return (
     <>
-      {/* <section className="-mt-28 h-screen bg-[url('/images/main.png')] bg-cover bg-right-bottom bg-no-repeat">
-        <div className="container mx-auto flex h-full flex-col items-end justify-end">
-          <div className="mb-24 w-full pr-[12%] text-right 2xl:pr-[7%]">
-            <h1 className="text-shadow max-w-[600px] scroll-m-20 text-6xl font-extrabold leading-[75px] tracking-tight text-white lg:text-[58px]">
+      <section className="h-screen bg-cover bg-right-bottom bg-no-repeat md:bg-[url('/images/mobile-main.png')] lg:-mt-28 lg:bg-[url('/images/main.png')]">
+        <div className="container mx-auto flex h-full flex-col items-end justify-center lg:justify-end">
+          <div className="mb-24 w-full px-4 pr-[50%] text-right lg:px-0 lg:pr-[12%] 2xl:pr-[7%]">
+            <h1 className="text-shadow mb-4 max-w-[600px] scroll-m-20 text-[30px] font-extrabold leading-[38px]  tracking-tight text-white sm:text-5xl sm:leading-[60px] lg:mb-0 lg:text-6xl lg:leading-[75px]">
               {t("index.header")}
             </h1>
-            <p className="text-shadow max-w-[550px] scroll-m-20 text-3xl font-bold tracking-tight text-white lg:text-3xl">
+            <p className="text-shadow max-w-[550px] scroll-m-20 text-xl font-bold tracking-tight text-white md:text-3xl lg:text-3xl">
               {t("index.header_2")}
             </p>
           </div>
@@ -83,7 +100,7 @@ export const Home = () => {
             whitebg="/images/blob-white-1.png"
             colorbg="/images/blob-color-1.png"
             id="1"
-            className="absolute md:-top-[610px] md:left-[270px]"
+            className="absolute -left-6 scale-75 sm:scale-90 md:scale-100 lg:-top-[480px] lg:left-[100px] xl:left-[270px] 2xl:-top-[610px]"
           ></FloatingCard>
           <FloatingCard
             icon={<MortgageInsuranceIcon />}
@@ -93,7 +110,7 @@ export const Home = () => {
             whitebg="/images/blob-white-2.png"
             colorbg="/images/blob-color-2.png"
             id="2"
-            className="absolute md:-top-[320px] md:left-[280px]"
+            className="_left absolute -top-28 scale-[0.8] sm:scale-100 lg:-top-[220px] lg:left-[180px] xl:left-[280px] 2xl:-top-[320px]"
           ></FloatingCard>
           <FloatingCard
             icon={<PropertyInsuranceIcon />}
@@ -103,12 +120,12 @@ export const Home = () => {
             whitebg="/images/blob-white-3.png"
             colorbg="/images/blob-color-3.png"
             id="3"
-            className="absolute md:-top-[60px] md:left-[20px]"
+            className="absolute -top-60 -left-4 scale-90 md:left-0 md:scale-95 lg:top-0 lg:scale-100 xl:-top-[90px] xl:left-[20px]"
           ></FloatingCard>
         </div>
-      </section> */}
+      </section>
 
-      <section className="relative px-4 lg:px-0">
+      <section className="relative mt-40 px-4 lg:mt-0 lg:px-0">
         <div className="container mx-auto mt-12 max-w-5xl text-center">
           <h1 className="main-heading">{t("index.sections.1.header")}</h1>
           <p className="mb-6 mt-4 text-lg font-bold tracking-tight lg:text-2xl">
@@ -325,7 +342,7 @@ export const Home = () => {
               height={30}
             />
           </button>
-          {/*<renderDots />*/}
+          {/* <renderDots/> */}
         </div>
       </section>
 

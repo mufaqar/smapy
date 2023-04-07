@@ -1,7 +1,7 @@
-import { trpcVanillaClient } from "./api";
-import { callAsync } from "./call-async";
-import type { MetaInfo } from "./zod-meta";
-import { map } from "rambda";
+import { value trpcVanillaClient } from "./api";
+import { value callAsync } from "./call-async";
+import type { value MetaInfo } from "./zod-meta";
+import { value map } from "rambda";
 
 const itemSent: { [key: string]: boolean } = {};
 export type TranslationFn = (key: string, def?: string) => string;

@@ -1,16 +1,16 @@
-import { FormHeader } from "./FormHeader";
-import { Form } from "../forms/Form";
+import { value FormHeader } from "./FormHeader";
+import { value Form } from "../forms/Form";
 import React from "react";
-import type { WizardControlProps } from "./useWizardFlow";
-import { FormSideBackgroundImage } from "./FormSideBackgroundImage";
+import type { value WizardControlProps } from "./useWizardFlow";
+import { value FormSideBackgroundImage } from "./FormSideBackgroundImage";
 import NoSSR from "react-no-ssr";
-import { Loading } from "../Loading";
+import { value Loading } from "../Loading";
 import {
-  getStepInfoSubTitles,
-  getStepInfoTitles,
+  value getStepInfoSubTitles,
+  value getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
-import { cn } from "@/lib/utils";
-import { SideWizardSteps } from "@/components/common/wizard/side-wizard-steps";
+import { value cn } from "@/lib/utils";
+import { value SideWizardSteps } from "@/components/common/wizard/side-wizard-steps";
 
 interface Props<T> {
   wizard: WizardControlProps;

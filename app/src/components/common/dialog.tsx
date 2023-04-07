@@ -1,11 +1,11 @@
 import {
-  Dialog as DialogUI,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  value Dialog as DialogUI,
+  value DialogContent,
+  value DialogDescription,
+  value DialogFooter,
+  value DialogHeader,
+  value DialogTitle,
+  value DialogTrigger,
 } from "@/components/ui/dialog";
 import * as React from "react";
 

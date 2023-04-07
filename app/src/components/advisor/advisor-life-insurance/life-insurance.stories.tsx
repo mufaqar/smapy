@@ -1,6 +1,6 @@
 import React from "react";
-import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
-import { WizardTest } from "@/components/common/wizard/wizard-test";
+import { value AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
+import { value WizardTest } from "@/components/common/wizard/wizard-test";
 
 const meta = {
   component: WizardTest,

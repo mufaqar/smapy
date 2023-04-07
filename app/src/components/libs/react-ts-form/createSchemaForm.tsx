@@ -1,41 +1,51 @@
 import type {
-  ForwardRefExoticComponent,
-  ReactNode,
-  RefAttributes,
+  value ForwardRefExoticComponent,
+  value ReactNode,
+  value RefAttributes,
 } from "react";
-import React, { Fragment, useRef } from "react";
-import type { ComponentProps } from "react";
-import type { ErrorOption, NestedValue, UseFormReturn } from "react-hook-form";
-import { FormProvider, useForm } from "react-hook-form";
-import type { AnyZodObject, z, ZodEffects } from "zod";
-import { getComponentForZodType } from "./getComponentForZodType";
+import React, { value Fragment, value useRef } from "react";
+import type { value ComponentProps } from "react";
 import type {
-  IndexOf,
-  IndexOfUnwrapZodType,
-  RequireKeysWithRequiredChildren,
-  UnwrapMapping,
+  value ErrorOption,
+  value NestedValue,
+  value UseFormReturn,
+} from "react-hook-form";
+import { value FormProvider, value useForm } from "react-hook-form";
+import type { value AnyZodObject, value z, value ZodEffects } from "zod";
+import { value getComponentForZodType } from "./getComponentForZodType";
+import type {
+  value IndexOf,
+  value IndexOfUnwrapZodType,
+  value RequireKeysWithRequiredChildren,
+  value UnwrapMapping,
 } from "./typeUtilities";
-import { unwrapEffects } from "./unwrap";
-import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
-import { FieldContextProvider, FormContext } from "./FieldContext";
-import { isZodTypeEqual } from "./isZodTypeEqual";
-import { duplicateTypeError, printWarningsForSchema } from "./logging";
+import { value unwrapEffects } from "./unwrap";
+import type {
+  value RTFBaseZodType,
+  value RTFSupportedZodTypes,
+} from "./supportedZodTypes";
+import { value FieldContextProvider, value FormContext } from "./FieldContext";
+import { value isZodTypeEqual } from "./isZodTypeEqual";
 import {
-  duplicateIdErrorMessage,
-  HIDDEN_ID_PROPERTY,
-  isSchemaWithHiddenProperties,
+  value duplicateTypeError,
+  value printWarningsForSchema,
+} from "./logging";
+import {
+  value duplicateIdErrorMessage,
+  value HIDDEN_ID_PROPERTY,
+  value isSchemaWithHiddenProperties,
 } from "./createFieldSchema";
-import { ZodNullableType } from "zod/lib/types";
-import type { BrowserNativeObject } from "react-hook-form";
+import { value ZodNullableType } from "zod/lib/types";
+import type { value BrowserNativeObject } from "react-hook-form";
 import {
-  ChoiceType,
-  getZodMetaInfo,
-  MetaInfo,
-  ZodMetaDataItem,
+  value ChoiceType,
+  value getZodMetaInfo,
+  value MetaInfo,
+  value ZodMetaDataItem,
 } from "../../../utils/zod-meta";
-import { formResolver } from "../../common/forms/form-resolver";
-import { cn } from "@/lib/utils";
-import { map } from "rambda";
+import { value formResolver } from "../../common/forms/form-resolver";
+import { value cn } from "@/lib/utils";
+import { value map } from "rambda";
 
 export type PreprocessField = (
   name: string,
@@ -343,35 +353,37 @@ export function createTsForm<
      * ```
      */
     props?: RequireKeysWithRequiredChildren<
-      Partial<{
-        [key in keyof z.infer<UnwrapEffects<SchemaType>>]: Mapping[IndexOf<
-          UnwrapMapping<Mapping>,
-          readonly [
-            IndexOfUnwrapZodType<
-              ReturnType<UnwrapEffects<SchemaType>["_def"]["shape"]>[key]
-            >,
-            any
-          ]
-        >] extends readonly [any, any] // I guess this tells typescript it has a second element? errors without this check.
-          ? Omit<
-              ComponentProps<
-                Mapping[IndexOf<
-                  UnwrapMapping<Mapping>,
-                  readonly [
-                    IndexOfUnwrapZodType<
-                      ReturnType<
-                        UnwrapEffects<SchemaType>["_def"]["shape"]
-                      >[key]
-                    >,
-                    any
-                  ]
-                >][1]
+      Partial<
+        {
+          [key in keyof z.infer<UnwrapEffects<SchemaType>>]: Mapping[IndexOf<
+            UnwrapMapping<Mapping>,
+            readonly [
+              IndexOfUnwrapZodType<
+                ReturnType<UnwrapEffects<SchemaType>["_def"]["shape"]>[key]
               >,
-              PropsMapType[number][1]
-            > &
-              ExtraProps
-          : never;
-      }>
+              any
+            ]
+          >] extends readonly [any, any] // I guess this tells typescript it has a second element? errors without this check.
+            ? Omit<
+                ComponentProps<
+                  Mapping[IndexOf<
+                    UnwrapMapping<Mapping>,
+                    readonly [
+                      IndexOfUnwrapZodType<
+                        ReturnType<
+                          UnwrapEffects<SchemaType>["_def"]["shape"]
+                        >[key]
+                      >,
+                      any
+                    ]
+                  >][1]
+                >,
+                PropsMapType[number][1]
+              > &
+                ExtraProps
+            : never;
+        }
+      >
     >;
   }> &
     RequireKeysWithRequiredChildren<{
@@ -380,9 +392,8 @@ export function createTsForm<
        */
       formProps?: Omit<ComponentProps<FormType>, "children" | "onSubmit">;
     }>) {
-    const useFormResultInitialValue = useRef<
-      undefined | ReturnType<typeof useForm>
-    >(form);
+    const useFormResultInitialValue =
+      useRef<undefined | ReturnType<typeof useForm>>(form);
     if (!!useFormResultInitialValue.current !== !!form) {
       throw new Error(useFormResultValueChangedErrorMesssage());
     }

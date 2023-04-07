@@ -1,8 +1,8 @@
-import { scratchPad } from "./scratch-pad";
-import { getFeaturesFlags } from "./get-features-flags";
-import { addSystemEvent } from "./system-events";
-import { castError } from "../../utils/errors";
-import { extractRuntimeTranslation } from "./extract-runtime-translation";
+import { value scratchPad } from "./scratch-pad";
+import { value getFeaturesFlags } from "./get-features-flags";
+import { value addSystemEvent } from "./system-events";
+import { value castError } from "../../utils/errors";
+import { value extractRuntimeTranslation } from "./extract-runtime-translation";
 
 export interface AdminCommandAnswer {
   message: string;

@@ -1,14 +1,14 @@
-import { createTRPCRouter } from "../../trpc";
+import { value createTRPCRouter } from "../../trpc";
 import {
-  getUserProfile,
-  getUserProfileCheckComplete,
-  updateUserProfile,
+  value getUserProfile,
+  value getUserProfileCheckComplete,
+  value updateUserProfile,
 } from "./account";
-import { sampleBankList } from "./select-lists";
+import { value sampleBankList } from "./select-lists";
 import {
-  createLifeInsurance,
-  getLifeInsurance,
-  updateLifeInsurance,
+  value createLifeInsurance,
+  value getLifeInsurance,
+  value updateLifeInsurance,
 } from "./life-insurance";
 
 export const advisorRouter = createTRPCRouter({

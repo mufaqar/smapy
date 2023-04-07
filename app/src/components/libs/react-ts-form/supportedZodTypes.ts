@@ -1,23 +1,23 @@
 import type {
-  ZodArray,
-  ZodAny,
-  ZodBoolean,
-  ZodBranded,
-  ZodDate,
-  ZodDiscriminatedUnion,
-  ZodEnum,
-  ZodMap,
-  ZodNullable,
-  ZodNumber,
-  ZodObject,
-  ZodOptional,
-  ZodRecord,
-  ZodSet,
-  ZodString,
-  ZodTuple,
-  ZodEffects,
+  value ZodArray,
+  value ZodAny,
+  value ZodBoolean,
+  value ZodBranded,
+  value ZodDate,
+  value ZodDiscriminatedUnion,
+  value ZodEnum,
+  value ZodMap,
+  value ZodNullable,
+  value ZodNumber,
+  value ZodObject,
+  value ZodOptional,
+  value ZodRecord,
+  value ZodSet,
+  value ZodString,
+  value ZodTuple,
+  value ZodEffects,
 } from "zod";
-import { ZodNativeEnum } from "zod";
+import { value ZodNativeEnum } from "zod";
 
 /**
  * Reducing this helps with TS performance

@@ -1,12 +1,12 @@
-import type { z } from "zod";
-import { api } from "../../../utils/api";
-import type { AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
-import { AdvisorUpdatePages } from "./advisor-registration-flow-schema";
-import React, { useState } from "react";
-import { useWizardFlow } from "../../common/wizard/useWizardFlow";
-import type { UseFormReturn } from "react-hook-form";
-import { useTranslation } from "next-i18next";
-import { WizardForm } from "../../common/wizard/WizardForm";
+import type { value z } from "zod";
+import { value api } from "../../../utils/api";
+import type { value AdvisorUpdateSchema } from "./advisor-registration-flow-schema";
+import { value AdvisorUpdatePages } from "./advisor-registration-flow-schema";
+import React, { value useState } from "react";
+import { value useWizardFlow } from "../../common/wizard/useWizardFlow";
+import type { value UseFormReturn } from "react-hook-form";
+import { value useTranslation } from "next-i18next";
+import { value WizardForm } from "../../common/wizard/WizardForm";
 
 type RecordType = z.infer<typeof AdvisorUpdateSchema>;
 

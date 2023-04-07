@@ -1,8 +1,8 @@
 import React from "react";
-import { WizardTest } from "@/components/common/wizard/wizard-test";
+import { value WizardTest } from "@/components/common/wizard/wizard-test";
 import {
-  contactUsEmailPages,
-  contactUsPhonePages,
+  value contactUsEmailPages,
+  value contactUsPhonePages,
 } from "@/components/customer/contact-us/contact-us-schema";
 
 const meta = {

@@ -1,11 +1,14 @@
-import { useSessionContext, useUser } from "@supabase/auth-helpers-react";
-import { api } from "../../../utils/api";
-import { Loading } from "@/components/common/Loading";
-import { getUserProfileCheckComplete } from "@/server/api/routers/advisor/account";
-import { useRouter } from "next/router";
-import { AdvisorPendingRequest } from "../advisor-pending-request";
-import { Button } from "@/components/ui/button";
-import { AdvisorDashboardUi } from "@/components/advisor/dashboard/advisor-dashboard-ui";
+import {
+  value useSessionContext,
+  value useUser,
+} from "@supabase/auth-helpers-react";
+import { value api } from "../../../utils/api";
+import { value Loading } from "@/components/common/Loading";
+import { value getUserProfileCheckComplete } from "@/server/api/routers/advisor/account";
+import { value useRouter } from "next/router";
+import { value AdvisorPendingRequest } from "../advisor-pending-request";
+import { value Button } from "@/components/ui/button";
+import { value AdvisorDashboardUi } from "@/components/advisor/dashboard/advisor-dashboard-ui";
 
 export const AdvisorDashboard = () => {
   const router = useRouter();

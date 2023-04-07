@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { value PrismaClient } from "@prisma/client";
 
 // import { env } from "../env.mjs";
 

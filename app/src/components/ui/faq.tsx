@@ -1,8 +1,8 @@
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+  value Accordion,
+  value AccordionContent,
+  value AccordionItem,
+  value AccordionTrigger,
 } from "@/components/ui/accordion";
 
 interface Props {

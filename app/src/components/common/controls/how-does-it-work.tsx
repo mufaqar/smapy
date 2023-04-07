@@ -1,6 +1,6 @@
-import { HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
-import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
-import type { ProductType } from "@/components/customer/compare/compare-flow-schema";
+import { value HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
+import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { value ProductType } from "@/components/customer/compare/compare-flow-schema";
 
 interface Props extends WizardControlProps {
   product: ProductType;

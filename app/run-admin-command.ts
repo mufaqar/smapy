@@ -3,12 +3,12 @@ dotenv.config();
 
 // console.log(`muly:`, { env: process.env });
 
-import { executeAdminCommand } from "./src/server/process/admin-commands";
+import { value executeAdminCommand } from "./src/server/process/admin-commands";
 import * as minimist from "minimist";
 // import * as colorize from 'json-colorizer';
 // const colorize = require('json-colorizer');
 import superjson from "superjson";
-import { writeFileSync } from "fs";
+import { value writeFileSync } from "fs";
 const jclrz = require("json-colorz");
 
 // jclrz.level.show = true

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { extractRuntimeTranslation } from "../../server/process/extract-runtime-translation";
-import { useTranslation } from "next-i18next";
-import { i18nGetServerSideProps } from "../../utils/i18n-ssr";
+import { value useState } from "react";
+import { value extractRuntimeTranslation } from "../../server/process/extract-runtime-translation";
+import { value useTranslation } from "next-i18next";
+import { value i18nGetServerSideProps } from "../../utils/i18n-ssr";
 
 export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 

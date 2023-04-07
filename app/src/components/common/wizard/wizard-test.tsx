@@ -1,9 +1,9 @@
-import type { WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
-import { useWizardFlow } from "@/components/common/wizard/useWizardFlow";
-import { WizardPage } from "./WizardPage";
-import { FormHeader } from "@/components/common/wizard/FormHeader";
+import type { value WizardPagesDefinition } from "@/components/common/wizard/useWizardFlow";
+import { value useWizardFlow } from "@/components/common/wizard/useWizardFlow";
+import { value WizardPage } from "./WizardPage";
+import { value FormHeader } from "@/components/common/wizard/FormHeader";
 import React from "react";
-import { useTranslation } from "next-i18next";
+import { value useTranslation } from "next-i18next";
 
 export const WizardTest = ({
   pages,
