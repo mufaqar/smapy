@@ -7,11 +7,19 @@ export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 
 const ExtractRuntimeTranslation = () => {
   const { t: advisor } = useTranslation("advisor");
+  const { t: landingPage } = useTranslation("landing-page");
+  const { t: customer } = useTranslation("customer");
+  const { t: common } = useTranslation("common");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleExtract = () => {
     setIsLoading(true);
-    const answer = extractRuntimeTranslation({ advisor });
+    const answer = extractRuntimeTranslation({
+      "landing-page": landingPage,
+      advisor,
+      customer,
+      common,
+    });
     console.log(`extractRuntimeTranslation ${answer.message}`, { answer });
     setIsLoading(false);
   };

@@ -32,7 +32,8 @@
     "placeholder": "Happy to see you",
     "entry": "",
     "entry_customer": "Customer entry",
-    "entry_advisor": "Advisor entry"
+    "entry_advisor": "Advisor entry",
+    "error_mismatch": "Phone is registered with different id"
   },
   "Required": "Required",
   "Not valid israeli id number": "Not valid israeli id number",
