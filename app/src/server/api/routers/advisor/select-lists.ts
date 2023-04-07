@@ -1,4 +1,4 @@
-import { value protectedProcedure } from "../../trpc";
+import { protectedProcedure } from "../../trpc";
 
 export const sampleBankList = protectedProcedure.query(({ ctx }) => {
   return [

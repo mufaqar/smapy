@@ -1,5 +1,5 @@
-import type { value WizardControlProps } from "../../common/wizard/useWizardFlow";
-import { value Button } from "@/components/ui/button";
+import type { WizardControlProps } from "../../common/wizard/useWizardFlow";
+import { Button } from "@/components/ui/button";
 
 export const MortgageSummary = ({ onStepNext }: WizardControlProps) => {
   return (

@@ -5,12 +5,12 @@
 
 import { type NextPage } from "next";
 import Head from "next/head";
-import type { value MetaInfo } from "../utils/zod-meta";
-import { value getZodMetaInfo } from "../utils/zod-meta";
-import { value AdvisorUpdateSchema } from "../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { value map } from "rambda";
-import { value useTranslation } from "next-i18next";
-import { value i18nGetServerSideProps } from "../utils/i18n-ssr";
+import type { MetaInfo } from "../utils/zod-meta";
+import { getZodMetaInfo } from "../utils/zod-meta";
+import { AdvisorUpdateSchema } from "../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { map } from "rambda";
+import { useTranslation } from "next-i18next";
+import { i18nGetServerSideProps } from "../utils/i18n-ssr";
 
 export const getServerSideProps = i18nGetServerSideProps(["advisor"]);
 

@@ -2,10 +2,10 @@ import {
   value useSessionContext,
   value useUser,
 } from "@supabase/auth-helpers-react";
-import { value api } from "../../../utils/api";
-import { value Loading } from "@/components/common/Loading";
-import { value useRouter } from "next/router";
-import { value CustomerDashboardUi } from "@/components/customer/dashboard/customer-dashboard-ui";
+import { api } from "../../../utils/api";
+import { Loading } from "@/components/common/Loading";
+import { useRouter } from "next/router";
+import { CustomerDashboardUi } from "@/components/customer/dashboard/customer-dashboard-ui";
 
 export const CustomerDashboard = () => {
   const router = useRouter();

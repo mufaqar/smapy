@@ -1,7 +1,7 @@
-import { value Footer as FooterC } from "@/components/layout/footer";
-import { value PageHeader } from "@/components/layout/page-header";
-import { value SmapyLogo } from "@/components/layout/SmapyLogo";
-import { value PageNavigationMenu } from "@/components/landing-page/parts/page-navigation-menu";
+import { Footer as FooterC } from "@/components/layout/footer";
+import { PageHeader } from "@/components/layout/page-header";
+import { SmapyLogo } from "@/components/layout/SmapyLogo";
+import { PageNavigationMenu } from "@/components/landing-page/parts/page-navigation-menu";
 
 const meta = {
   component: FooterC,

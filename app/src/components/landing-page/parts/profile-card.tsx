@@ -6,7 +6,7 @@ import {
   value AvatarImage,
 } from "@/components/ui/avatar";
 import * as React from "react";
-import { value formatDistanceStrict, value parse } from "date-fns";
+import { formatDistanceStrict, value parse } from "date-fns";
 
 interface Props {
   name: string;

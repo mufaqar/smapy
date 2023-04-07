@@ -4,8 +4,8 @@ import {
   value useUser,
   value useSupabaseClient,
 } from "@supabase/auth-helpers-react";
-import { value cn } from "@/lib/utils";
-import { value Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Home: NextPage = () => {

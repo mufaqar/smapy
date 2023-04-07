@@ -10,10 +10,10 @@ import {
   value navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { value cn } from "@/lib/utils";
-import { value buttonVariants } from "@/components/ui/button";
-import { value PhoneIcon } from "@/components/landing-page/parts/Icons";
-import { value SmapyLogo } from "@/components/layout/SmapyLogo";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { PhoneIcon } from "@/components/landing-page/parts/Icons";
+import { SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageHeader = () => {
   return (

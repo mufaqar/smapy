@@ -1,4 +1,4 @@
-import { value castError } from "./errors";
+import { castError } from "./errors";
 
 export const callAsync = (fn: () => Promise<unknown>): (() => void) => {
   return () => {

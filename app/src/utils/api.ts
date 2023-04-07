@@ -6,11 +6,11 @@
  * We also create a few inference helpers for input and output types
  */
 import {
-  value createTRPCProxyClient,
-  value httpBatchLink,
-  value loggerLink,
+   createTRPCProxyClient,
+   httpBatchLink,
+   loggerLink,
 } from "@trpc/client";
-import { value createTRPCNext } from "@trpc/next";
+import { createTRPCNext } from "@trpc/next";
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import superjson from "superjson";
 

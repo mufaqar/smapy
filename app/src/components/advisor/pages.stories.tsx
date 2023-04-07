@@ -1,6 +1,6 @@
-import { value AdvisorPendingRequest } from "@/components/advisor/advisor-pending-request";
-import { value AdvisorDashboardUi } from "@/components/advisor/dashboard/advisor-dashboard-ui";
-import { value pause } from "@/utils/pause";
+import { AdvisorPendingRequest } from "@/components/advisor/advisor-pending-request";
+import { AdvisorDashboardUi } from "@/components/advisor/dashboard/advisor-dashboard-ui";
+import { pause } from "@/utils/pause";
 
 const meta = {
   component: AdvisorDashboardUi,

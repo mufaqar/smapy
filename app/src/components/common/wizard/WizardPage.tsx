@@ -1,9 +1,9 @@
 import React from "react";
-import type { value WizardControlProps } from "./useWizardFlow";
+import type { WizardControlProps } from "./useWizardFlow";
 import Head from "next/head";
-import { value WizardForm } from "@/components/common/wizard/WizardForm";
-import { value PageHeader } from "@/components/layout/page-header";
-import { value Footer } from "@/components/layout/footer";
+import { WizardForm } from "@/components/common/wizard/WizardForm";
+import { PageHeader } from "@/components/layout/page-header";
+import { Footer } from "@/components/layout/footer";
 
 interface Props<T> {
   wizard: WizardControlProps;

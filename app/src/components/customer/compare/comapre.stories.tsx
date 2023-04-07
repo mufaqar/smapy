@@ -1,6 +1,6 @@
 import React from "react";
-import { value WizardTest } from "@/components/common/wizard/wizard-test";
-import { value compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
+import { WizardTest } from "@/components/common/wizard/wizard-test";
+import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
 
 const meta = {
   component: WizardTest,

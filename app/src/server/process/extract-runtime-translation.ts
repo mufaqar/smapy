@@ -1,13 +1,13 @@
-import { value AdvisorLifeInsurancePages } from "../../components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
-import { value AdvisorUpdatePages } from "../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { value schemaLogin } from "../../components/auth/user-auth-schema";
-import type { value ZodTypeAny } from "zod/lib/types";
-import type { value TranslationFn } from "../../utils/i18n-utils";
-import { value translateSchemaInfo } from "../../utils/i18n-utils";
-import type { value WizardPagesDefinition } from "../../components/common/wizard/useWizardFlow";
-import { value getPagesZodMetaInfo } from "../../components/common/wizard/useWizardFlow";
-import { value getZodMetaInfo } from "../../utils/zod-meta";
-import { value compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
+import { AdvisorLifeInsurancePages } from "../../components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
+import { AdvisorUpdatePages } from "../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { schemaLogin } from "../../components/auth/user-auth-schema";
+import type { ZodTypeAny } from "zod/lib/types";
+import type { TranslationFn } from "../../utils/i18n-utils";
+import { translateSchemaInfo } from "../../utils/i18n-utils";
+import type { WizardPagesDefinition } from "../../components/common/wizard/useWizardFlow";
+import { getPagesZodMetaInfo } from "../../components/common/wizard/useWizardFlow";
+import { getZodMetaInfo } from "../../utils/zod-meta";
+import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
 import {
   value contactUsEmailPages,
   value contactUsPhonePages,

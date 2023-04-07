@@ -1,5 +1,5 @@
-import type { value MetaInfo } from "@/utils/zod-meta";
-import { value filter, value map, value uniq, value uniqBy } from "rambda";
+import type { MetaInfo } from "@/utils/zod-meta";
+import { filter, value map, value uniq, value uniqBy } from "rambda";
 
 export type WizardLayout = "none" | "steps";
 

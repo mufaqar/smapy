@@ -1,8 +1,8 @@
-import { value FormHeader } from "@/components/common/wizard/FormHeader";
+import { FormHeader } from "@/components/common/wizard/FormHeader";
 import React from "react";
-import { value WizardTest } from "@/components/common/wizard/wizard-test";
-import { value AdvisorUpdatePages } from "@/components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { value AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
+import { WizardTest } from "@/components/common/wizard/wizard-test";
+import { AdvisorUpdatePages } from "@/components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
+import { AdvisorLifeInsurancePages } from "@/components/advisor/advisor-life-insurance/advisor-life-insurance-schema";
 
 const meta = {
   component: WizardTest,

@@ -1,11 +1,11 @@
-import { value maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
+import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 import {
   value useMeta,
   value useTsController,
 } from "@/components/libs/react-ts-form";
 import React from "react";
-import { value clsx } from "clsx";
-import { value Label } from "@/components/ui/label";
+import { clsx } from "clsx";
+import { Label } from "@/components/ui/label";
 
 interface Props {
   showLabel?: boolean;

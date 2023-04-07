@@ -1,5 +1,5 @@
-import { value useTranslation } from "next-i18next";
-import { value CompanyLogo } from "@/components/landing-page/parts/company-logo";
+import { useTranslation } from "next-i18next";
+import { CompanyLogo } from "@/components/landing-page/parts/company-logo";
 import React from "react";
 
 export const SecurityPrivacy = () => {

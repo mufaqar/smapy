@@ -2,8 +2,8 @@
        @typescript-eslint/require-await
 */
 
-import { value UserId } from "@/components/auth/user-id";
-import { value OTP } from "@/components/auth/otp";
+import { UserId } from "@/components/auth/user-id";
+import { OTP } from "@/components/auth/otp";
 
 const meta = {
   component: UserId,

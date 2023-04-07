@@ -1,5 +1,5 @@
 import React from "react";
-import { value WizardTest } from "@/components/common/wizard/wizard-test";
+import { WizardTest } from "@/components/common/wizard/wizard-test";
 import {
   value contactUsEmailPages,
   value contactUsPhonePages,

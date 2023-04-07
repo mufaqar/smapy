@@ -1,5 +1,5 @@
-import { value CustomerDashboardUi } from "@/components/customer/dashboard/customer-dashboard-ui";
-import { value pause } from "@/utils/pause";
+import { CustomerDashboardUi } from "@/components/customer/dashboard/customer-dashboard-ui";
+import { pause } from "@/utils/pause";
 
 const meta = {
   component: CustomerDashboardUi,

@@ -110,7 +110,7 @@ const customerDetails1 = z
   })
   .refine(
     (value) => {
-      console.log(`muly:refine:smoking_stop_month_validation`, { value });
+      console.log(`muly:refine:smoking_stop_month_validation`, {});
       return value.smoking !== "stop" || value.smoking_stop_month || 0 > 0;
     },
     {

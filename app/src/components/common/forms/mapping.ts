@@ -1,7 +1,7 @@
-import { value z } from "zod";
-import { value TextField } from "./TextField";
-import { value CheckboxField } from "./CheckboxField";
-import { value DateField } from "./DateField";
+import { z } from "zod";
+import { TextField } from "./TextField";
+import { CheckboxField } from "./CheckboxField";
+import { DateField } from "./DateField";
 
 const enum_like = {
   sample: "sample",

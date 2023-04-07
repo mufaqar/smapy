@@ -1,18 +1,18 @@
 import React from "react";
-import { value useWizardFlow } from "../../common/wizard/useWizardFlow";
-import { value useTranslation } from "next-i18next";
+import { useWizardFlow } from "../../common/wizard/useWizardFlow";
+import { useTranslation } from "next-i18next";
 import {
   value compareFlowPages,
   value ProductType,
 } from "@/components/customer/compare/compare-flow-schema";
-import { value useRouter } from "next/router";
-import { value WizardPage } from "@/components/common/wizard/WizardPage";
-import type { value HowToContactType } from "@/components/customer/contact-us/contact-us-schema";
+import { useRouter } from "next/router";
+import { WizardPage } from "@/components/common/wizard/WizardPage";
+import type { HowToContactType } from "@/components/customer/contact-us/contact-us-schema";
 import {
   value contactUsEmailPages,
   value contactUsPhonePages,
 } from "@/components/customer/contact-us/contact-us-schema";
-import { value api } from "@/utils/api";
+import { api } from "@/utils/api";
 
 export const ContactUsFlow = () => {
   const { t } = useTranslation("customer");

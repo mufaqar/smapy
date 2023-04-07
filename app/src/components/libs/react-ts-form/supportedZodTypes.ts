@@ -17,7 +17,7 @@ import type {
   value ZodTuple,
   value ZodEffects,
 } from "zod";
-import { value ZodNativeEnum } from "zod";
+import { ZodNativeEnum } from "zod";
 
 /**
  * Reducing this helps with TS performance

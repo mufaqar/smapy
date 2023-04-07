@@ -1,7 +1,7 @@
-import { value cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import React from "react";
-import { value getStepInfoTitles } from "@/components/common/wizard/steps-info";
-import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import { getStepInfoTitles } from "@/components/common/wizard/steps-info";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
 interface Props {
   wizard: WizardControlProps;

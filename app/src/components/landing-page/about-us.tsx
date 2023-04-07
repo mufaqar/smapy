@@ -1,6 +1,6 @@
-import { value useTranslation } from "next-i18next";
-import { value Button } from "@/components/ui/button";
-import { value ProfileCard } from "@/components/landing-page/parts/profile-card";
+import { useTranslation } from "next-i18next";
+import { Button } from "@/components/ui/button";
+import { ProfileCard } from "@/components/landing-page/parts/profile-card";
 import React from "react";
 
 export const AboutUs = () => {

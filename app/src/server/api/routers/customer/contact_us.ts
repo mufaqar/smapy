@@ -1,7 +1,7 @@
-import { value publicProcedure } from "@/server/api/trpc";
-import { value contactDetailsPhone } from "@/components/customer/contact-us/contact-us-schema";
-import { value Novu } from "@novu/node";
-import { value env } from "@/env.mjs";
+import { publicProcedure } from "@/server/api/trpc";
+import { contactDetailsPhone } from "@/components/customer/contact-us/contact-us-schema";
+import { Novu } from "@novu/node";
+import { env } from "@/env.mjs";
 
 const novu = new Novu(env.NOVU_API_KEY);
 

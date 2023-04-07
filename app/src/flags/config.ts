@@ -1,5 +1,5 @@
-import type { value Configuration } from "@happykit/flags/config";
-import { value env } from "../env.mjs";
+import type { Configuration } from "@happykit/flags/config";
+import { env } from "../env.mjs";
 
 // You can replace this with your exact flag types
 export type AppFlags = {

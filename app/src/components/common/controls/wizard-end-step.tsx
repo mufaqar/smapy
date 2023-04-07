@@ -1,8 +1,8 @@
-import { value ProductType } from "@/components/customer/compare/compare-flow-schema";
-import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
-import { value evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
+import { ProductType } from "@/components/customer/compare/compare-flow-schema";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
 import React from "react";
-import { value useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   children?: React.ReactNode;

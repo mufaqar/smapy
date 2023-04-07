@@ -1,6 +1,6 @@
-import { value useTranslation } from "next-i18next";
-import { value PriceCard } from "@/components/landing-page/parts/price-card";
-import { value SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
+import { useTranslation } from "next-i18next";
+import { PriceCard } from "@/components/landing-page/parts/price-card";
+import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
 import React from "react";
 
 export const Prices = () => {

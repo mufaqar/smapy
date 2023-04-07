@@ -1,7 +1,7 @@
-import { value createTRPCRouter } from "./trpc";
-import { value advisorRouter } from "./routers/advisor";
-import { value miscRouter } from "./routers/misc";
-import { value customerRouter } from "@/server/api/routers/customer";
+import { createTRPCRouter } from "./trpc";
+import { advisorRouter } from "./routers/advisor";
+import { miscRouter } from "./routers/misc";
+import { customerRouter } from "@/server/api/routers/customer";
 
 /**
  * This is the primary router for your server.

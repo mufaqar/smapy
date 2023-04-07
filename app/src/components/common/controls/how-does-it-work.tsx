@@ -1,6 +1,6 @@
-import { value HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
-import type { value WizardControlProps } from "@/components/common/wizard/useWizardFlow";
-import type { value ProductType } from "@/components/customer/compare/compare-flow-schema";
+import { HowDoesItWorkCard } from "@/components/common/controls/how-does-it-work-card";
+import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
+import type { ProductType } from "@/components/customer/compare/compare-flow-schema";
 
 interface Props extends WizardControlProps {
   product: ProductType;
@@ -21,7 +21,7 @@ export const HowDoesItWork = ({ product, onStepNext, step, props }: Props) => {
             image={`/images/how-does-it-work/${idx}.svg`}
             text={
               step.meta.text?.[
-                `text_${idx === 4 ? `${product}${idx}` : idx}`
+              `text_${idx === 4 ? `${product}${idx}` : idx}`
               ] || ""
             }
           />

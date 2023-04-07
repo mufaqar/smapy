@@ -1,19 +1,19 @@
-import { value Form } from "../common/forms/Form";
-import type { value z } from "zod";
-import { value useSessionContext } from "@supabase/auth-helpers-react";
-import React, { value useState } from "react";
-import { value useRouter } from "next/router";
-import { value api } from "../../utils/api";
-import { value useTranslation } from "next-i18next";
+import { Form } from "../common/forms/Form";
+import type { z } from "zod";
+import { useSessionContext } from "@supabase/auth-helpers-react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { api } from "../../utils/api";
+import { useTranslation } from "next-i18next";
 import {
   value evaluateFormControlCallback,
   value usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
-import { value useFlagBag } from "@/flags/client";
-import type { value CustomerRole } from "./user-auth-schema";
-import { value schemaLogin } from "./user-auth-schema";
-import { value OTP } from "./otp";
-import { value evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
+import { useFlagBag } from "@/flags/client";
+import type { CustomerRole } from "./user-auth-schema";
+import { schemaLogin } from "./user-auth-schema";
+import { OTP } from "./otp";
+import { evaluateControlCallback } from "@/components/common/wizard/useWizardFlow";
 
 const schema = schemaLogin;
 type LoginValues = z.infer<typeof schema>;

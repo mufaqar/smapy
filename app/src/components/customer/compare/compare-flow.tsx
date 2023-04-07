@@ -1,10 +1,10 @@
 import React from "react";
-import { value useWizardFlow } from "../../common/wizard/useWizardFlow";
-import { value useTranslation } from "next-i18next";
-import type { value ProductType } from "@/components/customer/compare/compare-flow-schema";
-import { value compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
-import { value useRouter } from "next/router";
-import { value WizardPage } from "@/components/common/wizard/WizardPage";
+import { useWizardFlow } from "../../common/wizard/useWizardFlow";
+import { useTranslation } from "next-i18next";
+import type { ProductType } from "@/components/customer/compare/compare-flow-schema";
+import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
+import { useRouter } from "next/router";
+import { WizardPage } from "@/components/common/wizard/WizardPage";
 
 export const CompareFlow = () => {
   const { t } = useTranslation("customer");

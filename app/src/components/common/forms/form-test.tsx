@@ -1,6 +1,6 @@
-import { value usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
-import { value Form } from "@/components/common/forms/Form";
-import { value useTranslation } from "next-i18next";
+import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
+import { Form } from "@/components/common/forms/Form";
+import { useTranslation } from "next-i18next";
 
 const FormTestComponent = (args: any) => {
   const { t } = useTranslation("customer");

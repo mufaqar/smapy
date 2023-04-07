@@ -1,9 +1,9 @@
-import { value createTsForm } from "../../libs/react-ts-form";
-import { value mapping } from "./mapping";
+import { createTsForm } from "../../libs/react-ts-form";
+import { mapping } from "./mapping";
 import React from "react";
-import { value useSubmitAction } from "./useSubmitAction";
-import { value Button } from "@/components/ui/button";
-import { value cn } from "@/lib/utils";
+import { useSubmitAction } from "./useSubmitAction";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export interface CommonFormProps {
   onSubmit: (values: unknown) => Promise<void>;

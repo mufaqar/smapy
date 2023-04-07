@@ -6,8 +6,8 @@ import {
   value AvatarImage,
 } from "@/components/ui/avatar";
 import * as React from "react";
-import { value formatDistanceStrict, value parse } from "date-fns";
-import { value useTranslation } from "next-i18next";
+import { formatDistanceStrict, value parse } from "date-fns";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   name: string;

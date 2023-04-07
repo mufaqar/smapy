@@ -6,7 +6,7 @@
       @typescript-eslint/no-unsafe-argument
 */
 
-import type { value RefinementCtx } from "zod";
+import type { RefinementCtx } from "zod";
 
 export const preTransformDates = (schema: any, value: any) => {
   const isDate = (field: any): boolean => {

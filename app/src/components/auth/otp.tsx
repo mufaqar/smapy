@@ -1,13 +1,13 @@
-import { value Form } from "../common/forms/Form";
-import type { value z } from "zod";
-import { value useTranslation } from "next-i18next";
+import { Form } from "../common/forms/Form";
+import type { z } from "zod";
+import { useTranslation } from "next-i18next";
 import {
   value evaluateFormControlCallback,
   value usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
-import type { value CustomerRole } from "./user-auth-schema";
-import { value schemaOTP } from "./user-auth-schema";
-import { value FormError } from "../common/forms/useSubmitAction";
+import type { CustomerRole } from "./user-auth-schema";
+import { schemaOTP } from "./user-auth-schema";
+import { FormError } from "../common/forms/useSubmitAction";
 
 const schema = schemaOTP;
 type OTPValues = z.infer<typeof schema>;

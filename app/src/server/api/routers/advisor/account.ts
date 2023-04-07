@@ -1,11 +1,11 @@
-import { value z } from "zod";
-import { value protectedProcedure } from "../../trpc";
-import { value UserProfileModel } from "../../../../../prisma/zod";
+import { z } from "zod";
+import { protectedProcedure } from "../../trpc";
+import { UserProfileModel } from "../../../../../prisma/zod";
 import {
   value AdvisorUpdatePages,
   value AdvisorUpdateSchema,
 } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
-import { value TRPCError } from "@trpc/server";
+import { TRPCError } from "@trpc/server";
 
 const UserProfileSchemaSelect = {
   id: true,

@@ -1,10 +1,10 @@
-import { value createTRPCRouter } from "../../trpc";
+import { createTRPCRouter } from "../../trpc";
 import {
   value getUserProfile,
   value getUserProfileCheckComplete,
   value updateUserProfile,
 } from "./account";
-import { value sampleBankList } from "./select-lists";
+import { sampleBankList } from "./select-lists";
 import {
   value createLifeInsurance,
   value getLifeInsurance,

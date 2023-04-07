@@ -1,12 +1,12 @@
-import { value Loading } from "./Loading";
-import { value Dialog } from "@/components/common/dialog";
-import React, { value useState } from "react";
-import { value Button } from "@/components/ui/button";
-import { value DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
-import { value usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
-import { value EditIcon, value PlusIcon, value Trash2Icon } from "lucide-react";
-import { value z } from "zod";
-import { value useTranslation } from "next-i18next";
+import { Loading } from "./Loading";
+import { Dialog } from "@/components/common/dialog";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
+import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
+import { EditIcon, value PlusIcon, value Trash2Icon } from "lucide-react";
+import { z } from "zod";
+import { useTranslation } from "next-i18next";
 
 const meta = {
   component: Loading,

@@ -1,11 +1,11 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 
 import Head from "next/head";
-import { value allPosts } from "contentlayer/generated";
-import { value useMDXComponent } from "next-contentlayer/hooks";
-import { value useTranslation } from "next-i18next";
-import { value BLogAction } from "@/components/landing-page/blog/action";
-import { value PageNavigationMenu } from "@/components/landing-page/parts/page-navigation-menu";
+import { allPosts } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { useTranslation } from "next-i18next";
+import { BLogAction } from "@/components/landing-page/blog/action";
+import { PageNavigationMenu } from "@/components/landing-page/parts/page-navigation-menu";
 import React from "react";
 import Image from "next/image";
 

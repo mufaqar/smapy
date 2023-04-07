@@ -1,4 +1,4 @@
-import { value Checkbox } from "./checkbox";
+import { Checkbox } from "./checkbox";
 
 const meta = {
   component: Checkbox,

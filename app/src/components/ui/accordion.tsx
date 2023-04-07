@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { value ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
-import { value cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const Accordion = AccordionPrimitive.Root;

@@ -6,13 +6,13 @@
       @typescript-eslint/no-unsafe-argument
 */
 
-import type { value ZodEffects } from "zod";
-import { value z, value ZodType } from "zod";
-import type { value ZodTypeAny } from "zod/lib/types";
+import type { ZodEffects } from "zod";
+import { z,  ZodType } from "zod";
+import type { ZodTypeAny } from "zod/lib/types";
 import type React from "react";
-import type { value WizardControlProps } from "../components/common/wizard/useWizardFlow";
-import type { value WizardInfo } from "../components/common/wizard/useWizardFlow";
-import { value mergeDeepRight } from "rambda";
+import type { WizardControlProps } from "../components/common/wizard/useWizardFlow";
+import type { WizardInfo } from "../components/common/wizard/useWizardFlow";
+import { mergeDeepRight } from "rambda";
 
 export const SPLIT_DESCRIPTION_SYMBOL = " // ";
 

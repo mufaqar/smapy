@@ -16,12 +16,12 @@
  * database, the session, etc.
  */
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-import { value initTRPC, value TRPCError } from "@trpc/server";
+import { initTRPC, value TRPCError } from "@trpc/server";
 import superjson from "superjson";
-import type { value User } from "@supabase/auth-helpers-nextjs";
-import { value createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import { value prisma } from "../db";
-import { value cookieOptions } from "../../utils/cookie-options";
+import type { User } from "@supabase/auth-helpers-nextjs";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { prisma } from "../db";
+import { cookieOptions } from "../../utils/cookie-options";
 
 type CreateContextOptions = {
   user: User | null;

@@ -1,4 +1,4 @@
-import { value z } from "zod";
+import { z } from "zod";
 
 /**
  * Constrains a type to an object other than an array.

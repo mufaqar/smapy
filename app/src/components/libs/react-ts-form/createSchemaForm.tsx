@@ -3,29 +3,29 @@ import type {
   value ReactNode,
   value RefAttributes,
 } from "react";
-import React, { value Fragment, value useRef } from "react";
-import type { value ComponentProps } from "react";
+import React, { Fragment, value useRef } from "react";
+import type { ComponentProps } from "react";
 import type {
   value ErrorOption,
   value NestedValue,
   value UseFormReturn,
 } from "react-hook-form";
-import { value FormProvider, value useForm } from "react-hook-form";
-import type { value AnyZodObject, value z, value ZodEffects } from "zod";
-import { value getComponentForZodType } from "./getComponentForZodType";
+import { FormProvider, value useForm } from "react-hook-form";
+import type { AnyZodObject, value z, value ZodEffects } from "zod";
+import { getComponentForZodType } from "./getComponentForZodType";
 import type {
   value IndexOf,
   value IndexOfUnwrapZodType,
   value RequireKeysWithRequiredChildren,
   value UnwrapMapping,
 } from "./typeUtilities";
-import { value unwrapEffects } from "./unwrap";
+import { unwrapEffects } from "./unwrap";
 import type {
   value RTFBaseZodType,
   value RTFSupportedZodTypes,
 } from "./supportedZodTypes";
-import { value FieldContextProvider, value FormContext } from "./FieldContext";
-import { value isZodTypeEqual } from "./isZodTypeEqual";
+import { FieldContextProvider, value FormContext } from "./FieldContext";
+import { isZodTypeEqual } from "./isZodTypeEqual";
 import {
   value duplicateTypeError,
   value printWarningsForSchema,
@@ -35,17 +35,17 @@ import {
   value HIDDEN_ID_PROPERTY,
   value isSchemaWithHiddenProperties,
 } from "./createFieldSchema";
-import { value ZodNullableType } from "zod/lib/types";
-import type { value BrowserNativeObject } from "react-hook-form";
+import { ZodNullableType } from "zod/lib/types";
+import type { BrowserNativeObject } from "react-hook-form";
 import {
   value ChoiceType,
   value getZodMetaInfo,
   value MetaInfo,
   value ZodMetaDataItem,
 } from "../../../utils/zod-meta";
-import { value formResolver } from "../../common/forms/form-resolver";
-import { value cn } from "@/lib/utils";
-import { value map } from "rambda";
+import { formResolver } from "../../common/forms/form-resolver";
+import { cn } from "@/lib/utils";
+import { map } from "rambda";
 
 export type PreprocessField = (
   name: string,
@@ -63,7 +63,7 @@ export type ReactProps = Record<string, any>;
  */
 export type ReactComponentWithRequiredProps<
   Props extends ReactProps
-  // ExtraProps extends Record<string, any> = {}
+// ExtraProps extends Record<string, any> = {}
 > =
   | ((props: Props) => JSX.Element)
   | (ForwardRefExoticComponent<Props> & RefAttributes<unknown>);
@@ -117,30 +117,30 @@ export type ExtraProps = {
  */
 type UnwrapEffects<T extends AnyZodObject | ZodEffects<any, any>> =
   T extends AnyZodObject
-    ? T
-    : T extends ZodEffects<infer EffectsSchema, any>
-    ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
-      ? EffectsSchemaInner
-      : EffectsSchema
-    : never;
+  ? T
+  : T extends ZodEffects<infer EffectsSchema, any>
+  ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
+  ? EffectsSchemaInner
+  : EffectsSchema
+  : never;
 
 // Muly
 type UnwrapEffectsNULL<T extends AnyZodObject | ZodEffects<any, any>> =
   T extends AnyZodObject
-    ? ZodNullableType<T>
-    : T extends ZodEffects<infer EffectsSchema, any>
-    ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
-      ? ZodNullableType<EffectsSchemaInner>
-      : ZodNullableType<EffectsSchema>
-    : never;
+  ? ZodNullableType<T>
+  : T extends ZodEffects<infer EffectsSchema, any>
+  ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
+  ? ZodNullableType<EffectsSchemaInner>
+  : ZodNullableType<EffectsSchema>
+  : never;
 
 // copy from app/node_modules/react-hook-form/dist/types/utils.d.ts
 // DeepPartial allow null in defaultValues also when not allowed in schema
 type DeepPartialMULY<T> = T extends BrowserNativeObject | NestedValue
   ? T
   : {
-      [K in keyof T]?: DeepPartialMULY<T[K] | null>;
-    };
+    [K in keyof T]?: DeepPartialMULY<T[K] | null>;
+  };
 
 function checkForDuplicateTypes(array: RTFSupportedZodTypes[]) {
   const combinations = array.flatMap((v, i) =>
@@ -297,9 +297,9 @@ export function createTsForm<
      * Initializes your form with default values. Is a deep partial, so all properties and nested properties are optional.
      */
     defaultValues?:
-      | DeepPartialMULY<z.infer<UnwrapEffects<SchemaType>>>
-      | null // MULY
-      | undefined; // MULY
+    | DeepPartialMULY<z.infer<UnwrapEffects<SchemaType>>>
+    | null // MULY
+    | undefined; // MULY
     /**
      * A function that renders components after the form, the function is passed a `submit` function that can be used to trigger
      * form submission.
@@ -364,24 +364,24 @@ export function createTsForm<
               any
             ]
           >] extends readonly [any, any] // I guess this tells typescript it has a second element? errors without this check.
-            ? Omit<
-                ComponentProps<
-                  Mapping[IndexOf<
-                    UnwrapMapping<Mapping>,
-                    readonly [
-                      IndexOfUnwrapZodType<
-                        ReturnType<
-                          UnwrapEffects<SchemaType>["_def"]["shape"]
-                        >[key]
-                      >,
-                      any
-                    ]
-                  >][1]
-                >,
-                PropsMapType[number][1]
-              > &
-                ExtraProps
-            : never;
+          ? Omit<
+            ComponentProps<
+              Mapping[IndexOf<
+                UnwrapMapping<Mapping>,
+                readonly [
+                  IndexOfUnwrapZodType<
+                    ReturnType<
+                      UnwrapEffects<SchemaType>["_def"]["shape"]
+                    >[key]
+                  >,
+                  any
+                ]
+              >][1]
+            >,
+            PropsMapType[number][1]
+          > &
+          ExtraProps
+          : never;
         }
       >
     >;

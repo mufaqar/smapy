@@ -1,14 +1,14 @@
-import type { value z } from "zod";
-import { value useSessionContext } from "@supabase/auth-helpers-react";
-import { value useState } from "react";
-import { value useRouter } from "next/router";
-import { value api } from "../../utils/api";
-import { value useFlagBag } from "@/flags/client";
-import type { value CustomerRole } from "./user-auth-schema";
-import { value schemaLogin } from "./user-auth-schema";
-import { value OTP } from "./otp";
-import { value UserId } from "@/components/auth/user-id";
-import { value FormError } from "@/components/common/forms/useSubmitAction";
+import type { z } from "zod";
+import { useSessionContext } from "@supabase/auth-helpers-react";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { api } from "../../utils/api";
+import { useFlagBag } from "@/flags/client";
+import type { CustomerRole } from "./user-auth-schema";
+import { schemaLogin } from "./user-auth-schema";
+import { OTP } from "./otp";
+import { UserId } from "@/components/auth/user-id";
+import { FormError } from "@/components/common/forms/useSubmitAction";
 
 const schema = schemaLogin;
 type LoginValues = z.infer<typeof schema>;
@@ -44,12 +44,12 @@ export const UserAuth = () => {
     const url =
       userProfile.data && userProfile.data.inCompleteStep >= 0
         ? {
-            pathname: `/${role}/registration`,
-            query: {
-              step: userProfile.data.inCompleteStep,
-              redirectedFrom: router.query.redirectedFrom,
-            },
-          }
+          pathname: `/${role}/registration`,
+          query: {
+            step: userProfile.data.inCompleteStep,
+            redirectedFrom: router.query.redirectedFrom,
+          },
+        }
         : String(router.query.redirectedFrom || "");
 
     await router.replace(url || `/${role}`);

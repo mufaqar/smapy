@@ -1,20 +1,20 @@
-import { value useTranslation } from "next-i18next";
-import { value FloatingCard } from "@/components/landing-page/parts/floating-card";
+import { useTranslation } from "next-i18next";
+import { FloatingCard } from "@/components/landing-page/parts/floating-card";
 import {
-  value LifeInsuranceIcon,
-  value MortgageInsuranceIcon,
-  value PropertyInsuranceIcon,
+  LifeInsuranceIcon,
+  MortgageInsuranceIcon,
+  PropertyInsuranceIcon,
 } from "@/components/landing-page/parts/Icons";
-import { value StepCard } from "@/components/landing-page/parts/step-card";
-import { value CompanyLogo } from "@/components/landing-page/parts/company-logo";
-import { value ImageCard } from "@/components/landing-page/parts/image-card";
+import { StepCard } from "@/components/landing-page/parts/step-card";
+import { CompanyLogo } from "@/components/landing-page/parts/company-logo";
+import { ImageCard } from "@/components/landing-page/parts/image-card";
 import Image from "next/image";
-import { value TestimonialCard } from "@/components/landing-page/parts/testimonial-card";
-import { value Accordion } from "@/components/ui/accordion";
-import { value faqData } from "@/components/landing-page/parts/faq-data";
-import { value Faq } from "@/components/ui/faq";
+import { TestimonialCard } from "@/components/landing-page/parts/testimonial-card";
+import { Accordion } from "@/components/ui/accordion";
+import { faqData } from "@/components/landing-page/parts/faq-data";
+import { Faq } from "@/components/ui/faq";
 import Link from "next/link";
-import { value SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
+import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
 import React from "react";
 import Slider from "react-slick";
 
@@ -353,7 +353,7 @@ export const Home = () => {
           </h1>
           <Accordion type="single" collapsible>
             {faqData.slice(0, 3).map(({ q, a }, idx: number) => (
-              <Faq key={idx} value={`${idx}`} question={q} answer={a} />
+              <Faq key={idx} = {`${idx}`} question={q} answer={a} />
             ))}
           </Accordion>
           <div className="mt-4 w-full text-base underline rtl:text-left lg:text-[22px]">

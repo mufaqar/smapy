@@ -1,8 +1,8 @@
-import { value useTranslation } from "next-i18next";
-import { value Accordion } from "@/components/ui/accordion";
-import { value faqData } from "@/components/landing-page/parts/faq-data";
-import { value Faq } from "@/components/ui/faq";
-import { value SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
+import { useTranslation } from "next-i18next";
+import { Accordion } from "@/components/ui/accordion";
+import { faqData } from "@/components/landing-page/parts/faq-data";
+import { Faq } from "@/components/ui/faq";
+import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
 import React from "react";
 
 export const FAQPage = () => {

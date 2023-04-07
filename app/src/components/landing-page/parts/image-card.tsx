@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { value useEffect, value useState } from "react";
+import React, { useEffect, value useState } from "react";
 
 interface Props {
   idx: number;
@@ -25,19 +25,19 @@ export const ImageCard = ({
     idx === 1
       ? "lg:pt-12"
       : idx === 2
-      ? "lg:pt-16"
-      : idx === 3
-      ? "lg:-mt-10"
-      : "lg:mt-10";
+        ? "lg:pt-16"
+        : idx === 3
+          ? "lg:-mt-10"
+          : "lg:mt-10";
   const wrapper = idx === 1 ? "" : idx === 2 ? "lg:pt-32" : idx === 3 ? "" : "";
   const imageWrapper =
     idx === 1
       ? ""
       : idx === 2
-      ? ""
-      : idx === 3
-      ? "lg:-mt-32 xl:-mt-28"
-      : "lg:mt-5";
+        ? ""
+        : idx === 3
+          ? "lg:-mt-32 xl:-mt-28"
+          : "lg:mt-5";
 
   return (
     <>
@@ -49,25 +49,22 @@ export const ImageCard = ({
             src={image}
             alt=""
             width={imageWidth}
-            className={`hidden pl-16 lg:block lg:pl-0 ${
-              idx === 4 && "pl-0 lg:scale-125"
-            } ${idx === 3 && "lg:scale-105"}`}
+            className={`hidden pl-16 lg:block lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"
+              } ${idx === 3 && "lg:scale-105"}`}
             height={250}
           />
           <Image
             src={imageMbl}
             alt=""
             width={`300`}
-            className={`pl-16 lg:hidden lg:pl-0 ${
-              idx === 4 && "pl-0 lg:scale-125"
-            } ${idx === 3 && "lg:scale-105"}`}
+            className={`pl-16 lg:hidden lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"
+              } ${idx === 3 && "lg:scale-105"}`}
             height={250}
           />
         </figure>
         <div
-          className={`lg:min-w-[350px] lg:max-w-[350px] ${
-            idx === 3 && "lg:-ml-16"
-          } ${content}`}
+          className={`lg:min-w-[350px] lg:max-w-[350px] ${idx === 3 && "lg:-ml-16"
+            } ${content}`}
         >
           <h2 className="mt-6 justify-center gap-4 text-[26px] font-medium sm:mt-0 lg:flex lg:justify-start">
             {idx} <span>{title}</span>

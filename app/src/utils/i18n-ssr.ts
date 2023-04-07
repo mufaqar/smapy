@@ -1,5 +1,5 @@
-import { value serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { value i18nConfig } from "../../next-i18next.config.mjs";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18nConfig } from "../../next-i18next.config.mjs";
 
 export const i18nGetServerSideProps =
   (nameSpaces: string[]) =>

@@ -1,4 +1,4 @@
-import { value getFlags } from "../../flags/server";
+import { getFlags } from "../../flags/server";
 
 export const getFeaturesFlags = async () => {
   const { flags } = await getFlags({ context: {} });

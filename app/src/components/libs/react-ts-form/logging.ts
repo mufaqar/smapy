@@ -1,5 +1,5 @@
-import { value ZodFirstPartyTypeKind } from "zod";
-import type { value RTFSupportedZodTypes } from "./supportedZodTypes";
+import { ZodFirstPartyTypeKind } from "zod";
+import type { RTFSupportedZodTypes } from "./supportedZodTypes";
 
 const shownWarnings = {
   enum: false,

@@ -1,6 +1,6 @@
-import { value Loading } from "./Loading";
-import { value Plus } from "lucide-react";
-import { value Button } from "@/components/ui/button";
+import { Loading } from "./Loading";
+import { Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 import {
   value Tooltip as TooltipC,
