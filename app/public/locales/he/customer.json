@@ -1,17 +1,17 @@
 {
   "customerCompareAndBuy": {
-    "title_life": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd ",
-    "title_mortgage": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05e9\u05db\u05e0\u05ea\u05d4",
-    "title_property": "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d5\u05e8\u05db\u05d9\u05e9\u05ea \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d3\u05d9\u05e8\u05d4",
+    "title_life": "השוואה ורכישת ביטוח חיים ",
+    "title_mortgage": "השוואה ורכישת ביטוח משכנתה",
+    "title_property": "השוואה ורכישת ביטוח דירה",
     "howDoesItWork": {
-      "label": " \u05d0\u05d9\u05da \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3?",
-      "text_1": "\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd \u05d0\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05dc\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d4\u05d0\u05d9\u05e9\u05d9\u05d9\u05dd \u05e9\u05dc\u05db\u05dd, \u05de\u05de\u05e9 \u05db\u05de\u05d5 \u05db\u05e4\u05e4\u05d4 \u05dc\u05d9\u05d3",
-      "text_2": "\u05de\u05e9\u05d5\u05d5\u05d9\u05dd \u05dc\u05db\u05dd \u05de\u05d7\u05d9\u05e8\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d0\u05d9\u05e0\u05d8\u05e8\u05e1, \u05d5\u05d0\u05ea\u05dd \u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05d1\u05d4\u05e6\u05e2\u05d4 \u05d4\u05de\u05e9\u05ea\u05dc\u05de\u05ea \u05d1\u05d9\u05d5\u05ea\u05e8",
-      "text_3": "\u05d0\u05e0\u05d5 \u05e2\u05d5\u05e7\u05d1\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9 \u05de\u05d7\u05d9\u05e8 \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e9\u05dc\u05db\u05dd, \u05db\u05da \u05e0\u05d3\u05d0\u05d2 \u05e9\u05ea\u05d7\u05e1\u05db\u05d5 \u05e2\u05d3 \u05e2\u05e9\u05e8\u05d5\u05ea \u05d0\u05dc\u05e4\u05d9 \u20aa",
-      "text_life4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
-      "text_mortgage4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d4? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
-      "text_property4": "\u05d9\u05e9 \u05dc\u05db\u05dd \u05db\u05d1\u05e8 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d3\u05d9\u05e8\u05d4? \u05d4\u05e2\u05d1\u05e8\u05ea \u05d4\u05d1\u05d9\u05d8\u05d5\u05d7 \u05e2\u05dc\u05d9\u05e0\u05d5.",
-      "next": "\u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4"
+      "label": " איך זה עובד?",
+      "text_1": "מתאימים את הביטוח לנתונים האישיים שלכם, ממש כמו כפפה ליד",
+      "text_2": "משווים לכם מחירים ללא אינטרס, ואתם בוחרים בהצעה המשתלמת ביותר",
+      "text_3": "אנו עוקבים אחרי מחיר הביטוח שלכם, כך נדאג שתחסכו עד עשרות אלפי ₪",
+      "text_life4": "יש לכם כבר ביטוח חיים? העברת הביטוח עלינו.",
+      "text_mortgage4": "יש לכם כבר ביטוח חיים למשכנתה? העברת הביטוח עלינו.",
+      "text_property4": "יש לכם כבר ביטוח דירה? העברת הביטוח עלינו.",
+      "next": "להשוואה"
     },
     "thanks": {
       "label": "Thanks for your interest in Smapy",
@@ -20,14 +20,14 @@
       "text2": "You will enjoy great service"
     },
     "end": {
-      "label": "Smapy -\u05ea\u05d5\u05d3\u05d4 \u05e9\u05d4\u05ea\u05e2\u05e0\u05d9\u05d9\u05e0\u05ea \u05d1",
-      "placeholder": "\u05db\u05e8\u05d2\u05e2 \u05d4\u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc\u05e0\u05d5 \u05e0\u05d9\u05ea\u05df \u05d3\u05e8\u05da \u05d9\u05d5\u05e2\u05e6\u05d9 \u05de\u05e9\u05db\u05e0\u05ea\u05d0\u05d5\u05ea \u05d5\u05e1\u05d5\u05db\u05e0\u05d9 \u05d1\u05d9\u05d8\u05d5\u05d7. ",
-      "text1": "\u05d1\u05e7\u05e8\u05d5\u05d1 \u05d9\u05d4\u05d9\u05d4 \u05e0\u05d9\u05ea\u05df \u05dc\u05e8\u05db\u05d5\u05e9 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05e1\u05de\u05d0\u05e4\u05d9 \u05de\u05d4\u05d0\u05ea\u05e8.",
-      "text2": "\u05d1\u05e1\u05de\u05d0\u05e4\u05d9 \u05ea\u05d4\u05e0\u05d5 \u05de\u05d7\u05d5\u05d5\u05d9\u05ea \u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05d9\u05e8\u05d5\u05ea \u05e9\u05d8\u05e8\u05dd \u05d4\u05db\u05e8\u05ea\u05dd."
+      "label": "Smapy -תודה שהתעניינת ב",
+      "placeholder": "כרגע השירות שלנו ניתן דרך יועצי משכנתאות וסוכני ביטוח. ",
+      "text1": "בקרוב יהיה ניתן לרכוש ביטוח סמאפי מהאתר.",
+      "text2": "בסמאפי תהנו מחווית שירות שירות שטרם הכרתם."
     }
   },
   "contactUsEmail": {
-    "label": "\u05e6\u05e8\u05d5 \u05d0\u05d9\u05ea\u05d9 \u05e7\u05e9\u05e8",
+    "label": "צרו איתי קשר",
     "contactDetailsEmail": {
       "full_name": {
         "label": "Full name"
@@ -36,23 +36,23 @@
         "label": "Email"
       },
       "subject": {
-        "label": "\u05d4\u05d5\u05d3\u05e2\u05d4"
+        "label": "הודעה"
       },
       "product": {
-        "label": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d4\u05d9\u05d9\u05ea \u05e8\u05d5\u05e6\u05d4 \u05e9\u05e0\u05e2\u05d6\u05d5\u05e8 \u05dc\u05da?",
+        "label": "באיזה ביטוח היית רוצה שנעזור לך?",
         "choices": {
-          "life": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd",
-          "life-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d0",
-          "property": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4",
-          "property-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4 \u05de\u05e9\u05db\u05e0\u05ea\u05d0"
+          "life": "ביטוח חיים",
+          "life-mortgage": "ביטוח חיים למשכנתא",
+          "property": "ביטוח מבנה",
+          "property-mortgage": "ביטוח מבנה משכנתא"
         }
       },
-      "header": "\u05de\u05dc\u05d0\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd \u05d5\u05e0\u05d7\u05d6\u05d5\u05e8 \u05d0\u05dc\u05d9\u05db\u05dd \u05d1\u05d4\u05e7\u05d3\u05dd",
+      "header": "מלאו פרטים ונחזור אליכם בהקדם",
       "contact_info": {
-        "label": "\u05de\u05d9\u05d9\u05dc"
+        "label": "מייל"
       },
       "name": {
-        "label": "\u05e9\u05dd \u05de\u05dc\u05d0"
+        "label": "שם מלא"
       }
     },
     "end": {
@@ -62,35 +62,35 @@
       "text2": "You will enjoy great service"
     }
   },
-  "Required": "\u05e9\u05d3\u05d4 \u05d7\u05d5\u05d1\u05d4",
+  "Required": "שדה חובה",
   "contactUsPhone": {
-    "label": "\u05e6\u05e8\u05d5 \u05d0\u05d9\u05ea\u05d9 \u05e7\u05e9\u05e8",
+    "label": "צרו איתי קשר",
     "contactDetailsPhone": {
       "full_name": {
         "label": "contactUsPhone.contactDetailsPhone.full_name.label"
       },
       "phone": {
-        "label": "\u05de\u05e1\u05e4\u05e8 \u05d8\u05dc\u05e4\u05d5\u05df"
+        "label": "מספר טלפון"
       },
       "subject": {
-        "label": "\u05e0\u05d5\u05e9\u05d0"
+        "label": "נושא"
       },
       "product": {
-        "label": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05d1\u05d9\u05d8\u05d5\u05d7 \u05d4\u05d9\u05d9\u05ea \u05e8\u05d5\u05e6\u05d4 \u05e9\u05e0\u05e2\u05d6\u05d5\u05e8 \u05dc\u05da?",
+        "label": "באיזה ביטוח היית רוצה שנעזור לך?",
         "choices": {
-          "life": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd",
-          "life-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05d7\u05d9\u05d9\u05dd \u05dc\u05de\u05e9\u05db\u05e0\u05ea\u05d0",
-          "property": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4",
-          "property-mortgage": "\u05d1\u05d9\u05d8\u05d5\u05d7 \u05de\u05d1\u05e0\u05d4 \u05de\u05e9\u05db\u05e0\u05ea\u05d0"
+          "life": "ביטוח חיים",
+          "life-mortgage": "ביטוח חיים למשכנתא",
+          "property": "ביטוח מבנה",
+          "property-mortgage": "ביטוח מבנה משכנתא"
         },
         "header": "Fill details and will return to you"
       },
-      "header": "\u05de\u05dc\u05d0\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd \u05d5\u05e0\u05d7\u05d6\u05d5\u05e8 \u05d0\u05dc\u05d9\u05db\u05dd \u05d1\u05d4\u05e7\u05d3\u05dd",
+      "header": "מלאו פרטים ונחזור אליכם בהקדם",
       "name": {
-        "label": "\u05e9\u05dd \u05de\u05dc\u05d0"
+        "label": "שם מלא"
       },
       "contact_info": {
-        "label": "\u05de\u05e1\u05e4\u05e8 \u05d8\u05dc\u05e4\u05d5\u05df"
+        "label": "מספר טלפון"
       }
     },
     "end": {
@@ -100,5 +100,5 @@
       "text2": "You will enjoy great service"
     }
   },
-  "Invalid email": "\u05de\u05d9\u05d9\u05dc \u05d1\u05dc\u05ea\u05d9 \u05d7\u05d5\u05e7\u05d9"
+  "Invalid email": "מייל בלתי חוקי"
 }

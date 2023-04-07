@@ -422,9 +422,7 @@
           "2": "Two"
         },
         "label": "How many customers"
-      },
-      "step_name": "Initial details",
-      "step_sub": "Persons"
+      }
     },
     "customerDetails1": {
       "label": "Personal Details",
