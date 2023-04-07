@@ -3,7 +3,7 @@ import json
 
 from pandas.api.types import is_scalar
 
-SRC_PATH = 'app/public/locales/en'
+SRC_PATH = 'app/public/locales/he'
 TARGET_PATH = 'app/public/locales/zz'
 
 

@@ -421,7 +421,9 @@
           "2": "שניים"
         },
         "label": "על כמה אנשים רשומה המשכנתה?"
-      }
+      },
+      "step_name": "Initial details",
+      "step_sub": "Persons"
     },
     "customerDetails1": {
       "label": "פרטים אישיים",
@@ -462,7 +464,8 @@
       "birthDate": {
         "label": "תאריך לידה"
       },
-      "subTitle": "subTitle.person2"
+      "subTitle": "subTitle.person2",
+      "step_sub": "Personal details"
     },
     "customerDetails2": {
       "label": "פרטים כלליים",
@@ -482,7 +485,8 @@
       "dangerous_hobby_desc": {
         "label": "תיאור"
       },
-      "subTitle": "subTitle.person2"
+      "subTitle": "subTitle.person2",
+      "step_sub": "General details"
     },
     "loanTracksCount": {
       "label": "פרטי המשכנתה",
@@ -498,7 +502,8 @@
           "8": "8"
         },
         "label": "כמה מסלולי הלוואה יש במשכנתה?"
-      }
+      },
+      "step_sub": "Loan details"
     },
     "loanTracks": {
       "label": "פרטי המשכנתה",
@@ -534,7 +539,8 @@
         },
         "label": "סוג הלוואה"
       },
-      "subTitle": "subTitle.track2"
+      "subTitle": "subTitle.track2",
+      "step_sub": "Loan details"
     },
     "customerMoreDetails": {
       "label": "השלמת פרטים אישיים",
@@ -565,7 +571,9 @@
       "apartment_number": {
         "label": "דירה"
       },
-      "subTitle": "subTitle.person2"
+      "subTitle": "subTitle.person2",
+      "step_name": "Complete Details",
+      "step_sub": "Complete Personal Details"
     },
     "mortgagePropertyAddress": {
       "label": "כתובת נכס ממושכן",
@@ -583,7 +591,8 @@
       },
       "property_apartment_number": {
         "label": "דירה"
-      }
+      },
+      "step_sub": "Property Address"
     },
     "insuranceDetails": {
       "label": "פרטי ביטוח",
@@ -605,7 +614,8 @@
       "bank_branch_number": {
         "label": "Branch Number",
         "placeholder": "Branch Number..."
-      }
+      },
+      "step_sub": "Insurance details"
     },
     "sendLinksToComplete": {
       "label": "שליחת קישור להשלמת רכישה",
@@ -623,7 +633,13 @@
       },
       "details_approval": {
         "label": "אני מאשר/ת בזאת שכל הפרטים שמסרתי הינם נכונים ומלאים "
-      }
+      },
+      "subTitle": "subTitle",
+      "subTitle2": "subTitle2",
+      "imageTitle1": "imageTitle1",
+      "imageTitle2": "imageTitle2",
+      "step_name": "Process End",
+      "step_sub": "Confirm and End"
     },
     "end": {
       "label": "Smapy תודה שבחרת",
@@ -638,7 +654,12 @@
     },
     "mortgageSummary": {
       "step_name": "Receiver Offers",
-      "step_sub": "Receiver Offers"
+      "step_sub": "Receiver Offers",
+      "label": "Results"
+    },
+    "loanDetailsIntro": {
+      "label": "loanDetailsIntro",
+      "step_sub": "Loan details"
     }
   }
 }
