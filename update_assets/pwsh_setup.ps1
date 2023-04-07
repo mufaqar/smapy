@@ -6,7 +6,8 @@ $eng = 'https://www.bing.com'
 $project = 'C:\Users\Nadav\Documents\ALL_PROJECTS\smapy'
 
 $server = 'http://localhost:3002/'
-
+$figma_url = 'https://www.figma.com/file/'`
++ 'sAvmr55UwcNhZNAJ9XGpA6/smapy-design?node-id=294%3A36462&t=vWrvHj8eaAd2tj3q-1'
 $shell = "C:\Users\Nadav\AppData\Local\Microsoft\WindowsApps\"`
 + "Microsoft.PowerShell_8wekyb3d8bbwe\pwsh.exe"
 
