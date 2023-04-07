@@ -98,7 +98,7 @@ def sheet_to_json(json_path):
     with open(json_path, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
-    df = pd.read_excel(INP_PATH)
+    df = pd.read_excel(INP_PATH).dropna(subset='key')
     df.apply(row_to_json_obj, axis=1, obj=json_obj)
 
     with open(json_path, mode='w', encoding='utf-8') as fp:

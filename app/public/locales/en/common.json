@@ -9,5 +9,78 @@
     "end": {
       "button": "End"
     }
+  },
+  "structure_ins": {
+    "header": "structure_ins.header",
+    "list": {
+      "1": "structure_ins.list.1",
+      "2": "structure_ins.list.2",
+      "3": "structure_ins.list.3"
+    }
+  },
+  "footer": {
+    "structure_ins": {
+      "header": "footer.structure_ins.header",
+      "list": {
+        "1": "footer.structure_ins.list.1",
+        "2": "footer.structure_ins.list.2",
+        "3": "footer.structure_ins.list.3",
+        "4": "footer.structure_ins.list.4",
+        "5": "footer.structure_ins.list.5"
+      }
+    },
+    "mortgage_struct_ins": {
+      "header": "footer.mortgage_struct_ins.header",
+      "list": {
+        "1": "footer.mortgage_struct_ins.list.1",
+        "2": "footer.mortgage_struct_ins.list.2",
+        "3": "footer.mortgage_struct_ins.list.3",
+        "4": "footer.mortgage_struct_ins.list.4",
+        "5": "footer.mortgage_struct_ins.list.5"
+      }
+    },
+    "mortgage_life_ins": {
+      "header": "footer.mortgage_life_ins.header",
+      "list": {
+        "1": "footer.mortgage_life_ins.list.1",
+        "2": "footer.mortgage_life_ins.list.2",
+        "3": "footer.mortgage_life_ins.list.3",
+        "4": "footer.mortgage_life_ins.list.4",
+        "5": "footer.mortgage_life_ins.list.5"
+      }
+    },
+    "life_ins": {
+      "header": "footer.life_ins.header",
+      "list": {
+        "1": "footer.life_ins.list.1",
+        "2": "footer.life_ins.list.2",
+        "3": "footer.life_ins.list.3"
+      }
+    },
+    "info": {
+      "header": "footer.info.header",
+      "list": {
+        "1": "footer.info.list.1",
+        "2": "footer.info.list.2",
+        "3": "footer.info.list.3"
+      }
+    },
+    "map": {
+      "header": "footer.map.header",
+      "list": {
+        "1": "footer.map.list.1",
+        "2": "footer.map.list.2",
+        "3": "footer.map.list.3",
+        "4": "footer.map.list.4"
+      }
+    },
+    "help": {
+      "header": "footer.help.header",
+      "list": {
+        "1": "footer.help.list.1",
+        "2": "footer.help.list.2"
+      }
+    },
+    "copyright": "footer.copyright"
   }
 }
