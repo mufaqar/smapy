@@ -39,7 +39,7 @@ const AboutUs: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageNavigationMenu />
-      <main className="flex flex-col gap-8">
+      <main className="align- flex flex-col gap-8">
         <AboutUs />
       </main>
       <Footer />

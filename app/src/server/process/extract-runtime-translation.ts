@@ -9,8 +9,8 @@ import { getPagesZodMetaInfo } from "../../components/common/wizard/useWizardFlo
 import { getZodMetaInfo } from "../../utils/zod-meta";
 import { compareFlowPages } from "@/components/customer/compare/compare-flow-schema";
 import {
-  value contactUsEmailPages,
-  value contactUsPhonePages,
+  contactUsEmailPages,
+  contactUsPhonePages,
 } from "@/components/customer/contact-us/contact-us-schema";
 // import { HowDoesItWork } from "@/components/customer/compare/how-does-it-work";
 

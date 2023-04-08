@@ -2,15 +2,15 @@ import React from "react";
 import { useWizardFlow } from "../../common/wizard/useWizardFlow";
 import { useTranslation } from "next-i18next";
 import {
-  value compareFlowPages,
-  value ProductType,
+  compareFlowPages,
+  ProductType,
 } from "@/components/customer/compare/compare-flow-schema";
 import { useRouter } from "next/router";
 import { WizardPage } from "@/components/common/wizard/WizardPage";
 import type { HowToContactType } from "@/components/customer/contact-us/contact-us-schema";
 import {
-  value contactUsEmailPages,
-  value contactUsPhonePages,
+  contactUsEmailPages,
+  contactUsPhonePages,
 } from "@/components/customer/contact-us/contact-us-schema";
 import { api } from "@/utils/api";
 

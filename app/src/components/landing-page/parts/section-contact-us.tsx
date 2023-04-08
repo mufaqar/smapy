@@ -1,8 +1,8 @@
 import { ConnectButton } from "@/components/landing-page/parts/connect-button";
 import {
-  value EmailIcon,
-  value PhoneOutlineIcon,
-  value WhatsappIcon,
+  EmailIcon,
+  PhoneOutlineIcon,
+  WhatsappIcon,
 } from "@/components/landing-page/parts/Icons";
 import React from "react";
 

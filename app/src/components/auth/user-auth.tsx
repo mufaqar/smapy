@@ -44,12 +44,12 @@ export const UserAuth = () => {
     const url =
       userProfile.data && userProfile.data.inCompleteStep >= 0
         ? {
-          pathname: `/${role}/registration`,
-          query: {
-            step: userProfile.data.inCompleteStep,
-            redirectedFrom: router.query.redirectedFrom,
-          },
-        }
+            pathname: `/${role}/registration`,
+            query: {
+              step: userProfile.data.inCompleteStep,
+              redirectedFrom: router.query.redirectedFrom,
+            },
+          }
         : String(router.query.redirectedFrom || "");
 
     await router.replace(url || `/${role}`);

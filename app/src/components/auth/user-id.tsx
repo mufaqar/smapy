@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import { api } from "../../utils/api";
 import { useTranslation } from "next-i18next";
 import {
-  value evaluateFormControlCallback,
-  value usePrepareSchema,
+  evaluateFormControlCallback,
+  usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
 import { useFlagBag } from "@/flags/client";
 import type { CustomerRole } from "./user-auth-schema";

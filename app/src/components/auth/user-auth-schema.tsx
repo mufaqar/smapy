@@ -1,10 +1,7 @@
 import { z } from "zod";
-import {
-  value formatPhoneNumber,
-  value validatePhoneNumber,
-} from "../../utils/phone";
+import { formatPhoneNumber, validatePhoneNumber } from "../../utils/phone";
 import { isIsraeliIdValid } from "../../utils/israeli-id-validator";
-import { declareTranslationNS, value dt } from "../../utils/i18n-utils";
+import { declareTranslationNS, dt } from "../../utils/i18n-utils";
 
 declareTranslationNS("landing-page");
 

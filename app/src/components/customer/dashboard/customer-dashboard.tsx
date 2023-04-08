@@ -1,7 +1,4 @@
-import {
-  value useSessionContext,
-  value useUser,
-} from "@supabase/auth-helpers-react";
+import { useSessionContext, useUser } from "@supabase/auth-helpers-react";
 import { api } from "../../../utils/api";
 import { Loading } from "@/components/common/Loading";
 import { useRouter } from "next/router";

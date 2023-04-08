@@ -1,12 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  value Avatar,
-  value AvatarFallback,
-  value AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import * as React from "react";
-import { formatDistanceStrict, value parse } from "date-fns";
+import { formatDistanceStrict, parse } from "date-fns";
 
 interface Props {
   name: string;

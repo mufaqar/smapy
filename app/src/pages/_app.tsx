@@ -7,10 +7,7 @@ import { useState } from "react";
 import type { AppProps } from "next/app";
 import { type AppType } from "next/app";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import {
-  SessionContextProvider,
-  useUser,
-} from "@supabase/auth-helpers-react";
+import { SessionContextProvider, useUser } from "@supabase/auth-helpers-react";
 import { cookieOptions } from "../utils/cookie-options";
 
 import { appWithTranslation } from "next-i18next";
@@ -28,8 +25,10 @@ import "../styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+
+
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   const [supabaseClient] = useState(() =>

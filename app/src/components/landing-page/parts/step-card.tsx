@@ -39,7 +39,7 @@ export const StepCard = ({ idx, text, title }: Props) => {
         <p className="mt-5 pr-6 text-right text-lg font-bold md:pr-0 md:text-xl lg:text-center">
           {title}
         </p>
-        <p className="mt-1 px-4 pr-5 text-right text-sm text-maingray md:mt-4 md:pr-0 md:text-lg lg:text-center">
+        <p className="text-maingray mt-1 px-4 pr-5 text-right text-sm md:mt-4 md:pr-0 md:text-lg lg:text-center">
           {text}
         </p>
       </div>

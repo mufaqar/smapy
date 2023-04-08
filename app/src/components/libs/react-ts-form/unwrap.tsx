@@ -1,8 +1,8 @@
-import type { ZodEnum, value ZodNullable, value ZodOptional } from "zod";
-import { z, value ZodFirstPartyTypeKind } from "zod";
+import type { ZodEnum, ZodNullable, ZodOptional } from "zod";
+import { z, ZodFirstPartyTypeKind } from "zod";
 import {
-  value HIDDEN_ID_PROPERTY,
-  value isSchemaWithHiddenProperties,
+  HIDDEN_ID_PROPERTY,
+  isSchemaWithHiddenProperties,
 } from "./createFieldSchema";
 import type { RTFSupportedZodTypes } from "./supportedZodTypes";
 
@@ -68,12 +68,12 @@ export function unwrapEffects(effects: RTFSupportedZodTypes) {
  */
 export type UnwrapZodType<T extends RTFSupportedZodTypes> =
   T extends ZodOptional<any>
-  ? EnumAsAnyEnum<T["_def"]["innerType"]>
-  : T extends ZodNullable<any>
-  ? T["_def"]["innerType"] extends ZodOptional<any>
-  ? EnumAsAnyEnum<T["_def"]["innerType"]["_def"]["innerType"]>
-  : EnumAsAnyEnum<T["_def"]["innerType"]>
-  : EnumAsAnyEnum<T>;
+    ? EnumAsAnyEnum<T["_def"]["innerType"]>
+    : T extends ZodNullable<any>
+    ? T["_def"]["innerType"] extends ZodOptional<any>
+      ? EnumAsAnyEnum<T["_def"]["innerType"]["_def"]["innerType"]>
+      : EnumAsAnyEnum<T["_def"]["innerType"]>
+    : EnumAsAnyEnum<T>;
 
 export type EnumAsAnyEnum<T extends RTFSupportedZodTypes> =
   T extends ZodEnum<any> ? ZodEnum<any> : T;

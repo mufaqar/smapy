@@ -1,15 +1,15 @@
-import React, { useContext, value useState } from "react";
+import React, { useContext, useState } from "react";
 import type { ReactNode } from "react";
 import { createContext } from "react";
 import type {
-  value Control,
-  value DeepPartial,
-  value UseControllerReturn,
+  Control,
+  DeepPartial,
+  UseControllerReturn,
 } from "react-hook-form";
 import { useController } from "react-hook-form";
 import { printUseEnumWarning } from "./logging";
 import { errorFromRhfErrorObject } from "./zodObjectErrors";
-import { MetaInfo, value ZodMetaDataItem } from "../../../utils/zod-meta";
+import { MetaInfo, ZodMetaDataItem } from "../../../utils/zod-meta";
 import { TranslationFn } from "../../../utils/i18n-utils";
 import { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 
@@ -21,18 +21,17 @@ export interface FormContext {
   flowContext?: WizardControlProps;
 }
 
-export const FieldContext =
-  createContext<null | {
-    control: Control<any>;
-    name: string;
-    // label?: string;
-    // placeholder?: string;
-    formContext: FormContext;
-    meta: ZodMetaDataItem;
-    enumValues?: string[];
-    addToCoerceUndefined: (v: string) => void;
-    removeFromCoerceUndefined: (v: string) => void;
-  }>(null);
+export const FieldContext = createContext<null | {
+  control: Control<any>;
+  name: string;
+  // label?: string;
+  // placeholder?: string;
+  formContext: FormContext;
+  meta: ZodMetaDataItem;
+  enumValues?: string[];
+  addToCoerceUndefined: (v: string) => void;
+  removeFromCoerceUndefined: (v: string) => void;
+}>(null);
 
 export function FieldContextProvider({
   name,

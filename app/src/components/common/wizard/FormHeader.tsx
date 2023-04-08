@@ -2,8 +2,8 @@ import React from "react";
 import type { WizardControlProps } from "./useWizardFlow";
 import { evaluateControlCallback } from "./useWizardFlow";
 import {
-  value backDisabled,
-  value getStepInfoTitles,
+  backDisabled,
+  getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
 import { TopWizardSteps } from "@/components/common/wizard/top-wizard-steps";
 

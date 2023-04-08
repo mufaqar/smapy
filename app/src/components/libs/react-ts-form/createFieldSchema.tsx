@@ -1,4 +1,4 @@
-import type { z, value ZodBranded } from "zod";
+import type { z, ZodBranded } from "zod";
 import type { RTFSupportedZodTypes } from "./supportedZodTypes";
 
 export const HIDDEN_ID_PROPERTY = "_rtf_id";

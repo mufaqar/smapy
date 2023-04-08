@@ -21,7 +21,7 @@ export const HowDoesItWork = ({ product, onStepNext, step, props }: Props) => {
             image={`/images/how-does-it-work/${idx}.svg`}
             text={
               step.meta.text?.[
-              `text_${idx === 4 ? `${product}${idx}` : idx}`
+                `text_${idx === 4 ? `${product}${idx}` : idx}`
               ] || ""
             }
           />

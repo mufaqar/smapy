@@ -1,9 +1,4 @@
-import Document, {
-  Html,
-  Main,
-  NextScript,
-  Head,
-} from "next/document";
+import Document, { Html, Main, NextScript, Head } from "next/document";
 import { i18n } from "next-i18next";
 
 class MyDocument extends Document {

@@ -1,47 +1,37 @@
 import type {
-  value ForwardRefExoticComponent,
-  value ReactNode,
-  value RefAttributes,
+  ForwardRefExoticComponent,
+  ReactNode,
+  RefAttributes,
 } from "react";
-import React, { Fragment, value useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import type { ComponentProps } from "react";
-import type {
-  value ErrorOption,
-  value NestedValue,
-  value UseFormReturn,
-} from "react-hook-form";
-import { FormProvider, value useForm } from "react-hook-form";
-import type { AnyZodObject, value z, value ZodEffects } from "zod";
+import type { ErrorOption, NestedValue, UseFormReturn } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
+import type { AnyZodObject, z, ZodEffects } from "zod";
 import { getComponentForZodType } from "./getComponentForZodType";
 import type {
-  value IndexOf,
-  value IndexOfUnwrapZodType,
-  value RequireKeysWithRequiredChildren,
-  value UnwrapMapping,
+  IndexOf,
+  IndexOfUnwrapZodType,
+  RequireKeysWithRequiredChildren,
+  UnwrapMapping,
 } from "./typeUtilities";
 import { unwrapEffects } from "./unwrap";
-import type {
-  value RTFBaseZodType,
-  value RTFSupportedZodTypes,
-} from "./supportedZodTypes";
-import { FieldContextProvider, value FormContext } from "./FieldContext";
+import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
+import { FieldContextProvider, FormContext } from "./FieldContext";
 import { isZodTypeEqual } from "./isZodTypeEqual";
+import { duplicateTypeError, printWarningsForSchema } from "./logging";
 import {
-  value duplicateTypeError,
-  value printWarningsForSchema,
-} from "./logging";
-import {
-  value duplicateIdErrorMessage,
-  value HIDDEN_ID_PROPERTY,
-  value isSchemaWithHiddenProperties,
+  duplicateIdErrorMessage,
+  HIDDEN_ID_PROPERTY,
+  isSchemaWithHiddenProperties,
 } from "./createFieldSchema";
 import { ZodNullableType } from "zod/lib/types";
 import type { BrowserNativeObject } from "react-hook-form";
 import {
-  value ChoiceType,
-  value getZodMetaInfo,
-  value MetaInfo,
-  value ZodMetaDataItem,
+  ChoiceType,
+  getZodMetaInfo,
+  MetaInfo,
+  ZodMetaDataItem,
 } from "../../../utils/zod-meta";
 import { formResolver } from "../../common/forms/form-resolver";
 import { cn } from "@/lib/utils";
@@ -63,7 +53,7 @@ export type ReactProps = Record<string, any>;
  */
 export type ReactComponentWithRequiredProps<
   Props extends ReactProps
-// ExtraProps extends Record<string, any> = {}
+  // ExtraProps extends Record<string, any> = {}
 > =
   | ((props: Props) => JSX.Element)
   | (ForwardRefExoticComponent<Props> & RefAttributes<unknown>);
@@ -117,30 +107,30 @@ export type ExtraProps = {
  */
 type UnwrapEffects<T extends AnyZodObject | ZodEffects<any, any>> =
   T extends AnyZodObject
-  ? T
-  : T extends ZodEffects<infer EffectsSchema, any>
-  ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
-  ? EffectsSchemaInner
-  : EffectsSchema
-  : never;
+    ? T
+    : T extends ZodEffects<infer EffectsSchema, any>
+    ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
+      ? EffectsSchemaInner
+      : EffectsSchema
+    : never;
 
 // Muly
 type UnwrapEffectsNULL<T extends AnyZodObject | ZodEffects<any, any>> =
   T extends AnyZodObject
-  ? ZodNullableType<T>
-  : T extends ZodEffects<infer EffectsSchema, any>
-  ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
-  ? ZodNullableType<EffectsSchemaInner>
-  : ZodNullableType<EffectsSchema>
-  : never;
+    ? ZodNullableType<T>
+    : T extends ZodEffects<infer EffectsSchema, any>
+    ? EffectsSchema extends ZodEffects<infer EffectsSchemaInner, any>
+      ? ZodNullableType<EffectsSchemaInner>
+      : ZodNullableType<EffectsSchema>
+    : never;
 
 // copy from app/node_modules/react-hook-form/dist/types/utils.d.ts
 // DeepPartial allow null in defaultValues also when not allowed in schema
 type DeepPartialMULY<T> = T extends BrowserNativeObject | NestedValue
   ? T
   : {
-    [K in keyof T]?: DeepPartialMULY<T[K] | null>;
-  };
+      [K in keyof T]?: DeepPartialMULY<T[K] | null>;
+    };
 
 function checkForDuplicateTypes(array: RTFSupportedZodTypes[]) {
   const combinations = array.flatMap((v, i) =>
@@ -297,9 +287,9 @@ export function createTsForm<
      * Initializes your form with default values. Is a deep partial, so all properties and nested properties are optional.
      */
     defaultValues?:
-    | DeepPartialMULY<z.infer<UnwrapEffects<SchemaType>>>
-    | null // MULY
-    | undefined; // MULY
+      | DeepPartialMULY<z.infer<UnwrapEffects<SchemaType>>>
+      | null // MULY
+      | undefined; // MULY
     /**
      * A function that renders components after the form, the function is passed a `submit` function that can be used to trigger
      * form submission.
@@ -353,37 +343,35 @@ export function createTsForm<
      * ```
      */
     props?: RequireKeysWithRequiredChildren<
-      Partial<
-        {
-          [key in keyof z.infer<UnwrapEffects<SchemaType>>]: Mapping[IndexOf<
-            UnwrapMapping<Mapping>,
-            readonly [
-              IndexOfUnwrapZodType<
-                ReturnType<UnwrapEffects<SchemaType>["_def"]["shape"]>[key]
-              >,
-              any
-            ]
-          >] extends readonly [any, any] // I guess this tells typescript it has a second element? errors without this check.
-          ? Omit<
-            ComponentProps<
-              Mapping[IndexOf<
-                UnwrapMapping<Mapping>,
-                readonly [
-                  IndexOfUnwrapZodType<
-                    ReturnType<
-                      UnwrapEffects<SchemaType>["_def"]["shape"]
-                    >[key]
-                  >,
-                  any
-                ]
-              >][1]
+      Partial<{
+        [key in keyof z.infer<UnwrapEffects<SchemaType>>]: Mapping[IndexOf<
+          UnwrapMapping<Mapping>,
+          readonly [
+            IndexOfUnwrapZodType<
+              ReturnType<UnwrapEffects<SchemaType>["_def"]["shape"]>[key]
             >,
-            PropsMapType[number][1]
-          > &
-          ExtraProps
+            any
+          ]
+        >] extends readonly [any, any] // I guess this tells typescript it has a second element? errors without this check.
+          ? Omit<
+              ComponentProps<
+                Mapping[IndexOf<
+                  UnwrapMapping<Mapping>,
+                  readonly [
+                    IndexOfUnwrapZodType<
+                      ReturnType<
+                        UnwrapEffects<SchemaType>["_def"]["shape"]
+                      >[key]
+                    >,
+                    any
+                  ]
+                >][1]
+              >,
+              PropsMapType[number][1]
+            > &
+              ExtraProps
           : never;
-        }
-      >
+      }>
     >;
   }> &
     RequireKeysWithRequiredChildren<{
@@ -392,8 +380,9 @@ export function createTsForm<
        */
       formProps?: Omit<ComponentProps<FormType>, "children" | "onSubmit">;
     }>) {
-    const useFormResultInitialValue =
-      useRef<undefined | ReturnType<typeof useForm>>(form);
+    const useFormResultInitialValue = useRef<
+      undefined | ReturnType<typeof useForm>
+    >(form);
     if (!!useFormResultInitialValue.current !== !!form) {
       throw new Error(useFormResultValueChangedErrorMesssage());
     }

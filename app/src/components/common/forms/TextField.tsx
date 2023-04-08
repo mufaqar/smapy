@@ -1,9 +1,6 @@
-import { useMeta, value useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import { RadioButtonGroup } from "./RadioButtonGroup";
-import type {
-  value ChoiceType,
-  value ZodMetaDataItem,
-} from "../../../utils/zod-meta";
+import type { ChoiceType, ZodMetaDataItem } from "../../../utils/zod-meta";
 import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 import { FormControl } from "./FormControl";
 import { clsx } from "clsx";
@@ -14,14 +11,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 
 import {
-  value Select,
-  value SelectContent,
-  value SelectGroup,
-  value SelectItem,
-  value SelectLabel,
-  value SelectSeparator,
-  value SelectTrigger,
-  value SelectValue,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 
 export interface Props {
@@ -171,7 +168,7 @@ export const TextField = (
     //       value={(field.value || "").split(",")}
     //       choices={choices}
     //       onChange={(value) => {
-    //         console.log(`muly:onCjange`, { });
+    //         console.log(`muly:onCjange`, { value });
     //         field.onChange(value.join(","));
     //       }}
     //     />

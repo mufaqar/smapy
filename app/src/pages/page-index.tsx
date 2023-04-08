@@ -1,9 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import {
-  value useUser,
-  value useSupabaseClient,
-} from "@supabase/auth-helpers-react";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

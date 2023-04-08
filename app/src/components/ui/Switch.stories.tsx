@@ -10,7 +10,7 @@ export const Primary = {
   render: (args: any) => {
     console.log(`muly:render`, { args });
     return (
-      <div className="flex space-x-2">
+      <div className="items-top flex space-x-2">
         <Switch id="terms1" {...args} />
         <div className="grid gap-1.5 leading-none">
           <label

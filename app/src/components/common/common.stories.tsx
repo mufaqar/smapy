@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DialogForm as DialogFormComponent } from "@/components/common/forms/dialog-form";
 import { usePrepareSchema } from "@/components/common/forms/usePrepareSchema";
-import { EditIcon, value PlusIcon, value Trash2Icon } from "lucide-react";
+import { EditIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import { z } from "zod";
 import { useTranslation } from "next-i18next";
 

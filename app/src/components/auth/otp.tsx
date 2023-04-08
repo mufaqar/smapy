@@ -2,8 +2,8 @@ import { Form } from "../common/forms/Form";
 import type { z } from "zod";
 import { useTranslation } from "next-i18next";
 import {
-  value evaluateFormControlCallback,
-  value usePrepareSchema,
+  evaluateFormControlCallback,
+  usePrepareSchema,
 } from "../common/forms/usePrepareSchema";
 import type { CustomerRole } from "./user-auth-schema";
 import { schemaOTP } from "./user-auth-schema";

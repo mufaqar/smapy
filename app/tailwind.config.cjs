@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "rgb(238,11,81)",
-        secondary: "#F08101",
-        maingray: "#495057",
+        'primary': 'rgb(238,11,81)',
+        'secondary': '#F08101',
+        'maingray': '#495057',
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

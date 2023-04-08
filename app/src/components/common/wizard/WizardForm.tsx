@@ -6,8 +6,8 @@ import { FormSideBackgroundImage } from "./FormSideBackgroundImage";
 import NoSSR from "react-no-ssr";
 import { Loading } from "../Loading";
 import {
-  value getStepInfoSubTitles,
-  value getStepInfoTitles,
+  getStepInfoSubTitles,
+  getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
 import { cn } from "@/lib/utils";
 import { SideWizardSteps } from "@/components/common/wizard/side-wizard-steps";

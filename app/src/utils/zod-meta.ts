@@ -7,7 +7,7 @@
 */
 
 import type { ZodEffects } from "zod";
-import { z,  ZodType } from "zod";
+import { z, ZodType } from "zod";
 import type { ZodTypeAny } from "zod/lib/types";
 import type React from "react";
 import type { WizardControlProps } from "../components/common/wizard/useWizardFlow";

@@ -1,13 +1,13 @@
 import {
-  value NavigationMenu,
-  value NavigationMenuContent,
-  value NavigationMenuIndicator,
-  value NavigationMenuItem,
-  value NavigationMenuLink,
-  value NavigationMenuList,
-  value NavigationMenuTrigger,
-  value NavigationMenuViewport,
-  value navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,7 @@ import { SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageHeader = () => {
   return (
-    <NavigationMenu className="m-auto mt-8 w-full max-w-7xl justify-start">
+    <NavigationMenu className="m-top m-auto mt-8 w-full max-w-7xl justify-start">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>

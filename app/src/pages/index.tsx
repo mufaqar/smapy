@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageNavigationMenu />
-      <main className="flex flex-col gap-8">
+      <main className="align- flex flex-col gap-8">
         <Home />
       </main>
       <Footer />

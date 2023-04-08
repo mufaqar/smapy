@@ -3,7 +3,7 @@ import { publicProcedure } from "../../trpc";
 import { env } from "../../../../env.mjs";
 import { TRPCError } from "@trpc/server";
 import { callAsync } from "../../../../utils/call-async";
-import { forEach, value map, value uniq, value uniqBy } from "rambda";
+import { forEach, map, uniq, uniqBy } from "rambda";
 import PMap from "../../../../utils/p-map";
 import fs from "fs";
 // import { promises as fsp } from "fs";

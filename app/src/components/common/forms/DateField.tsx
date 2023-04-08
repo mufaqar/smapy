@@ -1,4 +1,4 @@
-import { useMeta, value useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import type { ZodMetaDataItem } from "../../../utils/zod-meta";
 import { maybeConvertChild } from "../wizard/useWizardFlow";
 import { Checkbox } from "@/components/ui/checkbox";

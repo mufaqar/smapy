@@ -2,8 +2,8 @@ import { z } from "zod";
 import { protectedProcedure } from "../../trpc";
 import { UserProfileModel } from "../../../../../prisma/zod";
 import {
-  value AdvisorUpdatePages,
-  value AdvisorUpdateSchema,
+  AdvisorUpdatePages,
+  AdvisorUpdateSchema,
 } from "../../../../components/advisor/advisor-registration-flow/advisor-registration-flow-schema";
 import { TRPCError } from "@trpc/server";
 

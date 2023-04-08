@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import {
-  value getStepInfoSubTitles,
-  value getStepInfoTitles,
+  getStepInfoSubTitles,
+  getStepInfoTitles,
 } from "@/components/common/wizard/steps-info";
 import type { WizardControlProps } from "@/components/common/wizard/useWizardFlow";
 

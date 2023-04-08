@@ -15,7 +15,7 @@ export const ConnectButton = ({ href, text, icon }: Props) => {
         <Link href={href} legacyBehavior passHref>
           <div className="contact-icon flex cursor-pointer flex-col items-center justify-center transition duration-300 ease-in-out hover:scale-105 md:h-24 md:w-24">
             <i>{icon}</i>
-            <p className="mt-2 text-sm text-maingray">{text}</p>
+            <p className="text-maingray mt-2 text-sm">{text}</p>
           </div>
         </Link>
       </div>
@@ -25,7 +25,7 @@ export const ConnectButton = ({ href, text, icon }: Props) => {
             <i>{icon}</i>
           </div>
         </Link>
-        <p className=" text-sm text-maingray">{text}</p>
+        <p className=" text-maingray text-sm">{text}</p>
       </div>
     </>
   );

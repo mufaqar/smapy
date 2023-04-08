@@ -79,7 +79,7 @@ export const Home = () => {
 
   return (
     <>
-      <section className="h-screen bg-cover bg-right-bottom bg-no-repeat md:bg-[url('/images/mobile-main.png')] lg:-mt-28 lg:bg-[url('/images/main.png')]">
+      <section className="h-screen bg-[url('/images/mobile-main.png')] bg-cover bg-right-bottom bg-no-repeat lg:-mt-28 lg:bg-[url('/images/main.png')]">
         <div className="container mx-auto flex h-full flex-col items-end justify-center lg:justify-end">
           <div className="mb-24 w-full px-4 pr-[50%] text-right lg:px-0 lg:pr-[12%] 2xl:pr-[7%]">
             <h1 className="text-shadow mb-4 max-w-[600px] scroll-m-20 text-[30px] font-extrabold leading-[38px]  tracking-tight text-white sm:text-5xl sm:leading-[60px] lg:mb-0 lg:text-6xl lg:leading-[75px]">
@@ -353,7 +353,7 @@ export const Home = () => {
           </h1>
           <Accordion type="single" collapsible>
             {faqData.slice(0, 3).map(({ q, a }, idx: number) => (
-              <Faq key={idx} = {`${idx}`} question={q} answer={a} />
+              <Faq key={idx} value={`${idx}`} question={q} answer={a} />
             ))}
           </Accordion>
           <div className="mt-4 w-full text-base underline rtl:text-left lg:text-[22px]">

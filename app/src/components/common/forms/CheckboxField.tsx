@@ -1,4 +1,4 @@
-import { useMeta, value useTsController } from "../../libs/react-ts-form";
+import { useMeta, useTsController } from "../../libs/react-ts-form";
 import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 import { FormControl } from "./FormControl";
 import { clsx } from "clsx";

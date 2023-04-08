@@ -1,13 +1,13 @@
 import {
-  value NavigationMenu,
-  value NavigationMenuContent,
-  value NavigationMenuIndicator,
-  value NavigationMenuItem,
-  value NavigationMenuLink,
-  value NavigationMenuList,
-  value NavigationMenuTrigger,
-  value NavigationMenuViewport,
-  value navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -117,163 +117,143 @@ export const PageNavigationMenu = () => {
             />
           </Link>
         </div>
-        {openMobileNav && (
-          <nav className="fixed inset-0 z-50 bg-white lg:hidden">
-            <button
-              className="absolute top-4 right-4 z-50 cursor-pointer"
-              onClick={() => setOpenMobileNav(false)}
-            >
-              <Image src="/images/x.svg" alt="menu" width={30} height={100} />
-            </button>
-            <Image
-              src="/images/open-nav-icon.svg"
-              alt="menu"
-              width={135}
-              height={100}
-              className="absolute top-0 left-0"
-            />
+        {
+          openMobileNav && <nav className="fixed inset-0 z-50 bg-white lg:hidden">
+          <button
+            className="absolute top-4 right-4 z-50 cursor-pointer"
+            onClick={() => setOpenMobileNav(false)}
+          >
+            <Image src="/images/x.svg" alt="menu" width={30} height={100} />
+          </button>
+          <Image
+            src="/images/open-nav-icon.svg"
+            alt="menu"
+            width={135}
+            height={100}
+            className="absolute top-0 left-0"
+          />
 
-            <NavigationMenu>
-              <section>
-                <div className="mt-20 flex list-none flex-col gap-3 text-center">
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        {t("nav.about")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/faq" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        {t("nav.faqData")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/prices" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        {t("nav.price")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/security-privacy" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        {t("nav.security")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                </div>
-                <div className="mt-6 flex list-none flex-col items-center justify-center gap-5">
-                  <NavigationMenuItem className="mx-2">
-                    <Link href="/customer" legacyBehavior passHref>
-                      <NavigationMenuLink className={cn(buttonVariants())}>
-                        {t("nav.customer_entry")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem className="mx-2">
-                    <Link href="/advisor" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={`border-[#16D1C6] ${cn(buttonVariants())}`}
-                      >
-                        {t("nav.agent_entry")}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                </div>
-                <div className="mt-10 flex list-none items-center justify-center border-t-[1px] border-gray-200 pt-10 ">
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <Image
-                          src="/images/Facebook.svg"
-                          alt="faceboook"
-                          width={42}
-                          height={42}
-                        />
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <Image
-                          src="/images/Linkedin-ico.svg"
-                          alt="faceboook"
-                          width={42}
-                          height={42}
-                        />
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <Image
-                          src="/images/Google+ico.svg"
-                          alt="faceboook"
-                          width={42}
-                          height={42}
-                        />
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                </div>
-                <div className="mt-5 flex list-none flex-col gap-3 text-center">
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <span className="font-normal text-[#495057]">
-                          שומיש יאנת
-                        </span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <span className="font-normal text-[#495057]">
-                          תויטרפ תוינידמ
-                        </span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <span className="font-normal text-[#495057]">
-                          תודוא
-                        </span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                </div>
-              </section>
-            </NavigationMenu>
-          </nav>
-        )}
+          <NavigationMenu>
+            <section>
+              <div className="mt-20 flex list-none flex-col gap-3 text-center">
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {t("nav.about")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/faq" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {t("nav.faqData")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/prices" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {t("nav.price")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/security-privacy" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {t("nav.security")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </div>
+              <div className="mt-6 flex list-none flex-col items-center justify-center gap-5">
+                <NavigationMenuItem className="mx-2">
+                  <Link href="/customer" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(buttonVariants())}>
+                      {t("nav.customer_entry")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="mx-2">
+                  <Link href="/advisor" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`border-[#16D1C6] ${cn(buttonVariants())}`}
+                    >
+                      {t("nav.agent_entry")}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </div>
+              <div className="mt-10 flex list-none items-center justify-center border-t-[1px] border-gray-200 pt-10 ">
+               <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <Image src="/images/Facebook.svg" alt="faceboook" width={42} height={42}/>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <Image src="/images/Linkedin-ico.svg" alt="faceboook" width={42} height={42}/>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <Image src="/images/Google+ico.svg" alt="faceboook" width={42} height={42}/>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </div>
+              <div className="mt-5 flex list-none flex-col gap-3 text-center">
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <span className="font-normal text-[#495057]">שומיש יאנת</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <span className="font-normal text-[#495057]">תויטרפ תוינידמ</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/about-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                     <span className="font-normal text-[#495057]">תודוא</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </div>
+            </section>
+          </NavigationMenu>
+        </nav>
+        }
+        
       </MobileNavMenu>
     </>
   );
