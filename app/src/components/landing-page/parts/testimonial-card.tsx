@@ -48,9 +48,9 @@ export const TestimonialCard = ({
             </Avatar>
           </div>
           <ul className="item-center my-6 flex gap-1">
-            {rating.map((item, idx) => {
+            {rating.map((_, i) => {
               return (
-                <li key={idx}>
+                <li key={i}>
                   <Image
                     src="/images/star.svg"
                     alt="star"

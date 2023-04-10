@@ -31,7 +31,13 @@ export const ImageCard = ({
       : "lg:mt-10";
   const wrapper = idx === 1 ? "" : idx === 2 ? "lg:pt-32" : idx === 3 ? "" : "";
   const imageWrapper =
-    idx === 1 ? "" : idx === 2 ? "" : idx === 3 ? "lg:-mt-32 xl:-mt-28" : "lg:mt-5";
+    idx === 1
+      ? ""
+      : idx === 2
+      ? ""
+      : idx === 3
+      ? "lg:-mt-32 xl:-mt-28"
+      : "lg:mt-5";
 
   return (
     <>
@@ -43,18 +49,18 @@ export const ImageCard = ({
             src={image}
             alt=""
             width={imageWidth}
-            className={`hidden pl-16 lg:block lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"} ${
-              idx === 3 && "lg:scale-105"
-            }`}
+            className={`hidden pl-16 lg:block lg:pl-0 ${
+              idx === 4 && "pl-0 lg:scale-125"
+            } ${idx === 3 && "lg:scale-105"}`}
             height={250}
           />
           <Image
             src={imageMbl}
             alt=""
             width={`300`}
-            className={`pl-16 lg:hidden lg:pl-0 ${idx === 4 && "pl-0 lg:scale-125"} ${
-              idx === 3 && "lg:scale-105"
-            }`}
+            className={`pl-16 lg:hidden lg:pl-0 ${
+              idx === 4 && "pl-0 lg:scale-125"
+            } ${idx === 3 && "lg:scale-105"}`}
             height={250}
           />
         </figure>
@@ -70,7 +76,6 @@ export const ImageCard = ({
           {children}
         </div>
       </div>
-      
     </>
   );
 };
