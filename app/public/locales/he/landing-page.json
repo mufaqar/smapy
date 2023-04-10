@@ -106,7 +106,7 @@
       }
     }
   },
-  "faqData": {
+  "faq": {
     "header": "שאלות ותשובות נפוצות",
     "text": "משהו לא ברור? ריכזנו עבורכם את השאלות הנפוצות ביותר",
     "questions": {
@@ -197,11 +197,12 @@
   },
   "nav": {
     "about": "קצת עלינו",
-    "faqData": "שאלות נפוצות",
+    "faq": "שאלות נפוצות",
     "price": "מחירון",
     "security": "אבטחה ופרטיות",
     "customer_entry": "כניסת לקוחות",
-    "agent_entry": "כניסת יועצים/סוכנים"
+    "agent_entry": "כניסת יועצים/סוכנים",
+    "faqData": "nav.faqData"
   },
   "login": {
     "label": "שמחים לראותך שוב!",
@@ -213,11 +214,24 @@
     "phone": {
       "label": "מספר טלפון"
     },
-    "error_mismatch": "Phone is registered with different id"
+    "error_mismatch": "Phone is registered with different id, please check if information is correct"
   },
-  "Required": "Required",
-  "sample": {
-    "translation_v2": "sample.translation_v2",
-    "translation_v6": "sample.translation_v6"
+  "Required": "שדה חובה",
+  "otp": {
+    "label": "אימות קטן וממשיכים..",
+    "placeholder": "Sent you confirmation code in SMS message",
+    "entry_customer": "כניסת לקוחות",
+    "entry_advisor": "כניסת יועצים/ות",
+    "pin": {
+      "label": "מהו הקוד שקיבלת?"
+    },
+    "next": "המשך"
+  },
+  "Token has expired or is invalid": "קוד אימות שגוי או לא בתוקף",
+  "Not valid israeli id number": "מספר זהות בלתי חוקי",
+  "String must contain at least 6 character(s)": "String must contain at least 6 character(s)",
+  "Not a valid phone number": "מספר טלפון בלתי חוקי",
+  "user_id": {
+    "next": "המשך"
   }
 }

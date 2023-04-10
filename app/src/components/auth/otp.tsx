@@ -52,6 +52,7 @@ export const OTP = ({ role, onVerifyOTP }: Props) => {
         <h1 className="text-5xl font-normal">
           {evaluateFormControlCallback(label)}
         </h1>
+        <span>[PLACEHOLDER] message was sent to xxx...</span>
 
         <Form
           formContext={formContext}
@@ -62,7 +63,7 @@ export const OTP = ({ role, onVerifyOTP }: Props) => {
           formProps={{
             submit: {
               notification: false,
-              text: "Next",
+              text: t("otp.next") || "",
             },
           }}
         ></Form>

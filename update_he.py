@@ -10,9 +10,13 @@ from bidi.algorithm import get_display
 
 from zz_updator import refresh_address_jsons
 
-JSON_PATH = 'app/public/locales/he/landing-page.json'
 EXCEL_PATH = r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-INP_PATH = 'update_assets/input.xlsx'
+INP_PATH = r'C:\Users\Nadav\Documents\ALL_PROJECTS\smapy\update_assets\input.xlsx'
+
+CUSTOMER_HE_PATH = 'app/public/locales/he/customer.json'
+COMMON_HE_PATH = 'app/public/locales/he/common.json'
+ADVISOR_HE_PATH = 'app/public/locales/he/advisor.json'
+LANDING_PAGE_HE_PATH = 'app/public/locales/he/landing-page.json'
 
 
 def fmt_bi(content, *, direct):
@@ -26,7 +30,7 @@ def fmt_bi(content, *, direct):
     return pat.sub(repl=' ', string=res)
 
 
-def json_to_sheet(fmt_flag):
+def json_to_sheet(json_path):
     """Reload Excel sheet with current json entries."""
 
     def json_to_df(main_obj):
@@ -48,10 +52,10 @@ def json_to_sheet(fmt_flag):
         data = dict(key=[], value=[])
         fill_data(main_obj)
         df = pd.DataFrame(data)
-        df['format_flag'] = fmt_flag
+        df['format_flag'] = False
         return df
 
-    with open(JSON_PATH, encoding='utf-8') as fp:
+    with open(json_path, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
     result = json_to_df(json_obj)
@@ -60,7 +64,7 @@ def json_to_sheet(fmt_flag):
     subprocess.run([EXCEL_PATH, INP_PATH])
 
 
-def sheet_to_json():
+def sheet_to_json(json_path):
     """Update json entries with sheet data."""
 
     def row_to_json_obj(row: pd.Series, *, obj):
@@ -91,22 +95,37 @@ def sheet_to_json():
         else:
             print(invalid_key_message)
 
-    with open(JSON_PATH, encoding='utf-8') as fp:
+    with open(json_path, encoding='utf-8') as fp:
         json_obj = json.load(fp)
 
-    df = pd.read_excel(INP_PATH)
+    df = pd.read_excel(INP_PATH).dropna(subset='key')
     df.apply(row_to_json_obj, axis=1, obj=json_obj)
 
-    with open(JSON_PATH, mode='w', encoding='utf-8') as fp:
-        json.dump(json_obj, fp)
+    with open(json_path, mode='w', encoding='utf-8') as fp:
+        json.dump(json_obj, fp, ensure_ascii=False)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--init', action='store_true',
-                        help='Format all by default.')
+    parser = argparse.ArgumentParser(
+        description='Script to update values in'
+                    ' hebrew locale.')
+    allowed_values = ['landing', 'common', 'advisor', 'customer']
+    parser.add_argument('-p', '--path', choices=allowed_values,
+                        help='filepath to modify.')
     args = parser.parse_args()
-    flag = args.init
+
+    match args.path:
+        case 'landing':
+            target = LANDING_PAGE_HE_PATH
+        case 'common':
+            target = COMMON_HE_PATH
+        case 'advisor':
+            target = ADVISOR_HE_PATH
+        case 'customer':
+            target = CUSTOMER_HE_PATH
+        case _:
+            raise ValueError(f'Value should be in {allowed_values}.')
+
     refresh_address_jsons()
-    json_to_sheet(flag)
-    sheet_to_json()
+    json_to_sheet(target)
+    sheet_to_json(target)

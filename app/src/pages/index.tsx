@@ -6,7 +6,10 @@ import { Footer } from "@/components/layout/footer";
 import React from "react";
 import { Home } from "@/components/landing-page/home";
 
-export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
+export const getServerSideProps = i18nGetServerSideProps([
+  "landing-page",
+  "common",
+]);
 
 const HomePage: NextPage = () => {
   return (

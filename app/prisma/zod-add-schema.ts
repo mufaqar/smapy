@@ -12,8 +12,8 @@ export const optionalUuidSchema = z
   .transform((e) => (e === "" ? undefined : e));
 
 export const InterestType = {
-  fixed: "fixed",
   change: "change",
+  fixed: "fixed",
 };
 
 export const LinkageType = {
