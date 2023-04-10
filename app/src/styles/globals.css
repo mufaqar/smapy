@@ -2,46 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-Light.ttf');
+  src: url("../../public/fonts/Rubik-Light.ttf");
   font-weight: 300;
 }
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-Regular.ttf');
+  src: url("../../public/fonts/Rubik-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-Medium.ttf');
+  src: url("../../public/fonts/Rubik-Medium.ttf");
   font-weight: 500;
 }
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-SemiBold.ttf');
+  src: url("../../public/fonts/Rubik-SemiBold.ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-Bold.ttf');
+  src: url("../../public/fonts/Rubik-Bold.ttf");
   font-weight: 700;
 }
 @font-face {
   font-family: rubik;
-  src: url('../../public/fonts/Rubik-ExtraBold.ttf');
+  src: url("../../public/fonts/Rubik-ExtraBold.ttf");
   font-weight: 800;
 }
 
-.text-shadow{
+.text-shadow {
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-
-body{
-  font-family: 'Rubik', sans-serif;
+body {
+  font-family: "Rubik", sans-serif;
 }
 
 /* should be done inside tailwind app/src/components/common/forms/RadioButtonGroup.tsx */
@@ -56,15 +53,13 @@ button.radio-group-tbd[data-state="on"] {
 .blog h2 {
   font-weight: bold;
 }
-.shadow{
+.shadow {
   box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.1);
 }
 
-
-
-@layer components{
-  .main-heading{
-    @apply text-[28px] md:text-[42px] font-bold leading-8
+@layer components {
+  .main-heading {
+    @apply text-[28px] font-bold leading-8 md:text-[42px];
   }
 }
 
@@ -79,48 +74,62 @@ button.radio-group-tbd[data-state="on"] {
 .blog ol {
   @apply my-6 ml-6 list-disc;
 }
-svg{
+svg {
   margin: auto;
 }
-._testimonial .slick-dots li button:before{
+._testimonial .slick-dots li button:before {
   background: transparent;
   color: transparent;
-  border: 3px solid #BED5D7;
+  border: 3px solid #bed5d7;
   border-radius: 100%;
 }
-._testimonial .slick-dots li{
+._testimonial .slick-dots li {
   margin: 0 10px;
 }
-._testimonial .slick-dots li.slick-active button:before{
+._testimonial .slick-dots li.slick-active button:before {
   color: transparent;
-  background: #BED5D7;
+  background: #bed5d7;
 }
-._testimonial .slick-list{
-padding-bottom: 2rem
+._testimonial .slick-list {
+  padding-bottom: 2rem;
 }
-.accordion{
-  background: linear-gradient(90deg, rgba(254, 5, 85, 0.15) 0%, rgba(255, 135, 0, 0.15) 100%);
+.accordion {
+  background: linear-gradient(
+    90deg,
+    rgba(254, 5, 85, 0.15) 0%,
+    rgba(255, 135, 0, 0.15) 100%
+  );
   mix-blend-mode: normal;
-  border: 1px solid #E8A5AD;
+  border: 1px solid #e8a5ad;
   box-shadow: 0px 4px 20px rgba(84, 76, 105, 0.22);
   border-radius: 15px;
 }
-.contact-icon{
-  background: linear-gradient(315deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
+.contact-icon {
+  background: linear-gradient(
+      315deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #ffffff;
   background-blend-mode: soft-light, normal;
-  box-shadow: -8.90123px -8.90123px 26.7037px rgba(255, 255, 255, 0.5), 13.3518px 13.3518px 26.7037px rgba(0, 0, 0, 0.15);
+  box-shadow: -8.90123px -8.90123px 26.7037px rgba(255, 255, 255, 0.5),
+    13.3518px 13.3518px 26.7037px rgba(0, 0, 0, 0.15);
   border-radius: 32px;
 }
 
-@media (max-width:768px) {
-  ._testimonial .slick-dots li button:before{
+@media (max-width: 768px) {
+  ._testimonial .slick-dots li button:before {
     width: 12px;
     height: 12px;
   }
-  ._testimonial .slick-dots li{
-    margin: 0 5px
+  ._testimonial .slick-dots li {
+    margin: 0 5px;
   }
-  .contact-icon{
+  .contact-icon {
     border-radius: 12px;
   }
+  ._left{
+    right: -4rem
+  }
 }
+

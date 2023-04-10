@@ -46,6 +46,7 @@ export const SectionContactUs = ({ children }: Props) => {
         className="h-[950px] overflow-hidden bg-cover bg-no-repeat md:hidden"
         style={{ backgroundImage: `url("/images/mbl-footer-bg.png")` }}
       >
+        '
         <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
           <div className="mb-[350px] w-full px-4">
             {children}
