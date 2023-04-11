@@ -18,7 +18,7 @@ export const AboutUs = () => {
         btnText={t("about.buy")}
       />
       <section className="relative">
-        <div className="relative container mx-auto px-4 xl:px-0">
+        <div className="container relative mx-auto px-4 xl:px-0">
           <h1 className="mb-8 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             {t("about.tech.header")}
           </h1>
@@ -32,7 +32,7 @@ export const AboutUs = () => {
             alt="shape"
             width={150}
             height={100}
-            className="absolute right-0 -z-[1] hidden md:block -top-40"
+            className="absolute right-0 -top-40 -z-[1] hidden md:block"
           />
         <Image
             src="/images/shape/bg-l-orange.svg"
@@ -53,7 +53,7 @@ export const AboutUs = () => {
       </section>
 
       <section className="relative px-4 lg:px-0">
-        <div className="container mx-auto mt-10 bg-white rounded-[40px] p-8 shadow md:p-12">
+        <div className="container mx-auto mt-10 rounded-[40px] bg-white p-8 shadow md:p-12">
           <h2 className="gradient-text mb-2 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             {t("about.vision.header")}
           </h2>

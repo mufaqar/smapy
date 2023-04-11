@@ -24,7 +24,7 @@ export const PriceCard = ({ name, price, lines, image }: Props) => {
     ...(lines || []),
   ];
   return (
-    <div className="flex relative flex-col items-center mb-5 lg:mb-0 justify-between gap-2 rounded-[40px] bg-gradient-to-l from-[#16D1C6] to-[#0E5D89] p-1">
+    <div className="relative mb-5 flex flex-col items-center justify-between gap-2 rounded-[40px] bg-gradient-to-l from-[#16D1C6] to-[#0E5D89] p-1 lg:mb-0">
       <div className="mt-4 flex flex-col items-center">
         <img src={image} alt="" className="h-12 w-12" />
         <h2 className="my-3 text-center text-2xl font-medium text-white">
@@ -32,7 +32,7 @@ export const PriceCard = ({ name, price, lines, image }: Props) => {
         </h2>
       </div>
 
-      <div className="h-full w-full flex flex-col gap-6 justify-between rounded-[40px] bg-white p-6">
+      <div className="flex h-full w-full flex-col justify-between gap-6 rounded-[40px] bg-white p-6">
         <ul className="border-b-[1px] border-gray-200 pb-4">
           {all_lines.map((line, idx) => (
             <li
@@ -55,15 +55,15 @@ export const PriceCard = ({ name, price, lines, image }: Props) => {
             <p className="font-light text-[#495057]">{t("price.cost")}</p>
             <p className="font-bold text-[#495057]">{price}</p>
           </div>
-          <div className="flex items-center gap-5 mt-2 mb-6">
+          <div className="mt-2 mb-6 flex items-center gap-5">
             <p className="font-light text-[#495057]">{t("price.cost_service")}</p>
             <p className="font-bold text-[#495057]">{t("price.free")}</p>
           </div>
           <p className="text-center font-light text-[#495057]">{t("price.footer")}</p>
-          <p className="text-center font-light text-sm text-[#495057] mb-5">{t("price.footer2")}</p>
+          <p className="mb-5 text-center text-sm font-light text-[#495057]">{t("price.footer2")}</p>
         </div>
       </div>
-      <Link className="bg-gradient-to-l -bottom-4 absolute from-[#FF8700] to-[#FE0555] text-white p-2 rounded-xl px-8" href="#">חוטיב תשיכרל</Link>
+      <Link className="absolute -bottom-4 rounded-xl bg-gradient-to-l from-[#FF8700] to-[#FE0555] p-2 px-8 text-white" href="#">חוטיב תשיכרל</Link>
     </div>
   );
 };

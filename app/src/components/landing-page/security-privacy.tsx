@@ -18,13 +18,13 @@ export const SecurityPrivacy = () => {
       />
 
       <section className="relative">
-      <div className="max-w-[900px] px-4 lg:px-0 mx-auto">
+      <div className="mx-auto max-w-[900px] px-4 lg:px-0">
         <h1 className="mb-8 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
         {t("security.header2")}
           </h1>
-        <p className="font-light text-xl leading-8 text-[#495057]">{t("security.text1")}</p>
-        <div className="font-light text-xl leading-8 mt-6 text-[#495057]">
-        <Image src="/images/_logo.svg" alt="logo" className="inline-block ml-2" width={80} height={15}/>
+        <p className="text-xl font-light leading-8 text-[#495057]">{t("security.text1")}</p>
+        <div className="mt-6 text-xl font-light leading-8 text-[#495057]">
+        <Image src="/images/_logo.svg" alt="logo" className="ml-2 inline-block" width={80} height={15}/>
         {t("security.text2")}
         </div>
       </div>
@@ -33,7 +33,7 @@ export const SecurityPrivacy = () => {
             alt="shape"
             width={150}
             height={100}
-            className="absolute right-0 -z-[1] top-[1000px] md:-top-40"
+            className="absolute right-0 top-[1000px] -z-[1] md:-top-40"
           />
           <Image
             src="/images/shape/bg-l-orange.svg"
@@ -47,12 +47,12 @@ export const SecurityPrivacy = () => {
             alt="shape"
             width={90}
             height={100}
-            className="absolute right-0 bottom-[600px] md:hidden -z-[1] top-20 "
+            className="absolute right-0 bottom-[600px] top-20 -z-[1] md:hidden "
           />
       </section>
       
 
-      <section className="shadow max-w-[900px] w-full mx-auto rounded-3xl md:my-10 mb-80 md:mb-20">
+      <section className="mx-auto mb-80 w-full max-w-[900px] rounded-3xl shadow md:my-10 md:mb-20">
         <div className="flex flex-row flex-wrap justify-center gap-8 py-6">
           <CompanyLogo
             name={t("security.logo.1")}

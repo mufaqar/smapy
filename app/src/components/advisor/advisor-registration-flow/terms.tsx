@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import SignatureCanvas from "react-signature-canvas";
+import ReactSignatureCanvas from "react-signature-canvas";
 
 export const Terms = () => {
-  const signaturePadRef = useRef<SignatureCanvas>();
+  const signaturePadRef = useRef<ReactSignatureCanvas>(null);
 
   const handleClear = () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -16,7 +16,7 @@ export const Terms = () => {
   };
   return (
     <>
-      <SignatureCanvas
+      <ReactSignatureCanvas
         ref={signaturePadRef}
         penColor="green"
         canvasProps={{
