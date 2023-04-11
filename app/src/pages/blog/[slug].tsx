@@ -1,4 +1,4 @@
-/* eslint-disable tailwindcss/no-custom-classname */
+/* xslint-disable tailwindcss/no-custom-classname */
 
 import Head from "next/head";
 import { allPosts } from "contentlayer/generated";

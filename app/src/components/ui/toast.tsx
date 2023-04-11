@@ -1,4 +1,4 @@
-/* eslint-disable tailwindcss/no-custom-classname */
+/* xslint-disable tailwindcss/no-custom-classname */
 
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";

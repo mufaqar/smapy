@@ -1,0 +1,21 @@
+on: [pull_request]
+
+name: Pull Request Check
+jobs:
+  pullrequest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: yarn_confirm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: cd app && yarn && yarn confirm-ci
+
+    # - id: 'post-comment'
+    #   uses: thollander/actions-comment-pull-request@v2
+    #   with:
+    #     message: "Success"
+    #     reactions: rocket
