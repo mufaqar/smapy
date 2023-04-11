@@ -20,7 +20,7 @@ const FAQ: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageNavigationMenu />
-      <main className="align- flex flex-col gap-8">
+      <main className="align-flex  flex-col gap-8">
         <FAQPage />
       </main>
       <Footer />

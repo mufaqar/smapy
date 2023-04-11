@@ -28,10 +28,10 @@ import { ProfileCard } from "@/components/landing-page/parts/profile-card";
 import { faqData } from "@/components/landing-page/parts/faq-data";
 import { SectionContactUs } from "@/components/landing-page/parts/section-contact-us";
 import { PriceCard } from "@/components/landing-page/parts/price-card";
-
+import {Prices} from '../components/landing-page/prices'
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
-const Prices: NextPage = () => {
+const PricesPage: NextPage = () => {
   const { t } = useTranslation("landing-page");
 
   return (
@@ -50,4 +50,4 @@ const Prices: NextPage = () => {
   );
 };
 
-export default Prices;
+export default PricesPage;

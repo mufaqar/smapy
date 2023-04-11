@@ -2,43 +2,92 @@ import { useTranslation } from "next-i18next";
 import { Button } from "@/components/ui/button";
 import { ProfileCard } from "@/components/landing-page/parts/profile-card";
 import React from "react";
+import PageBanner from "./page-banner";
+import Image from "next/image";
 
 export const AboutUs = () => {
   const { t } = useTranslation("landing-page");
 
   return (
     <>
-      {" "}
-      <section>
-        <h1 className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-6xl">
-          {t("about.header")}
-        </h1>
-        <Button variant="primary">{t("about.buy")}</Button>
+      <PageBanner
+        heading={t("about.header")}
+        subheading={``}
+        image="/images/about-image.png"
+        mobileImage="/images/about-image-mobile.png"
+        btnText={t("about.buy")}
+      />
+      <section className="relative">
+        <div className="relative container mx-auto px-4 xl:px-0">
+          <h1 className="mb-8 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+            {t("about.tech.header")}
+          </h1>
+          <p className="text-xl font-light leading-8 text-[#495057]">
+            {t("about.tech.text")}
+          </p>
+          
+        </div>
+        <Image
+            src="/images/shape/bg-r-design.svg"
+            alt="shape"
+            width={150}
+            height={100}
+            className="absolute right-0 -z-[1] hidden md:block -top-40"
+          />
+        <Image
+            src="/images/shape/bg-l-orange.svg"
+            alt="shape"
+            width={150}
+            height={100}
+            className="absolute left-0 top-0 -z-[1] hidden md:block lg:-top-40"
+          />
+        <Image
+          src="/images/shape/blue-right.svg"
+          alt="shape"
+          width={90}
+          height={100}
+          className="absolute right-0 top-20 -z-[1] md:hidden"
+        />
+        
+        
       </section>
-      <section>
-        <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-          {t("about.tech.header")}
-        </h1>
-        <p className="text-2xl font-bold tracking-tight lg:text-2xl">
-          {t("about.tech.text")}
-        </p>
+
+      <section className="relative px-4 lg:px-0">
+        <div className="container mx-auto mt-10 bg-white rounded-[40px] p-8 shadow md:p-12">
+          <h2 className="gradient-text mb-2 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+            {t("about.vision.header")}
+          </h2>
+          <h3 className="mb-8 scroll-m-20 text-center text-2xl tracking-tight">
+            {t("about.vision.header_2")}
+          </h3>
+          <p className="text-center text-xl font-light leading-8 text-[#495057]">
+            {t("about.vision.text")}
+          </p>
+          <div className="gradient-text mt-10 flex w-full items-center justify-center">
+            <Button variant="default">ונלש תורישה לע דוע</Button>
+          </div>
+        </div>
+        <Image
+          src="/images/shape/orange-diamond.svg"
+          alt="shape"
+          width={160}
+          height={100}
+          className="absolute left-0 top-60 -z-[1] md:hidden"
+        />
+        <Image
+          src="/images/shape/orange-line-2 .png"
+          alt="shape"
+          width={150}
+          height={100}
+          className="absolute right-0 top-80 -z-[1] hidden md:block"
+        />
       </section>
-      <section>
-        <h2 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-          {t("about.vision.header")}
-        </h2>
-        <h3 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
-          {t("about.vision.header_2")}
-        </h3>
-        <p className="text-2xl font-bold tracking-tight lg:text-2xl">
-          {t("about.vision.text")}
-        </p>
-      </section>
-      <section>
-        <h1 className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-5xl">
+
+      <section className="container mx-auto mt-10 mb-96 px-4 md:mb-20 lg:px-0">
+        <h1 className="mb-8 scroll-m-20 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
           {t("about.about_us.header")}
         </h1>
-        <div className="flex flex-row flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 justify-center gap-8 md:grid-cols-2 lg:grid-cols-3">
           <ProfileCard
             name={t("about.profile.1.name")}
             role_en={t("about.profile.1.role_en")}

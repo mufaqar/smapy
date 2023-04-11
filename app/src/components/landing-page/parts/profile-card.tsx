@@ -15,14 +15,14 @@ interface Props {
 
 export const ProfileCard = ({ name, role_he, role_en, text, image }: Props) => {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-md border">
+    <div className="flex flex-col items-center gap-2 rounded-[40px] p-10 bg-white shadow">
       <Avatar>
         <AvatarImage src={image} />
       </Avatar>
-      <p>{name}</p>
-      <p>{role_en}</p>
-      <p>{role_he}</p>
-      <p className="self-end">{text}</p>
+      <p className="text-xl font-bold">{name}</p>
+      <p className="text-sm -mt-1 text-[#75787C]">{role_en}</p>
+      <p className="text-sm -mt-1 text-[#75787C]" >{role_he}</p>
+      <p className="font-light text-lg text-center mt-8 leading-8 text-[#495057]">{text}</p>
     </div>
   );
 };

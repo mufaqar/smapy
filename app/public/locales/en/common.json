@@ -20,17 +20,17 @@
   },
   "footer": {
     "structure_ins": {
-      "header": "footer.structure_ins.header",
+      "header": "אתנכשמ חוטיב",
       "list": {
-        "1": "footer.structure_ins.list.1",
-        "2": "footer.structure_ins.list.2",
+        "1": "םיפיט",
+        "2": "אתנכשמ חוטיב תאוושה",
         "3": "footer.structure_ins.list.3",
         "4": "footer.structure_ins.list.4",
         "5": "footer.structure_ins.list.5"
       }
     },
     "mortgage_struct_ins": {
-      "header": "footer.mortgage_struct_ins.header",
+      "header": "תכולה ומבנה ‧ טיפים",
       "list": {
         "1": "footer.mortgage_struct_ins.list.1",
         "2": "footer.mortgage_struct_ins.list.2",

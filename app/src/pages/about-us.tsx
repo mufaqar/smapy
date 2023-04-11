@@ -25,10 +25,11 @@ import {
 } from "@/components/landing-page/parts/Icons";
 import { Button } from "@/components/ui/button";
 import { ProfileCard } from "@/components/landing-page/parts/profile-card";
+import {AboutUs} from '../components/landing-page/about-us'
 
 export const getServerSideProps = i18nGetServerSideProps(["landing-page"]);
 
-const AboutUs: NextPage = () => {
+const About: NextPage = () => {
   const { t } = useTranslation("landing-page");
 
   return (
@@ -47,4 +48,4 @@ const AboutUs: NextPage = () => {
   );
 };
 
-export default AboutUs;
+export default About;

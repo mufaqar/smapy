@@ -13,7 +13,7 @@ interface Props {
 export const SectionContactUs = ({ children }: Props) => {
   return (
     <>
-      <section className="hidden overflow-x-hidden md:block lg:mt-40 2xl:mt-24">
+      <section className="hidden overflow-x-hidden md:block lg:mt-10 2xl:mt-24">
         <img
           src="/images/footer-bg.png"
           alt="img"

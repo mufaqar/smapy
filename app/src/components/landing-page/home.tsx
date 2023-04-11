@@ -346,7 +346,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="relative mt-10 px-4 lg:mt-20 lg:px-0">
+      <section className="relative mt-10 px-4 lg:mt-20 lg:px-0 mb-20">
         <div className="container mx-auto">
           <h1 className="main-heading mb-6 text-center">
             {t("index.sections.6.header")}

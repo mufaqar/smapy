@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import SignatureCanvas from "react-signature-canvas";
 
 export const Terms = () => {
-  const signaturePadRef = useRef(null);
+  const signaturePadRef = useRef<SignatureCanvas>();
 
   const handleClear = () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -20,10 +20,9 @@ export const Terms = () => {
         ref={signaturePadRef}
         penColor="green"
         canvasProps={{
-          border: "1px solid black",
           width: 400,
           height: 200,
-          className: "sigCanvas border-black border-2 ",
+          className: "sigCanvas border-black border-2",
         }}
       />
       <div className="mb-72 flex justify-around">
