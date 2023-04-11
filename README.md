@@ -3,16 +3,16 @@ ___
 
 ## New Development Setup
 
-Make sure to get .env file and save in ./app 
+Make sure to get .env file and save in ./app
 
 ```
 yarn install
 cd app
 yarn dev
-yarn storybook 
+yarn storybook
 ```
 
-We use prettier for code formatting, please configure your IDE 
+We use prettier for code formatting, please configure your IDE
 to reformat on save
 
 Prettier is installed as part of the project so can just use from node_module
@@ -32,3 +32,8 @@ run `python update_he.py` to modify hebrew text.
 
 cd ./app
 yarn add file:C:/smapy/storybook-react-i18next-main
+
+## TODO
+
+Put back
+"plugin:tailwindcss/recommended"
