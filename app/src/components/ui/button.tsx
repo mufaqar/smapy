@@ -10,9 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "rounded-[20px] bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] text-base text-white",
+          "rounded-[16px] bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] text-base text-white",
+        secondary:
+          "rounded-[16px] bg-gradient-to-r from-darkBlue to-lightBlue text-base text-white",
         default:
-          " color-black cursor-pointer rounded-full border border-[rgba(254,5,85,1)]",
+          " color-black cursor-pointer rounded-[16px] border border-[rgba(254,5,85,1)] focus:outline-none hover:border-transparent hover:bg-gradient-to-r hover:from-[rgba(254,5,85,1)] hover:to-[rgba(255,135,0,1)] active:scale-95",
+          secondaryBorder:
+            " color-black cursor-pointer rounded-[16px] border border-darkBlue focus:outline-none active:scale-95 hover:border-transparent hover:bg-gradient-to-r hover:from-darkBlue hover:to-lightBlue",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         outline:

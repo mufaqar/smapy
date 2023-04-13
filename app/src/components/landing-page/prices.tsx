@@ -48,7 +48,7 @@ export const Prices = () => {
             alt="shape"
             width={150}
             height={100}
-            className="absolute right-0 top-[1000px] -z-[1] md:-top-40"
+            className="absolute right-0 -z-[1] top-[1000px] md:-top-40"
           />
           <Image
             src="/images/shape/bg-l-orange.svg"
@@ -62,14 +62,14 @@ export const Prices = () => {
             alt="shape"
             width={120}
             height={100}
-            className="absolute right-0 bottom-[600px] top-20 -z-[1] md:hidden "
+            className="absolute right-0 bottom-[600px] md:hidden -z-[1] top-20 "
           />
           <Image
             src="/images/shape/left-l-green.svg"
             alt="shape"
             width={100}
             height={100}
-            className="absolute inset-y-60 left-0 -z-[1] md:hidden"
+            className="absolute left-0 bottom-60 -z-[1] md:hidden top-60"
           />
       </section>
       <SectionContactUs>

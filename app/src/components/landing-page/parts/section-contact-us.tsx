@@ -50,7 +50,7 @@ export const SectionContactUs = ({ children }: Props) => {
         <div className="container relative mx-auto flex h-full flex-col items-end justify-end">
           <div className="mb-[350px] w-full px-4">
             {children}
-            <div className="-mr-2 mt-2 flex flex-row gap-2 lg:mt-8 lg:gap-8">
+            <div className="-mr-2 mt-2 flex justify-center sm:justify-start flex-row sm:gap-2 lg:mt-8 lg:gap-8">
               <ConnectButton
                 icon={<WhatsappIcon />}
                 text="Whatsapp"

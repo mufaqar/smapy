@@ -29,7 +29,7 @@ const PageBanner = ({ heading, subheading, image, mobileImage, btnText }: any) =
         <p className="mt-2 max-w-[250px] text-right text-xl md:max-w-[580px] lg:text-3xl">
           {subheading}
         </p>
-        {btnText && <div className="mt-4 w-full max-w-[250px] md:max-w-[580px] "> <Button variant="primary">{btnText}</Button> </div> }
+        {btnText && <div className="md:max-w-[580px] max-w-[250px] w-full mt-4 "> <Button variant="primary">{btnText}</Button> </div> }
       </div>
       
     </section>

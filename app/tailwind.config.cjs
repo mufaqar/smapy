@@ -9,6 +9,8 @@ module.exports = {
       colors: {
         'primary': 'rgb(238,11,81)',
         'secondary': '#F08101',
+        'darkBlue':'#0E5D89',
+        'lightBlue': '#16D1C6',
         'maingray': '#495057',
       },
       fontFamily: {

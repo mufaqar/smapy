@@ -31,28 +31,28 @@ export const FAQPage = () => {
           alt="shape"
           width={150}
           height={100}
-          className="absolute right-0 -top-20 -z-[1] hidden md:-top-40 md:block"
+          className="absolute right-0 hidden md:block -top-20 md:-top-40 -z-[1]"
         />
         <Image
           src="/images/shape/bg-l-orange.svg"
           alt="shape"
           width={150}
           height={100}
-          className="absolute left-0 top-0 -z-[1] hidden md:block lg:-top-40"
+          className="absolute left-0 hidden md:block top-0 lg:-top-40 -z-[1]"
         />
         <Image
           src="/images/shape/right-l-orange.svg"
           alt="shape"
           width={120}
           height={100}
-          className="absolute right-0 bottom-[600px] -z-[1] opacity-40 md:-bottom-20 md:opacity-100"
+          className="absolute right-0 opacity-40 md:opacity-100 bottom-[600px] md:-bottom-20 -z-[1]"
         />
        <Image
           src="/images/shape/left-l-green.svg"
           alt="shape"
           width={100}
           height={100}
-          className="absolute left-0 bottom-60 -z-[1] opacity-40  md:-bottom-60  md:opacity-100"
+          className="absolute left-0 bottom-60 opacity-40 md:opacity-100  md:-bottom-60  -z-[1]"
         />
       </section>
       <SectionContactUs>

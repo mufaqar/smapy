@@ -70,7 +70,7 @@ export const ImageCard = ({
           } ${content}`}
         >
           <h2 className="mt-6 justify-center gap-4 text-[26px] font-medium sm:mt-0 lg:flex lg:justify-start">
-            {idx} <span>{title}</span>
+            <span className="hidden lg:block">{idx}</span> <span>{title}</span>
           </h2>
           <p className="text-maingray mt-4 text-[18px]">{text}</p>
           {children}

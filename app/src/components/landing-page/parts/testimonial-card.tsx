@@ -38,9 +38,10 @@ export const TestimonialCard = ({
   }
 
   return (
-    <section className="p-3">
-      <div className=" flex-1 gap-2 rounded-2xl border bg-gradient-to-l from-[#4AB4B7] to-[#315CA6] p-4">
-        <div className="mt-12 flex min-h-[270px] flex-col items-center rounded-2xl bg-white p-3  px-4">
+    <section className="sm:p-3 pr-4 sm:pr-0">
+      <div className=" flex-1 gap-2 rounded-2xl border bg-gradient-to-l from-lightBlue to-darkBlue p-4">
+        <div className="mt-12 flex min-h-[350px] flex-col justify-between items-center h-full rounded-2xl bg-white p-3 px-4">
+        <div className="flex-col justify-between items-center flex">
           <div className="-mt-12">
             <Avatar>
               <AvatarImage src={image} />
@@ -62,19 +63,26 @@ export const TestimonialCard = ({
             })}
           </ul>
           <div className="mb-4 text-sm text-[#050505] rtl:text-right md:text-base">
-            {children}
-          </div>
-          <div className="flex w-full justify-between">
-            <Image src="/images/google.svg" alt="star" width={30} height={30} />
-            <div>
-              <p className="text-end text-xs font-semibold md:text-sm">
-                {name}
-              </p>
-              <p className="text-end text-xs">{duration}</p>
+              {children}
+            </div>
+            </div>
+            <div className="flex w-full justify-between">
+              <Image
+                src="/images/google.svg"
+                alt="star"
+                width={30}
+                height={30}
+              />
+              <div>
+                <p className="text-end text-xs font-semibold md:text-sm">
+                  {name}
+                </p>
+                <p className="text-end text-xs">{duration}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      
     </section>
   );
 };

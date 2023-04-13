@@ -21,7 +21,7 @@ export const ConnectButton = ({ href, text, icon }: Props) => {
       </div>
       <div className="flex flex-col items-center md:hidden">
         <Link href={href} legacyBehavior passHref className="md:hidden">
-          <div className="contact-icon flex h-20 w-20 scale-75 cursor-pointer flex-col items-center justify-center">
+          <div className="contact-icon flex h-24 w-24 scale-75 cursor-pointer flex-col items-center justify-center">
             <i>{icon}</i>
           </div>
         </Link>

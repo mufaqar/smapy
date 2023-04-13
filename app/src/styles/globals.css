@@ -132,11 +132,18 @@ svg {
   ._testimonial .slick-dots li {
     margin: 0 5px;
   }
+  .slick-dots{
+    bottom: -45px !important;
+  }
+
   .contact-icon {
     border-radius: 12px;
   }
   ._left{
     right: -4rem
+  }
+  .slick-list{
+    padding: 0 !important;
   }
 }
 

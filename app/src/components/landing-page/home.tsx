@@ -35,6 +35,7 @@ export const Home = () => {
         slidesToShow: number;
         slidesToScroll: number;
         infinite: boolean;
+        centerMode: boolean;
       };
     }[];
   }
@@ -54,6 +55,7 @@ export const Home = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          centerMode: false,
         },
       },
       {
@@ -62,6 +64,7 @@ export const Home = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          centerMode: false,
         },
       },
       {
@@ -70,6 +73,7 @@ export const Home = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
+          centerMode: true,
         },
       },
     ],
@@ -79,10 +83,10 @@ export const Home = () => {
 
   return (
     <>
-      <section className="h-screen bg-[url('/images/mobile-main.png')] bg-cover bg-right-bottom bg-no-repeat lg:-mt-28 lg:bg-[url('/images/main.png')]">
+      <section className="lg:h-screen bg-[url('/images/mobile-main.png')] bg-cover bg-right-bottom h-[700px] md:h-[850px] bg-no-repeat lg:-mt-28 lg:bg-[url('/images/main.png')]">
         <div className="container mx-auto flex h-full flex-col items-end justify-center lg:justify-end">
           <div className="mb-24 w-full px-4 pr-[50%] text-right lg:px-0 lg:pr-[12%] 2xl:pr-[7%]">
-            <h1 className="text-shadow mb-4 max-w-[600px] scroll-m-20 text-[30px] font-extrabold leading-[38px]  tracking-tight text-white sm:text-5xl sm:leading-[60px] lg:mb-0 lg:text-6xl lg:leading-[75px]">
+            <h1 className="text-shadow mb-4 max-w-[600px] scroll-m-20 text-[30px] font-extrabold leading-[38px] tracking-tight text-white sm:text-5xl sm:leading-[60px] lg:mb-0 lg:text-6xl lg:leading-[75px]">
               {t("index.header")}
             </h1>
             <p className="text-shadow max-w-[550px] scroll-m-20 text-xl font-bold tracking-tight text-white md:text-3xl lg:text-3xl">
@@ -100,7 +104,7 @@ export const Home = () => {
             whitebg="/images/blob-white-1.png"
             colorbg="/images/blob-color-1.png"
             id="1"
-            className="absolute -left-6 scale-75 sm:scale-90 md:scale-100 lg:-top-[480px] lg:left-[100px] xl:left-[270px] 2xl:-top-[610px]"
+            className="absolute -left-6 top-6 sm:left-16 sm:top-0 scale-75 sm:scale-90 md:scale-100 lg:-top-[480px] lg:left-[100px] xl:left-[270px] 2xl:-top-[610px]"
           ></FloatingCard>
           <FloatingCard
             icon={<MortgageInsuranceIcon />}
@@ -110,7 +114,7 @@ export const Home = () => {
             whitebg="/images/blob-white-2.png"
             colorbg="/images/blob-color-2.png"
             id="2"
-            className="_left absolute -top-28 scale-[0.8] sm:scale-100 lg:-top-[220px] lg:left-[180px] xl:left-[280px] 2xl:-top-[320px]"
+            className="_left absolute -top-28 scale-[0.8] sm:scale-100 md:left-80 lg:-top-[220px] lg:left-[180px] xl:left-[280px] 2xl:-top-[320px]"
           ></FloatingCard>
           <FloatingCard
             icon={<PropertyInsuranceIcon />}
@@ -120,13 +124,13 @@ export const Home = () => {
             whitebg="/images/blob-white-3.png"
             colorbg="/images/blob-color-3.png"
             id="3"
-            className="absolute -top-60 -left-4 scale-90 md:left-0 md:scale-95 lg:top-0 lg:scale-100 xl:-top-[90px] xl:left-[20px]"
+            className="absolute -top-60 sm:left-0 -left-10 scale-75 md:left-0 sm:scale-95 lg:top-0 lg:scale-100 xl:-top-[90px] xl:left-0"
           ></FloatingCard>
         </div>
       </section>
 
       <section className="relative mt-40 px-4 lg:mt-0 lg:px-0">
-        <div className="container mx-auto mt-12 max-w-5xl text-center">
+        <div className="container mx-auto mt-16 lg:mt-56 xl:mt-28 max-w-5xl text-center">
           <h1 className="main-heading">{t("index.sections.1.header")}</h1>
           <p className="mb-6 mt-4 text-lg font-bold tracking-tight lg:text-2xl">
             {t("index.sections.1.text.1")}
@@ -188,7 +192,7 @@ export const Home = () => {
 
       <section className="mt-10 bg-[#E7F3F3] px-4 py-10 text-center md:mt-16 md:bg-transparent lg:mt-24 lg:px-0">
         <h1 className="main-heading mb-8">{t("index.sections.3.header")}</h1>
-        <div className="container mx-auto flex flex-row flex-wrap justify-center gap-3 md:gap-5 lg:gap-8">
+        <div className="container mx-auto flex flex-row flex-wrap  justify-center gap-3 md:gap-5 lg:gap-8">
           <CompanyLogo name="cmp1" src="/images/company-logo/klal.png" />
           <CompanyLogo name="cmp2" src="/images/company-logo/image 6.png" />
           <CompanyLogo name="cmp3" src="/images/company-logo/image 5.png" />
@@ -346,7 +350,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="relative mt-10 mb-20 px-4 lg:mt-20 lg:px-0">
+      <section className="relative mt-10 px-4 lg:mt-20 lg:px-0 mb-20">
         <div className="container mx-auto">
           <h1 className="main-heading mb-6 text-center">
             {t("index.sections.6.header")}

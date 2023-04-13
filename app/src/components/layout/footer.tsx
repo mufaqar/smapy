@@ -7,9 +7,7 @@ export const Footer = () => {
     <footer className="relative z-10 -mt-72 bg-[url('/images/mobile-footer-g.png')] bg-cover bg-no-repeat pt-20 sm:pb-20 md:-mt-2 md:bg-[#C4E4E8] md:bg-[url('/images/main-f-bg.png')]">
       <div className=" grid w-full grid-cols-1 gap-6 px-8 text-white sm:grid-cols-2 lg:grid-cols-6 lg:px-20">
         <div>
-          <h2 className="text-xl md:text-2xl">
-            {t("footer.structure_ins.header")}
-          </h2>
+          <h2 className="text-xl md:text-2xl">{t("footer.structure_ins.header")}</h2>
           <ul className="mt-2 flex flex-col gap-2 text-sm font-light md:text-base">
             <li>
               <Link href="#">{t("footer.structure_ins.list.1")}</Link>
@@ -29,12 +27,10 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl md:text-2xl">
-            {t("footer.mortgage_struct_ins.header")}
-          </h2>
+          <h2 className="text-xl md:text-2xl">{t("footer.mortgage_struct_ins.header")}</h2>
           <ul className="mt-2 flex flex-col gap-2 text-sm font-light md:text-base">
             <li>
-              <Link href="#">{t("footer.mortgage_struct_ins.list.1")}</Link>
+              <Link href="#">{t("footer.mortgage_struct_ins.list.1")} 1</Link>
             </li>
             <li>
               <Link href="#">{t("footer.mortgage_struct_ins.list.2")}</Link>
@@ -51,9 +47,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl md:text-2xl">
-            {t("footer.mortgage_life_ins.header")}
-          </h2>
+          <h2 className="text-xl md:text-2xl">{t("footer.mortgage_life_ins.header")}</h2>
           <ul className="mt-2 flex flex-col gap-2 text-sm font-light md:text-base">
             <li>
               <Link href="#">{t("footer.mortgage_life_ins.list.1")}</Link>
@@ -81,7 +75,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl md:text-2xl">{t("footer.info.header")}</h2>
+          <h2 className="text-xl text-2xl">{t("footer.info.header")}</h2>
           <ul className="mt-2 flex flex-col gap-2 text-sm font-light md:text-base">
             <li>
               <Link href="#">{t("footer.info.list.1")}</Link>
@@ -95,7 +89,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl md:text-2xl">{t("footer.map.header")}</h2>
+          <h2 className="text-xl text-2xl">{t("footer.map.header")}</h2>
           <ul className="mt-2 flex flex-col gap-2 text-sm font-light md:text-base">
             <li>
               <Link href="#">{t("footer.map.list.1")}</Link>
@@ -170,7 +164,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="mt-10 pb-5 text-center text-sm font-light text-white sm:hidden">
+      <p className="mt-10 pb-5 px-4 md:px-0 text-center text-sm font-light text-white sm:hidden">
         {t("footer.copyright")}
       </p>
     </footer>
