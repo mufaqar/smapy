@@ -1,17 +1,19 @@
 import path from "path";
 
+const isDev = process.env.NODE_ENV === "development";
+
 /** @type {import("next-i18next").UserConfig} */
 export const i18nConfig = {
-  debug: process.env.NODE_ENV === "development",
-  reloadOnPrerender: process.env.NODE_ENV === "development",
+  debug: isDev,
+  reloadOnPrerender: isDev,
   i18n: {
-    locales: ["en", "he", "zz"],
-    defaultLocale: process.env.NODE_ENV === "development" ? "en" : "he",
+    locales: isDev ? ["en", "he", "zz"] : ["he"],
+    defaultLocale: isDev ? "en" : "he",
   },
   // ns: ['common'],
   localePath: path.resolve("./public/locales"),
-  updateMissing: true,
-  saveMissing: true,
+  updateMissing: isDev,
+  saveMissing: isDev,
   saveMissingTo: "all",
   // missingKeyHandler: (lngs, ns, key, fallbackValue, updateMissing, options) => {
   //   console.log(`muly:missingKeyHandler`, {
