@@ -80,7 +80,7 @@ export const PageNavigationMenu = () => {
           <NavigationMenuItem className="mx-2">
             <Link href="/customer" legacyBehavior passHref>
               <NavigationMenuLink>
-                <Button variant="default">
+                <Button variant="primary_outline">
                   {t("nav.customer_entry")}
                 </Button>
               </NavigationMenuLink>
@@ -89,7 +89,7 @@ export const PageNavigationMenu = () => {
           <NavigationMenuItem className="mx-2">
             <Link href="/advisor" legacyBehavior passHref>
               <NavigationMenuLink>
-                <Button variant="secondaryBorder">
+                <Button variant="secondary_outline">
                   {t("nav.agent_entry")}
                 </Button>
               </NavigationMenuLink>

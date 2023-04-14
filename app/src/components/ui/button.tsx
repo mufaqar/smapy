@@ -6,22 +6,24 @@ import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none active:scale-95  disabled:pointer-events-none  disabled:opacity-50 ",
+  "inline-flex items-center button_padding justify-center max-w-[240px] py-8 flex justify-between items-center w-full rounded-md text-sm font-medium transition-colors focus:outline-none active:scale-95 disabled:pointer-events-none disabled:opacity-50 ",
   {
     variants: {
       variant: {
         primary:
-          "rounded-[16px] bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] text-base text-white",
+          "rounded-[18px] bg-gradient-to-r from-[rgba(254,5,85,1)] to-[rgba(255,135,0,1)] text-base text-white hover:bg-gradient-to-r hover:to-[#db6c06] hover:from-[#cc0d41]",
+        primary_outline:
+          "rounded-[18px] border text-black border-[rgba(254,5,85,1)] hover:border-none text-slate-900 hover:text-white hover:bg-gradient-to-r hover:to-[#db6c06] hover:from-[#cc0d41]",
         secondary:
-          "rounded-[16px] bg-gradient-to-r from-darkBlue to-lightBlue text-base text-white",
+          "rounded-[18px] bg-gradient-to-r from-darkBlue to-lightBlue text-base text-white hover:bg-gradient-to-r hover:from-[#0d4867] hover:to-[#158b87]",
         default:
-          " color-black cursor-pointer rounded-[16px] border border-[rgba(254,5,85,1)] focus:outline-none hover:border-transparent hover:bg-gradient-to-r hover:from-[rgba(254,5,85,1)] hover:to-[rgba(255,135,0,1)] active:scale-95",
-        secondaryBorder:
-          " color-black cursor-pointer rounded-[16px] border border-darkBlue focus:outline-none active:scale-95 hover:border-transparent hover:bg-gradient-to-r hover:from-darkBlue hover:to-lightBlue",
+          " color-black cursor-pointer rounded-[18px] border border-[rgba(254,5,85,1)] focus:outline-none hover:border-transparent hover:bg-gradient-to-r hover:from-[rgba(254,5,85,1)] hover:to-[rgba(255,135,0,1)] active:scale-95",
+        secondary_outline:
+          "  border border-darkBlue text-black rounded-[18px] text-base hover:border-none hover:text-white hover:bg-gradient-to-r hover:from-[#0d4867] hover:to-[#158b87]",
         destructive:
-          "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
-        outline:
-          "border border-slate-200 bg-transparent hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100",
+          "bg-red-500 text-white  hover:bg-red-600 dark:hover:bg-red-600",
+        alternate:
+          "border border-slate-300 bg-transparent rounded-[18px] text-slate-500 hover:border-slate-700 hover:text-slate-700 dark:border-slate-700 dark:text-slate-100",
         subtle:
           "bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100",
         ghost:

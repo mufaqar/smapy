@@ -17,7 +17,7 @@ import { SmapyLogo } from "@/components/layout/SmapyLogo";
 
 export const PageHeader = () => {
   return (
-    <NavigationMenu className="m-top m-auto mt-8 w-full max-w-7xl justify-start">
+    <NavigationMenu className="m-top m-auto mt-8 w-full max-w-7xl justify-start0">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>

@@ -42,7 +42,7 @@ export const PrimaryOutline = {
   ...Primary,
   args: {
     ...Primary.args,
-    variant: "primary-outline",
+    variant: "primary_outline",
   },
 };
 
@@ -53,7 +53,7 @@ export const Secondary = {
 
 export const SecondaryOutline = {
   ...Primary,
-  args: { ...Primary.args, variant: "secondary-outline" },
+  args: { ...Primary.args, variant: "secondary_outline" },
 };
 
 export const Alternate = {

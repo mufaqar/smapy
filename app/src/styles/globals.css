@@ -147,3 +147,8 @@ svg {
   }
 }
 
+
+.button_padding{
+  padding-top: 26px !important;
+  padding-bottom: 26px !important;
+}
