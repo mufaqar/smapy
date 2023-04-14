@@ -3,6 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none active:scale-95  disabled:pointer-events-none  disabled:opacity-50 ",
@@ -15,8 +16,8 @@ const buttonVariants = cva(
           "rounded-[16px] bg-gradient-to-r from-darkBlue to-lightBlue text-base text-white",
         default:
           " color-black cursor-pointer rounded-[16px] border border-[rgba(254,5,85,1)] focus:outline-none hover:border-transparent hover:bg-gradient-to-r hover:from-[rgba(254,5,85,1)] hover:to-[rgba(255,135,0,1)] active:scale-95",
-          secondaryBorder:
-            " color-black cursor-pointer rounded-[16px] border border-darkBlue focus:outline-none active:scale-95 hover:border-transparent hover:bg-gradient-to-r hover:from-darkBlue hover:to-lightBlue",
+        secondaryBorder:
+          " color-black cursor-pointer rounded-[16px] border border-darkBlue focus:outline-none active:scale-95 hover:border-transparent hover:bg-gradient-to-r hover:from-darkBlue hover:to-lightBlue",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         outline:
@@ -48,15 +49,24 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, isLoading, ...props }, ref) => {
+  ({ className, disabled, variant, size, isLoading, ...props }, ref) => {
     //TODO: isLoading
     return (
-      <button
-        type="button"
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
+      <>
+        <button
+          type="button"
+          className={cn(buttonVariants({ variant, size, className }))}
+          disabled={disabled || isLoading}
+          ref={ref}
+          {...props}
+        >
+          {isLoading ? (
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            props.children
+          )}
+        </button>
+      </>
     );
   }
 );
