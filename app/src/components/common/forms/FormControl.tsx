@@ -25,7 +25,7 @@ export const FormControl = ({ children, showLabel }: Props) => {
       {children}
       <label className="label">
         {!error ? null : (
-          <p className="text-sm text-red-500">
+          <p className="text-sm text-red-500 my-2">
             {formContext.t(error?.errorMessage)}
           </p>
         )}
