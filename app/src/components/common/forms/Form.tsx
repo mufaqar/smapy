@@ -38,9 +38,9 @@ const CommonForm = ({
   });
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <div className="flex flex-col items-center">
-        <div className={cn("flex flex-col gap-4", className)}>{children}</div>
+    <form onSubmit={handleSubmit} className="w-full" noValidate>
+      <div className="flex flex-col items-start">
+        <div className={cn("flex flex-col gap-4 w-full mb-5", className)}>{children}</div>
         <Button
           variant="primary"
           className={buttonClassName}
