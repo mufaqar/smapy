@@ -196,7 +196,6 @@ export const TextField = (
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
-
         <SelectContent>
           {choices.map((choice, idx) => {
             const { id, title } =
