@@ -27,12 +27,12 @@ export const Error = {
   },
 };
 
-// TODO: See password input
-export const WithRightButton = {
-  render: () => <Input rightIcon={<EditIcon />} />,
-};
-
-export const WithLeftIcon = { render: () => <Input leftIcon={<EditIcon />} /> };
+// // TODO: See password input
+// export const WithRightButton = {
+//   render: () => <Input rightIcon={<EditIcon />} />,
+// };
+//
+// export const WithLeftIcon = { render: () => <Input leftIcon={<EditIcon />} /> };
 
 // Left side search icon, right side clear icon type="search"
 export const Search = { render: () => <Input type="search" /> };

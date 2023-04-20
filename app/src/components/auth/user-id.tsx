@@ -40,7 +40,7 @@ export const UserId = ({ onSubmit, role }: Props) => {
           {(text && text[`entry_${role}`]) || null}
         </h3>
         <h1 className="text-5xl font-normal">
-          {evaluateFormControlCallback(label)}
+          {evaluateFormControlCallback(label, formContext)}
         </h1>
 
         <Form
@@ -52,7 +52,7 @@ export const UserId = ({ onSubmit, role }: Props) => {
           formProps={{
             submit: {
               notification: false,
-              text: t('user_id.next') || '',
+              text: t("user_id.next") || "",
             },
           }}
         ></Form>

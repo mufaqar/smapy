@@ -37,53 +37,127 @@
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-body {
-  font-family: "Rubik", sans-serif;
+@layer base {
+  :root {
+    --background: 204 33% 97%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 340, 99%, 50%;
+    --primary-to: 31, 100%, 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 201 81% 29%;
+    --secondary-to: 176 80% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
 }
 
-/* should be done inside tailwind app/src/components/common/forms/RadioButtonGroup.tsx */
-.radio-group-tbd {
-  border: 1px solid red;
+.button-gradient-primary {
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-to)) 100%);
 }
 
-button.radio-group-tbd[data-state="on"] {
-  border: 1px solid blue;
+.button-gradient-secondary {
+  background: linear-gradient(90deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-to)) 100%);
 }
 
-.blog h2 {
-  font-weight: bold;
+.button-gradinet-primary {
+  background: linear-gradient(90deg, #fe0555 0%, #ff8700 100%);
 }
-.shadow {
-  box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.1);
-}
-.gradient-text{
-  background: linear-gradient(90deg, #FE0555 0%, #FF8700 100%);
+
+.gradient-text {
+  background: linear-gradient(90deg, #fe0555 0%, #ff8700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 
-@layer components {
-  .main-heading {
-    @apply text-[28px] font-bold leading-8 md:text-[42px];
+@layer base {
+  * {
+    @apply border-border;
+    font-family: Rubik, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+      Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-.blog li {
-  @apply mt-2;
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute inline-flex h-8 w-8 items-center justify-center rounded-full bg-muted text-center -indent-px text-base font-medium;
+    @apply ml-[-41px];
+    content: counter(step);
+  }
 }
 
-.blog ul {
-  @apply my-6 ml-6 list-disc;
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
 }
 
-.blog ol {
-  @apply my-6 ml-6 list-disc;
-}
-svg {
-  margin: auto;
-}
 ._testimonial .slick-dots li button:before {
   background: transparent;
   color: transparent;
@@ -132,29 +206,17 @@ svg {
   ._testimonial .slick-dots li {
     margin: 0 5px;
   }
-  .slick-dots{
+  .slick-dots {
     bottom: -45px !important;
   }
 
   .contact-icon {
     border-radius: 12px;
   }
-  ._left{
-    right: -4rem
+  ._left {
+    right: -4rem;
   }
-  .slick-list{
+  .slick-list {
     padding: 0 !important;
   }
-}
-
-
-.button_padding{
-  padding-top: 26px !important;
-  padding-bottom: 26px !important;
-}
-label{
-  color: rgb(183, 183, 183) !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  font-size: 13px !important;
 }

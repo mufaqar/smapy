@@ -50,7 +50,7 @@ export const OTP = ({ role, onVerifyOTP }: Props) => {
           {(text && text[`entry_${role}`]) || null}
         </h3>
         <h1 className="text-5xl font-normal">
-          {evaluateFormControlCallback(label)}
+          {evaluateFormControlCallback(label, formContext)}
         </h1>
         <span>[PLACEHOLDER] message was sent to xxx...</span>
 

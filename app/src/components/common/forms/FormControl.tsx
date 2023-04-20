@@ -20,12 +20,14 @@ export const FormControl = ({ children, showLabel }: Props) => {
   return (
     <div className={clsx([{ "w-full": !className }, className])}>
       {showLabel !== false && (
-        <Label htmlFor={field.name}>{maybeConvertChild(label)}</Label>
+        <Label htmlFor={field.name} className="mb-8">
+          {maybeConvertChild(label)}
+        </Label>
       )}
       {children}
       <label className="label">
         {!error ? null : (
-          <p className="text-sm text-red-500 my-2">
+          <p className="text-sm text-red-500">
             {formContext.t(error?.errorMessage)}
           </p>
         )}
