@@ -16,10 +16,8 @@ export const FormHeader = (wizard: WizardControlProps) => {
 
   return (
     <>
-      <h1 className="text-center text-5xl font-normal">
-        {evaluateControlCallback(meta.label, wizard)}
-      </h1>
-      <TopWizardSteps wizard={wizard} />
+  
+      {/* <TopWizardSteps wizard={wizard} /> */}
       <div className="relative w-full">
         <div className="flex flex-col items-center">
           <h2 className="text-center text-4xl font-bold">

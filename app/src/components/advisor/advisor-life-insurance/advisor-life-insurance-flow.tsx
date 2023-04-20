@@ -157,7 +157,7 @@ export const AdvisorLifeInsuranceFlow = () => {
   });
 
   return (
-    <WizardForm
+   <WizardForm
       wizard={wizard}
       handleSubmit={handleSubmit}
       recordData={recordData}

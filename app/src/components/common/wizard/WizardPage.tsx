@@ -30,7 +30,7 @@ export const WizardPage = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageHeader />
-      <main className="align- flex flex-col items-center gap-8">
+      <main className="align- flex flex-col items-center gap-8 mb-96 lg:mb-20">
         <WizardForm
           wizard={wizard}
           handleSubmit={handleSubmit}

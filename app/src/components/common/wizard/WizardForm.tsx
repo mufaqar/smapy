@@ -1,7 +1,7 @@
 import { FormHeader } from "./FormHeader";
 import { Form } from "../forms/Form";
 import React from "react";
-import type { WizardControlProps } from "./useWizardFlow";
+import { WizardControlProps, evaluateControlCallback } from "./useWizardFlow";
 import { FormSideBackgroundImage } from "./FormSideBackgroundImage";
 import NoSSR from "react-no-ssr";
 import { Loading } from "../Loading";
@@ -40,11 +40,14 @@ export const WizardForm = ({
     // Server has no access to url parameters so it render step 0
     // Maybe we can revisit this in the future
     <NoSSR onSSR={<Loading />}>
-      <div className="m-auto flex max-w-6xl flex-col gap-8">
+      <h1 className="text-center text-5xl mb-8 text-[#212429] font-normal">
+       הריד חוטיב תשיכרו האוושה  
+      </h1>
+      <div className="m-auto flex max-w-6xl flex-col gap-8 bg-white shadow rounded-3xl p-12">
         <FormHeader {...wizard} />
         {/* TODO: move to anywhere fit for layout */}
         <SideWizardSteps wizard={wizard} />
-        <div className="relative" key={step.name}>
+        <div className="relativ" key={step.name}>
           {!!control ? (
             control(wizard)
           ) : (

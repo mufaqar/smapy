@@ -31,7 +31,6 @@ const PageBanner = ({ heading, subheading, image, mobileImage, btnText }: any) =
         </p>
         {btnText && <div className="md:max-w-[580px] max-w-[250px] w-full mt-4 "> <Button variant="primary">{btnText}</Button> </div> }
       </div>
-      
     </section>
   );
 };
