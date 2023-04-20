@@ -13,6 +13,8 @@ export const CheckboxField = ({ controlName }: Props) => {
     label: "",
   };
 
+  controlName = controlName || meta?.control;
+
   let control;
   if (controlName === "Switch") {
     control = (

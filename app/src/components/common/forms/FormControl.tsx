@@ -1,8 +1,8 @@
 import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 import { useMeta, useTsController } from "@/components/libs/react-ts-form";
-import React from "react";
-import { clsx } from "clsx";
 import { Label } from "@/components/ui/label";
+import { clsx } from "clsx";
+import React from "react";
 
 interface Props {
   showLabel?: boolean;
@@ -18,7 +18,7 @@ export const FormControl = ({ children, showLabel }: Props) => {
   };
 
   return (
-    <div className={clsx([{ "w-full max-w-xs": !className }, className])}>
+    <div className={clsx([{ "w-full": !className }, className])}>
       {showLabel !== false && (
         <Label htmlFor={field.name}>{maybeConvertChild(label)}</Label>
       )}
