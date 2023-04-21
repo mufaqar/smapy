@@ -1,6 +1,5 @@
-import type {
+import {
   ZodArray,
-  ZodAny,
   ZodBoolean,
   ZodBranded,
   ZodDate,
@@ -17,7 +16,6 @@ import type {
   ZodTuple,
   ZodEffects,
 } from "zod";
-import { ZodNativeEnum } from "zod";
 
 /**
  * Reducing this helps with TS performance
@@ -26,7 +24,6 @@ export type RTFBaseZodType =
   | ZodString
   | ZodNumber
   | ZodBoolean
-  | ZodAny
   | ZodDate
   | ZodArray<any, any>
   | ZodObject<any, any, any, any, any>
@@ -36,7 +33,6 @@ export type RTFBaseZodType =
   | ZodMap<any>
   | ZodSet<any>
   | ZodEnum<any>
-  | ZodNativeEnum<any>
   | ZodBranded<any, any>
   | ZodEffects<any, any>;
 

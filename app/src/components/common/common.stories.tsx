@@ -68,7 +68,9 @@ export const DialogForm = () => {
     <DialogFormComponent
       formContext={formContext}
       schema={schema}
-      onSubmit={(newRec) => newRec}
+      onSubmit={(newRec) => {
+        console.log(`muly:Submit`, { newRec });
+      }}
       formProps={{
         trigger: (
           <Button>
