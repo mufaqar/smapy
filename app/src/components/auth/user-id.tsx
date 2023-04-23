@@ -50,44 +50,55 @@ export const UserId = ({ onSubmit, role }: Props) => {
           </Link>
         </div>
       </section>
-      <section className="p-8" >
-      <div className="flex flex-col md:flex-row bg-white shadow rounded-3xl gap-20 -mt-[300px] mx-auto max-w-[1020px] p-10 lg:p-20 items-center">
-        <img
-          src="/images/forms/login.svg"
-          width={364}
-          className="row-span-3"
-          alt=""
-        />
-        <div className="flex flex-col items-start">
-          <h3 className="text-2xl font-light">
-            {(text && text[`entry_${role}`]) || null}
-          </h3>
-          <h1 className="text-4xl font-semibold mb-8">
-            {evaluateFormControlCallback(label)}
-          </h1>
+      <section className="p-8">
+        <div className="mx-auto -mt-[300px] flex max-w-[1020px] flex-col items-center gap-20 rounded-3xl bg-white p-10 shadow md:flex-row lg:p-20">
+          <img
+            src="/images/forms/login.svg"
+            width={364}
+            className="row-span-3"
+            alt=""
+          />
+          <div className="flex flex-col items-start">
+            <h3 className="text-2xl font-light">
+              {(text && text[`entry_${role}`]) || null}
+            </h3>
+            <h1 className="mb-8 text-4xl font-semibold">
+              {evaluateFormControlCallback(label, formContext)}
+            </h1>
 
-          <Form
-            formContext={formContext}
-            schema={schema}
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
-            onSubmit={onSubmit}
-            props={{}}
-            formProps={{
-              submit: {
-                notification: false,
-                text: t("user_id.next") || "",
-              },
-            }}
-          ></Form>
+            <Form
+              formContext={formContext}
+              schema={schema}
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onSubmit={onSubmit}
+              props={{}}
+              formProps={{
+                submit: {
+                  notification: false,
+                  text: t("user_id.next") || "",
+                },
+              }}
+            ></Form>
+          </div>
         </div>
-      </div>
       </section>
       <div className="relative mt-80 md:mt-20">
-        <Image src="/images/shape/bg-r-design.svg" className="absolute -top-40" width={130} height={100} alt="shape"/>
-        <Image src="/images/faq-shape.svg" className="absolute left-0 -top-60" width={130} height={100} alt="shape"/>
+        <Image
+          src="/images/shape/bg-r-design.svg"
+          className="absolute -top-40"
+          width={130}
+          height={100}
+          alt="shape"
+        />
+        <Image
+          src="/images/faq-shape.svg"
+          className="absolute left-0 -top-60"
+          width={130}
+          height={100}
+          alt="shape"
+        />
       </div>
-     <Footer />
-
+      <Footer />
     </>
   );
 };

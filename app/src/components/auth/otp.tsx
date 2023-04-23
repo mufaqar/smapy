@@ -59,46 +59,58 @@ export const OTP = ({ role, onVerifyOTP }: Props) => {
           </Link>
         </div>
       </section>
-      <section className="p-8" >
-      <div className="flex flex-col md:flex-row bg-white shadow rounded-3xl gap-20 -mt-[300px] mx-auto max-w-[1020px] p-10 lg:p-24 items-center">
+      <section className="p-8">
+        <div className="mx-auto -mt-[300px] flex max-w-[1020px] flex-col items-center gap-20 rounded-3xl bg-white p-10 shadow md:flex-row lg:p-24">
+          <img
+            src="/images/forms/otp.svg"
+            width={364}
+            className="row-span-3"
+            alt=""
+          />
+          <div className="flex flex-col items-start">
+            <h3 className="text-2xl font-light">
+              {(text && text[`entry_${role}`]) || null}
+            </h3>
+            <h1 className="mb-2 text-4xl font-semibold">
+              {evaluateFormControlCallback(label, formContext)}
+            </h1>
+            <span className="mb-8">
+              [PLACEHOLDER] message was sent to xxx...
+            </span>
 
-        <img
-          src="/images/forms/otp.svg"
-          width={364}
-          className="row-span-3"
-          alt=""
-        />
-        <div className="flex flex-col items-start">
-        <h3 className="text-2xl font-light">
-            {(text && text[`entry_${role}`]) || null}
-          </h3>
-          <h1 className="text-4xl font-semibold mb-2">
-            {evaluateFormControlCallback(label)}
-          </h1>
-          <span className="mb-8">[PLACEHOLDER] message was sent to xxx...</span>
-
-          <Form
-            formContext={formContext}
-            schema={schema}
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
-            onSubmit={handleVerifyOTP}
-            props={{}}
-            formProps={{
-              submit: {
-                notification: false,
-                text: t("otp.next") || "",
-              },
-            }}
-          ></Form>
+            <Form
+              formContext={formContext}
+              schema={schema}
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onSubmit={handleVerifyOTP}
+              props={{}}
+              formProps={{
+                submit: {
+                  notification: false,
+                  text: t("otp.next") || "",
+                },
+              }}
+            ></Form>
+          </div>
         </div>
-      </div>
       </section>
       <div className="relative mt-80 md:mt-20">
-        <Image src="/images/shape/bg-r-design.svg" className="absolute -top-40" width={130} height={100} alt="shape"/>
-        <Image src="/images/faq-shape.svg" className="absolute left-0 -top-60" width={130} height={100} alt="shape"/>
+        <Image
+          src="/images/shape/bg-r-design.svg"
+          className="absolute -top-40"
+          width={130}
+          height={100}
+          alt="shape"
+        />
+        <Image
+          src="/images/faq-shape.svg"
+          className="absolute left-0 -top-60"
+          width={130}
+          height={100}
+          alt="shape"
+        />
       </div>
       <Footer />
-
     </>
   );
 };
