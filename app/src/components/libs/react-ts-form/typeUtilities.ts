@@ -1,7 +1,7 @@
-import type { z } from "zod";
+import { z } from "zod";
 import type { FormComponentMapping } from "./createSchemaForm";
-import type { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
-import type { UnwrapZodType } from "./unwrap";
+import { RTFBaseZodType, RTFSupportedZodTypes } from "./supportedZodTypes";
+import { UnwrapZodType } from "./unwrap";
 
 /**
  * @internal
@@ -101,3 +101,24 @@ export type IndexOf<V extends readonly any[], T> = {
       : never
     : never;
 }[keyof Indexes<V>];
+
+/**
+ * @internal
+ */
+export type ExpandRecursively<T> = T extends object
+  ? T extends infer O
+    ? { [K in keyof O]: ExpandRecursively<O[K]> }
+    : never
+  : T;
+
+/**
+ * @internal
+ */
+export type NullToUndefined<T> = T extends null ? undefined : T;
+
+/**
+ * @internal
+ */
+export type RemoveNull<T> = ExpandRecursively<{
+  [K in keyof T]: NullToUndefined<T[K]>;
+}>;

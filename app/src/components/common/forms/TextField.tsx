@@ -1,30 +1,22 @@
-import { useMeta, useTsController } from "../../libs/react-ts-form";
+import { useMetaEx, useTsController } from "@/components/libs/react-ts-form";
 import { RadioButtonGroup } from "./RadioButtonGroup";
 import type { ChoiceType, ZodMetaDataItem } from "../../../utils/zod-meta";
 import { maybeConvertChild } from "@/components/common/wizard/useWizardFlow";
 import { FormControl } from "./FormControl";
-import { clsx } from "clsx";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { InputPassword } from "@/components/common/forms/InputPassword";
+import { SelectField } from "@/components/common/forms/SelectField";
+import { ControlCallback } from "../../../utils/zod-meta";
 
 export interface Props {
   choices?: ChoiceType[];
-  type?: string;
-  controlName?: ZodMetaDataItem["control"];
+  // type?: string;
+  // controlName?: ZodMetaDataItem["control"];
 }
 
 export const TextField = (
@@ -32,43 +24,39 @@ export const TextField = (
   //   // label?: string;
   //   enumValues?: string[];
   // }
-  { type, choices: choicesParams, controlName }: Props
+  {}: /* merged to meta */ Props
 ) => {
   const { field, error, formContext } = useTsController<string>();
-  const meta = useMeta();
   const {
+    type,
+    choices,
+    disabled,
     label,
     placeholder,
-    choices: choicesDescription,
-    className,
-  } = meta || {
-    label: "",
-    placeholder: "",
-  };
+    control: controlName,
+  } = useMetaEx();
 
-  const choices = choicesParams || choicesDescription;
+  // let extraMeta = undefined;
+  // if (preprocess) {
+  //   // @ts-ignore
+  //   extraMeta = preprocess({ formContext });
+  // }
 
   // const options = parseOptionsString(placeholder);
   // if (options.choices && !choices) {
   //   choices = parseChoices(String(options.choices));
   // }
 
-  controlName = controlName || meta?.control;
-
-  // console.log(
-  //   `muly:TextField ${field.name} label:${label}, placeholder:${placeholder}`,
-  //   {
-  //     error,
-  //     meta,
-  //     choices,
-  //     field,
-  //     label,
-  //     placeholder,
-  //   }
-  // );
-
   let control;
-  if (!choices) {
+  if (typeof controlName === "function") {
+    if (!formContext.flowContext) {
+      throw new Error(
+        `TextField: controlName is a function but flowContext is not defined`
+      );
+    }
+    const controlFn: ControlCallback = controlName;
+    control = controlFn(formContext.flowContext);
+  } else if (!choices) {
     if (controlName === "Textarea") {
       control = (
         <Textarea
@@ -79,14 +67,16 @@ export const TextField = (
           onChange={(e) => {
             field.onChange(e.target.value);
           }}
+          disabled={disabled}
         />
       );
     } else if (controlName === "File") {
       control = (
         <input
-          className={clsx([{ error: "file-input-error" }])}
+          // className={clsx([{ "tbd-error-style": error }])}
           type="file"
           name={field.name}
+          disabled={disabled}
           onChange={(e) => {
             let file;
 
@@ -100,6 +90,8 @@ export const TextField = (
           }}
         />
       );
+    } else if (type === "password") {
+      control = <InputPassword />;
     } else {
       // console.log(`muly:TextField`, { error });
       control = (
@@ -110,6 +102,7 @@ export const TextField = (
           type={type || undefined}
           placeholder={placeholder}
           value={field.value ? field.value + "" : ""}
+          disabled={disabled}
           onChange={(e) => {
             field.onChange(e.target.value);
           }}
@@ -123,10 +116,11 @@ export const TextField = (
     control = (
       <div className="flex items-center space-x-2">
         <Checkbox
-          className={clsx(["checkbox", { error: "checkbox-error" }])}
+          // className={clsx(["checkbox", { error: "checkbox-error" }])}
           id={field.name}
           name={field.name}
           checked={field.value == valueTrue}
+          disabled={disabled}
           onCheckedChange={(checked) => {
             field.onChange(checked ? String(valueTrue) : String(valueFalse));
           }}
@@ -135,7 +129,7 @@ export const TextField = (
           htmlFor={field.name}
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          {maybeConvertChild(label)}
+          {maybeConvertChild(label, formContext.flowContext)}
         </label>
       </div>
     );
@@ -146,10 +140,10 @@ export const TextField = (
     control = (
       <div className="flex items-center space-x-2">
         <Switch
-          className="flex h-10 w-full rounded-md border border-slate-300 bg-transparent py-2 px-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900"
           id={field.name}
           name={field.name}
           checked={field.value == valueTrue}
+          disabled={disabled}
           onCheckedChange={(checked) => {
             field.onChange(checked ? String(valueTrue) : String(valueFalse));
           }}
@@ -158,7 +152,7 @@ export const TextField = (
           htmlFor={field.name}
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          {maybeConvertChild(label)}
+          {maybeConvertChild(label, formContext.flowContext)}
         </label>
       </div>
     );
@@ -185,32 +179,8 @@ export const TextField = (
       />
     );
   } else {
-    control = (
-      <Select
-        name={field.name}
-        value={field.value ? field.value + "" : ""}
-        onValueChange={(value) => {
-          field.onChange(value);
-        }}
-      >
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder={placeholder} />
-        </SelectTrigger>
-        <SelectContent>
-          {choices.map((choice, idx) => {
-            const { id, title } =
-              typeof choice === "string"
-                ? { id: choice, title: choice }
-                : choice;
-            return (
-              <SelectItem key={idx} value={String(id)}>
-                {title}
-              </SelectItem>
-            );
-          })}
-        </SelectContent>
-      </Select>
-    );
+    // console.log(`muly:Select Field ${disabled}`, { props });
+    control = <SelectField />;
   }
 
   // console.log(`muly:TextField`, { formContext });

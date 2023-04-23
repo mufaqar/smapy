@@ -38,11 +38,22 @@ export const Primary = {
   },
 };
 
+export const Text = {
+  args: {
+    variant: "text",
+    pseudo: {
+      hover: ["#button-hover"],
+      focus: ["#button-focus"],
+      active: ["#button-active"],
+    },
+  },
+};
+
 export const PrimaryOutline = {
   ...Primary,
   args: {
     ...Primary.args,
-    variant: "primary_outline",
+    variant: "primary-outline",
   },
 };
 
@@ -53,10 +64,30 @@ export const Secondary = {
 
 export const SecondaryOutline = {
   ...Primary,
-  args: { ...Primary.args, variant: "secondary_outline" },
+  args: { ...Primary.args, variant: "secondary-outline" },
 };
 
 export const Alternate = {
   ...Primary,
   args: { ...Primary.args, variant: "alternate" },
+};
+
+export const Destructive = {
+  ...Primary,
+  args: { ...Primary.args, variant: "destructive" },
+};
+
+export const outline = {
+  ...Primary,
+  args: { ...Primary.args, variant: "outline" },
+};
+
+export const ghost = {
+  ...Primary,
+  args: { ...Primary.args, variant: "ghost" },
+};
+
+export const link = {
+  ...Primary,
+  args: { ...Primary.args, variant: "link" },
 };
