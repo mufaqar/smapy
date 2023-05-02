@@ -24,6 +24,7 @@ export const SideWizardSteps = ({ wizard }: Props) => {
                 { "text-gray-300": status === "next" },
               ])}
             >
+
               {title}
             </div>
           )
