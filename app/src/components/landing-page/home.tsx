@@ -192,7 +192,7 @@ export const Home = () => {
 
       <section className="mt-10 bg-[#E7F3F3] px-4 py-10 text-center md:mt-16 md:bg-transparent lg:mt-24 lg:px-0">
         <h1 className="main-heading mb-8">{t("index.sections.3.header")}</h1>
-        <div className="container mx-auto flex flex-row flex-wrap  justify-center gap-3 md:gap-5 lg:gap-8">
+        <div className="container mx-auto flex flex-row flex-wrap justify-center gap-3 md:gap-5 lg:gap-8">
           <CompanyLogo name="cmp1" src="/images/company-logo/klal.png" />
           <CompanyLogo name="cmp2" src="/images/company-logo/image 6.png" />
           <CompanyLogo name="cmp3" src="/images/company-logo/image 5.png" />

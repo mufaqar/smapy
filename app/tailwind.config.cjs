@@ -19,14 +19,16 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
+        primary:  "hsl(var(--primary))",
+        primary_to:  "hsl(var(--primary-to))",
+        primary_foreground: "hsl(var(--primary-foreground))",
+        secondary: "hsl(var(--secondary))",
+        secondary_to: "hsl(var(--secondary-to))",
+        secondaryForeground: "hsl(var(--secondary-foreground))",
+        faq_from: `var(--faq-from)`,
+        faq_to: `var(--faq-to)`,
+
+
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -47,11 +49,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'maingray': '#495057',
+        
       },
       borderRadius: {
         lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
-        sm: "calc(var(--radius) - 4px)",
+        md: `calc(var(--radius) - 8px)`,
+        sm: "calc(var(--radius) - 10px)",
+      },
+      boxShadow: {
+        'main': `var(--shadow-main)`,
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

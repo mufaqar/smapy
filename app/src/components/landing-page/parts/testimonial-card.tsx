@@ -39,7 +39,7 @@ export const TestimonialCard = ({
 
   return (
     <section className="sm:p-3 pr-4 sm:pr-0">
-      <div className=" flex-1 gap-2 rounded-2xl border bg-gradient-to-l from-lightBlue to-darkBlue p-4">
+      <div className=" flex-1 gap-2 rounded-lg border bg-gradient-to-l to-secondary from-secondary_to p-4">
         <div className="mt-12 flex min-h-[350px] flex-col justify-between items-center h-full rounded-2xl bg-white p-3 px-4">
         <div className="flex-col justify-between items-center flex">
           <div className="-mt-12">
