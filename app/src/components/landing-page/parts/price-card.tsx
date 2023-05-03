@@ -25,7 +25,7 @@ export const PriceCard = ({ name, price, lines, image }: Props) => {
     ...(lines || []),
   ];
   return (
-    <div className="flex relative flex-col items-center mb-5 lg:mb-0 justify-between gap-2 rounded-[40px] bg-gradient-to-l from-lightBlue to-darkBlue p-1">
+    <div className="flex relative flex-col items-center mb-5 lg:mb-0 justify-between gap-2 rounded-[40px] bg-gradient-to-r from-secondary to-secondary_to p-1">
       <div className="mt-4 flex flex-col items-center">
         <img src={image} alt="" className="h-12 w-12" />
         <h2 className="my-3 text-center text-2xl font-medium text-white">
